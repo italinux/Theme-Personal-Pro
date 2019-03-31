@@ -1,0 +1,433 @@
+/* Main Tags
+---------------------------------------------------------*/
+
+@charset"utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, button {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  background: transparent;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 0;
+}
+
+/* Main
+---------------------------------------------------------*/
+html {
+  overflow-y: scroll;
+}
+
+body {
+  color: @body-type-color;
+  background-color: @body-even-bg-color;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  overflow: hidden;
+}
+
+/* Main Page Wrapper
+---------------------------------------------------------*/
+div.main-wrapper {
+  margin-bottom: -1px;
+
+  article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+
+  figure {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  hr {
+    margin: 0;
+    padding: 0;
+  }
+
+  blockquote {
+    quotes: none;
+    &::before, &::after {
+      content: "";
+      content: none;
+    }
+  }
+
+  q {
+    display: inline;
+    &::before {
+      content: "“";
+    }
+    &::after {
+      content: "”";
+    }
+  }
+
+  del {
+    text-decoration: line-through;
+  }
+
+  ul, ol {
+    margin-left: 0;
+    list-style-position: outside;
+  }
+
+  ul, ul li {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: circle;
+  }
+
+  input[type=button], input[type=submit], button {
+    cursor: pointer;
+  }
+
+  pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  small {
+    font-size: 70%;
+  }
+
+  img, object, embed {
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  textarea {
+    overflow: auto;
+  }
+
+  input[type="checkbox"] {
+    vertical-align: bottom;
+  }
+
+  iframe {
+    border: 0 !important;
+  }
+
+  /* Anchors
+---------------------------------------------------------*/
+  a {
+    outline: none;
+    text-decoration: underline;
+    &:hover {
+      outline: none;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: none;
+      text-decoration: underline;
+    }
+    &:active {
+      outline: none;
+      text-decoration: underline;
+    }
+  }
+
+  /**
+* - - PRE HANDS - -
+*
+* Anchors + Buttons (.btn .btn-primary)
+---------------------------------------------------------*/
+  a {
+    &.info, &.goto {
+      text-decoration: none;
+      > span {
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    &.btn {
+      &.info > span, &.goto > span {
+        text-decoration: none;
+      }
+    }
+  }
+
+  div.global-cta {
+    .btn {
+      border-radius: 6px;
+    }
+  }
+
+  .btn {
+    font-weight: 400;
+    text-decoration: none;
+    padding: 18px 35px;
+    border-width: 0px;
+    border-style: none;
+    border-radius: 4px;
+    display: inline-block;
+    &:hover, &:focus, &:active, &.active, &.active:focus {
+      opacity: 0.9;
+      outline: invert none 0px;
+      text-decoration: none;
+    }
+    &.active, &:active, &.active:focus {
+      box-shadow: none;
+    }
+    &.btn-primary {
+      background-image: none;
+      background-repeat: no-repeat;
+      box-shadow: none;
+      border-width: 0px;
+      border-style: none;
+      border-color: @body-high-bg-color;
+      &:hover, &:focus {
+        background-position: inherit;
+      }
+      &:active, &.active {
+        background-image: none;
+        border-color: @body-high-bg-color;
+      }
+      &.active, &:active, &.active:focus {
+        box-shadow: none;
+      }
+      &.disabled, &[disabled], fieldset[disabled] & {
+        &, &:hover, &:focus, &.focus, &:active, &.active {
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  section.pre-hand {
+    .btn {
+      min-width: 150px;
+    }
+    .btn-primary {
+      color: @body-high-font-color !important;
+      background-color: @body-high-bg-color;
+      &:active, &.active, &:focus, &.focus, &[disabled]:hover {
+        background-color: @body-high-bg-color;
+      }
+    }
+  }
+
+  /* Scroll Top Arrow
+---------------------------------------------------------*/
+  div#scroll-top {
+    position: fixed;
+    right: -145px;
+    bottom: 5px;
+    width: 145px;
+    height: 145px;
+    padding-left: 1%;
+    padding-top: 1%;
+    -webkit-transition: all 0.3s ease 0s;
+       -moz-transition: all 0.3s ease 0s;
+         -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+    text-align: center;
+    font-size: 1em;
+    color: @body-high-font-color;
+    background-color: @body-high-bg-color;
+    border-radius: 100% 10px 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    &:hover {
+      opacity: 0.8;
+    }
+    &.visible {
+      right: 5px;
+    }
+    .fa {
+      align-self: center;
+    }
+  }
+
+  /* Preloader Animation (GIF)
+---------------------------------------------------------*/
+  div#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    background-color: fade(@body-preload-bg-color, @body-preload-bg-color-opacity);
+    z-index: 9999;
+    > div.spinner {
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      width: 90px;
+      height: 90px;
+      margin: -45px 0 0 -45px;
+      background-color: #fff;
+      background-image: url("../../../images/pre-loader.gif");
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center center;
+      border-radius: 45px;
+      opacity: 0.4;
+    }
+  }
+
+  /* Menu
+--------------------------------------------------------- */
+  section.pre-hand.menu {
+    &.static {
+      background-color: @brand-menu-background-color;
+    }
+    div.hamburger {
+      .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        background-color: @brand-menu-font-color;
+      }
+    }
+    nav {
+      li {
+        &.highlight {
+          background-color: fade(@body-high-bg-color, 50%);
+          a {
+            color: @body-high-font-color;
+          }
+        }
+      }
+    }
+  }
+
+  /* Banner
+--------------------------------------------------------- */
+  section.pre-hand.banner {
+    h1, h2 {
+      & when (round(@brand-banner-title-shadow-size/40) > 0) {
+        text-shadow: 0px 0px round(@brand-banner-title-shadow-size/40) lighten(@brand-banner-font-color, 40%);
+      }
+    }
+    h4, h5 {
+      & when (round(@brand-banner-subtitle-shadow-size/40) > 0) {
+        text-shadow: 0px 0px round(@brand-banner-subtitle-shadow-size/40) lighten(@brand-banner-font-color, 40%);
+      }
+    }
+    h5:last-of-type {
+      text-shadow: none;
+    }
+    a {
+      &.CTA, &.CTA-arrow {
+        & when (round(@brand-banner-CTA-shadow-size/40) > 0) {
+          text-shadow: 0px 0px round(@brand-banner-CTA-shadow-size/40) lighten(@brand-banner-font-color, 40%);
+        }
+      }
+      &.btn-primary {
+        & when (round(@brand-banner-CTA-shadow-size/40) > 0) {
+          box-shadow: 0px 0px round(@brand-banner-CTA-shadow-size/40) 0px lighten(@brand-banner-font-color, 40%);
+        }
+      }
+    }
+  }
+
+  /* What I Do
+--------------------------------------------------------- */
+
+  /* Team
+--------------------------------------------------------- */
+
+  /* Services
+--------------------------------------------------------- */
+
+  /* FB Page Posts
+--------------------------------------------------------- */
+
+  /* About Me
+--------------------------------------------------------- */
+  section.pre-hand.about-me {
+    div.about-me-photo {
+      div.loader {
+        border-top-color: @body-high-bg-color;
+      }
+    }
+  }
+
+  /* Adverts
+--------------------------------------------------------- */
+
+  /* Bookmarks
+--------------------------------------------------------- */
+
+  /* My Skills
+--------------------------------------------------------- */
+
+  /* My Works
+--------------------------------------------------------- */
+
+  /* Prices
+--------------------------------------------------------- */
+
+  /* Portfolio
+--------------------------------------------------------- */
+
+  /* Testimonials
+--------------------------------------------------------- */
+
+  /* Contacts
+--------------------------------------------------------- */
+  section.pre-hand.contacts {
+    div.main {
+      div.form-actions {
+        &.loader {
+          border-top-color: @body-high-bg-color;
+        }
+      }
+    }
+  }
+
+  /* Clients
+--------------------------------------------------------- */
+
+  /* Social Media
+--------------------------------------------------------- */
+
+  /* Footer
+--------------------------------------------------------- */
+  footer.pre-hand.footer {
+    div.block-header {
+      opacity: 0.9;
+    }
+    div.credits {
+      &.download {
+        opacity: 0.4;
+      }
+
+      opacity: 0.2;
+      text-shadow: 1px 1px 0 @brand-footer-background-rgb-color;
+    }
+  }
+}
+
+/* Media Tablets
+---------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  div.main-wrapper {
+    div#scroll-top {
+      display: none;
+    }
+  }
+}

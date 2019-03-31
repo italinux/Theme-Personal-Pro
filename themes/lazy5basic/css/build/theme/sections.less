@@ -1,0 +1,553 @@
+/* Section Mixin Methods
+--------------------------------------------------------- */
+.smart-background-image (@url) when (@url = none) {
+  background-image: none;
+}
+.smart-background-image (@url) when not (@url = none) {
+  background-image: url("../../../@{url}");
+}
+
+/* Section HowTo Video INTRO & Page Not Found
+--------------------------------------------------------- */
+section.howto-video-intro,
+section.page-error {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  min-height: 650px;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  background-position: center center;
+  a {
+    &.goto {
+      &::after {
+        margin-top: 0px;
+        margin-left: 6px;
+        margin-right: 10px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+  &.page-block {
+    margin: 0px auto;
+    text-align: center;
+  }
+  div.block-header {
+    position: relative;
+    text-align: center;
+    border: none;
+  }
+}
+
+/* Section HowTo Video INTRO
+--------------------------------------------------------- */
+section.howto-video-intro {
+  color: @brand-howto-video-intro-font-color;
+  background-color: @brand-howto-video-intro-background-color;
+  .smart-background-image(@brand-howto-video-intro-background-image);
+  a {
+    color: @brand-howto-video-intro-font-color;
+  }
+  &.page-block {
+    padding: 5em 4% 0.8em;
+  }
+  &.no-top-margins {
+    padding-top: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  h5 {
+    padding-top: 5px;
+  }
+  div.block-header {
+    padding: 2em 0 2.4em;
+  }
+}
+
+/* Page Not Found
+--------------------------------------------------------- */
+section.page-error {
+  color: @brand-page-error-font-color;
+  background-color: @brand-page-error-background-color;
+  .smart-background-image(@brand-page-error-background-image);
+  a {
+    color: @brand-page-error-font-color;
+  }
+  &.page-block {
+    padding: 3.8em 8% 5.2em;
+  }
+  div.block-header {
+    padding: 0 0 3em;
+  }
+}
+
+/* Page Block for Custom Blocks
+---------------------------------------------------------*/
+div.main-wrapper {
+  div.page-block {
+    .page-block {
+      padding: 1% 0px;
+    }
+  }
+}
+
+/* Global Page Block
+ *
+ * Media Large Desktop
+---------------------------------------------------------*/
+.page-block {
+  padding: 6em 8%;
+}
+
+/* Media Desktop
+---------------------------------------------------------*/
+@media screen and (max-width: 1600px) {
+  .page-block {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+/* Media Desktop
+---------------------------------------------------------*/
+@media screen and (max-width: 1280px) {
+  .page-block {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+/* Media Tablets
+---------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .page-block {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+/* Global Custom Spaces
+---------------------------------------------------------*/
+div.main-wrapper {
+  div.single-space-bottom {
+    padding-bottom: 1.8em !important;
+  }
+  div.double-space-bottom {
+    padding-bottom: 3.2em !important;
+  }
+  div.single-space-top {
+    padding-top: 1.8em !important;
+  }
+  div.double-space-top {
+    padding-top: 3.2em !important;
+  }
+}
+
+/* Global NO Spaces
+---------------------------------------------------------*/
+.no-space-top {
+  padding-top: 1%;
+  &.strict {
+    padding-top: 0px;
+  }
+}
+.no-space-bottom {
+  padding-bottom: 1%;
+  &.strict {
+    padding-bottom: 0px;
+  }
+}
+.no-sides-spaces {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.no-spaces {
+  padding: 1% 0px;
+  &.strict {
+    padding: 0px;
+  }
+}
+
+/* Banner
+--------------------------------------------------------- */
+section.pre-hand.banner {
+  color: @brand-banner-font-color;
+  a {
+    color: @brand-banner-link-color;
+  }
+  &.over-image {
+    background-color: @brand-banner-background-color;
+    &::before {
+      background-image: -webkit-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:    -moz-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:     -ms-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:      -o-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:         linear-gradient(to bottom, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+    }
+  }
+}
+
+/* Menu
+--------------------------------------------------------- */
+section.pre-hand.menu {
+  color: @brand-menu-font-color;
+  a {
+    color: @brand-menu-link-color;
+  }
+  &.over-image {
+    &::before {
+      background-color: @brand-menu-background-color;
+    }
+  }
+  nav.navbar {
+    div.navbar-center {
+      div.menu-wrapper.fixed {
+        background-color: @brand-menu-background-color;
+      }
+    }
+  }
+}
+
+/* What i do
+--------------------------------------------------------- */
+section.pre-hand.what-i-do {
+  color: @brand-what-i-do-font-color;
+  a {
+    color: @brand-what-i-do-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-what-i-do-background-image);
+    background-color: @brand-what-i-do-background-color;
+    &::before {
+      background-color: @brand-what-i-do-background-color;
+    }
+  }
+  div.main {
+    div[class^="wid-item"] {
+      a.btn-primary {
+        color: @body-high-font-color;
+      }
+    }
+    div.wid-item-1 {
+      .smart-item-color(@what-i-do-1st-color, @catalyst-1st-color);
+    }
+    div.wid-item-2 {
+      .smart-item-color(@what-i-do-2nd-color, @catalyst-2nd-color);
+    }
+    div.wid-item-3 {
+      .smart-item-color(@what-i-do-3rd-color, @catalyst-3rd-color);
+    }
+    div.wid-item-4 {
+      .smart-item-color(@what-i-do-4th-color, @catalyst-4th-color);
+    }
+  }
+}
+
+/* Team
+--------------------------------------------------------- */
+section.pre-hand.team {
+  color: @brand-team-font-color;
+  a {
+    color: @brand-team-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-team-background-image);
+    background-color: @brand-team-background-color;
+    &::before {
+      background-color: @brand-team-background-color;
+    }
+  }
+  div.main {
+    div.team-item-1 {
+      .smart-grid-item-color(@team-1st-color, @catalyst-1st-color);
+    }
+    div.team-item-2 {
+      .smart-grid-item-color(@team-2nd-color, @catalyst-2nd-color);
+    }
+    div.team-item-3 {
+      .smart-grid-item-color(@team-3rd-color, @catalyst-3rd-color);
+    }
+    div.team-item-4 {
+      .smart-grid-item-color(@team-4th-color, @catalyst-4th-color);
+    }
+  }
+}
+
+/* Services
+--------------------------------------------------------- */
+section.pre-hand.services {
+  color: @brand-services-font-color;
+  a {
+    color: @brand-services-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-services-background-image);
+    background-color: @brand-services-background-color;
+    &::before {
+      background-color: @brand-services-background-color;
+    }
+  }
+  div.main {
+    div.services-item-1 {
+      .smart-grid-item-color(@services-1st-color, @catalyst-1st-color);
+    }
+    div.services-item-2 {
+      .smart-grid-item-color(@services-2nd-color, @catalyst-2nd-color);
+    }
+    div.services-item-3 {
+      .smart-grid-item-color(@services-3rd-color, @catalyst-3rd-color);
+    }
+    div.services-item-4 {
+      .smart-grid-item-color(@services-4th-color, @catalyst-4th-color);
+    }
+  }
+}
+
+/* About me
+--------------------------------------------------------- */
+section.pre-hand.about-me {
+  color: @brand-about-me-font-color;
+  a {
+    color: @brand-about-me-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-about-me-background-image);
+    background-color: @brand-about-me-background-color;
+    &::before {
+      background-color: @brand-about-me-background-color;
+    }
+  }
+  div.polaroid > div.loader {
+    border-top-color: @body-high-bg-color;
+  }
+}
+
+/* My skills
+--------------------------------------------------------- */
+section.pre-hand.my-skills {
+  color: @brand-my-skills-font-color;
+  a {
+    color: @brand-my-skills-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-my-skills-background-image);
+    background-color: @brand-my-skills-background-color;
+    &::before {
+      background-color: @brand-my-skills-background-color;
+    }
+  }
+  div.main {
+    div[class^="skill-item"] {
+      a.btn-primary {
+        color: @body-high-font-color;
+      }
+    }
+    div.skill-item-1 {
+      .smart-item-color(@my-skills-1st-color, @catalyst-1st-color);
+    }
+    div.skill-item-2 {
+      .smart-item-color(@my-skills-2nd-color, @catalyst-2nd-color);
+    }
+    div.skill-item-3 {
+      .smart-item-color(@my-skills-3rd-color, @catalyst-3rd-color);
+    }
+    div.skill-item-4 {
+      .smart-item-color(@my-skills-4th-color, @catalyst-4th-color);
+    }
+  }
+}
+
+/* Curriculum vitae
+--------------------------------------------------------- */
+section.pre-hand.curriculum-vitae {
+  color: @brand-curriculum-vitae-font-color;
+  a {
+    color: @brand-curriculum-vitae-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-curriculum-vitae-background-image);
+    background-color: @brand-curriculum-vitae-background-color;
+    &::before {
+      background-color: @brand-curriculum-vitae-background-color;
+    }
+  }
+  div.main {
+    div[class^="chart-item"] {
+      a.btn-primary {
+        color: @body-high-font-color;
+      }
+    }
+    div.chart-item-1 {
+      .smart-item-lighter-color(@curriculum-vitae-1st-color, @catalyst-1st-color);
+    }
+    div.chart-item-2 {
+      .smart-item-lighter-color(@curriculum-vitae-2nd-color, @catalyst-2nd-color);
+    }
+    div.chart-item-3 {
+      .smart-item-lighter-color(@curriculum-vitae-3rd-color, @catalyst-3rd-color);
+    }
+    div.chart-item-4 {
+      .smart-item-lighter-color(@curriculum-vitae-4th-color, @catalyst-4th-color);
+    }
+    div.chart-item-5 {
+      .smart-item-lighter-color(@curriculum-vitae-5th-color, @catalyst-5th-color);
+    }
+    div.chart-item-6 {
+      .smart-item-lighter-color(@curriculum-vitae-6th-color, @catalyst-6th-color);
+    }
+  }
+}
+
+/* Portfolio
+--------------------------------------------------------- */
+section.pre-hand.portfolio {
+  color: @brand-portfolio-font-color;
+  a {
+    color: @brand-portfolio-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-portfolio-background-image);
+    background-color: @brand-portfolio-background-color;
+    &::before {
+      background-color: @brand-portfolio-background-color;
+    }
+  }
+  div.main {
+    div.portfolio-item-1 {
+      .smart-grid-item-color(@portfolio-1st-color, @catalyst-1st-color);
+    }
+    div.portfolio-item-2 {
+      .smart-grid-item-color(@portfolio-2nd-color, @catalyst-2nd-color);
+    }
+    div.portfolio-item-3 {
+      .smart-grid-item-color(@portfolio-3rd-color, @catalyst-3rd-color);
+    }
+    div.portfolio-item-4 {
+      .smart-grid-item-color(@portfolio-4th-color, @catalyst-4th-color);
+    }
+    div.portfolio-item-5 {
+      .smart-grid-item-color(@portfolio-5th-color, @catalyst-5th-color);
+    }
+    div.portfolio-item-6 {
+      .smart-grid-item-color(@portfolio-6th-color, @catalyst-6th-color);
+    }
+    div.portfolio-item-7 {
+      .smart-grid-item-color(@portfolio-7th-color, @catalyst-7th-color);
+    }
+    div.portfolio-item-8 {
+      .smart-grid-item-color(@portfolio-8th-color, @catalyst-8th-color);
+    }
+    div.portfolio-item-9 {
+      .smart-grid-item-color(@portfolio-9th-color, @catalyst-9th-color);
+    }
+  }
+}
+
+/* Prices
+--------------------------------------------------------- */
+section.pre-hand.prices {
+  color: @brand-prices-font-color;
+  a {
+    color: @brand-prices-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-prices-background-image);
+    background-color: @brand-prices-background-color;
+    &::before {
+      background-color: @brand-prices-background-color;
+    }
+  }
+  div.main {
+    div[class^="price-item"] {
+      a.btn-primary {
+        color: @body-high-font-color;
+      }
+    }
+    div.price-item-1 {
+      .smart-item-lighter-color(@prices-1st-color, @catalyst-1st-color);
+    }
+    div.price-item-2 {
+      .smart-item-lighter-color(@prices-2nd-color, @catalyst-2nd-color);
+    }
+    div.price-item-3 {
+      .smart-item-lighter-color(@prices-3rd-color, @catalyst-3rd-color);
+    }
+    div.price-item-4 {
+      .smart-item-lighter-color(@prices-4th-color, @catalyst-4th-color);
+    }
+  }
+}
+
+/* Contacts
+--------------------------------------------------------- */
+section.pre-hand.contacts {
+  color: @brand-contacts-font-color;
+  a {
+    color: @brand-contacts-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-contacts-background-image);
+    background-color: @brand-contacts-background-color;
+    &::before {
+      background-color: @brand-contacts-background-color;
+    }
+  }
+  div.form-actions.loader {
+    border-top-color: @body-high-bg-color;
+  }
+}
+
+/* Clients
+--------------------------------------------------------- */
+section.pre-hand.clients {
+  color: @brand-clients-font-color;
+  a {
+    color: @brand-clients-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-clients-background-image);
+    background-color: @brand-clients-background-color;
+    &::before {
+      background-color: @brand-clients-background-color;
+    }
+  }
+}
+
+/* Social media
+--------------------------------------------------------- */
+section.pre-hand.social-media {
+  color: @brand-social-media-font-color;
+  a {
+    color: @brand-social-media-link-color;
+  }
+  &.over-image {
+    background-color: @brand-social-media-background-color;
+    &::before {
+      background-color: @brand-social-media-background-color;
+    }
+  }
+}
+
+/* Footer
+--------------------------------------------------------- */
+footer.pre-hand.footer {
+  color: @brand-footer-font-color;
+  a {
+    color: @brand-footer-link-color;
+  }
+  &.over-image {
+    background-color: @brand-footer-background-color;
+    &::before {
+      background-color: @brand-footer-background-color;
+      opacity: 0.25;
+    }
+  }
+}
