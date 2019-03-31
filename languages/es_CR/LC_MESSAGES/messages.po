@@ -1,0 +1,1066 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2015-10-02T21:29:47+02:00\n"
+"PO-Revision-Date: 2015-10-02T21:30:07+02:00\n"
+"Language: es_CR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# - - - - - - - - - - - - - - - - - - -
+# Theme Lazy5basic
+# next entry is Editable in-place
+msgid "writer of novels"
+msgstr "escritor de novelas"
+
+msgid "singer"
+msgstr "cantante"
+
+msgid "paperbacks"
+msgstr "libros de bolsillo"
+
+msgid "audio books"
+msgstr "libros de audio"
+
+msgid "listen a sample"
+msgstr "escucha una muestra"
+
+msgid "read a sample"
+msgstr "lee una muestra"
+
+msgid "listen to an extract"
+msgstr "escucha un extracto"
+
+msgid "read an extract"
+msgstr "lee un extracto"
+
+msgid "pen name"
+msgstr "nombre de arte"
+
+# theme shared
+msgid "is responsive and suits any kind of website."
+msgstr "es sensible y se adapta a cualquier tipo de sitio web."
+
+msgid "A perfectly crafted template that uses all the power of"
+msgstr "Una plantilla perfectamente dise&ntilde;ada que utiliza todo el poder de"
+
+msgid "This is the page title"
+msgstr "Este es el t&iacute;tulo de la p&aacute;gina"
+
+msgid "This is page description"
+msgstr "Esta es la descripci&oacute;n de la p&aacute;gina"
+
+msgid "page not found"
+msgstr "p&aacute;gina no encontrada"
+
+msgid "go to homepage"
+msgstr "ir a la p&aacute;gina de inicio"
+
+msgid "%1$s is responsive and suits any kind of website."
+msgstr "%1$s responde y se adapta a cualquier tipo de sitio web."
+
+msgid "A perfectly crafted theme that uses all the power of %s"
+msgstr "Un tema perfectamente dise&ntilde;ado que utiliza todo el poder de %s"
+
+msgid "where to start"
+msgstr "donde empezar"
+
+msgid "%1$slogin%2$s %3$s"
+msgstr "%1$sinicie sesi&oacute;n%2$s %3$s"
+
+msgid "and then .."
+msgstr "y entonces.."
+
+msgid "page forbidden"
+msgstr "p&aacute;gina prohibida"
+
+msgid "you are not allowed to access this page"
+msgstr "no tienes permiso para acceder a esta p&aacute;gina"
+
+msgid "Watch this and then"
+msgstr "Mira esto y luego"
+
+msgid "%1$s %2$slogin%3$s"
+msgstr "%1$s %2$sinicie sesi&oacute;n%3$s"
+
+msgid "developed by Matteo (italinux)"
+msgstr "desarrollado por Matteo (italinux)"
+
+msgid "Concrete5, CMS, Themes, Add-ons, web development, Bootstrap, CSS3, freelancing, linux"
+msgstr "Concrete5, CMS, Temas, Add-ons, desarrollo web, Bootstrap, CSS3, freelancing, linux"
+
+msgid "Page not found"
+msgstr "P&aacute;gina no encontrada"
+
+msgid "Page forbidden"
+msgstr "P&aacute;gina prohibida"
+
+msgid "%1$s is responsive and multipurpose theme for your website."
+msgstr "%1$s es un tema receptivo y multiprop&oacute;sito para su sitio web."
+
+msgid "%1$sFull documentation: %2$s %3$s"
+msgstr "%1$sDocumentaci&oacute;n completa: %2$s %3$s"
+
+msgid "Click Here"
+msgstr "Haga clic aqu&iacute;"
+
+msgid "%1$s Note: %2$s %3$s"
+msgstr "%1$s Nota: %2$s %3$s"
+
+msgid "Choose how to start"
+msgstr "Elija c&oacute;mo comenzar"
+
+msgid "This is how to start your theme installation on your server"
+msgstr "Esta es la manera de comenzar la instalaci&oacute;n de tu tema en tu servidor"
+
+msgid "No Content"
+msgstr "Sin contenido"
+
+msgid "Full Content"
+msgstr "Contenido completo"
+
+msgid "All images on the demo are replaced by placeholders in your server"
+msgstr "Todas las im&aacute;genes en la demostraci&oacute;n son reemplazadas por marcadores de posici&oacute;n en su servidor"
+
+# block Menu
+msgid "Delete this Menu item"
+msgstr "Eliminar este elemento del men&uacute;"
+
+msgid "You can leave this blank if you want to link to this same page"
+msgstr "Puede dejar esto en blanco si desea vincular a esta misma p&aacute;gina"
+
+msgid "Title displays only on mobile view"
+msgstr "El t&iacute;tulo solo se muestra en la vista m&oacute;vil"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "site name"
+msgstr "nombre del sitio"
+
+msgid "List of Add-ons"
+msgstr "Lista de Add-ons"
+
+msgid "Dedicated Add-on"
+msgstr "Add-on dedicado"
+
+msgid "all your menu items are listed below"
+msgstr "todos los elementos de su men&uacute; se enumeran a continuaci&oacute;n"
+
+msgid "menu items"
+msgstr "elementos de men&uacute;"
+
+msgid "show logo?"
+msgstr "¿Mostrar el logo?"
+
+msgid "show language switch?"
+msgstr "¿Mostrar el cambio de idioma?"
+
+# block Banner
+msgid "Video is %s"
+msgstr "El video es %s"
+
+msgid "my name is"
+msgstr "mi nombre es"
+
+msgid "playing guitar"
+msgstr "tocar la guitarra"
+
+msgid "songwriting"
+msgstr "canciones"
+
+msgid "YouTube Video Url"
+msgstr "URL de v&iacute;deo de YouTube"
+
+msgid "Video Quality"
+msgstr "Calidad de video"
+
+msgid "Video On / Off"
+msgstr "Video On / Off"
+
+msgid "Video Quality options"
+msgstr "Opciones de calidad de video"
+
+msgid "Disabled"
+msgstr "Discapacitado"
+
+msgid "Quality"
+msgstr "Calidad"
+
+msgid "Enabled"
+msgstr "Habilitado"
+
+msgid "I am: %s"
+msgstr "Soy: %s"
+
+msgid "I do: %s"
+msgstr "Yo hago: %s"
+
+msgid "I like"
+msgstr "Me gusta"
+
+msgid "this banner"
+msgstr "este banner"
+
+msgid "is nice"
+msgstr "es bueno"
+
+msgid "I am"
+msgstr "yo soy"
+
+msgid "Who I am"
+msgstr "Qui&eacute;n soy"
+
+msgid "cool name"
+msgstr "buen nombre"
+
+msgid "big name"
+msgstr "gran nombre"
+
+msgid "my name"
+msgstr "mi nombre"
+
+msgid "I do"
+msgstr "hago"
+
+msgid "nice things"
+msgstr "cosas bonitas"
+
+msgid "great things"
+msgstr "grandes cosas"
+
+msgid "Slogan"
+msgstr "Eslogan"
+
+msgid "a catchy slogan"
+msgstr "un eslogan pegadizo"
+
+msgid "This is a sample text"
+msgstr "Este es un ejemplo de texto"
+
+msgid "here you will write few information about you"
+msgstr "aqu&iacute; usted escribir&aacute; pocas informaciones sobre usted"
+
+msgid "or the concept of your website"
+msgstr "o sobre el concepto de su sitio web"
+
+msgid "Video Enabled?"
+msgstr "Video habilitado?"
+
+msgid "Missing"
+msgstr "Desaparecido"
+
+msgid "Error in Template %s"
+msgstr "Error en la plantilla %s"
+
+msgid "Banner templates"
+msgstr "Plantillas de banner"
+
+msgid "all templates available are listed below"
+msgstr "todas las plantillas disponibles se enumeran a continuaci&oacute;n"
+
+# block What I Do
+msgid "I like doing .."
+msgstr "Me gusta hacer.."
+
+msgid "hiking, travelling"
+msgstr "senderismo, viajes"
+
+msgid "What I do %s"
+msgstr "Lo que hago"
+
+# block About Me
+msgid "This is the %1$sAbout Me%2$s sample section,"
+msgstr "Esta es la secci&oacute;n de ejemplos %1$sQui&eacute;n soy%2$s,"
+
+msgid "here you will write information about yourself or your business."
+msgstr "aqu&iacute; usted escribir&aacute; la informaci&oacute;n sobre usted o su negocio."
+
+msgid "With the inline rich-text editor in %1$sedit mode%2$s"
+msgstr "Con el editor de texto enriquecido en l&iacute;nea en %1$smodo de edici&oacute;n%2$s"
+
+msgid "you can edit this text, add fonts, %1$sstyle italic%2$s,"
+msgstr "puede editar este texto, a&ntilde;adir fuentes, %1$sstyle italic%2$s,"
+
+msgid "%1$slarger%2$s or %3$ssmaller chars%4$s, images &amp; links"
+msgstr "%3$scaracteres m&aacute;s peque&ntilde;os%4$s o %1$sM&aacute;s grande%2$s, im&aacute;genes y enlaces"
+
+msgid "People will get to know you better if your message is clear and straight forward."
+msgstr "La gente te conocer&aacute; mejor si tu mensaje es claro y directo."
+
+msgid "to find out more &amp; to start editing now"
+msgstr "para saber m&aacute;s y para comenzar a editar ahora"
+
+msgid "To start editing now"
+msgstr "Para empezar a editar ahora"
+
+msgid "See my skills"
+msgstr "Ves mis habilidades"
+
+msgid "see my skills"
+msgstr "ves mis habilidades"
+
+msgid "No image selected"
+msgstr "No se ha seleccionado ninguna imagen"
+
+msgid "this is default"
+msgstr "este es el predeterminado"
+
+msgid "title goes here .."
+msgstr "el t&iacute;tulo va aqu&iacute;.."
+
+msgid "who I am"
+msgstr "qui&eacute;n soy"
+
+msgid "bold type"
+msgstr "negrita"
+
+# block Contacts
+msgid "please add fields"
+msgstr "por favor, agregue campos"
+
+msgid "in your contact form here"
+msgstr "en su formulario de contacto aqu&iacute;"
+
+msgid "type a message"
+msgstr "escribe un mensaje"
+
+msgid "this is just a sample field"
+msgstr "esto es s&oacute;lo un campo de muestra"
+
+msgid "to add the real input fields"
+msgstr "para agregar los campos de entrada reales"
+
+msgid "success! thank you"
+msgstr "¡&eacute;xito! gracias"
+
+msgid "write to me"
+msgstr "escr&iacute;beme"
+
+msgid "Add"
+msgstr "Agregue"
+
+msgid "Your form must have a name"
+msgstr "Su formulario debe tener un nombre"
+
+msgid "Please complete all required fields"
+msgstr "Por favor completa todos los campos requeridos"
+
+msgid "AJAX Error"
+msgstr "Error de AJAX"
+
+msgid "Please add at least one question to your form"
+msgstr "Por favor, a&ntilde;ada al menos una pregunta a su formulario"
+
+msgid "You must enter a valid email address"
+msgstr "Debes ingresar una direcci&oacute;n de correo electr&oacute;nico v&aacute;lida"
+
+msgid "Complete required fields *"
+msgstr "Completar campos obligatorios *"
+
+msgid "Invalid file extension"
+msgstr "Extensi&oacute;n de archivo inv&aacute;lida"
+
+msgid "Invalid file"
+msgstr "Archivo inv&aacute;lido"
+
+msgid "Please correct the following errors:"
+msgstr "Por favor corrige los siguientes errores:"
+
+msgid "No file specified"
+msgstr "No se especific&oacute; ning&uacute;n archivo"
+
+msgid "submit"
+msgstr "enviar"
+
+msgid "Mobile"
+msgstr "M&oacute;vil"
+
+msgid "Telephone"
+msgstr "Tel&eacute;fono"
+
+msgid "Telephone: %s"
+msgstr "Tel&eacute;fono: %s"
+
+msgid "Address"
+msgstr "Direcci&oacute;n"
+
+msgid "Your Address:"
+msgstr "Su direcci&oacute;n:"
+
+msgid "%s Example"
+msgstr "%s Ejemplo"
+
+msgid "%s Paris"
+msgstr "%s Par&iacute;s"
+
+msgid "France"
+msgstr "Francia"
+
+msgid "Opening"
+msgstr "Apertura"
+
+msgid "Opening Hours"
+msgstr "Horario de apertura"
+
+msgid "Opening Hours:"
+msgstr "Horario de apertura:"
+
+msgid "Monday %1$s Friday: %2$s"
+msgstr "Lunes %1$s Viernes: %2$s"
+
+msgid "Saturday: %s"
+msgstr "S&aacute;bados: %s"
+
+msgid "Sunday: Closed"
+msgstr "Domingo: Cerrado"
+
+# block Social Media
+msgid "social profiles"
+msgstr "perfiles sociales"
+
+msgid "social profile"
+msgstr "perfil social"
+
+msgid "join me .."
+msgstr "&uacute;nete a mi .."
+
+msgid "follow me .."
+msgstr "s&iacute;gueme .."
+
+msgid "Social profile %s"
+msgstr "Perfiles sociales"
+
+msgid "Link to social profile:"
+msgstr "Enlace al perfil social:"
+
+# block Footer
+msgid "you want this website template?"
+msgstr "desea esta plantilla de sitio web?"
+
+msgid "you want this website theme?"
+msgstr "¿Quieres este tema del sitio web?"
+
+msgid "developed with &hearts; by"
+msgstr "desarrollado con &hearts; de"
+
+msgid "you want to download this add-on?"
+msgstr "¿Quieres descargar esta add-on?"
+
+msgid "a footer phrase goes here"
+msgstr "una frase de pie de p&aacute;gina va aqu&iacute;"
+
+msgid "thanks for passing by.."
+msgstr "gracias por la visita.."
+
+msgid "Come back soon"
+msgstr "Vuelve pronto"
+
+msgid "wrap title with Quotes?"
+msgstr "envolver el t&iacute;tulo con las cotizaciones?"
+
+msgid "here you write credits, additional infos and/or a link. %s"
+msgstr "aqu&iacute; usted escribe cr&eacute;ditos, informaciones adicionales y / o un enlace. %s"
+
+msgid "It shows below Subtitle"
+msgstr "Se muestra debajo de Subt&iacute;tulo"
+
+msgid "It shows at the very bottom"
+msgstr "Se muestra en la parte inferior"
+
+msgid "to see our Terms & Conditions.."
+msgstr "para ver nuestros t&eacute;rminos y condiciones.."
+
+msgid "Credits: %s"
+msgstr "Cr&eacute;ditos: %s"
+
+msgid "Link to name: %s"
+msgstr "Enlace al nombre: %s"
+
+msgid "developed for fun by:"
+msgstr "desarrollado para la diversi&oacute;n cerca:"
+
+msgid "Credits one"
+msgstr "Cr&eacute;ditos uno"
+
+msgid "Credits two"
+msgstr "Cr&eacute;ditos dos"
+
+msgid "Credits %s"
+msgstr "Cr&eacute;ditos %s"
+
+msgid "you want to download other add-ons?"
+msgstr "¿Quieres descargar otros add-ons?"
+
+msgid "you want to download other themes?"
+msgstr "¿Quieres descargar otros temas?"
+
+msgid "you want to download some add-ons?"
+msgstr "¿Quieres descargar unas add-ons?"
+
+msgid "my motto is"
+msgstr "mi lema es"
+
+msgid "my motto is:"
+msgstr "mi lema es:"
+
+msgid "my favourite quote"
+msgstr "mi cita preferida"
+
+msgid "my favourite quote:"
+msgstr "mi cita favorita"
+
+msgid "my favourite line"
+msgstr "mi cita preferida"
+
+msgid "my favourite line:"
+msgstr "mi cita favorita"
+
+msgid "that is my motto"
+msgstr "ese es mi lema"
+
+msgid "that is my favourite line"
+msgstr "esa es mi cita favorita"
+
+msgid "that is my favourite quote"
+msgstr "esa es mi cita favorita"
+
+msgid "developed with %s by"
+msgstr "desarrollado con %s de"
+
+msgid "you want to see other themes?"
+msgstr "¿Quieres ver otros temas?"
+
+msgid "terms"
+msgstr "t&eacute;rminos"
+
+msgid "conditions"
+msgstr "condiciones"
+
+# block shared
+msgid "File type required: JPG or PNG"
+msgstr "Tipo de archivo requerido: JPG o PNG"
+
+msgid "File extension required: JPG or PNG"
+msgstr "Se requiere extensi&oacute;n de archivo: JPG o PNG"
+
+msgid "File image is invalid"
+msgstr "La imagen del archivo no es v&aacute;lida"
+
+msgid "Cannot be empty"
+msgstr "No puede estar vac&iacute;o"
+
+msgid "Title"
+msgstr "T&iacute;tulo"
+
+msgid "Subtitle"
+msgstr "Subtitular"
+
+msgid "Customise Style"
+msgstr "Personalizar el estilo"
+
+msgid "background image"
+msgstr "imagen de fondo"
+
+msgid "font colour"
+msgstr "color de la fuente"
+
+msgid "with Animation"
+msgstr "con Animaci&oacute;n"
+
+msgid "a title goes here"
+msgstr "un t&iacute;tulo aqu&iacute;"
+
+msgid "and subtitle here"
+msgstr "y subt&iacute;tulos aqu&iacute;"
+
+msgid "contact us"
+msgstr "cont&aacute;ctenos"
+
+msgid "name"
+msgstr "nombre"
+
+msgid "Required"
+msgstr "Necesario"
+
+msgid "your"
+msgstr "tu"
+
+msgid "Your"
+msgstr "Tu"
+
+msgid "Page"
+msgstr "P&aacute;gina"
+
+msgid "here"
+msgstr "aqu&iacute;"
+
+msgid "click here"
+msgstr "haga clic aqu&iacute;"
+
+msgid "Contacts"
+msgstr "Contactos"
+
+msgid "contact me"
+msgstr "cont&aacute;ctame"
+
+msgid "yeah, go ahead"
+msgstr "s&iacute;, adelante"
+
+msgid "Title: %s"
+msgstr "T&iacute;tulo: %s"
+
+msgid "Subtitle: %s"
+msgstr "Subt&iacute;tulo: %s"
+
+msgid "Email: %s"
+msgstr "Correo electr&oacute;nico: %s"
+
+msgid "%1$s Page %2$s: %3$s"
+msgstr "%1$s P&aacute;gina %2$s: %3$s"
+
+msgid "my"
+msgstr "mi"
+
+msgid "File size exceeded: Max %s"
+msgstr "Tama&ntilde;o del archivo excedido: Max %s"
+
+msgid "Cannot be empty: %s"
+msgstr "No puede estar vac&iacute;o: %s"
+
+msgid "name: %s"
+msgstr "nombre: %s"
+
+msgid "and"
+msgstr "y"
+
+msgid "Here"
+msgstr "Aqu&iacute;"
+
+msgid "Invalid link: %s"
+msgstr "Enlace no v&aacute;lido: %s"
+
+msgid "Visible?"
+msgstr "¿Visible?"
+
+msgid "Background Colour"
+msgstr "Color de fondo"
+
+msgid "Adjust Background Opacity"
+msgstr "Ajustar la opacidad del fondo"
+
+msgid "Background Image"
+msgstr "Imagen de fondo"
+
+msgid "Foreground Colour"
+msgstr "Color del primer plano"
+
+msgid "Animation / Transition"
+msgstr "Animaci&oacute;n / Transici&oacute;n"
+
+msgid "Yes"
+msgstr "S&iacute;"
+
+msgid "No"
+msgstr "No"
+
+msgid "Choose Image"
+msgstr "Elege la imagen"
+
+msgid "default"
+msgstr "defecto"
+
+msgid "adjust top opacity"
+msgstr "ajusta la opacidad superior"
+
+msgid "find out more"
+msgstr "saber m&aacute;s"
+
+msgid "Random image from: %s"
+msgstr "Imagen aleatoria de: %s"
+
+msgid "File Sets"
+msgstr "Conjuntos de archivos"
+
+msgid "Choose"
+msgstr "Elege"
+
+msgid "Otherwise"
+msgstr "De otra manera"
+
+msgid "stick a single image here"
+msgstr "pone una imagen &uacute;nica aqu&iacute;"
+
+msgid "it has priority over single image"
+msgstr "tiene prioridad sobre la imagen &uacute;nica"
+
+msgid "%1$s Select a %2$s %1$s"
+msgstr "%1$s Seleccione un %2$s %1$s"
+
+msgid "File Set"
+msgstr "Conjunto de archivos"
+
+msgid "How to add a %s"
+msgstr "C&oacute;mo agregar un %s"
+
+msgid "Content: %s"
+msgstr "Contenido: %s"
+
+msgid "Text Button: %s"
+msgstr "Texto de Bot&oacute;n: %s"
+
+msgid "Link / anchor to: %s"
+msgstr "Enlace / ancla a: %s"
+
+msgid "hi everyone"
+msgstr "¡Hola a todos"
+
+msgid "Global Text Button: %s"
+msgstr "Bot&oacute;n de texto global: %s"
+
+msgid "Global Link / anchor to: %s"
+msgstr "Enlace global / ancla a: %s"
+
+msgid "Choose an icon:"
+msgstr "Elige un icono:"
+
+msgid "it has priority over the icon"
+msgstr "tiene prioridad sobre el icono"
+
+msgid "Title below icon / image: %s"
+msgstr "T&iacute;tulo abajo icono / imagen: %s"
+
+msgid "Single Text Button: %s"
+msgstr "Bot&oacute;n de texto &uacute;nico: %s"
+
+msgid "check it out"
+msgstr "ves"
+
+msgid "Or stick an image:"
+msgstr "O poner una imagen:"
+
+msgid "1st %s"
+msgstr "1er %s"
+
+msgid "2nd %s"
+msgstr "2do %s"
+
+msgid "3rd %s"
+msgstr "3er %s"
+
+msgid "4th %s"
+msgstr "4to %s"
+
+msgid "Invalid URL: %s"
+msgstr "URL no v&aacute;lido: %s"
+
+msgid "Options file sets list"
+msgstr "Lista de conjuntos de archivos de opciones"
+
+msgid "URL How to add a file set"
+msgstr "URL C&oacute;mo agregar un conjunto de archivos"
+
+msgid "Custom template name"
+msgstr "Nombre de la plantilla personalizada"
+
+msgid "Custom Foreground image"
+msgstr "Imagen personalizada de primer plano"
+
+msgid "Content"
+msgstr "Contenido"
+
+msgid "see how"
+msgstr "ver c&oacute;mo"
+
+msgid "Global Link: %s"
+msgstr "Enlace global: %s"
+
+msgid "Item %s"
+msgstr "Art&iacute;culo %s"
+
+msgid "How to choose a %s"
+msgstr "C&oacute;mo elegir un %s"
+
+msgid "available"
+msgstr "disponible"
+
+msgid "I got the skills"
+msgstr "Tengo las maestr&iacute;as"
+
+msgid "find out who I am"
+msgstr "averiguar qui&eacute;n soy"
+
+msgid "check me out"
+msgstr "&eacute;chame un vistazo"
+
+msgid "ask me more"
+msgstr "preg&uacute;ntame m&aacute;s"
+
+msgid "1st"
+msgstr "1er"
+
+msgid "2nd"
+msgstr "2do"
+
+msgid "3rd"
+msgstr "3er"
+
+msgid "4th"
+msgstr "4to"
+
+msgid "5th"
+msgstr "5º"
+
+msgid "6th"
+msgstr "sexto"
+
+msgid "7th"
+msgstr "7º"
+
+msgid "8th"
+msgstr "octavo"
+
+msgid "9th"
+msgstr "9º"
+
+msgid "what I do"
+msgstr "Qu&eacute; hago"
+
+msgid "What I do"
+msgstr "Qu&eacute; hago"
+
+msgid "Prices"
+msgstr "Precios"
+
+msgid "prices"
+msgstr "precios"
+
+msgid "contacts"
+msgstr "contactos"
+
+msgid "subtitle goes here"
+msgstr "el subt&iacute;tulo va aqu&iacute;"
+
+msgid "text: %s"
+msgstr "texto: %s"
+
+msgid "Link to text: %s"
+msgstr "Enlace al texto: %s"
+
+msgid "background colour %s"
+msgstr "color de fondo %s"
+
+msgid "with or without transparency"
+msgstr "con o sin transparencia"
+
+msgid "Page: %s"
+msgstr "P&aacute;gina: %s"
+
+msgid "it has priority over the link"
+msgstr "tiene prioridad sobre el enlace"
+
+msgid "Choose File"
+msgstr "Elija el archivo"
+
+msgid "File type required: PDF, ODT or DOC"
+msgstr "Tipo de archivo requerido: PDF, ODT o DOC"
+
+msgid "File extension required: PDF, ODT or DOC"
+msgstr "Se requiere extensi&oacute;n de archivo: PDF, ODT o DOC"
+
+msgid "File is invalid"
+msgstr "El archivo no es v&aacute;lido"
+
+msgid "new"
+msgstr "nuevo"
+
+msgid "Title below / over image: %s"
+msgstr "T&iacute;tulo debajo / sobre la imagen: %s"
+
+msgid "And now Choose"
+msgstr "Y ahora elige"
+
+msgid "Pop Up image?"
+msgstr "¿Imagen emergente?"
+
+msgid "it has priority over Single Link"
+msgstr "tiene prioridad sobre Enlace &uacute;nico"
+
+msgid "Link type"
+msgstr "Tipo de enlace"
+
+msgid "Select a Page"
+msgstr "Seleccione una p&aacute;gina"
+
+msgid "Autoscroll to"
+msgstr "Desplazamiento autom&aacute;tico a"
+
+msgid "Custom anchor"
+msgstr "Ancla personalizada"
+
+msgid "if you have not installed it yet"
+msgstr "si a&uacute;n no lo has instalado"
+
+msgid "OK good"
+msgstr "Bien"
+
+msgid "Menu item"
+msgstr "Opci&oacute;n del men&uacute;"
+
+msgid "Add menu item"
+msgstr "Agregar elemento de men&uacute;"
+
+msgid "Link to a web page"
+msgstr "Enlace a una p&aacute;gina web"
+
+msgid "NO auto scrolling"
+msgstr "SIN desplazamiento autom&aacute;tico"
+
+msgid "Same window"
+msgstr "La misma ventana"
+
+msgid "New window"
+msgstr "Nueva ventana"
+
+msgid "Target of link"
+msgstr "Destino del enlace"
+
+msgid "anchor-name"
+msgstr "nombre-del-ancla"
+
+msgid "visit:"
+msgstr "visitar:"
+
+msgid "See them All"
+msgstr "Ves todos"
+
+msgid "See more"
+msgstr "Ves m&aacute;s"
+
+msgid "Same Page"
+msgstr "Misma p&aacute;gina"
+
+msgid "New Page"
+msgstr "Nueva pagina"
+
+msgid "Type a URL"
+msgstr "Escriba una URL"
+
+msgid "Profile icon"
+msgstr "Icono de perfil"
+
+msgid "Profile URL"
+msgstr "URL del perfil"
+
+msgid "Link types list"
+msgstr "Lista de enlaces"
+
+msgid "Link targets list"
+msgstr "Lista de objetivos de enlaces"
+
+msgid "Or stick a custom logo:"
+msgstr "O pon un logotipo personalizado:"
+
+msgid "Global Link"
+msgstr "Enlace global"
+
+msgid "Single Link to Page or URL"
+msgstr "Enlace &uacute;nico a la p&aacute;gina o URL"
+
+msgid "Title below / over image"
+msgstr "T&iacute;tulo debajo / sobre la imagen"
+
+msgid "Global URL"
+msgstr "URL global"
+
+msgid "Profile"
+msgstr "Perfil"
+
+msgid "Custom image"
+msgstr "Imagen personalizada"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "page"
+msgstr "p&aacute;gina"
+
+msgid "Button Text"
+msgstr "Bot&oacute;n de texto"
+
+msgid "Text Link: %s"
+msgstr "Enlace de texto: %s"
+
+msgid "Action Link"
+msgstr "Enlace de acci&oacute;n"
+
+msgid "Link Name: %s"
+msgstr "Nombre del enlace: %s"
+
+msgid "Link name"
+msgstr "Nombre del enlace"
+
+msgid "all your items are listed below"
+msgstr "todos sus art&iacute;culos se enumeran a continuaci&oacute;n"
+
+msgid "templates"
+msgstr "plantillas"
+
+msgid "Link to Page or URL"
+msgstr "Enlace a la P&aacute;gina o URL"
+
+msgid "it has priority over Link to Page or URL"
+msgstr "tiene prioridad sobre el Enlace a la p&aacute;gina O URL"
+
+msgid "item Title: %s"
+msgstr "t&iacute;tulo del art&iacute;culo: %s"
+
+msgid "Name: %s"
+msgstr "Nombre: %s"
+
+msgid "all your %s are listed below"
+msgstr "todos sus %s se enumeran a continuaci&oacute;n"
+
+msgid "items"
+msgstr "elemento"
+
+msgid "item Title"
+msgstr "t&iacute;tulo del elemento"
+
+msgid "single image here"
+msgstr "una sola imagen aqu&iacute;"
+
+msgid "random image from: %s"
+msgstr "imagen aleatoria de: %s"
+
+msgid "Choose this item's icon"
+msgstr "Elija el icono de este art&iacute;culo"
+
+msgid "template"
+msgstr "plantilla"
+
+msgid "Here you define:"
+msgstr "Aqu&iacute; defines:"
+
+msgid "link to a %1$s URL %2$s or to a %1$s Page %2$s"
+msgstr "enlace a una URL %1$s %2$s o a una p&aacute;gina %1$S % 2$s"
+
+msgid "add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
+msgstr "a&ntilde;adir un ancla % 1$s %2$s para desplazarse a una secci&oacute;n %1$s %2$s de una p&aacute;gina"
+
+msgid "open up to a %1$s new page %2$s or on the %1$s same page %2$s"
+msgstr "abrir a una nueva p&aacute;gina %1$s % 2$s o en la %1$s misma p&aacute;gina %2$s"
+
+msgid "Leave it empty to hide it"
+msgstr "D&eacute;jalo vac&iacute;o para esconderlo."
+
+msgid "documentation:"
+msgstr "documentaci&oacute;n:"
+
+msgid "an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
+msgstr "un ancla %1$s %2$s para desplazarse a una %1$s secci&oacute;n %2$s de una p&aacute;gina"
