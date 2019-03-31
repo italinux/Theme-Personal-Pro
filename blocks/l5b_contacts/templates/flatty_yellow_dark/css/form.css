@@ -1,0 +1,223 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.4 (31 March 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+section.contacts[class*="flatty_"] div.form-wrapper {
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields {
+  position: relative;
+  padding: 10px 0 0 0;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields > div {
+  margin-bottom: 35px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields > div input:not([type="radio"]),
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields > div select,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields > div textarea {
+  width: 99%;
+  border-radius: 0;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields select,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields option,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields input:not([type="radio"]),
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields textarea {
+  height: auto;
+  padding: 12px 8px;
+  outline: 0;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: left top;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields select,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields option,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields input:not([type="radio"]):not([type="checkbox"]),
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields textarea {
+  margin: 0;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields select:hover,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields option:hover {
+  cursor: pointer;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields label.control-label {
+  font-style: italic;
+  padding-bottom: 6px;
+  padding-left: 10px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields div.radioPair {
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  width: 100%;
+  padding: 5% 0 1% 10%;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields div.radioPair > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields div.radioPair > div:first-child {
+  width: 40px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields div.radioPair > div:last-child {
+  padding-top: 8px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper .miniSurveyView div.alert {
+  font-size: 1.15em;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 2px auto 20px auto;
+  padding: 0.5em 0 0.6em;
+  text-align: center;
+  border-radius: 10px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper .miniSurveyView div.alert-danger {
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper .miniSurveyView div.alert-success {
+  font-size: 1.25em;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper .miniSurveyView span.required {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #f00;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper .field-wrapper {
+  padding-top: 3px;
+  padding-bottom: 7px;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields select,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields option,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields input:not([type="radio"]),
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields textarea {
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields label.control-label {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields.disabled select,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields.disabled option,
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields.disabled input:not([type="radio"]),
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields.disabled textarea {
+  color: #666;
+}
+
+section.contacts[class*="flatty_"] div.form-wrapper div.form-fields.disabled textarea {
+  padding-left: 12px;
+}
+
+@media screen and (max-width: 500px) {
+  section.contacts[class*="flatty_"] div.form-wrapper {
+    text-align: center;
+  }
+
+  section.contacts[class*="flatty_"] div.form-wrapper div.form-fields label.control-label {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  section.contacts[class*="flatty_"] div.form-wrapper div.form-fields select,
+  section.contacts[class*="flatty_"] div.form-wrapper div.form-fields option,
+  section.contacts[class*="flatty_"] div.form-wrapper div.form-fields input:not([type="radio"]),
+  section.contacts[class*="flatty_"] div.form-wrapper div.form-fields textarea {
+    font-size: 1.2em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+section.contacts[class^="mobile_view_flatty_"] div.form-wrapper {
+  text-align: center;
+}
+
+section.contacts[class^="mobile_view_flatty_"] div.form-wrapper div.form-fields label.control-label {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+section.contacts[class^="mobile_view_flatty_"] div.form-wrapper div.form-fields select,
+section.contacts[class^="mobile_view_flatty_"] div.form-wrapper div.form-fields option,
+section.contacts[class^="mobile_view_flatty_"] div.form-wrapper div.form-fields input:not([type="radio"]),
+section.contacts[class^="mobile_view_flatty_"] div.form-wrapper div.form-fields textarea {
+  font-size: 1.2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+section.contacts[class*="flatty_"] div.form-actions {
+  font-size: 110%;
+  letter-spacing: 1px;
+}
+
+section.contacts[class*="flatty_"] div.form-actions.disabled {
+  background: none;
+}
+
+section.contacts[class*="flatty_"] div.form-actions input[type="submit"] {
+  min-width: 180px;
+}
+
+section.contacts[class*="flatty_"] div.form-actions.disabled input[type="submit"],
+section.contacts[class*="flatty_"] div.form-actions.disabled input[type="submit"]:hover {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+  section.contacts[class*="flatty_"] div.form-actions {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+section.contacts[class^="mobile_view_flatty_"] div.form-actions {
+  margin-right: auto;
+  margin-left: auto;
+}

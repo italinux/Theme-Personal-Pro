@@ -1,0 +1,43 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.4 (31 March 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields select,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields option,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields input,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields textarea {
+  color: #222;
+  border: 1px dotted #222;
+  background-color: rgba(245, 242, 150, 0.6);
+}
+
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields:not(.disabled) select:hover,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields:not(.disabled) select:focus,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields:not(.disabled) input:hover,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields:not(.disabled) input:focus,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields:not(.disabled) textarea:hover,
+section.contacts[class*='flatty_yellow_dark'] div.form-wrapper div.form-fields:not(.disabled) textarea:focus {
+  -webkit-box-shadow: 0 0 2px 0 rgba(95, 92, 0, 1);
+   -khtml-box-shadow: 0 0 2px 0 rgba(95, 92, 0, 1);
+     -moz-box-shadow: 0 0 2px 0 rgba(95, 92, 0, 1);
+       -o-box-shadow: 0 0 2px 0 rgba(95, 92, 0, 1);
+          box-shadow: 0 0 2px 0 rgba(95, 92, 0, 1);
+}

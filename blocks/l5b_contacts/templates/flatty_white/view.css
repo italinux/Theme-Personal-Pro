@@ -1,0 +1,303 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.4 (31 March 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+.single-space-bottom > section.contacts.page-block,
+.double-space-bottom > section.contacts.page-block,
+.no-spaces > section.contacts.page-block,
+.no-space-bottom > section.contacts.page-block {
+  padding-bottom: 0 !important;
+}
+.single-space-top > section.contacts.page-block,
+.double-space-top > section.contacts.page-block,
+.no-spaces > section.contacts.page-block,
+.no-space-top > section.contacts.page-block {
+  padding-top: 0 !important;
+}
+.no-sides-spaces > section.contacts.page-block {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+section.contacts {
+  position: relative;
+  overflow: hidden;
+}
+section.contacts a:not(.CTA-clean).info::after,
+section.contacts a:not(.CTA-clean).goto::after {
+  margin-top: 0px;
+  font-family: "FontAwesome";
+  font-size: 0.8em;
+  text-decoration: none;
+}
+section.contacts a:not(.CTA-clean).info > span,
+section.contacts a:not(.CTA-clean).goto > span {
+  align-self: center;
+}
+section.contacts a:not(.CTA-clean).info::after {
+  content: "\f05a";
+  margin-right: 5px;
+  margin-left: 5px;
+}
+section.contacts a:not(.CTA-clean).goto::after {
+  content: "\f08e";
+  margin-left: 6px;
+  margin-right: 10px;
+}
+section.contacts div.global-cta {
+  margin-top: 4em;
+  margin-bottom: 2em;
+  font-size: 120%;
+  text-align: center;
+}
+section.contacts div.global-cta a.btn {
+  width: 30%;
+}
+section.contacts .btn {
+  max-width: 460px;
+}
+section.contacts .btn.btn-primary[disabled] {
+  cursor: default;
+}
+section.contacts.editMode {
+  border: 1px dashed #bbb;
+}
+section.contacts.page-block {
+  margin: 0px auto;
+  padding: 6em 8%;
+}
+section.contacts.over-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  content: "";
+}
+section.contacts.over-image {
+  background-color: transparent;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: auto;
+  background-position: center center;
+}
+section.contacts.over-image.cfg-color h1 {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color h2 {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color h3 {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color h4 {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color h5 {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color h6 {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color p {
+  color: inherit;
+}
+section.contacts.over-image.cfg-color a:not(.btn) {
+  color: inherit;
+}
+section.contacts div.block-header {
+  position: relative;
+  padding: 0 0 3em;
+  text-align: center;
+  border: none;
+}
+section.contacts .hide {
+  display: none;
+  visibility: hidden;
+}
+section.contacts .show {
+  display: block;
+  visibility: visible;
+}
+section.contacts .single-space-bottom {
+  padding-bottom: 1.8em;
+}
+section.contacts .double-space-bottom {
+  padding-bottom: 3.2em;
+}
+section.contacts .single-space-top {
+  padding-top: 1.8em;
+}
+section.contacts .double-space-top {
+  padding-top: 3.2em;
+}
+section.contacts .no-margins {
+  margin: 0 !important;
+}
+section.contacts .no-paddings {
+  padding: 0 !important;
+}
+section.contacts .no-spaces {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+section.contacts .no-sides-margins {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+section.contacts .no-sides-paddings {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+section.contacts .no-space-bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+section.contacts .no-space-top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+section.contacts .no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+section.contacts .no-margin-top {
+  margin-top: 0 !important;
+}
+section.contacts .nopaque {
+  opacity: 0;
+}
+section.contacts .opaque {
+  opacity: 1;
+}
+@media screen and (max-width: 1600px) {
+  section.contacts.page-block {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.contacts.page-block {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section.contacts.page-block {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+section.contacts[class^="mobile_view"].page-block {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+@media screen and (max-width: 500px) {
+  section.contacts.page-block {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+section.contacts.page-block {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+section.contacts > div.disabled {
+  opacity: 0.85;
+  background-color: transparent;
+  background-image: none;
+}
+section.contacts div.main div.form-actions {
+  min-height: 60px;
+  margin: 4em auto 1em 1.4em;
+  text-align: left;
+}
+section.contacts div.main div.form-actions.loader {
+  margin-left: 85px;
+  border-top-color: inherit;
+}
+section.contacts div.others > div {
+  padding-bottom: 2em;
+}
+section.contacts div.others .fa {
+  width: 50px;
+  text-align: center;
+}
+section.contacts div.others p.word-wrap-break {
+  word-wrap: break-word;
+}
+section.contacts div.others p.single-space-left {
+  padding-left: 15px;
+}
+section.contacts div.others p.double-space-left {
+  padding-left: 25px;
+}
+@media screen and (max-width: 991px) {
+  section.contacts {
+    text-align: center;
+  }
+  section.contacts div.others > div {
+    padding-bottom: 3em;
+  }
+  section.contacts div.others p.single-space-left,
+  section.contacts div.others p.double-space-left {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.contacts div.main div.form-actions {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.contacts.page-block {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+  }
+  section.contacts div.others {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  section.contacts div.others p.single-space-left,
+  section.contacts div.others p.double-space-left {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+section.contacts[class^="mobile_view"] {
+  text-align: center;
+}
+section.contacts[class^="mobile_view"].page-block {
+  padding-left: 2% !important;
+  padding-right: 2% !important;
+}
+section.contacts[class^="mobile_view"] div.others {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+section.contacts[class^="mobile_view"] div.others p.single-space-left,
+section.contacts[class^="mobile_view"] div.others p.double-space-left {
+  padding-right: 0;
+  padding-left: 0;
+}
