@@ -1,0 +1,43 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.4 (31 March 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+section.about-me.image_clean_right div.about-me-photo img {
+  -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+  border: none;
+  border-radius: 0%;
+}
+
+section.about-me.image_clean_right div.main > div.about-me-left {
+  float: right;
+}
+
+section.about-me.image_clean_right div.main > div.about-me-right {
+  text-align: right;
+  float: left;
+}
+
+section.about-me.image_clean_right div.main > div.about-me-right > div.global-cta {
+  text-align: right;
+}

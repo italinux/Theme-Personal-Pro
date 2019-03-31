@@ -1,0 +1,47 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.4 (31 March 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+section.banner.free_style.over-image {
+  background-image: url("../images/background.jpg");
+}
+
+section.banner.free_style > div[class^="container"] {
+  padding-top: 10%;
+}
+
+@media screen and (max-width: 1280px) {
+  section.banner.free_style > div[class^="container"] {
+    padding-top: 15%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section.banner.free_style > div[class^="container"] {
+    padding-top: 20%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.banner.free_style > div[class^="container"] {
+    padding-top: 25%;
+  }
+}
