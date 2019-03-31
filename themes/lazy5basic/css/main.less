@@ -1,0 +1,47 @@
+/**
+* =================================================
+* File: main.less
+* File provides: Custom Theme styles
+*                Colours, Typography, Paddings
+*
+* This is the main configuration file 
+* presets/*.less they contain skins
+*
+* @author:  Matteo Montanari <matteo@italinux.com>
+* =================================================
+*/
+/* * * * * * * * * * * * * * * * * * * * *
+* Choose default Preset
+*/
+@import "presets/defaults.less";
+
+/* * * * * * * * * * * * * * * * * * * * *
+* Import fonts files
+*/
+@import ~"@{body-fonts-file}";
+@import ~"@{preset-fonts-file}";
+
+/* * * * * * * * * * * * * * * * * * * * *
+* Import Theme styles
+*/
+// [Mixin]
+@import "build/theme/mixin.less";
+
+// [Global]
+@import "build/theme/style.less";
+@import "build/theme/typography.less";
+
+// [Media Queries]
+@import "build/theme/media/desktops.less";
+@import "build/theme/media/tablets.less";
+@import "build/theme/media/mobiles.less";
+
+// [Sections]
+@import "build/theme/sections.less";
+
+/* * * * * * * * * * * * * * * * * * * * *
+* [OTHER]
+*/
+@import "extra.less";
+
+/* * * * * * * * * * * * * * * * * * * * */

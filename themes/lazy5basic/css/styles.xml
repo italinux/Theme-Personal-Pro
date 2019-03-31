@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<styles version="1.0">
+  <set name="Banner &amp; Main">
+    <style name="font Title shadow size" variable="brand-banner-title-shadow" type="size" />
+    <style name="font Subtitle shadow size" variable="brand-banner-subtitle-shadow" type="size" />
+    <style name="font CTA shadow size" variable="brand-banner-CTA-shadow" type="size" />
+    <style name="main Background color" variable="body-odd-bg" type="color" />
+    <style name="main Font color" variable="body-odd-font" type="color" />
+    <style name="main Links color" variable="body-odd-link" type="color" />
+  </set>
+  <set name="Highlights &amp; Buttons">
+    <style name="CTAs Background color" variable="body-high-bg" type="color" />
+    <style name="CTAs Font color" variable="body-high-font" type="color" />
+  </set>
+  <set name="Body">
+    <style name="body Background color" variable="body-even-bg" type="color" />
+    <style name="body Font Type + color" variable="body" type="type" />
+    <style name="body Links color" variable="body-even-link" type="color" />
+  </set>
+</styles>
