@@ -1,0 +1,2 @@
+Theme Lazy5basic
+A perfectly crafted theme that uses all the power of concrete5
