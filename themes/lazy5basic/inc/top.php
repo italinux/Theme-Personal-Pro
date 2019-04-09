@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (31 March 2019)
+|  @version: v1.2.4 (07 April 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -52,9 +52,23 @@
 
     <?php echo $html->css($view->getStylesheet('main.less'))?>
 
-    <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/build/tools/c5-ui.css'); }?>
+    <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/tools/c5-ui.css'); }?>
 
     <?php View::element('header_required', $sPage)?>
+<?php
+  /* - - - - - - - - - - - - - - - - - - -
+  * Theme Colours (Mobile devices Address Bar)
+  */
+  $theme_color = \Config::get('app.config.theme-color');
+
+  if (isset($theme_color)) { ?>
+    <!-- Theme Color: Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="<?php echo $theme_color?>">
+    <!-- Theme Color: Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="<?php echo $theme_color?>">
+    <!-- Theme Color: iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $theme_color?>">
+  <?php }?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
