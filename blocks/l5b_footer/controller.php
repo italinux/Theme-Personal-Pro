@@ -722,7 +722,7 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('/css/tools/lazy-global-ui.css', 'css');
+        $this->addLocalAssets('../../../themes/lazy5basic/css/tools/lazy-global-ui.css', 'css');
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
