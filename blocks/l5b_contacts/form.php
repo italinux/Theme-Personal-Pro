@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -369,7 +369,13 @@ $c = Page::getCurrentPage();
                 <div class="form-group center single-space-top">
                   <?php echo $form->label('telephone', t('Telephone: %s', '<span>(+33 (0)1 22 33 44 55)</span>'))?>
                   <div class="input-group">
-                    <?php echo $form->text('telephone', trim($telephone), array('maxlength' => '155'))?>
+                    <?php echo $form->textarea(
+                            'telephone',
+                            trim($telephone), array(
+                                'rows' => 3,
+                                'maxlength' => '255',
+                            ));
+                        ?>
                   </div>
                 </div>
               </div>

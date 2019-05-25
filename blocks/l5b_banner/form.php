@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |

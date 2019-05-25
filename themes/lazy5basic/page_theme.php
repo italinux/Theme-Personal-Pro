@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (31 March 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -99,6 +99,25 @@ class PageTheme extends Theme
     public function getAreasNames()
     {
         return cPackage::create()->getAreasNames();
+    }
+
+    public function getThemeBlockClasses()
+    {
+
+        $blockClasses = array(
+            'page-block',
+            'no-spaces',
+            'no-space-top',
+            'no-space-bottom',
+            'single-space-top',
+            'single-space-bottom',
+            'double-space-top',
+            'double-space-bottom',
+            'no-sides-spaces',
+            'strict',
+        );
+
+        return array('*' => $blockClasses);
     }
 
     public function getThemeResponsiveImageMap() 

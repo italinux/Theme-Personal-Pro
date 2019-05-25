@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -57,16 +57,14 @@
     <?php View::element('header_required', $sPage)?>
 <?php
   /* - - - - - - - - - - - - - - - - - - -
-  * Theme Colours (Mobile devices Address Bar)
+  * Theme Colour (Mobile devices Address Bar)
   */
   $theme_color = \Config::get('app.config.theme-color');
 
   if (isset($theme_color)) { ?>
-    <!-- Theme Color: Chrome, Firefox OS and Opera -->
+    <!-- Theme Colour (Mobile devices Address Bar) -->
     <meta name="theme-color" content="<?php echo $theme_color?>">
-    <!-- Theme Color: Windows Phone -->
     <meta name="msapplication-navbutton-color" content="<?php echo $theme_color?>">
-    <!-- Theme Color: iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $theme_color?>">
   <?php }?>
 

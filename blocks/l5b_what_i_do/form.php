@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -120,13 +120,17 @@ defined('C5_EXECUTE') or die("Access Denied.");
               <h4><?php echo t('all your %s are listed below', t('items'))?></h4>
             </div>
 
+            <!-- START JS SCRIPT -->
+              <?php $this->inc('elements/jscript.php')?>
+            <!-- END JS SCRIPT -->
+
             <?php
               echo $hUI->tabs($itemsTotalTabs);
 
               for ($i=1; $i<(count($itemsTotalTabs)+1); $i++) {
             ?>
             <!-- Tabs -->
-            <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>">
+            <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>" <?php echo ($i==1) ? ' style="display:block"' : null?>>
               <fieldset>
                   <div class="col-lg-7">
                     <div class="form-group no-sides-spaces single-space-top">

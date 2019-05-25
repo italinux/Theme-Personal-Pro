@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -37,19 +37,24 @@ class Controller extends BlockController
 {
 
     protected $btTable = "btLazy5basicSocialMedia";
-
     protected static $btHandlerId = "social-media";
-
-    // Total number Items on this Block Grid
-    protected static $btItemsTotal = 4;
-
-    protected $btInterfaceWidth = "1420";
-    protected $btInterfaceHeight = "900";
-
-    protected $btWrapperClass = 'ccm-ui';
-    protected $btWrapperForm = 'lazy-ui';
-
     protected $btDefaultSet = 'lazy5basic';
+
+    /* Configure Block Grid per Media in View
+     *  key: Number of items
+     *  value: Max number of items per Media per row
+     *
+     *  LG = Large Screen, MD = Desktop, SM = Tablet, SX = Mobile
+     */
+    protected static $btItemsGrid = array(4 => array('lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
+                                          3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'sxMax' => 1),
+                                          2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
+                                          1 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1));
+
+    // Configure Offsets per Media (NB: depending on value above) if you want to CENTER the last ODD item
+    // e.g. if value above is one figure less than it's main key, add an offset below
+    // first key is items TOTAL COUNT, second key is OFFSET amount per Media
+    protected static $btItemsCount = array(3 => array('smOffset' => 1));
 
     // Custom Image Thumb Width X Height (pixels)
     protected static $btCustomImageThumbWidth = 64;
@@ -58,15 +63,22 @@ class Controller extends BlockController
     // Style Background & Foreground Colours
     protected static $btStyleOpacity = '0.7';
 
-    // Upload Image size in KBytes (1KB = 1025b)
+    // Style Upload Background Image size in KBytes (1KB = 1025b)
     protected static $btStyleUploadImageSize = 450;
 
-    // Upload Image Thumb Width X Height (pixels)
+    // Style Background Image size: Width X Height (pixels)
     protected static $btStyleUploadThumbWidth = 1680;
     protected static $btStyleUploadThumbHeight = 945;
 
-    // Background Over Image default Opacity
+    // Style Background Over Image default Opacity
     protected static $bgOverImageOpacity = 1;
+
+    // Window Overlay size: Width X Height (pixels)
+    protected $btInterfaceWidth = "1420";
+    protected $btInterfaceHeight = "900";
+
+    protected $btWrapperClass = 'ccm-ui';
+    protected $btWrapperForm = 'lazy-ui';
 
     // Support for Inline Editing
     protected $btSupportsInlineEdit = false;
@@ -149,7 +161,7 @@ class Controller extends BlockController
         );
 
         // loop multiple items
-        for ($i=1; $i<(self::$btItemsTotal+1); $i++) {
+        for ($i=1; $i<(self::get_btItemsTotal()+1); $i++) {
 
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
@@ -187,7 +199,7 @@ class Controller extends BlockController
         );
 
         // loop multiple items
-        for ($i=1; $i<(self::$btItemsTotal+1); $i++) {
+        for ($i=1; $i<(self::get_btItemsTotal()+1); $i++) {
 
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
@@ -219,6 +231,15 @@ class Controller extends BlockController
                 'label' => t('Window Overlay Items Tabs'),
             ),
         );
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * This Block: Items Total Number
+    * @return integer
+    */
+    protected static function get_btItemsTotal()
+    {
+       return count(self::$btItemsGrid);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -414,7 +435,7 @@ class Controller extends BlockController
     {
         $o = array();
 
-        for ($i=1; $i<(self::$btItemsTotal+1); $i++) {
+        for ($i=1; $i<(self::get_btItemsTotal()+1); $i++) {
 
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
@@ -601,51 +622,16 @@ class Controller extends BlockController
     public function getBootstrapCol_Config($offset, $key)
     {
 
-        $array = $this->getAll_isEnabled(range(1, self::$btItemsTotal));
+        $array = $this->getAll_isEnabled(range(1, self::get_btItemsTotal()));
 
         // Total number of items
         $items = count($array);
 
-        // lg, md, sm, sx
-        $lgMax = $mdMax = $smMax = $sxMax = null;
-
-        // Offsets
-        $lgOffset = $mdOffset = $smOffset = $sxOffset = 0;
-
-        /* Choose Max number of items per view type:
-         *
-         * LG = Large Screen
-         * MD = Desktop
-         * SM = Tablet
-         * SX = Mobile
-         */
-        // case the number of items to display and so how
-        switch($items) {
-        case 4:
-           $lgMax = 4; $mdMax = 2; $smMax = 2; $sxMax = 1;
-
-           break;
-        case 3:
-           $lgMax = 3; $mdMax = 3; $smMax = 2; $sxMax = 1;
-
-           // add Offset manually here if required
-           if ($offset == 3) {
-               $smOffset = 1;
-           }
-           break;
-        case 2:
-           $lgMax = 2; $mdMax = 2; $smMax = 2; $sxMax = 1;
-           break;
-        case 1:
-           $lgMax = 1; $mdMax = 1; $smMax = 1; $sxMax = 1;
-           break;
-        }
-
         // Calculate the number of columns requited in the View Layout per number of items chosen
-        ${$key . 'Max'} = is_int(${$key . 'Max'}) ? (12 / ${$key . 'Max'}) : null;
+        ${$key . 'Max'} = is_int(self::$btItemsGrid[$items][$key . 'Max']) ? (12 / self::$btItemsGrid[$items][$key . 'Max']) : null;
 
         // Calculate Offset if required
-        ${$key . 'Offset'} = ${$key . 'Offset'} == true ? ($items * ${$key . 'Offset'}) : 0;
+        ${$key . 'Offset'} = (isset(self::$btItemsCount[$offset][$key . 'Offset']) && ($items == $offset)) ? ($items * self::$btItemsCount[$offset][$key . 'Offset']) : 0;
 
         // set the value into an array
         $data = ${$key . 'Max'} == true ? array(${$key . 'Max'}, 'offset' => ${$key . 'Offset'}) : array();
@@ -720,7 +706,7 @@ class Controller extends BlockController
         $this->set('cFgColorClass', $this->getCustomFgColorClassName());
 
         // Sanitize & set some of the main values
-        $this->set('allData', $this->getAll_data(range(1, self::$btItemsTotal)));
+        $this->set('allData', $this->getAll_data(range(1, self::get_btItemsTotal())));
 
         // Import Custom Css3 inline
         $this->set('cStyle', $this->getCustomStyle());

@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (31 March 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -39,7 +39,7 @@ class Controller extends Package
 {
 
     protected $pkgHandle = 'theme_lazy5basic';
-    protected $pkgVersion = '1.2.4';
+    protected $pkgVersion = '1.2.8';
     protected $pkgPrefix = 'l5b';
     protected $pkgAlias = 'Personal Pro';
 

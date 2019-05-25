@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -86,7 +86,7 @@ echo $cStyle;
                 <div class="form-group captcha">
                   <?php echo $captcha->label()?>
                   <?php $captcha->display()?>
-                  <div class="single-space-top single-space-bottom">
+                  <div class="form-fields">
                     <?php $captcha->showInput()?>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ echo $cStyle;
           </div>
           <div class="col-sm-12 no-sides-paddings contact-details">
             <p class="single-space-left">
-              <?php echo h($telephone)?>
+              <?php echo trim($telephone)?>
             </p>
           </div>
         </div>

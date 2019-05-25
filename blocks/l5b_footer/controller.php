@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.4 (07 April 2019)
+|  @version: v1.2.8 (20 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -37,29 +37,28 @@ class Controller extends BlockController
 {
 
     protected $btTable = "btLazy5basicFooter";
-
     protected static $btHandlerId = "footer";
-
-    protected $btInterfaceWidth = "1050";
-    protected $btInterfaceHeight = "650";
-
-    protected $btWrapperClass = 'ccm-ui';
-    protected $btWrapperForm = 'lazy-ui';
-
     protected $btDefaultSet = 'lazy5basic';
 
     // Style Background & Foreground Colours
     protected static $btStyleOpacity = '0.95';
 
-    // Upload Image size in KBytes (1KB = 1024b)
+    // Style Upload Background Image size in KBytes (1KB = 1024b)
     protected static $btStyleUploadImageSize = 450;
 
-    // Upload Image Thumb Width X Height (pixels)
+    // Style Background Image size: Width X Height (pixels)
     protected static $btStyleUploadThumbWidth = 1190;
     protected static $btStyleUploadThumbHeight = 650;
 
-    // Background Over Image default Opacity
+    // Style Background Over Image default Opacity
     protected static $bgOverImageOpacity = 0.25;
+
+    // Window Overlay size: Width X Height (pixels)
+    protected $btInterfaceWidth = "1050";
+    protected $btInterfaceHeight = "650";
+
+    protected $btWrapperClass = 'ccm-ui';
+    protected $btWrapperForm = 'lazy-ui';
     
     // Support for Inline Editing
     protected $btSupportsInlineEdit = false;
