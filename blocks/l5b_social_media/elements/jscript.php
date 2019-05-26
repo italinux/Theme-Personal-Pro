@@ -2,7 +2,7 @@
 /**
 .---------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
-|  @version: v1.2.8 (20 May 2019)
+|  @version: v1.2.8 (26 May 2019)
 |  @link:    http://italinux.com/personal-pro
 |  @docs:    http://italinux.com/theme-personal-pro
 |
@@ -94,7 +94,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                  }
 
                  // Target input name & value
-                 inputName = $(this).attr('name');
+                  inputName = $(this).attr('name');
                  inputValue = $(this).val();
 
                  // Create / Update Attributes data-name & data-value
