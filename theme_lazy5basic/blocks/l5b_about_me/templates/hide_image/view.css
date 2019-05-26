@@ -1,0 +1,437 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.8 (20 May 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+.single-space-bottom > section.about-me.page-block,
+.double-space-bottom > section.about-me.page-block,
+.no-spaces > section.about-me.page-block,
+.no-space-bottom > section.about-me.page-block {
+  padding-bottom: 0 !important;
+}
+.single-space-top > section.about-me.page-block,
+.double-space-top > section.about-me.page-block,
+.no-spaces > section.about-me.page-block,
+.no-space-top > section.about-me.page-block {
+  padding-top: 0 !important;
+}
+.no-sides-spaces > section.about-me.page-block {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+section.about-me {
+  position: relative;
+  overflow: hidden;
+}
+section.about-me a:not(.CTA-clean).info::after,
+section.about-me a:not(.CTA-clean).goto::after {
+  margin-top: 0px;
+  font-family: "FontAwesome";
+  font-size: 0.8em;
+  text-decoration: none;
+}
+section.about-me a:not(.CTA-clean).info > span,
+section.about-me a:not(.CTA-clean).goto > span {
+  align-self: center;
+}
+section.about-me a:not(.CTA-clean).info::after {
+  content: "\f05a";
+  margin-right: 5px;
+  margin-left: 5px;
+}
+section.about-me a:not(.CTA-clean).goto::after {
+  content: "\f08e";
+  margin-left: 6px;
+  margin-right: 10px;
+}
+section.about-me div.global-cta {
+  margin-top: 4em;
+  margin-bottom: 2em;
+  font-size: 120%;
+  text-align: center;
+}
+section.about-me div.global-cta a.btn {
+  width: 30%;
+}
+section.about-me .btn {
+  max-width: 460px;
+}
+section.about-me .btn.btn-primary[disabled] {
+  cursor: default;
+}
+section.about-me.editMode {
+  border: 1px dashed #bbb;
+}
+section.about-me.page-block {
+  margin: 0px auto;
+  padding: 6em 8%;
+}
+section.about-me.over-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  content: "";
+}
+section.about-me.over-image {
+  background-color: transparent;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: auto;
+  background-position: center center;
+}
+section.about-me.over-image.cfg-color h1 {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color h2 {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color h3 {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color h4 {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color h5 {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color h6 {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color p {
+  color: inherit;
+}
+section.about-me.over-image.cfg-color a:not(.btn) {
+  color: inherit;
+}
+section.about-me div.block-header {
+  position: relative;
+  padding: 0 0 3em;
+  text-align: center;
+  border: none;
+}
+section.about-me .hide {
+  display: none;
+  visibility: hidden;
+}
+section.about-me .show {
+  display: block;
+  visibility: visible;
+}
+section.about-me .single-space-bottom {
+  padding-bottom: 1.8em;
+}
+section.about-me .double-space-bottom {
+  padding-bottom: 3.2em;
+}
+section.about-me .single-space-top {
+  padding-top: 1.8em;
+}
+section.about-me .double-space-top {
+  padding-top: 3.2em;
+}
+section.about-me .no-margins {
+  margin: 0 !important;
+}
+section.about-me .no-paddings {
+  padding: 0 !important;
+}
+section.about-me .no-spaces {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+section.about-me .no-sides-margins {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+section.about-me .no-sides-paddings {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+section.about-me .no-space-bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+section.about-me .no-space-top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+section.about-me .no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+section.about-me .no-margin-top {
+  margin-top: 0 !important;
+}
+section.about-me .nopaque {
+  opacity: 0;
+}
+section.about-me .opaque {
+  opacity: 1;
+}
+@media screen and (max-width: 1600px) {
+  section.about-me.page-block {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.about-me.page-block {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section.about-me.page-block {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+section.about-me[class^="mobile_view"].page-block {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+@media screen and (max-width: 500px) {
+  section.about-me.page-block {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+section.about-me a:not(.btn).goto {
+  margin-left: 5px;
+}
+section.about-me a:not(.btn).goto::after {
+  margin-right: 8px;
+}
+section.about-me .play-now {
+  -webkit-animation: actionaboutmepopin 0s linear 0.5s 1 normal forwards running;
+     -moz-animation: actionaboutmepopin 0s linear 0.5s 1 normal forwards running;
+       -o-animation: actionaboutmepopin 0s linear 0.5s 1 normal forwards running;
+          animation: actionaboutmepopin 0s linear 0.5s 1 normal forwards running;
+  opacity: 0;
+}
+section.about-me div.global-cta {
+  margin-top: 5em;
+}
+section.about-me div.global-cta a.btn {
+  width: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+section.about-me div.about-me-photo {
+  opacity: 0.8;
+}
+section.about-me div.about-me-photo div.loader {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 70px;
+  height: 70px;
+  margin: 25% auto 0px;
+  -webkit-animation: actionaboutmeloader 1s linear 0s infinite normal none running;
+     -moz-animation: actionaboutmeloader 1s linear 0s infinite normal none running;
+       -o-animation: actionaboutmeloader 1s linear 0s infinite normal none running;
+  animation-name: actionaboutmeloader;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #a58e2a;
+  border-radius: 50%;
+}
+section.about-me div.about-me-photo img {
+  min-width: 90%;
+  max-width: 95%;
+  height: auto;
+  margin: 20px auto 0px auto;
+  -webkit-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+  box-shadow: 2px 4px 5px 1px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 0%;
+}
+@-webkit-keyframes actionaboutmepopin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes actionaboutmepopin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes actionaboutmepopin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes actionaboutmepopin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes actionaboutmeloader {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes actionaboutmeloader {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes actionaboutmeloader {
+  0% {
+    -o-transform: rotate(0deg);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes actionaboutmeloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+section.about-me div.main div.about-me-photo {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding-left: 7%;
+  padding-right: 7%;
+  text-align: center;
+}
+section.about-me div.main div.about-me-photo div.msg-default {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0px auto;
+  -webkit-transform: rotate(-2deg);
+     -moz-transform: rotate(-2deg);
+       -o-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+  text-align: center;
+  display: block;
+  z-index: 1;
+}
+section.about-me div.main div.about-me-text h2:first-of-type {
+  white-space: pre;
+}
+section.about-me div.main div.about-me-text big {
+  font-size: 130%;
+}
+@media screen and (max-width: 1920px) {
+  section.about-me.page-block {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  section.about-me div.main div.about-me-photo {
+    padding-left: 6%;
+    padding-right: 6%;
+    -webkit-transform: translateY(5%);
+       -moz-transform: translateY(5%);
+         -o-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@media screen and (max-width: 1680px) {
+  section.about-me.page-block {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  section.about-me div.main div.about-me-photo {
+    padding-left: 5%;
+    padding-right: 5%;
+    -webkit-transform: translateY(10%);
+       -moz-transform: translateY(10%);
+         -o-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.about-me div.main div.about-me-photo {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  section.about-me div.main div.about-me-photo img {
+    min-width: 85%;
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  section.about-me.page-block {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  section.about-me div.main div.about-me-text,
+  section.about-me div.main div.global-cta {
+    text-align: center !important;
+  }
+  section.about-me div.main div.about-me-photo {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.about-me.page-block {
+    padding-top: 30px;
+  }
+  section.about-me div.main div.about-me-photo {
+    display: none;
+  }
+  section.about-me div.main div.about-me-text h2:first-of-type {
+    white-space: normal;
+  }
+}
+section.about-me[class^="mobile_view"] div.main div.about-me-text,
+section.about-me[class^="mobile_view"] div.main div.global-cta {
+  text-align: center;
+}

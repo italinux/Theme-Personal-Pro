@@ -1,0 +1,287 @@
+/* Typography Main 
+--------------------------------------------------------- */
+html {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+  a {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+    -webkit-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+  }
+}
+
+body {
+  font-family: @body-type-font-family;
+  font-size: @body-type-font-size;
+  font-weight: @body-type-font-weight;
+  line-height: @body-type-line-height;
+}
+
+/* Typography Main Page Wrapper
+--------------------------------------------------------- */
+div.main-wrapper {
+  /* Paragraphs
+--------------------------------------------------------- */
+  p {
+    font-size: @p-type-font-size;
+    font-weight: @p-type-font-weight;
+    line-height: @p-type-line-height;
+    margin-bottom: @p-margin-bottom;
+    strong {
+      font-weight: 400;
+    }
+  }
+
+  /* Headings
+--------------------------------------------------------- */
+  div.block-header {
+    h4,
+    h5,
+    h6 {
+      font-family: @body-type-font-family;
+      font-weight: 300;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: @this-preset-font-family;
+  }
+  h1 {
+    font-size: @h1-type-font-size;
+    font-weight: @h1-type-font-weight;
+    line-height: @h1-type-line-height;
+    margin-top: @h1-margin-top;
+    margin-bottom: @h1-margin-bottom;
+  }
+  h2 {
+    font-size: @h2-type-font-size;
+    font-weight: @h2-type-font-weight;
+    line-height: @h2-type-line-height;
+    margin-top: @h2-margin-top;
+    margin-bottom: @h2-margin-bottom;
+  }
+  h3 {
+    font-size: @h3-type-font-size;
+    font-weight: @h3-type-font-weight;
+    line-height: @h3-type-line-height;
+    margin-bottom: @h3-margin-bottom;
+    padding-top: @h3-margin-top;
+  }
+  h4 {
+    font-size: @h4-type-font-size;
+    font-weight: @h4-type-font-weight;
+    line-height: @h4-type-line-height;
+    margin-bottom: @h4-margin-bottom;
+    padding-top: @h4-margin-top;
+  }
+  h5 {
+    font-size: @h5-type-font-size;
+    font-weight: @h5-type-font-weight;
+    line-height: @h5-type-line-height;
+    margin-bottom: @h5-margin-bottom;
+    padding-top: @h5-margin-top;
+  }
+  h6 {
+    font-family: @body-type-font-family;
+    font-size: @h6-type-font-size;
+    font-weight: @h6-type-font-weight;
+    line-height: @h6-type-line-height;
+    margin-bottom: @h6-margin-bottom;
+    padding-top: @h6-margin-top;
+  }
+
+  /**
+*  Anchors
+* ---------------------------------------------------------*/
+  a:not(.CTA-clean) {
+    &.info,
+    &.goto {
+      &::after {
+        font-family: "FontAwesome";
+        font-size: 0.8em;
+      }
+    }
+    &.info::after {
+      content: "\f05a";
+    }
+    &.goto::after {
+      content: "\f08e";
+    }
+  }
+
+  /**
+*  Sections
+* ---------------------------------------------------------*/
+  section {
+    .btn {
+      font-size: @p-type-font-size - 0.15em;
+      line-height: 1em;
+    }
+  }
+
+  /**
+*  Loader Scroll Top
+* ---------------------------------------------------------*/
+  div#scroll-top {
+    .fa {
+      font-size: @p-type-font-size + 2.25em;
+    }
+  }
+
+  /**
+*  - - ALL BLOCKS HERE - - 
+*
+*  Menu
+--------------------------------------------------------- */
+  section.pre-hand.menu {
+    nav {
+      div.navbar-center {
+        ul.nav {
+          a {
+            font-family: @this-preset-font-family;
+            font-size: @brand-menu-type-font-size;
+            line-height: 0.9em;
+            font-weight: @brand-menu-type-font-weight;
+          }
+        }
+        div.fixed {
+          ul.nav {
+            a {
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Banner
+--------------------------------------------------------- */
+  section.pre-hand.banner {
+    h1 {
+      font-weight: @h1-banner-type-font-weight;
+      sup {
+        font-style: italic;
+      }
+    }
+    h4 {
+      font-weight: @h4-banner-type-font-weight;
+      line-height: @h4-type-line-height + 0.2em;
+      padding-top: @h4-margin-top - 5px;
+    }
+    a {
+      &.CTA-arrow-top {
+        font-size: @brand-banner-CTA-font-size;
+      }
+    }
+  }
+
+  /* What I Do
+--------------------------------------------------------- */
+
+  /* Team
+--------------------------------------------------------- */
+
+  /* Services
+--------------------------------------------------------- */
+
+  /* FB Page Posts
+--------------------------------------------------------- */
+
+  /* About Me
+--------------------------------------------------------- */
+  section.about-me {
+    div.main {
+      div.about-me-text {
+        p {
+          margin-bottom: @p-margin-bottom + 2px;
+        }
+      }
+    }
+  }
+
+  /* Adverts
+--------------------------------------------------------- */
+
+  /* Bookmarks
+--------------------------------------------------------- */
+
+  /* My Skills
+--------------------------------------------------------- */
+
+  /* Curriculum Vitae
+--------------------------------------------------------- */
+  section.curriculum-vitae {
+    div.main {
+      div.curriculum-vitae-text {
+        p {
+          font-size: @p-type-font-size - 0.05em;
+        }
+      }
+    }
+  }
+
+  /* My Works
+--------------------------------------------------------- */
+
+  /* Prices
+--------------------------------------------------------- */
+
+  /* Portfolio
+--------------------------------------------------------- */
+  section.portfolio {
+    div.main {
+      div.inner-content {
+        h3 {
+          line-height: 1em;
+        }
+      }
+    }
+  }
+
+  /* Testimonials
+--------------------------------------------------------- */
+
+  /* Contacts
+--------------------------------------------------------- */
+  section.contacts {
+    div.form-wrapper {
+      div.form-fields {
+        select,
+        option,
+        input,
+        textarea {
+          font-family: @body-type-font-family;
+        }
+      }
+    }
+  }
+
+  /* Clients
+--------------------------------------------------------- */
+
+  /* Social Media
+--------------------------------------------------------- */
+
+  /* Footer
+--------------------------------------------------------- */
+  footer.pre-hand {
+    div.block-header {
+      h5,
+      h6 {
+        font-family: @body-type-font-family;
+      }
+    }
+    div.credits {
+      font-size: 85%;
+      line-height: 1.2em;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+  }
+}

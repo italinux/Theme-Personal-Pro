@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete5-cif version="1.0">
+   <blocktypesets>
+      <blocktypeset handle="lazy5basic" name="Lazy5basic" package="theme_lazy5basic">
+         <blocktype handle="l5b_banner" />
+         <blocktype handle="l5b_menu" />
+         <blocktype handle="l5b_what_i_do" />
+         <blocktype handle="l5b_about_me" />
+         <blocktype handle="l5b_contacts" />
+         <blocktype handle="l5b_social_media" />
+         <blocktype handle="l5b_footer" />
+      </blocktypeset>
+   </blocktypesets>
+   <blocktypes>
+      <blocktype handle="l5b_banner" package="theme_lazy5basic" />
+      <blocktype handle="l5b_menu" package="theme_lazy5basic" />
+      <blocktype handle="l5b_what_i_do" package="theme_lazy5basic" />
+      <blocktype handle="l5b_about_me" package="theme_lazy5basic" />
+      <blocktype handle="l5b_contacts" package="theme_lazy5basic" />
+      <blocktype handle="l5b_social_media" package="theme_lazy5basic" />
+      <blocktype handle="l5b_footer" package="theme_lazy5basic" />
+   </blocktypes>
+   <pagetemplates>
+      <pagetemplate icon="full.png" name="Full" handle="full" package="" internal="" />
+   </pagetemplates>
+   <pagetypes>
+      <pagetype name="Page" handle="page" package="" launch-in-composer="0" is-frequently-added="1">
+         <pagetemplates type="all" default="full" />
+         <target handle="all" package="" form-factor="" />
+         <composer>
+            <formlayout>
+               <set name="Basics" description="">
+                  <control custom-template="" required="1" custom-label="Page Name" description="" type="core_page_property" handle="name" />
+                  <control custom-template="" custom-label="" description="" type="core_page_property" handle="description" />
+                  <control custom-template="" custom-label="" description="" type="core_page_property" handle="url_slug" />
+                  <control custom-template="" custom-label="" description="" type="core_page_property" handle="page_template" />
+                  <control custom-template="" custom-label="" description="" type="core_page_property" handle="publish_target" />
+               </set>
+               <set name="Content" description="">
+                  <control custom-template="" custom-label="Body" description="" output-control-id="e2ec607e" type="block" handle="content" />
+               </set>
+            </formlayout>
+            <output>
+               <pagetemplate handle="full">
+                  <page name="" path="" public-date="2018-09-18 23:27:58" filename="" pagetype="page" template="full" user="admin" description="" package="" root="true">
+                     <area name="Main">
+                        <blocks>
+                           <block type="core_page_type_composer_control_output" name="" mc-block-id="b19ff86e">
+                              <control output-control-id="e2ec607e" />
+                           </block>
+                        </blocks>
+                     </area>
+                  </page>
+               </pagetemplate>
+            </output>
+         </composer>
+      </pagetype>
+   </pagetypes>
+   <themes>
+      <theme handle="lazy5basic" package="theme_lazy5basic" activated="1" />
+   </themes>
+   <pages>
+      <page name="Home" path="" public-date="2018-09-18 23:27:20" filename="" pagetype="page" template="full" user="admin" description="" package="" root="true">
+         <area name="Main">
+            <blocks />
+         </area>
+         <area name="Page Footer">
+            <blocks />
+         </area>
+         <area name="Banner">
+            <blocks>
+               <block type="l5b_banner" name="" custom-template="clean_style">
+                  <data table="btLazy5basicBanner">
+                     <record>
+                        <cs_CTA_hash><![CDATA[#what-i-do-more]]></cs_CTA_hash>
+                        <cs_CTA_linkType><![CDATA[url]]></cs_CTA_linkType>
+                        <cs_CTA_pID><![CDATA[0]]></cs_CTA_pID>
+                        <cs_CTA_target><![CDATA[self]]></cs_CTA_target>
+                        <cs_CTA_text><![CDATA[check me out]]></cs_CTA_text>
+                        <cs_CTA_url />
+                        <cs_isVideoEnabled><![CDATA[0]]></cs_isVideoEnabled>
+                        <cs_subtitle><![CDATA[writer of novels]]></cs_subtitle>
+                        <cs_title><![CDATA[pen name]]></cs_title>
+                        <cs_videoHQ><![CDATA[medium]]></cs_videoHQ>
+                        <cs_videoURL><![CDATA[http://youtu.be/eR1K_TbUkbc]]></cs_videoURL>
+                        <fs_CTA_hash><![CDATA[#what-i-do-more]]></fs_CTA_hash>
+                        <fs_CTA_linkType><![CDATA[url]]></fs_CTA_linkType>
+                        <fs_CTA_pID><![CDATA[0]]></fs_CTA_pID>
+                        <fs_CTA_target><![CDATA[self]]></fs_CTA_target>
+                        <fs_CTA_text><![CDATA[find out more]]></fs_CTA_text>
+                        <fs_CTA_url />
+                        <fs_content><![CDATA[<h1>this banner</h1>
+
+<h2>is nice</h2>]]></fs_content>
+                        <fs_isVideoEnabled><![CDATA[0]]></fs_isVideoEnabled>
+                        <fs_videoHQ><![CDATA[medium]]></fs_videoHQ>
+                        <fs_videoURL><![CDATA[http://youtu.be/SWAbthUf68o]]></fs_videoURL>
+                        <iam_wid_CTA_hash><![CDATA[#about-me]]></iam_wid_CTA_hash>
+                        <iam_wid_CTA_linkType><![CDATA[url]]></iam_wid_CTA_linkType>
+                        <iam_wid_CTA_pID><![CDATA[0]]></iam_wid_CTA_pID>
+                        <iam_wid_CTA_target><![CDATA[self]]></iam_wid_CTA_target>
+                        <iam_wid_CTA_text><![CDATA[check it out]]></iam_wid_CTA_text>
+                        <iam_wid_CTA_url />
+                        <iam_wid_iam><![CDATA[I am]]></iam_wid_iam>
+                        <iam_wid_ido><![CDATA[I do]]></iam_wid_ido>
+                        <iam_wid_isVideoEnabled><![CDATA[0]]></iam_wid_isVideoEnabled>
+                        <iam_wid_subtitle><![CDATA[songwriting]]></iam_wid_subtitle>
+                        <iam_wid_title><![CDATA[cool name]]></iam_wid_title>
+                        <iam_wid_videoHQ><![CDATA[medium]]></iam_wid_videoHQ>
+                        <iam_wid_videoURL><![CDATA[http://youtu.be/eR1K_TbUkbc]]></iam_wid_videoURL>
+                        <img_sd_CTA_hash />
+                        <img_sd_CTA_linkType><![CDATA[url]]></img_sd_CTA_linkType>
+                        <img_sd_CTA_pID><![CDATA[0]]></img_sd_CTA_pID>
+                        <img_sd_CTA_target><![CDATA[blank]]></img_sd_CTA_target>
+                        <img_sd_CTA_text><![CDATA[see how]]></img_sd_CTA_text>
+                        <img_sd_CTA_url><![CDATA[http://italinux.com/addon-curriculum-vitae]]></img_sd_CTA_url>
+                        <img_sd_content><![CDATA[<p>This is a sample text</p>
+
+<p>here you will write few information about you</p>
+
+<p>or the concept of your website</p>]]></img_sd_content>
+                        <img_sd_fID><![CDATA[0]]></img_sd_fID>
+                        <img_sd_isVideoEnabled><![CDATA[0]]></img_sd_isVideoEnabled>
+                        <img_sd_sID><![CDATA[0]]></img_sd_sID>
+                        <img_sd_subtitle><![CDATA[singer]]></img_sd_subtitle>
+                        <img_sd_title><![CDATA[name]]></img_sd_title>
+                        <img_sd_videoHQ><![CDATA[medium]]></img_sd_videoHQ>
+                        <img_sd_videoURL><![CDATA[http://youtu.be/SWAbthUf68o]]></img_sd_videoURL>
+                        <videoStartFrom><![CDATA[1]]></videoStartFrom>
+                        <videoStartTo><![CDATA[5]]></videoStartTo>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+         <area name="Menu">
+            <blocks>
+               <block type="l5b_menu" name="" custom-template="sticky">
+                  <data table="btLazy5basicMenu">
+                     <record>
+                        <title />
+                        <showLogo><![CDATA[1]]></showLogo>
+                        <o1_fID><![CDATA[0]]></o1_fID>
+                        <showLanguage><![CDATA[0]]></showLanguage>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+                  <data table="btLazy5basicMenuItem">
+                     <record>
+                        <id><![CDATA[1]]></id>
+                        <name><![CDATA[Who I am]]></name>
+                        <target><![CDATA[self]]></target>
+                        <pageID />
+                        <url />
+                        <anchor><![CDATA[addon]]></anchor>
+                        <hash />
+                        <addon><![CDATA[about-me]]></addon>
+                        <sort><![CDATA[0]]></sort>
+                     </record>
+                     <record>
+                        <id><![CDATA[2]]></id>
+                        <name><![CDATA[What I do]]></name>
+                        <target><![CDATA[self]]></target>
+                        <pageID />
+                        <url />
+                        <anchor><![CDATA[addon]]></anchor>
+                        <hash />
+                        <addon><![CDATA[what-i-do]]></addon>
+                        <sort><![CDATA[1]]></sort>
+                     </record>
+                     <record>
+                        <id><![CDATA[3]]></id>
+                        <name><![CDATA[Social media]]></name>
+                        <target><![CDATA[self]]></target>
+                        <pageID />
+                        <url />
+                        <anchor><![CDATA[addon]]></anchor>
+                        <hash />
+                        <addon><![CDATA[social-media]]></addon>
+                        <sort><![CDATA[2]]></sort>
+                     </record>
+                     <record>
+                        <id><![CDATA[4]]></id>
+                        <name><![CDATA[Contacts]]></name>
+                        <target><![CDATA[self]]></target>
+                        <pageID />
+                        <url />
+                        <anchor><![CDATA[addon]]></anchor>
+                        <hash />
+                        <addon><![CDATA[contacts]]></addon>
+                        <sort><![CDATA[3]]></sort>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+         <area name="What I Do">
+            <blocks>
+               <block type="l5b_what_i_do" name="" custom-template="items_style_clean">
+                  <data table="btLazy5basicWhatIDo">
+                     <record>
+                        <title><![CDATA[what I do]]></title>
+                        <subtitle />
+                        <CTA_linkType><![CDATA[url]]></CTA_linkType>
+                        <CTA_pID><![CDATA[0]]></CTA_pID>
+                        <CTA_url />
+                        <CTA_hash><![CDATA[#about-me]]></CTA_hash>
+                        <CTA_target><![CDATA[self]]></CTA_target>
+                        <CTA_text><![CDATA[find out who I am]]></CTA_text>
+                        <o1_isEnabled><![CDATA[1]]></o1_isEnabled>
+                        <o1_linkType><![CDATA[url]]></o1_linkType>
+                        <o1_pID><![CDATA[0]]></o1_pID>
+                        <o1_url />
+                        <o1_hash />
+                        <o1_target><![CDATA[self]]></o1_target>
+                        <o1_fID><![CDATA[0]]></o1_fID>
+                        <o1_title><![CDATA[paperbacks]]></o1_title>
+                        <o1_icon><![CDATA[pencil]]></o1_icon>
+                        <o1_content><![CDATA[<p>Crebritate tunica die et armatis eum et nihil muros <strong>mandato obscuro</strong> Polam prope celeri</p>]]></o1_content>
+                        <o1_button><![CDATA[check it out]]></o1_button>
+                        <o2_isEnabled><![CDATA[1]]></o2_isEnabled>
+                        <o2_linkType><![CDATA[url]]></o2_linkType>
+                        <o2_pID><![CDATA[0]]></o2_pID>
+                        <o2_url><![CDATA[http://librivox.org]]></o2_url>
+                        <o2_hash />
+                        <o2_target><![CDATA[blank]]></o2_target>
+                        <o2_fID><![CDATA[0]]></o2_fID>
+                        <o2_title><![CDATA[audio books]]></o2_title>
+                        <o2_icon><![CDATA[headphones]]></o2_icon>
+                        <o2_content><![CDATA[<p>Miaci celeri non <strong>non pavceids</strong> si hostes rapacium vastabant nec tamen <strong>ultro</strong> vantur</p>]]></o2_content>
+                        <o2_button><![CDATA[listen to an extract]]></o2_button>
+                        <o3_isEnabled><![CDATA[1]]></o3_isEnabled>
+                        <o3_linkType><![CDATA[url]]></o3_linkType>
+                        <o3_pID><![CDATA[0]]></o3_pID>
+                        <o3_url><![CDATA[http://gutenberg.org]]></o3_url>
+                        <o3_hash />
+                        <o3_target><![CDATA[self]]></o3_target>
+                        <o3_fID><![CDATA[0]]></o3_fID>
+                        <o3_title><![CDATA[e-books]]></o3_title>
+                        <o3_icon><![CDATA[tablet]]></o3_icon>
+                        <o3_content><![CDATA[<p>Retentabant dubitatur esset Lotophagi domicilium <strong>virtutum humanitatis</strong> ingenuos</p>]]></o3_content>
+                        <o3_button><![CDATA[read an extract]]></o3_button>
+                        <o4_isEnabled><![CDATA[0]]></o4_isEnabled>
+                        <o4_linkType><![CDATA[url]]></o4_linkType>
+                        <o4_pID><![CDATA[0]]></o4_pID>
+                        <o4_url />
+                        <o4_hash />
+                        <o4_target><![CDATA[blank]]></o4_target>
+                        <o4_fID><![CDATA[0]]></o4_fID>
+                        <o4_title><![CDATA[process serving]]></o4_title>
+                        <o4_icon><![CDATA[creative-commons]]></o4_icon>
+                        <o4_content><![CDATA[<p>Laeva successorio <strong>Euphratis dextra</strong> cum limes cognomentum regna porrigitur ut efficaciae</p>]]></o4_content>
+                        <o4_button><![CDATA[check it out]]></o4_button>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+         <area name="About Me">
+            <blocks>
+               <block type="l5b_about_me" name="" custom-template="image_clean_left">
+                  <data table="btLazy5basicAboutMe">
+                     <record>
+                        <title><![CDATA[who I am]]></title>
+                        <content><![CDATA[<p>This is the <q>About Me</q> sample section,<br />
+here you will write information about yourself or your business.</p>
+
+<p>With the inline rich-text editor in <a class="info" data-concrete5-link-lightbox="iframe" data-concrete5-link-lightbox-height="520" data-concrete5-link-lightbox-width="900" href="//player.vimeo.com/video/144310867" target="lightbox"><span>edit mode</span></a> you can edit this text, add fonts, <em>style italic</em>, <b>bold type</b>, <big>larger</big> or <small>smaller chars</small>, images &amp; links</p>
+
+<p>People will get to know you better if your message is clear and straight forward.</p>
+
+<p>To start editing now <a class="goto" href="{CCM:BASE_URL}/index.php/login"><span>click here</span></a></p>]]></content>
+                        <CTA_hash><![CDATA[#contacts]]></CTA_hash>
+                        <CTA_linkType><![CDATA[url]]></CTA_linkType>
+                        <CTA_pID><![CDATA[0]]></CTA_pID>
+                        <CTA_target><![CDATA[self]]></CTA_target>
+                        <CTA_text><![CDATA[contact me]]></CTA_text>
+                        <CTA_url />
+                        <o1_fID><![CDATA[0]]></o1_fID>
+                        <o1_sID><![CDATA[0]]></o1_sID>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+         <area name="Contacts">
+            <blocks>
+               <block type="l5b_contacts" name="" custom-template="flatty_yellow_light">
+                  <data table="btLazy5basicContacts">
+                     <record>
+                        <questionSetId><![CDATA[1537306223]]></questionSetId>
+                        <title><![CDATA[contact me]]></title>
+                        <subtitle><![CDATA[yeah, go ahead!]]></subtitle>
+                        <address><![CDATA[10 rue de Example
+75006 Paris
+France]]></address>
+                        <email><![CDATA[your@email.here]]></email>
+                        <fbPageUrl />
+                        <openHours><![CDATA[Monday - Friday: 9am - 6pm
+Saturday: 9am - 2pm
+Sunday: Closed]]></openHours>
+                        <telephone><![CDATA[+0 (1)2 34 56 78]]></telephone>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+         <area name="Social Media">
+            <blocks>
+               <block type="l5b_social_media" name="">
+                  <data table="btLazy5basicSocialMedia">
+                     <record>
+                        <title><![CDATA[social profiles]]></title>
+                        <subtitle><![CDATA[follow me ..]]></subtitle>
+                        <o1_fID><![CDATA[0]]></o1_fID>
+                        <o1_hash />
+                        <o1_icon><![CDATA[facebook]]></o1_icon>
+                        <o1_isEnabled><![CDATA[1]]></o1_isEnabled>
+                        <o1_url><![CDATA[https://facebook.com/mateus73]]></o1_url>
+                        <o2_fID><![CDATA[0]]></o2_fID>
+                        <o2_hash><![CDATA[#contacts-more]]></o2_hash>
+                        <o2_icon><![CDATA[whatsapp]]></o2_icon>
+                        <o2_isEnabled><![CDATA[1]]></o2_isEnabled>
+                        <o2_url />
+                        <o3_fID><![CDATA[0]]></o3_fID>
+                        <o3_hash />
+                        <o3_icon><![CDATA[instagram]]></o3_icon>
+                        <o3_isEnabled><![CDATA[1]]></o3_isEnabled>
+                        <o3_url><![CDATA[https://instagram.com/italinux]]></o3_url>
+                        <o4_fID><![CDATA[0]]></o4_fID>
+                        <o4_hash />
+                        <o4_icon><![CDATA[linkedin]]></o4_icon>
+                        <o4_isEnabled><![CDATA[1]]></o4_isEnabled>
+                        <o4_url><![CDATA[https://linkedin.com/in/italinux]]></o4_url>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+         <area name="Footer">
+            <blocks>
+               <block type="l5b_footer" name="" custom-template="show_credits">
+                  <data table="btLazy5basicFooter">
+                     <record>
+                        <title><![CDATA[a footer phrase goes here]]></title>
+                        <subtitle><![CDATA[and subtitle here]]></subtitle>
+                        <isQuoted><![CDATA[0]]></isQuoted>
+                        <credits1stMessage><![CDATA[you want to download other add-ons?]]></credits1stMessage>
+                        <credits1stName><![CDATA[click here]]></credits1stName>
+                        <credits1stUrl><![CDATA[http://italinux.com/addons]]></credits1stUrl>
+                        <credits2ndMessage><![CDATA[developed with ♥ by]]></credits2ndMessage>
+                        <credits2ndName><![CDATA[Matteo]]></credits2ndName>
+                        <credits2ndUrl><![CDATA[http://matteo-montanari.com/its-me]]></credits2ndUrl>
+                        <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
+                        <bgColorOpacity><![CDATA[0.25]]></bgColorOpacity>
+                        <bgFID><![CDATA[0]]></bgFID>
+                        <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
+                        <isAnimated><![CDATA[1]]></isAnimated>
+                     </record>
+                  </data>
+               </block>
+            </blocks>
+         </area>
+      </page>
+   </pages>
+</concrete5-cif>

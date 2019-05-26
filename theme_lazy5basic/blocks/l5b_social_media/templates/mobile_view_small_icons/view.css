@@ -1,0 +1,274 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: v1.2.8 (20 May 2019)
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   http://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) 2019                                                       |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+.single-space-bottom > section.social-media.page-block,
+.double-space-bottom > section.social-media.page-block,
+.no-spaces > section.social-media.page-block,
+.no-space-bottom > section.social-media.page-block {
+  padding-bottom: 0 !important;
+}
+.single-space-top > section.social-media.page-block,
+.double-space-top > section.social-media.page-block,
+.no-spaces > section.social-media.page-block,
+.no-space-top > section.social-media.page-block {
+  padding-top: 0 !important;
+}
+.no-sides-spaces > section.social-media.page-block {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+section.social-media {
+  position: relative;
+  overflow: hidden;
+}
+section.social-media a:not(.CTA-clean).info::after,
+section.social-media a:not(.CTA-clean).goto::after {
+  margin-top: 0px;
+  font-family: "FontAwesome";
+  font-size: 0.8em;
+  text-decoration: none;
+}
+section.social-media a:not(.CTA-clean).info > span,
+section.social-media a:not(.CTA-clean).goto > span {
+  align-self: center;
+}
+section.social-media a:not(.CTA-clean).info::after {
+  content: "\f05a";
+  margin-right: 5px;
+  margin-left: 5px;
+}
+section.social-media a:not(.CTA-clean).goto::after {
+  content: "\f08e";
+  margin-left: 6px;
+  margin-right: 10px;
+}
+section.social-media div.global-cta {
+  margin-top: 4em;
+  margin-bottom: 2em;
+  font-size: 120%;
+  text-align: center;
+}
+section.social-media div.global-cta a.btn {
+  width: 30%;
+}
+section.social-media .btn {
+  max-width: 460px;
+}
+section.social-media .btn.btn-primary[disabled] {
+  cursor: default;
+}
+section.social-media.editMode {
+  border: 1px dashed #bbb;
+}
+section.social-media.page-block {
+  margin: 0px auto;
+  padding: 6em 8%;
+}
+section.social-media.over-image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  content: "";
+}
+section.social-media.over-image {
+  background-color: transparent;
+  background-image: url("images/background.jpg");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: auto;
+  background-position: center center;
+}
+section.social-media.over-image.cfg-color h1 {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color h2 {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color h3 {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color h4 {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color h5 {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color h6 {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color p {
+  color: inherit;
+}
+section.social-media.over-image.cfg-color a:not(.btn) {
+  color: inherit;
+}
+section.social-media div.block-header {
+  position: relative;
+  padding: 0 0 3em;
+  text-align: center;
+  border: none;
+}
+section.social-media .hide {
+  display: none;
+  visibility: hidden;
+}
+section.social-media .show {
+  display: block;
+  visibility: visible;
+}
+section.social-media .single-space-bottom {
+  padding-bottom: 1.8em;
+}
+section.social-media .double-space-bottom {
+  padding-bottom: 3.2em;
+}
+section.social-media .single-space-top {
+  padding-top: 1.8em;
+}
+section.social-media .double-space-top {
+  padding-top: 3.2em;
+}
+section.social-media .no-margins {
+  margin: 0 !important;
+}
+section.social-media .no-paddings {
+  padding: 0 !important;
+}
+section.social-media .no-spaces {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+section.social-media .no-sides-margins {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+section.social-media .no-sides-paddings {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+section.social-media .no-space-bottom {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+section.social-media .no-space-top {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+section.social-media .no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+section.social-media .no-margin-top {
+  margin-top: 0 !important;
+}
+section.social-media .nopaque {
+  opacity: 0;
+}
+section.social-media .opaque {
+  opacity: 1;
+}
+@media screen and (max-width: 1600px) {
+  section.social-media.page-block {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.social-media.page-block {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section.social-media.page-block {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+section.social-media[class^="mobile_view"].page-block {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+@media screen and (max-width: 500px) {
+  section.social-media.page-block {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+section.social-media + section.social-media.page-block {
+  padding-top: 0px;
+}
+section.social-media div.main div.service-icon {
+  min-height: 64px;
+  margin: 20px 0;
+  text-align: center;
+}
+section.social-media div.main div.service-icon a {
+  position: absolute;
+  max-width: 100px;
+  width: fit-content;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: auto;
+  padding: 6px 12px;
+  text-decoration: none;
+  justify-content: center;
+  display: block;
+}
+section.social-media div.main div.service-icon a.fa:hover {
+  opacity: 0.9;
+}
+section.social-media div.main div.service-icon a img {
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  display: inline;
+}
+@media screen and (max-width: 1024px) {
+  section.social-media div.main div.service-icon {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.social-media {
+    overflow: visible;
+  }
+  section.social-media.over-image::before {
+    margin-bottom: -1px;
+  }
+}
+section.social-media[class^="mobile_view"] div.main div.service-icon {
+  text-align: center;
+}
+@media screen and (max-width: 500px) {
+  section.social-media div.main div.service-icon {
+    text-align: center;
+  }
+}

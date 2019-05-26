@@ -1,0 +1,300 @@
+/** Minix control colors
+--------------------------------------------------------- */
+
+/**
+* SMART ITEM LIGHTER COLORS
+* --------------------------------------------------------- */
+
+// it's VERY DARK so MIX with Catalyst + LIGHTEN mixin
+.smart-item-lighter-color (@color, @mix) when (lightness(@color) < 10%) {
+  > div:first-of-type {
+    color: lighten(mix(@mix, @color, 70%), 15%);
+    background-color: lighten(mix(@mix, @color, 70%), 15%);
+    &::after {
+      border-color: lighten(mix(@mix, @color, 70%), 15%);
+    }
+    a {
+      color: lighten(mix(@mix, @color, 70%), 15%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(lighten(mix(@mix, @color, 70%), 15%), 90%);
+    border-color: lighten(mix(@mix, @color, 70%), 15%);
+  }
+}
+
+// it's still a LITTLE DARK so LIGHTEN mixin
+.smart-item-lighter-color (@color, @mix) when (lightness(@color) >= 10%)  and (lightness(@color) < 20%) {
+  > div:first-of-type {
+    color: lighten(mix(@mix, @color, 78%), 15%);
+    background-color: lighten(mix(@mix, @color, 78%), 15%);
+    &::after {
+      border-color: lighten(mix(@mix, @color, 78%), 15%);
+    }
+    a {
+      color: lighten(mix(@mix, @color, 78%), 15%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(lighten(mix(@mix, @color, 78%), 15%), 90%);
+    border-color: lighten(mix(@mix, @color, 78%), 15%);
+  }
+}
+
+// fallback
+.smart-item-lighter-color (@color, @mix) when (lightness(@color) >= 20%) {
+  .smart-item-color (@color, @mix);
+}
+
+/**
+* SMART ITEM DEFAULT COLORS
+* --------------------------------------------------------- */
+
+// it's VERY DARK so MIX with Catalyst + LIGHTEN mixin
+.smart-item-color (@color, @mix) when (lightness(@color) < 10%) {
+  > div:first-of-type {
+    color: lighten(mix(@mix, @color, 70%), 7%);
+    background-color: lighten(mix(@mix, @color, 70%), 7%);
+    &::after {
+      border-color: lighten(mix(@mix, @color, 70%), 7%);
+    }
+    a {
+      color: lighten(mix(@mix, @color, 70%), 7%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(lighten(mix(@mix, @color, 70%), 7%), 90%);
+    border-color: lighten(mix(@mix, @color, 70%), 7%);
+  }
+}
+
+// it's still a LITTLE DARK so we LIGHTEN mixin
+.smart-item-color (@color, @mix) when (lightness(@color) >= 10%)  and (lightness(@color) < 20%) {
+  > div:first-of-type {
+    color: lighten(@color, 8%);
+    background-color: lighten(@color, 8%);
+    &::after {
+      border-color: lighten(@color, 8%);
+    }
+    a {
+      color: lighten(@color, 8%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(lighten(@color, 8%), 90%);
+    border-color: lighten(@color, 8%);
+  }
+}
+
+// it's still DARK so we LIGHTEN a bit mixin
+.smart-item-color (@color, @mix) when (lightness(@color) >= 20%)  and (lightness(@color) < 50%) {
+  > div:first-of-type {
+    color: lighten(@color, 4%);
+    background-color: lighten(@color, 4%);
+    &::after {
+      border-color: lighten(@color, 4%);
+    }
+    a {
+      color: lighten(@color, 4%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(lighten(@color, 4%), 90%);
+    border-color: lighten(@color, 4%);
+  }
+}
+
+// it's OK but we DARKEN a bit mixin
+.smart-item-color (@color, @mix) when (lightness(@color) >= 50%)  and (lightness(@color) < 70%) {
+  > div:first-of-type {
+    color: darken(@color, 20%);
+    background-color: darken(@color, 20%);
+    &::after {
+      border-color: darken(@color, 20%);
+    }
+    a {
+      color: darken(@color, 20%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(darken(@color, 20%), 90%);
+    border-color: darken(@color, 20%);
+  }
+}
+
+// it's LIGHT so we DARKEN mixin
+.smart-item-color (@color, @mix) when (lightness(@color) >= 70%) {
+  > div:first-of-type {
+    color: darken(@color, 75%);
+    background-color: darken(@color, 75%);
+    &::after {
+      border-color: darken(@color, 75%);
+    }
+    a {
+      color: darken(@color, 75%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(darken(@color, 75%), 90%);
+    border-color: darken(@color, 75%);
+  }
+}
+
+/**
+* SMART ITEM LOW SATURATION COLORS
+* --------------------------------------------------------- */
+
+// Has LOW saturation and It's DARK so MIX with Catalyst + LIGHTEN mixin
+.smart-item-color (@color, @mix) when (saturation(@color) <= 80%) and (lightness(@color) <= 50%) {
+  > div:first-of-type {
+    color: saturate(lighten(mix(@mix, @color, 70%), 10%), 15%);
+    background-color: saturate(lighten(mix(@mix, @color, 70%), 10%), 15%);
+    &::after {
+      border-color: saturate(lighten(mix(@mix, @color, 70%), 10%), 15%);
+    }
+    a {
+      color: saturate(lighten(mix(@mix, @color, 70%), 10%), 15%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(saturate(lighten(mix(@mix, @color, 70%), 10%), 15%), 90%);
+    border-color: saturate(lighten(mix(@mix, @color, 70%), 10%), 15%);
+  }
+}
+
+// Has LOW saturation and It's LIGHT so MIX with Catalyst + LIGHTEN mixin
+.smart-item-color (@color, @mix) when (saturation(@color) <= 80%) and (lightness(@color) > 50%) {
+  > div:first-of-type {
+    color: saturate(mix(@mix, @color, 70%), 15%);
+    background-color: saturate(mix(@mix, @color, 70%), 15%);
+    &::after {
+      border-color: saturate(mix(@mix, @color, 70%), 15%);
+    }
+    a {
+      color: saturate(mix(@mix, @color, 70%), 15%);
+    }
+  }
+  a.btn-primary {
+    background-color: fade(saturate(mix(@mix, @color, 70%), 15%), 90%);
+    border-color: saturate(mix(@mix, @color, 70%), 15%);
+  }
+}
+
+/**
+* SMART ITEM COLORS for PORTFOLIO, TEAM
+* --------------------------------------------------------- */
+
+// it's VERY DARK so MIX with Catalyst + LIGHTEN mixin
+.smart-grid-item-color (@color, @mix) when (lightness(@color) < 10%) {
+  > div:first-of-type {
+    &::before {
+      background-color: fade(lighten(mix(@mix, @color, 70%), 7%), 48%);
+    }
+    div.inner-content {
+      &.with-shadow {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px lighten(mix(@mix, @color, 70%), 7%);
+        }
+      }
+      &.clean {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px fade(lighten(mix(@mix, @color, 70%), 7%), 50%);
+        }
+      }
+    }
+  }
+}
+
+// it's still a LITTLE DARK so we LIGHTEN mixin
+.smart-grid-item-color (@color, @mix) when (lightness(@color) >= 10%)  and (lightness(@color) < 20%) {
+  > div:first-of-type {
+    &::before {
+      background-color: fade(lighten(@color, 8%), 48%);
+    }
+    div.inner-content {
+      &.with-shadow {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px lighten(@color, 8%);
+        }
+      }
+      &.clean {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px fade(lighten(@color, 8%), 50%);
+        }
+      }
+    }
+  }
+}
+
+// it's still DARK so we LIGHTEN a bit mixin
+.smart-grid-item-color (@color, @mix) when (lightness(@color) >= 20%)  and (lightness(@color) < 50%) {
+  > div:first-of-type {
+    &::before {
+      background-color: fade(lighten(@color, 4%), 48%);
+    }
+    div.inner-content {
+      &.with-shadow {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px lighten(@color, 4%);
+        }
+      }
+      &.clean {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px fade(lighten(@color, 4%), 50%);
+        }
+      }
+    }
+  }
+}
+
+// it's OK but we DARKEN a bit mixin
+.smart-grid-item-color (@color, @mix) when (lightness(@color) >= 50%)  and (lightness(@color) < 70%) {
+  > div:first-of-type {
+    &::before {
+      background-color: fade(darken(@color, 20%), 48%);
+    }
+    div.inner-content {
+      &.with-shadow {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px darken(@color, 20%);
+        }
+      }
+      &.clean {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px fade(darken(@color, 20%), 50%);
+        }
+      }
+    }
+  }
+}
+
+// it's LIGHT so we DARKEN mixin
+.smart-grid-item-color (@color, @mix) when (lightness(@color) >= 70%) {
+  > div:first-of-type {
+    &::before {
+      background-color: fade(darken(@color, 40%), 48%);
+    }
+    div.inner-content {
+      &.with-shadow {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px darken(@color, 40%);
+        }
+      }
+      &.clean {
+        h3,
+        p {
+          text-shadow: 0px 0px 1px fade(darken(@color, 40%), 50%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+/**
+* ============================================
+* File: Extra.less
+* File provides: Extra Custom Theme styles
+*                Colours, Typography, Paddings
+*
+* This is an extra configuration file 
+* to really master the theme
+*
+* @author:  Matteo Montanari <matteo@italinux.com>
+* ============================================
+*/
+
+/* Main Page Wrapper
+--------------------------------------------------------- */
+div.main-wrapper {
+  /* CTAs
+--------------------------------------------------------- */
+  div.global-cta {
+    .btn {
+      border-radius: 8px;
+    }
+  }
+  .btn {
+    border-radius: 6px;
+    &.btn-primary {
+      background-image: -webkit-linear-gradient(top,       rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.22) 70%);
+      background-image:    -moz-linear-gradient(top,       rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.22) 70%);
+      background-image:     -ms-linear-gradient(top,       rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.22) 70%);
+      background-image:      -o-linear-gradient(top,       rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.22) 70%);
+      background-image:         linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.22) 70%);
+      background-repeat: repeat-x;
+      border-width: 1px;
+      border-style: double;
+
+      &:hover, &:focus {
+      }
+      &:active, &.active {
+        background-image: none;
+      }
+      &.active, &:active, &.active:focus {
+        box-shadow: none;
+      }
+      &.disabled, &[disabled], fieldset[disabled] & {
+        &, &:hover, &:focus, &.focus, &:active, &.active {
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  /* Scroll Top arrow
+---------------------------------------------------------*/
+  div#scroll-top {
+    width: 85px;
+    height: 85px;
+    padding-left: 0.8%;
+    padding-top: 0.5%;
+    font-size: 0.65em;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  /* Menu
+--------------------------------------------------------- */
+  section.menu {
+    nav {
+      div.navbar-header {
+        div.title-wrapper {
+          .nav-title {
+            margin-top: 2px;
+          }
+        }
+      }
+      div.menu-wrapper {
+        ul.nav {
+          li {
+            a {
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

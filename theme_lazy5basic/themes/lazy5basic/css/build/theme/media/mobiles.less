@@ -1,0 +1,184 @@
+/* Typography Media: Mobiles
+---------------------------------------------------------*/
+div.main-wrapper {
+  section {
+    &[class^="mobile_view"] {
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.main-wrapper {
+    section {
+      p {
+        font-size: @p-type-font-size - 0.13em;
+        strong {
+          font-weight: 400;
+        }
+      }
+      div.block-header {
+        h4,
+        h5,
+        h6 {
+          font-weight: 300;
+        }
+      }
+      h1 {
+        font-size: @h1-type-font-size - 1em;
+      }
+      h2 {
+        font-size: @h2-type-font-size - 1em;
+      }
+      h3 {
+        font-size: @h3-type-font-size - 0.4em;
+      }
+      h4 {
+        font-size: @h4-type-font-size - 0.2em;
+      }
+      h5 {
+        font-size: @h5-type-font-size - 0.2em;
+      }
+    }
+  }
+}
+
+/**
+*  - - ALL BLOCKS HERE - - 
+*
+*  Menu
+--------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  div.main-wrapper {
+    section.pre-hand.menu {
+      nav {
+        div.navbar-center {
+          &.fixed {
+            ul.nav {
+              a {
+                font-size: 2em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Banner
+--------------------------------------------------------- */
+@media screen and (max-width: 500px) {
+  div.main-wrapper {
+    section.banner {
+      h5 {
+        line-height: @h5-type-line-height - 1em;
+      }
+    }
+  }
+}
+
+/* What I Do
+--------------------------------------------------------- */
+
+/* Team
+--------------------------------------------------------- */
+
+/* Services
+--------------------------------------------------------- */
+
+/* FB Page Posts
+--------------------------------------------------------- */
+
+/* About Me
+--------------------------------------------------------- */
+@media screen and (max-width: 500px) {
+  div.main-wrapper {
+    section.about-me {
+      div.main {
+        div.about-me-text {
+          p {
+            font-size: @p-type-font-size - 0.15em;
+            line-height: @p-type-line-height - 0.2em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Adverts
+--------------------------------------------------------- */
+
+/* Bookmarks
+--------------------------------------------------------- */
+
+/* My Skills
+--------------------------------------------------------- */
+
+/* Curriculum Vitae
+--------------------------------------------------------- */
+
+/* My Works
+--------------------------------------------------------- */
+
+/* Prices
+--------------------------------------------------------- */
+
+/* Portfolio
+--------------------------------------------------------- */
+
+/* Testimonials
+--------------------------------------------------------- */
+
+/* Contacts
+--------------------------------------------------------- */
+
+/* Clients
+--------------------------------------------------------- */
+
+/* Social Media
+--------------------------------------------------------- */
+
+/* Footer
+--------------------------------------------------------- */
+div.main-wrapper {
+  footer.pre-hand {
+    &[class^="mobile_view"] {
+      div.block-header {
+        h5 {
+          font-size: @h5-type-font-size - 0.4em;
+          line-height: @h5-type-line-height - 0.4em;
+        }
+        h6 {
+          font-size: @h6-type-font-size - 0.15em;
+          line-height: @h6-type-line-height - 0.15em;
+        }
+      }
+      div.credits {
+        font-size: 81%;
+        letter-spacing: 0.6px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.main-wrapper {
+    footer.pre-hand {
+      div.block-header {
+        h5 {
+          font-size: @h5-type-font-size - 0.4em;
+          line-height: @h5-type-line-height - 0.4em;
+        }
+        h6 {
+          font-size: @h6-type-font-size - 0.15em;
+          line-height: @h6-type-line-height - 0.15em;
+        }
+      }
+      div.credits {
+        font-size: 81%;
+        letter-spacing: 0.6px;
+      }
+    }
+  }
+}

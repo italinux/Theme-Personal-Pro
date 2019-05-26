@@ -1,0 +1,1066 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2015-10-02T21:29:47+02:00\n"
+"PO-Revision-Date: 2015-10-02T21:29:48+02:00\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# - - - - - - - - - - - - - - - - - - -
+# Theme Lazy5basic
+# next entry is Editable in-place
+msgid "writer of novels"
+msgstr "f&ouml;rfattare av romaner"
+
+msgid "singer"
+msgstr "s&aring;ngare"
+
+msgid "paperbacks"
+msgstr "paperbacks"
+
+msgid "audio books"
+msgstr "ljudb&ouml;cker"
+
+msgid "listen a sample"
+msgstr "lyssna p&aring; ett prov"
+
+msgid "read a sample"
+msgstr "l&auml;s ett prov"
+
+msgid "listen to an extract"
+msgstr "lyssna p&aring; ett utdrag"
+
+msgid "read an extract"
+msgstr "l&auml;s ett utdrag"
+
+msgid "pen name"
+msgstr "pseudonym"
+
+# theme shared
+msgid "is responsive and suits any kind of website."
+msgstr "reagerar och passar alla typer av webbplats."
+
+msgid "A perfectly crafted template that uses all the power of"
+msgstr "En perfekt utformad mall som anv&auml;nder all makt"
+
+msgid "This is the page title"
+msgstr "Detta &auml;r sidans titel"
+
+msgid "This is page description"
+msgstr "Detta &auml;r sida beskrivning"
+
+msgid "page not found"
+msgstr "sidan hittas inte"
+
+msgid "go to homepage"
+msgstr "g&aring; till hemsidan"
+
+msgid "%1$s is responsive and suits any kind of website."
+msgstr "%1$s &auml;r lyh&ouml;rd och passar alla typer av webbplats."
+
+msgid "A perfectly crafted theme that uses all the power of %s"
+msgstr "En perfekt utformad tema som anv&auml;nder all kraft %s"
+
+msgid "where to start"
+msgstr "var du ska b&ouml;rja"
+
+msgid "%1$slogin%2$s %3$s"
+msgstr "%1$slogin%2$s %3$s"
+
+msgid "and then .."
+msgstr "och d&aring;.."
+
+msgid "page forbidden"
+msgstr "sida f&ouml;rbjuden"
+
+msgid "you are not allowed to access this page"
+msgstr "du har inte tilltr&auml;de till den h&auml;r sidan"
+
+msgid "Watch this and then"
+msgstr "Titta p&aring; det h&auml;r och d&aring;"
+
+msgid "%1$s %2$slogin%3$s"
+msgstr "%1$s %2$slogin%3$s"
+
+msgid "developed by Matteo (italinux)"
+msgstr "utvecklad av Matteo (italinux)"
+
+msgid "Concrete5, CMS, Themes, Add-ons, web development, Bootstrap, CSS3, freelancing, linux"
+msgstr "Concrete5, CMS, Teman, Till&auml;gg, webbutveckling, Bootstrap, CSS3, freelancing, Linux"
+
+msgid "Page not found"
+msgstr "Sidan hittas inte"
+
+msgid "Page forbidden"
+msgstr "Sidan f&ouml;rbjuden"
+
+msgid "%1$s is responsive and multipurpose theme for your website."
+msgstr "%1$s &auml;r lyh&ouml;rd och m&aring;ngsidigt tema f&ouml;r din webbplats."
+
+msgid "%1$sFull documentation: %2$s %3$s"
+msgstr "%1$sFull dokumentation: %2$s %3$s"
+
+msgid "Click Here"
+msgstr "Klicka H&auml;r"
+
+msgid "%1$s Note: %2$s %3$s"
+msgstr "%1$s Obs: %2$s %3$s"
+
+msgid "Choose how to start"
+msgstr ""
+
+msgid "This is how to start your theme installation on your server"
+msgstr ""
+
+msgid "No Content"
+msgstr ""
+
+msgid "Full Content"
+msgstr ""
+
+msgid "All images on the demo are replaced by placeholders in your server"
+msgstr ""
+
+# block Menu
+msgid "Delete this Menu item"
+msgstr "Ta bort det h&auml;r menyalternativet"
+
+msgid "You can leave this blank if you want to link to this same page"
+msgstr "Du kan l&auml;mna detta tomt om du vill l&auml;nka till samma sida"
+
+msgid "Title displays only on mobile view"
+msgstr "Titel visas endast i mobilvy"
+
+msgid "Logo"
+msgstr "Logotyp"
+
+msgid "site name"
+msgstr "sidnamn"
+
+msgid "List of Add-ons"
+msgstr "Lista &ouml;ver till&auml;gg"
+
+msgid "Dedicated Add-on"
+msgstr "Dedikerad till&auml;gg"
+
+msgid "all your menu items are listed below"
+msgstr "alla dina menyalternativ listas nedan"
+
+msgid "menu items"
+msgstr "menyalternativ"
+
+msgid "show logo?"
+msgstr "visa logotyp?"
+
+msgid "show language switch?"
+msgstr "visa spr&aring;k switch?"
+
+# block Banner
+msgid "Video is %s"
+msgstr "Video &auml;r %s"
+
+msgid "my name is"
+msgstr "mitt namn &auml;r"
+
+msgid "playing guitar"
+msgstr "att spela gitarr"
+
+msgid "songwriting"
+msgstr "l&aring;tskrivande"
+
+msgid "YouTube Video Url"
+msgstr "YouTube Video URL"
+
+msgid "Video Quality"
+msgstr "Videokvalit&eacute;t"
+
+msgid "Video On / Off"
+msgstr "Video On / Off"
+
+msgid "Video Quality options"
+msgstr "Video kvalitetsalternativ"
+
+msgid "Disabled"
+msgstr "Inaktiverad"
+
+msgid "Quality"
+msgstr "Kvalitet"
+
+msgid "Enabled"
+msgstr "Aktiverad"
+
+msgid "I am: %s"
+msgstr "Jag &auml;r: %s"
+
+msgid "I do: %s"
+msgstr "Jag g&ouml;r: %s"
+
+msgid "I like"
+msgstr "Jag gillar"
+
+msgid "this banner"
+msgstr "den banner"
+
+msgid "is nice"
+msgstr "&auml;r trevligt"
+
+msgid "I am"
+msgstr "Jag &auml;r"
+
+msgid "Who I am"
+msgstr "Vem &auml;r jag"
+
+msgid "cool name"
+msgstr "coolt namn"
+
+msgid "big name"
+msgstr "stort namn"
+
+msgid "my name"
+msgstr "mitt namn"
+
+msgid "I do"
+msgstr "Jag g&ouml;r"
+
+msgid "nice things"
+msgstr "fina saker"
+
+msgid "great things"
+msgstr "bra saker"
+
+msgid "Slogan"
+msgstr "Slogan"
+
+msgid "a catchy slogan"
+msgstr "en catchy slogan"
+
+msgid "This is a sample text"
+msgstr "Detta &auml;r ett exempel p&aring; text"
+
+msgid "here you will write few information about you"
+msgstr "h&auml;r skriver du lite information om dig"
+
+msgid "or the concept of your website"
+msgstr "eller om konceptet p&aring; din webbplats"
+
+msgid "Video Enabled?"
+msgstr "Video aktiverad?"
+
+msgid "Missing"
+msgstr "Saknas"
+
+msgid "Error in Template %s"
+msgstr "Fel i mall %s"
+
+msgid "Banner templates"
+msgstr "Bandermalar"
+
+msgid "all templates available are listed below"
+msgstr "alla tillg&auml;ngliga mallar listas nedan"
+
+# block What I Do
+msgid "I like doing .."
+msgstr "Jag gillar att g&ouml;ra.."
+
+msgid "hiking, travelling"
+msgstr "vandring, reser"
+
+msgid "What I do %s"
+msgstr "Vad jag g&ouml;r %s"
+
+# block About Me
+msgid "This is the %1$sAbout Me%2$s sample section,"
+msgstr "Detta &auml;r prov avsnittet %1$sVem &auml;r jag%2$s,"
+
+msgid "here you will write information about yourself or your business."
+msgstr "h&auml;r kommer du att skriva information om dig sj&auml;lv eller ditt f&ouml;retag."
+
+msgid "With the inline rich-text editor in %1$sedit mode%2$s"
+msgstr "Med inline RTF-editor i %1$sredigeringsl&auml;ge%2$s"
+
+msgid "you can edit this text, add fonts, %1$sstyle italic%2$s,"
+msgstr "du kan redigera text, l&auml;gga till typsnitt, %1$sstil kursiv%2$s,"
+
+msgid "%1$slarger%2$s or %3$ssmaller chars%4$s, images &amp; links"
+msgstr "%1$sst&ouml;rre%2$s eller %3$smindre tecken%4$s, bilder och l&auml;nkar"
+
+msgid "People will get to know you better if your message is clear and straight forward."
+msgstr "M&auml;nniskor kommer att l&auml;ra k&auml;nna dig b&auml;ttre om ditt meddelande &auml;r klart och rakt fram&aring;t."
+
+msgid "to find out more &amp; to start editing now"
+msgstr "att ta reda p&aring; mer och att b&ouml;rja redigera nu"
+
+msgid "To start editing now"
+msgstr "F&ouml;r att b&ouml;rja redigera nu"
+
+msgid "See my skills"
+msgstr "Se mina f&auml;rdigheter"
+
+msgid "see my skills"
+msgstr "se mina f&auml;rdigheter"
+
+msgid "No image selected"
+msgstr "Ingen bild valts"
+
+msgid "this is default"
+msgstr "detta &auml;r standard"
+
+msgid "title goes here .."
+msgstr "titeln g&aring;r h&auml;r.."
+
+msgid "who I am"
+msgstr "vem &auml;r jag"
+
+msgid "bold type"
+msgstr "fet stil"
+
+# block Contacts
+msgid "please add fields"
+msgstr "l&auml;gg f&auml;lt"
+
+msgid "in your contact form here"
+msgstr "i kontaktformul&auml;ret h&auml;r"
+
+msgid "type a message"
+msgstr "skriva ett meddelande"
+
+msgid "this is just a sample field"
+msgstr "detta &auml;r bara ett urval f&auml;lt"
+
+msgid "to add the real input fields"
+msgstr "att l&auml;gga till den verkliga inmatningsf&auml;lt"
+
+msgid "success! thank you"
+msgstr "framg&aring;ng! tack"
+
+msgid "write to me"
+msgstr "skriv till mig"
+
+msgid "Add"
+msgstr "L&auml;gg till"
+
+msgid "Your form must have a name"
+msgstr "Formul&auml;ret m&aring;ste ha ett namn"
+
+msgid "Please complete all required fields"
+msgstr "V&auml;nligen fyll i alla obligatoriska f&auml;lt"
+
+msgid "AJAX Error"
+msgstr "AJAX fel"
+
+msgid "Please add at least one question to your form"
+msgstr "L&auml;gg till minst en fr&aring;ga i formul&auml;ret"
+
+msgid "You must enter a valid email address"
+msgstr "Du m&aring;ste ange en giltig emailadress"
+
+msgid "Complete required fields *"
+msgstr "Slutf&ouml;ra obligatoriska f&auml;lt *"
+
+msgid "Invalid file extension"
+msgstr "Ogiltig fil&auml;ndelse"
+
+msgid "Invalid file"
+msgstr "Felaktig fil"
+
+msgid "Please correct the following errors:"
+msgstr "R&auml;tta f&ouml;ljande fel:"
+
+msgid "No file specified"
+msgstr "Ingen fil anges"
+
+msgid "submit"
+msgstr "skicka"
+
+msgid "Mobile"
+msgstr "Mobil"
+
+msgid "Telephone"
+msgstr "Telefon"
+
+msgid "Telephone: %s"
+msgstr "Telefon: %s"
+
+msgid "Address"
+msgstr "Adress"
+
+msgid "Your Address:"
+msgstr "Din adress:"
+
+msgid "%s Example"
+msgstr "%s Exempel"
+
+msgid "%s Paris"
+msgstr "%s Paris"
+
+msgid "France"
+msgstr "Frankrike"
+
+msgid "Opening"
+msgstr "&Ouml;ppning"
+
+msgid "Opening Hours"
+msgstr "&Ouml;ppettider"
+
+msgid "Opening Hours:"
+msgstr "&Ouml;ppettider:"
+
+msgid "Monday %1$s Friday: %2$s"
+msgstr "M&aring;ndag %1$s fredag: %2$s"
+
+msgid "Saturday: %s"
+msgstr "L&ouml;rdag: %s"
+
+msgid "Sunday: Closed"
+msgstr "S&ouml;ndag: St&auml;ngt"
+
+# block Social Media
+msgid "social profiles"
+msgstr "sociala profiler"
+
+msgid "social profile"
+msgstr "social profil"
+
+msgid "join me .."
+msgstr "g&aring; med mig .."
+
+msgid "follow me .."
+msgstr "f&ouml;lj mig .."
+
+msgid "Social profile %s"
+msgstr "Social profil %s"
+
+msgid "Link to social profile:"
+msgstr "L&auml;nk till social profil:"
+
+# block Footer
+msgid "you want this website template?"
+msgstr "du vill denna webbplats mall?"
+
+msgid "you want this website theme?"
+msgstr "vill du denna webbplats tema?"
+
+msgid "developed with &hearts; by"
+msgstr "utvecklats med &hearts; av"
+
+msgid "you want to download this add-on?"
+msgstr "vill du ladda ner add-on?"
+
+msgid "a footer phrase goes here"
+msgstr "en sidfot fras g&aring;r h&auml;r"
+
+msgid "thanks for passing by.."
+msgstr "tack f&ouml;r bes&ouml;ket.."
+
+msgid "Come back soon"
+msgstr "Kom tillbaka snart"
+
+msgid "wrap title with Quotes?"
+msgstr "wrap titel med citat?"
+
+msgid "here you write credits, additional infos and/or a link. %s"
+msgstr "h&auml;r skriver krediter, ytterligare information och / eller en l&auml;nk. %s"
+
+msgid "It shows below Subtitle"
+msgstr "Det visar under undertext"
+
+msgid "It shows at the very bottom"
+msgstr "Det visar l&auml;ngst ner"
+
+msgid "to see our Terms & Conditions.."
+msgstr "att se v&aring;ra Villkor.."
+
+msgid "Credits: %s"
+msgstr "Po&auml;ng: %s"
+
+msgid "Link to name: %s"
+msgstr "L&auml;nk till namn: %s"
+
+msgid "developed for fun by:"
+msgstr "utvecklad f&ouml;r skojs skull av:"
+
+msgid "Credits one"
+msgstr "Krediter en"
+
+msgid "Credits two"
+msgstr "Krediter tv&aring;"
+
+msgid "Credits %s"
+msgstr "Krediter %s"
+
+msgid "you want to download other add-ons?"
+msgstr "vill du ladda ner andra till&auml;gg?"
+
+msgid "you want to download other themes?"
+msgstr "vill du ladda ner andra teman?"
+
+msgid "you want to download some add-ons?"
+msgstr "vill du ladda ner n&aring;gra till&auml;gg?"
+
+msgid "my motto is"
+msgstr "mitt motto &auml;r"
+
+msgid "my motto is:"
+msgstr "mitt motto &auml;r:"
+
+msgid "my favourite quote"
+msgstr "min favorit citat"
+
+msgid "my favourite quote:"
+msgstr "min favorit citat:"
+
+msgid "my favourite line"
+msgstr "min favorit citat"
+
+msgid "my favourite line:"
+msgstr "min favorit citat:"
+
+msgid "that is my motto"
+msgstr "det &auml;r mitt motto"
+
+msgid "that is my favourite line"
+msgstr "det &auml;r min favorit citat"
+
+msgid "that is my favourite quote"
+msgstr "det &auml;r min favorit citat"
+
+msgid "developed with %s by"
+msgstr "utvecklad med %s av"
+
+msgid "you want to see other themes?"
+msgstr "vill du se andra teman?"
+
+msgid "terms"
+msgstr "villkor"
+
+msgid "conditions"
+msgstr "betingelser"
+
+# block shared
+msgid "File type required: JPG or PNG"
+msgstr "Filtyp som kr&auml;vs: JPG eller PNG"
+
+msgid "File extension required: JPG or PNG"
+msgstr "Fil&auml;ndelsen kr&auml;vs: JPG eller PNG"
+
+msgid "File image is invalid"
+msgstr "Filbild &auml;r ogiltig"
+
+msgid "Cannot be empty"
+msgstr "Kan inte vara tom"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Subtitle"
+msgstr "Texta"
+
+msgid "Customise Style"
+msgstr "Skr&auml;ddarsy Style"
+
+msgid "background image"
+msgstr "bakgrundsbild"
+
+msgid "font colour"
+msgstr "font color"
+
+msgid "with Animation"
+msgstr "med Animation"
+
+msgid "a title goes here"
+msgstr "en titel g&aring;r h&auml;r"
+
+msgid "and subtitle here"
+msgstr "och undertext h&auml;r"
+
+msgid "contact us"
+msgstr "kontakta oss"
+
+msgid "name"
+msgstr "namn"
+
+msgid "Required"
+msgstr "N&ouml;dv&auml;ndig"
+
+msgid "your"
+msgstr "din"
+
+msgid "Your"
+msgstr "Din"
+
+msgid "Page"
+msgstr "Sida"
+
+msgid "here"
+msgstr "h&auml;r"
+
+msgid "click here"
+msgstr "klicka h&auml;r"
+
+msgid "Contacts"
+msgstr "Kontakter"
+
+msgid "contact me"
+msgstr "kontakta mig"
+
+msgid "yeah, go ahead"
+msgstr "ja, g&aring; vidare"
+
+msgid "Title: %s"
+msgstr "Titel: %s"
+
+msgid "Subtitle: %s"
+msgstr "Text: %s"
+
+msgid "Email: %s"
+msgstr "E-post: %s"
+
+msgid "%1$s Page %2$s: %3$s"
+msgstr "%1$s Page %2$s: %3$s"
+
+msgid "my"
+msgstr "min"
+
+msgid "File size exceeded: Max %s"
+msgstr "Filstorlek exceded: Max %s"
+
+msgid "Cannot be empty: %s"
+msgstr "Kan inte vara tom: %s"
+
+msgid "name: %s"
+msgstr "namn: %s"
+
+msgid "and"
+msgstr "och"
+
+msgid "Here"
+msgstr "H&auml;r"
+
+msgid "Invalid link: %s"
+msgstr "Ogiltig l&auml;nk: %s"
+
+msgid "Visible?"
+msgstr "Synlig?"
+
+msgid "Background Colour"
+msgstr "Bakgrunds~~POS=TRUNC"
+
+msgid "Adjust Background Opacity"
+msgstr "Justera bakgrunds opacitet"
+
+msgid "Background Image"
+msgstr "Bakgrundsbild"
+
+msgid "Foreground Colour"
+msgstr "F&ouml;rgrunds F&auml;rg"
+
+msgid "Animation / Transition"
+msgstr "Animation / Transition"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nej"
+
+msgid "Choose Image"
+msgstr "V&auml;lj Bild"
+
+msgid "default"
+msgstr "standard"
+
+msgid "adjust top opacity"
+msgstr "justera topp opacitet"
+
+msgid "find out more"
+msgstr "f&aring; reda p&aring; mer"
+
+msgid "Random image from: %s"
+msgstr "Random bilder fr&aring;n: %s"
+
+msgid "File Sets"
+msgstr "Filupps&auml;ttningar"
+
+msgid "Choose"
+msgstr "V&auml;lja"
+
+msgid "Otherwise"
+msgstr "Annat"
+
+msgid "stick a single image here"
+msgstr "s&auml;tta en enda bild h&auml;r"
+
+msgid "it has priority over single image"
+msgstr "det har h&ouml;gre prioritet &auml;n enstaka bild"
+
+msgid "%1$s Select a %2$s %1$s"
+msgstr "%1$s V&auml;lj ett %2$s %1$s"
+
+msgid "File Set"
+msgstr "File Set"
+
+msgid "How to add a %s"
+msgstr "Hur man l&auml;gger till en %s"
+
+msgid "Content: %s"
+msgstr "Inneh&aring;ll"
+
+msgid "Text Button: %s"
+msgstr "Text Button: %s"
+
+msgid "Link / anchor to: %s"
+msgstr "L&auml;nk / ankare till: %s"
+
+msgid "hi everyone"
+msgstr "hej allihopa"
+
+msgid "Global Text Button: %s"
+msgstr "Global Text Button: %s"
+
+msgid "Global Link / anchor to: %s"
+msgstr "Global Link / ankare till: %s"
+
+msgid "Choose an icon:"
+msgstr "V&auml;lj en ikon:"
+
+msgid "it has priority over the icon"
+msgstr "det har prioritet &ouml;ver ikonen"
+
+msgid "Title below icon / image: %s"
+msgstr "Titel nedan ikon / bild: %s"
+
+msgid "Single Text Button: %s"
+msgstr "Enda text knapp: %s"
+
+msgid "check it out"
+msgstr "kolla in det"
+
+msgid "Or stick an image:"
+msgstr "Eller s&auml;tta en bild:"
+
+msgid "1st %s"
+msgstr "1:a %s"
+
+msgid "2nd %s"
+msgstr "2:a %s"
+
+msgid "3rd %s"
+msgstr "3:e %s"
+
+msgid "4th %s"
+msgstr "4:e %s"
+
+msgid "Invalid URL: %s"
+msgstr "Ogiltig URL: %s"
+
+msgid "Options file sets list"
+msgstr "Alternativ filupps&auml;ttningar listan"
+
+msgid "URL How to add a file set"
+msgstr "URL Hur man l&auml;gga till en fil set"
+
+msgid "Custom template name"
+msgstr "Anpassad mallnamn"
+
+msgid "Custom Foreground image"
+msgstr "Anpassad F&ouml;rgrunds bild"
+
+msgid "Content"
+msgstr "Inneh&aring;ll"
+
+msgid "see how"
+msgstr "se hur"
+
+msgid "Global Link: %s"
+msgstr "Global L&auml;nk: %s"
+
+msgid "Item %s"
+msgstr "Objekt %s"
+
+msgid "How to choose a %s"
+msgstr "Hur man v&auml;ljer en %s"
+
+msgid "available"
+msgstr "tillg&auml;ngliga"
+
+msgid "I got the skills"
+msgstr "Jag har f&auml;rdigheterna"
+
+msgid "find out who I am"
+msgstr "ta reda p&aring; vem jag &auml;r"
+
+msgid "check me out"
+msgstr "kolla in mig"
+
+msgid "ask me more"
+msgstr "fr&aring;ga mig mer"
+
+msgid "1st"
+msgstr "1:a"
+
+msgid "2nd"
+msgstr "2:e"
+
+msgid "3rd"
+msgstr "3:e"
+
+msgid "4th"
+msgstr "4:e"
+
+msgid "5th"
+msgstr "5:e"
+
+msgid "6th"
+msgstr "6:e"
+
+msgid "7th"
+msgstr "7:e"
+
+msgid "8th"
+msgstr "8:e"
+
+msgid "9th"
+msgstr "9:e"
+
+msgid "what I do"
+msgstr "vad jag g&ouml;r"
+
+msgid "What I do"
+msgstr "Vad jag g&ouml;r"
+
+msgid "Prices"
+msgstr "Priserna"
+
+msgid "prices"
+msgstr "priser"
+
+msgid "contacts"
+msgstr "kontakter"
+
+msgid "subtitle goes here"
+msgstr "textning g&aring;r h&auml;r"
+
+msgid "text: %s"
+msgstr "text: %s"
+
+msgid "Link to text: %s"
+msgstr "L&auml;nk till text: %s"
+
+msgid "background colour %s"
+msgstr "bakgrundsf&auml;rg %s"
+
+msgid "with or without transparency"
+msgstr "med eller utan genomskinlighet"
+
+msgid "Page: %s"
+msgstr "Sida: %s"
+
+msgid "it has priority over the link"
+msgstr "den har prioritet &ouml;ver l&auml;nken"
+
+msgid "Choose File"
+msgstr "V&auml;lj FIL"
+
+msgid "File type required: PDF, ODT or DOC"
+msgstr "Filtyp kr&auml;vs: PDF, ODT eller DOC"
+
+msgid "File extension required: PDF, ODT or DOC"
+msgstr "Filf&ouml;rl&auml;ngning kr&auml;vs: PDF, ODT eller DOC"
+
+msgid "File is invalid"
+msgstr "Filen &auml;r ogiltig"
+
+msgid "new"
+msgstr "ny"
+
+msgid "Title below / over image: %s"
+msgstr "Titel nedan / &ouml;ver bild: %s"
+
+msgid "And now Choose"
+msgstr "Och nu V&auml;lj"
+
+msgid "Pop Up image?"
+msgstr "Pop up bild?"
+
+msgid "it has priority over Single Link"
+msgstr "den har prioritet &ouml;ver Single Link"
+
+msgid "Link type"
+msgstr "L&auml;nktyp"
+
+msgid "Select a Page"
+msgstr "V&auml;lj en sida"
+
+msgid "Autoscroll to"
+msgstr "Autoscroll till"
+
+msgid "Custom anchor"
+msgstr "Anpassat ankare"
+
+msgid "if you have not installed it yet"
+msgstr "om du inte har installerat det &auml;n"
+
+msgid "OK good"
+msgstr "Okej bra"
+
+msgid "Menu item"
+msgstr "Menyobjekt"
+
+msgid "Add menu item"
+msgstr "L&auml;gg till menyalternativ"
+
+msgid "Link to a web page"
+msgstr "L&auml;nk till en webbsida"
+
+msgid "NO auto scrolling"
+msgstr "INGEN automatisk rullning"
+
+msgid "Same window"
+msgstr "Samma f&ouml;nster"
+
+msgid "New window"
+msgstr "Nytt f&ouml;nster"
+
+msgid "Target of link"
+msgstr "M&aring;l f&ouml;r l&auml;nk"
+
+msgid "anchor-name"
+msgstr "ankare-namn"
+
+msgid "visit:"
+msgstr "bes&ouml;k:"
+
+msgid "See them All"
+msgstr "Se dem alla"
+
+msgid "See more"
+msgstr "Se mer"
+
+msgid "Same Page"
+msgstr "Samma sida"
+
+msgid "New Page"
+msgstr "Ny sida"
+
+msgid "Type a URL"
+msgstr "Skriv en URL"
+
+msgid "Profile icon"
+msgstr "Profilikon"
+
+msgid "Profile URL"
+msgstr "Profil webbadress"
+
+msgid "Link types list"
+msgstr "L&auml;nktyper lista"
+
+msgid "Link targets list"
+msgstr "L&auml;nk m&aring;llista"
+
+msgid "Or stick a custom logo:"
+msgstr "Eller s&auml;tt en anpassad logotyp:"
+
+msgid "Global Link"
+msgstr "Global Link"
+
+msgid "Single Link to Page or URL"
+msgstr "Enkel l&auml;nk till sida eller URL"
+
+msgid "Title below / over image"
+msgstr "Titel nedan / &ouml;ver bild"
+
+msgid "Global URL"
+msgstr "Global URL"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Custom image"
+msgstr "Anpassad bild"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "page"
+msgstr "sida"
+
+msgid "Button Text"
+msgstr "Knapp-text"
+
+msgid "Text Link: %s"
+msgstr "Textl&auml;nk: %s"
+
+msgid "Action Link"
+msgstr "Action Link"
+
+msgid "Link Name: %s"
+msgstr "L&auml;nknamn: %s"
+
+msgid "Link name"
+msgstr "L&auml;nknamn"
+
+msgid "all your items are listed below"
+msgstr "alla dina artiklar listas nedan"
+
+msgid "templates"
+msgstr "mallar"
+
+msgid "Link to Page or URL"
+msgstr "L&auml;nk till Sida eller WEBBADRESS"
+
+msgid "it has priority over Link to Page or URL"
+msgstr "det har prioritet &ouml;ver l&auml;nk till sida eller URL"
+
+msgid "item Title: %s"
+msgstr "punkt Titel:  %s"
+
+msgid "Name: %s"
+msgstr "Namn: %s"
+
+msgid "all your %s are listed below"
+msgstr "alla dina  %s listas nedan"
+
+msgid "items"
+msgstr "objekt"
+
+msgid "item Title"
+msgstr "punkt rubrik"
+
+msgid "single image here"
+msgstr "enda bild h&auml;r"
+
+msgid "random image from: %s"
+msgstr "slumpm&auml;ssig bild fr&aring;n: %s"
+
+msgid "Choose this item's icon"
+msgstr "V&auml;lj den h&auml;r objektets ikon"
+
+msgid "template"
+msgstr "mall"
+
+msgid "Here you define:"
+msgstr "H&auml;r definierar du:"
+
+msgid "link to a %1$s URL %2$s or to a %1$s Page %2$s"
+msgstr "l&auml;nka till en % 1$S-URL % 2$s eller till en % 1$s-Sida %2$s"
+
+msgid "add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
+msgstr "l&auml;gg till en % 1$s ankare %2$s f&ouml;r att bl&auml;ddra till en % 1$s Sektion %2$s p&aring; en sida"
+
+msgid "open up to a %1$s new page %2$s or on the %1$s same page %2$s"
+msgstr "&ouml;ppna upp till en %1$S ny sida %2$s eller p&aring; %1$S samma sida %2$s"
+
+msgid "Leave it empty to hide it"
+msgstr "L&auml;mna det tomt f&ouml;r att d&ouml;lja det"
+
+msgid "documentation:"
+msgstr "dokumentation:"
+
+msgid "an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
+msgstr "en % 1$s ankare %2$s f&ouml;r att bl&auml;ddra till en % 1$s Sektion %2$S p&aring; en sida"
