@@ -682,3 +682,634 @@ class Controller extends BlockController
 
             <style>
               <?php
+                if (BlockUtils::isValidColor($this->bgColorRGBA) ||
+                    $this->isCustomOverImageOpacity($this->bgColorOpacity)) {
+                ?>
+                  section<?php echo $this->getStyleSelector()?>.over-image::before {
+                    <?php
+                      if (BlockUtils::isValidColor($this->bgColorRGBA)) { ?>
+                          background-color: <?php echo $this->getOverImageBgColor()?> !important;
+                    <?php } ?>
+                    <?php
+                      if ($this->isCustomOverImageOpacity($this->bgColorOpacity)) { ?>
+                          opacity: <?php echo $this->bgColorOpacity?> !important;
+                    <?php } ?>
+                  }
+              <?php } ?>
+
+              <?php
+                if (BlockUtils::isValidImage($this->getBgFID()) ||
+                    BlockUtils::isValidColor($this->bgColorRGBA) ||
+                    BlockUtils::isValidColor($this->fgColorRGB)) {
+                ?>
+                  section<?php echo $this->getStyleSelector()?>.over-image {
+                    <?php
+                      if (BlockUtils::isValidImage($this->getBgFID())) { ?>
+                          background-image: url('<?php echo $this->getCustomStyleImagePath()?>') !important;
+                    <?php } ?>
+
+                    <?php
+                      if (BlockUtils::isValidColor($this->bgColorRGBA)) { ?>
+                          background-color: <?php echo $this->bgColorRGBA?> !important;
+                    <?php } ?>
+
+                    <?php
+                      if (BlockUtils::isValidColor($this->fgColorRGB)) { ?>
+                          color: <?php echo $this->fgColorRGB ?> !important;
+                    <?php } ?>
+                  }
+               <?php } ?>
+            </style>
+
+            <?php
+            $o = ob_get_contents();
+
+            ob_end_clean();
+
+            $o = BlockUtils::getCustomStyleSanitised($o);
+        }
+
+        return $o;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Main Validate
+    */
+    public function validate($args)
+    {
+        $e = BlockUtils::getThisApp()->make('error');
+
+        // Validate Styles
+        foreach (array_keys(self::get_btStyles()) as $key) {
+
+            switch ($key) {
+            case (lcfirst(substr($key, -3)) == 'fID'):
+
+                if (!empty($args[$key])) {
+                    $f = BlockUtils::getFileObject($args[$key]);
+
+                    if (is_object($f)) {
+                        switch ($f->getMimeType()) {
+                        case 'image/jpeg':
+                        case 'image/jpg':
+                        case 'image/png':
+                            break;
+                        default:
+                            $e->add(t('File type required: JPG or PNG'));
+                            break;
+                        }
+
+                        switch (strtolower($f->getExtension())) {
+                        case 'jpeg':
+                        case 'jpg':
+                        case 'png':
+                            break;
+                        default:
+                            $e->add(t('File extension required: JPG or PNG'));
+                            break;
+                        }
+
+                        $uploadImageSize = BlockUtils::getUploadImageSize(self::$btStyleUploadImageSize);
+
+                        if ($f->getFullSize() > $uploadImageSize) {
+                            $e->add(t('File size exceeded: Max %s', BlockUtils::getHumanReadUploadImageSize($uploadImageSize)));
+                        }
+
+                        if ($f->isError()) {
+                            $e->add(t('File image is invalid'));
+                        }
+                    } else {
+                        $e->add(t('File image is invalid'));
+                    }
+                }
+                break;
+            }
+        }
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * Validate input Fields
+        */
+        foreach (self::get_btFields() as $key => $value) {
+
+            // Detect if field requires custom condition
+            if (isset($value['validCondition'])) {
+
+                // do Validation (basic + custom)
+                $this->doValidateMore($e, $args, $key, $value);
+            } else {
+
+                // do Validation (basic)
+                $this->doValidate($e, $args, $key, $value);
+            }
+        }
+
+        return $e;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * do Validation
+    */
+    protected function doValidate($e, $args, $key, $value)
+    {
+        // Allowed Empty?
+        if (isset($value['allowEmpty']) && ($value['allowEmpty'] === false)) {
+            if (empty($args[$key])) {
+                $e->add(t('Cannot be empty: %s', $value['label']));
+            }
+        }
+
+        // URL is Valid?
+        if (!empty($args[$key])) {
+            if (isset($value['validateURL']) && ($value['validateURL'] === true)) {
+                if (BlockUtils::getIsValidURL($args[$key]) === false) {
+                    $e->add(t('Invalid URL: %s', $value['label']));
+                }
+            }
+        }
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * do more Validation (custom)
+    */
+    protected function doValidateMore($e, $args, $key, $value)
+    {
+        // output validation
+        $oValid == false;
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * IF custom condition value IS a METHOD (has PARAMS)
+        */
+        $validCond = $value['validCondition'];
+
+        if (is_array($validCond)) {
+
+            $method = $validCond['method'];
+            $params = $validCond['params'];
+
+            // Call custom condition method with argument param
+            $oValid = (method_exists($this, 'get' . ucfirst($method)) == true ? $this->{'get' . ucfirst($method)}($params, $args) : false);
+        } else {
+
+            /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            * IF custom condition value IS a PROPERTY
+            */
+            if (isset($args[$method])) {
+
+                // Retrieve custom condition as input value
+                $oValid = $args[$method];
+            }
+        }
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * Custom condition is Valid:
+        *     NOW Detect Errors
+        */
+        if ($oValid == true) {
+            if (is_array($oValid) && array_key_exists('error', $oValid)) {
+                $e->add(t($oValid['error'] . ': %s', $oValid['label']));
+            }
+
+            // do Validation (additional)
+            $this->doValidate($e, $args, $key, $value);
+        }
+    }
+
+    public function save($args)
+    {
+
+        // Update custom Styles for all pages
+        foreach (array_keys(self::get_btStyles()) as $key) {
+
+            switch ($key) {
+            case (lcfirst(substr($key, -3)) == 'sID'):
+                if (empty($args[$key])) {
+                    $args[$key] = 0;
+                }
+                break;
+            case (lcfirst(substr($key, -3)) == 'fID'):
+                if (empty($args[$key])) {
+                    $args[$key] = 0;
+                }
+                break;
+            case (lcfirst(substr($key, -3)) == 'pID'):
+                if (empty($args[$key])) {
+                    $args[$key] = 0;
+                }
+                break;
+            case 'bgColorRGBA':
+                if (empty($args[$key])) {
+                    $args[$key] = 'transparent';
+                }
+                break;
+            case 'fgColorRGB':
+                if (empty($args[$key])) {
+                    $args[$key] = 'transparent';
+                }
+                break;
+            }
+        }
+
+        // Sanitize input for DB
+        foreach (array_keys(self::get_btFields()) as $key) {
+
+            // Custom Field hash
+            switch ($key) {
+            case (substr($key, -4) == 'hash'):
+
+                if (trim($args[$key]) == true) {
+                    $args[$key] = '#' . str_replace('#', '', trim($args[$key]));
+                }
+                break;
+            }
+
+            // Prevent Default Value from setting
+            if (empty($args[$key])) {
+                $args[$key] = ' ';
+            }
+        }
+
+        // WYSIWYGs inputs
+        foreach (array_keys(self::get_btWYSIWYG()) as $key) {
+
+            // Strip 'End Of Line' symbol for this platform ("\n" or "\r")
+            $args[$key] = trim(str_replace(PHP_EOL, '', $args[$key]));
+
+            // Sanitize URLs
+            $args[$key] = LinkAbstractor::translateTo($args[$key]);
+        }
+
+        parent::save($args);
+    }
+ 
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Block Handlers Design Methods
+    */
+    protected static function getViewPointId()
+    {
+        return self::$btHandlerId;
+    }
+
+    protected function getSectionId()
+    {
+        return 's' . $this->bID;
+    }
+
+    protected function getStyleSelector()
+    {
+        return '#' . $this->getSectionId() . '.' . self::$btHandlerId;
+    }
+
+    protected function getJSelectorId()
+    {
+        return $this->getSectionId() . '.' . self::$btHandlerId;
+    }
+
+    protected function getCustomTemplateName()
+    {
+        $tName = 'no_template';
+        $block = $this->getBlockObject();
+
+        if (is_object($block)) {
+          $tName = ($block->getBlockFilename() == true ? $block->getBlockFilename() : $tName);
+        } 
+
+        return $tName;
+    }
+
+    protected function getCustomFgColorClassName()
+    {
+        return (BlockUtils::isValidColor($this->fgColorRGB) ? 'cfg-color' : null);
+    }
+
+    public static function getBlockHandle()
+    {
+        return strtolower(basename(dirname(__FILE__)));
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Block - Foreground Custom Images PATHs
+    *
+    * @return image full Path (file system)
+    */
+    protected function getBlockForegroundImageURL($fID, $w = null, $h = null)
+    {
+        // set thumbnail width
+        $width = ($w == false) ? self::$btCustomImageThumbWidth : $w;
+
+        // set thumbnail height
+        $height = ($h == false) ? self::$btCustomImageThumbHeight : $h;
+
+        // get source thumbnail image
+        return (is_object($fID) ? BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src : null);
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Template & Block - Default & Background Images URLs
+    *
+    * @return image URL (for HTML src attribute)
+    */
+    protected function getBlockDefaultImageURL($idx)
+    {
+        $image = $this->getDefaultImageFullSrc('default', $idx);
+
+        return $image['url'];
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Template & Block - Paths & URLs 
+    *
+    * @param true / false
+    * @return image base Path and URL (Template / Block)
+    */
+    protected function getBlockImagesBaseURL($tPath=false)
+    {
+        return $this->getBlockAssetsURL() . ($tPath !== false ? $this->getBlockTemplateRelativePath() : null) . '/images';
+    }
+
+    protected function getBlockImagesBasePath($tPath=false)
+    {
+        return __DIR__ . ($tPath !== false ? $this->getBlockTemplateRelativePath() : null) . '/images';
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Template - Paths & URLs 
+    *
+    * @return image base Path and URL for a Template
+    */
+    protected function getBlockImagesBaseTemplateURL()
+    {
+        return $this->getBlockImagesBaseURL(true);
+    }
+
+    protected function getBlockImagesBaseTemplatePath()
+    {
+        return $this->getBlockImagesBasePath(true);
+    }
+
+    /** Get Template relative Path */
+    protected function getBlockTemplateRelativePath()
+    {
+        return ($this->getCustomTemplateName() == false ? null : '/templates/' . $this->getCustomTemplateName());
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * get Template or Block images Paths & URLs
+    * IMPORTANT: it uses inheritance
+    * Returns image from Template or Block folders
+    *
+    * @param default / background
+    * @return array (path, url)
+    */
+    private function getBlockTemplateImageFullPaths($f, $e)
+    {
+        return array('path' => $this->getBlockImagesBaseTemplatePath() . '/' . $f . '.' . $e,
+                      'url' => $this->getBlockImagesBaseTemplateURL() . '/' . $f . '.' . $e);
+    }
+
+    private function getBlockImageFullPaths($f, $e)
+    {
+        return array('path' => $this->getBlockImagesBasePath() . '/' . $f . '.' . $e,
+                      'url' => $this->getBlockImagesBaseURL() . '/' . $f . '.' . $e);
+    }
+
+    private function getDefaultImageFullSrc($file='default', $idx)
+    {
+        $image = null;
+
+        // extensions lookup
+        $exts = array('png', 'jpg');
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * check if Template Image folder has images
+        */
+        if (is_dir($this->getBlockImagesBaseTemplatePath())) {
+            foreach ($exts as $ext) {
+
+                // fallback image (default.jpg | .png)
+                $imgFallBack = $this->getBlockTemplateImageFullPaths($file, $ext);
+
+                // additional images (default2.jpg | default3.jpg | default4.jpg)
+                $imgSiblings = $this->getBlockTemplateImageFullPaths($file . $idx, $ext);
+
+                // setup current image
+                $thisImage = is_file($imgSiblings['path']) == true ? $imgSiblings : $imgFallBack;
+
+                if (is_file($thisImage['path'])) {
+                    $image = array('path' => $thisImage['path'],
+                                    'url' => $thisImage['url']);
+                }
+            }
+        }
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * otherwise use images within Block
+        */
+        if ($image == false) {
+            foreach ($exts as $ext) {
+
+                // fallback image (default.jpg | .png)
+                $imgFallBack = $this->getBlockImageFullPaths($file, $ext);
+
+                // additional images (default2.jpg | default3.jpg | default4.jpg)
+                $imgSiblings = $this->getBlockImageFullPaths($file . $idx, $ext);
+
+                // setup current image
+                $thisImage = is_file($imgSiblings['path']) == true ? $imgSiblings : $imgFallBack;
+
+                if (is_file($thisImage['path'])) {
+                    $image = array('path' => $thisImage['path'],
+                                    'url' => $thisImage['url']);
+                }
+            }
+        }
+
+        return (array) $image;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Custom inline Style Methods
+    * Background inline Styles Methods
+    */
+    public function getBgFID()
+    {
+        if ($this->bgFID > 0) {
+            $fObj = BlockUtils::getFileObject($this->bgFID);
+        }
+
+        return (isset($fObj) && is_object($fObj)) ? $fObj : null;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Check if Animation is enabled (ideal for JS variables)
+    */
+    public function getIsAnimationEnabled()
+    {        
+        return ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false) ? 'true' : 'false';
+    }
+
+    public function getIsEditMode()
+    {
+        return (Page::getCurrentPage()->isEditMode() == false) ? 0 : 1;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Custom Animation / Transition
+    */
+    public function getIsAnimated()
+    {
+        $cName  = 'isAnimated';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = true;
+
+        return filter_var(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}), FILTER_VALIDATE_BOOLEAN);
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Background Opacity Over Image
+    */
+    public function getBgColorOpacity()
+    {
+        $cName  = 'bgColorOpacity';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = self::$bgOverImageOpacity;
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Background Opacity Over Image Options
+    */
+    public function getBgColorOpacityOptions()
+    {
+        return array(
+            '-75%' => 0.25,
+            '-50%' => 0.5,
+            '-25%' => 0.75,
+            'default' => 1
+        );
+    }
+
+    protected function getCustomStyleImagePath()
+    {
+        return BlockUtils::getThisApp()->make('helper/image')->getThumbnail($this->getBgFID(), self::$btStyleUploadThumbWidth, self::$btStyleUploadThumbHeight, false)->src;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Custom inline Style Methods
+    */
+    protected function isCustomOverImageOpacity($value)
+    {
+        return ($value == true && (self::$bgOverImageOpacity != $this->getBgColorOpacity())) === true ? true : false;
+    }
+
+    protected function getOverImageBgColor()
+    {
+        return $this->bgColorRGBA;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Form Overlay (Edit/Add) Methods
+    */
+    public function getBlockAssetsURL()
+    {
+        $bt = BlockType::getByHandle(self::getBlockHandle());
+        $bPath = BlockUtils::getThisApp()->make('helper/concrete/urls')->getBlockTypeAssetsURL($bt);
+
+        return $bPath;
+    }
+
+    protected function addLocalAssets($path, $type = 'css')
+    {
+        $this->addHeaderItem(BlockUtils::getThisApp()->make('helper/html')->{$type}($this->getBlockAssetsURL() . $path));
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Add Form (Window Overlay) - default Values
+    */
+    protected function addFormDefaultValues()
+    {
+        // Retrieve defaults Values
+        if (method_exists(__CLASS__, 'get_btFields')) {
+
+            foreach (array_keys(self::get_btFields()) as $key) {
+                $o = $this->get_btCall($key);
+                $o = is_array($o) ? $o : trim($o);
+                $this->set($key, $o);
+            }
+        }
+
+        // Retrieve WYSIWYG Editor Values translation
+        if (method_exists(__CLASS__, 'get_btWYSIWYG')) {
+            foreach (array_keys(self::get_btWYSIWYG()) as $key) {
+                $this->set($key, LinkAbstractor::translateFrom($this->get_btCall($key)));
+            }
+        }
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Add Form (Window Overlay) - extra Values
+    */
+    protected function addFormExtraValues()
+    {
+        // Retrieve defaults Values
+        if (method_exists(__CLASS__, 'get_btStyles')) {
+            foreach (array_keys(self::get_btStyles()) as $key) {
+                $this->set($key, $this->get_btCall($key));
+            }
+        }
+
+        // Retrieve extra Values
+        if (method_exists(__CLASS__, 'get_btFormExtraValues')) {
+            foreach (array_keys(self::get_btFormExtraValues()) as $key) {
+                $this->set($key, $this->{'get' . ucfirst($key)}());
+            }
+        }
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Add Form (Window Overlay)
+    */
+    protected function add()
+    {
+        // WYSIWYG Editor
+        if (is_array(self::get_btWYSIWYG())) {
+
+            $editor = BlockUtils::getThisApp()->make('editor');
+
+            $editor->setAllowFileManager(true);
+            $editor->setAllowSitemap(false);
+
+            // We can include and exclude editor plugins.
+            $editor->getPluginManager()->deselect(array('table', 'specialcharacters'));
+            $editor->getPluginManager()->select('fontsize');
+
+            $this->set('editor', $editor);
+        }
+
+        // Custom Styles Palettes
+        $this->set('color', BlockUtils::getThisApp()->make('helper/form/color'));
+        $this->set('asset', BlockUtils::getThisApp()->make('helper/concrete/asset_library'));
+
+        $this->set('fgColorPalette', BlockUtils::getFgColorPalette(false, true));
+        $this->set('bgColorPalette', BlockUtils::getBgColorPalette(true, true, self::$btStyleOpacity));
+
+        $this->set('btWrapperForm', $this->btWrapperForm);
+
+        // Page Selector
+        $this->set('pageSelector', BlockUtils::getThisApp()->make('helper/form/page_selector'));
+
+        $this->addFormDefaultValues();
+        $this->addFormExtraValues();
+
+        // Add Assets to Window Overlay
+        $this->addLocalAssets('../../../themes/lazy5basic/css/tools/lazy-global-ui.css', 'css');
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Edit Form (Window Overlay)
+    */
+    protected function edit() 
+    {
+        $this->add();
+    }
+}
