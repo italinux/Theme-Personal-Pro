@@ -70,6 +70,13 @@ section.contacts div.form-actions.loader {
   }
 }
 
+/* Styling input buttons for iOS */
+section.contacts div.form-actions input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 /* Hide submit button when loading */
 section.contacts div.form-actions.loader input[type="submit"] {
   display: none;
