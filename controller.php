@@ -85,7 +85,7 @@ class Controller extends Package
 
     public function getPackageBlockTypeSet()
     {
-        return strtolower(self::getPackageNameID());
+        return strtolower(str_replace(" ", "-", self::getPackageNameID()));
     }
 
     public function getPackagePrefix()
@@ -108,7 +108,7 @@ class Controller extends Package
     */
     private static function _getThemePath() 
     {
-        return 'themes/' . strtolower(self::getPackageNameID()) . '/';
+        return 'themes/' . strtolower(str_replace(" ", "_", self::getPackageNameID())) . '/';
     }
     
     private static function _getJsPath() 
@@ -219,7 +219,7 @@ class Controller extends Package
         $blocksAndTables = array();
 
         foreach (array_keys($this->getBlocksAvailable()) as $key) {
-            $blocksAndTables[$this->pkgPrefix . '_' . $key] = 'bt' . self::getPackageNameID() . ucfirst(str_replace('_', '', mb_convert_case(mb_strtolower($key, "UTF-8"), MB_CASE_TITLE, "UTF-8")));
+            $blocksAndTables[$this->pkgPrefix . '_' . $key] = 'bt' . str_replace(' ', '', self::getPackageNameID()) . ucfirst(str_replace('_', '', mb_convert_case(mb_strtolower($key, "UTF-8"), MB_CASE_TITLE, "UTF-8")));
         }
 
         return $blocksAndTables;
