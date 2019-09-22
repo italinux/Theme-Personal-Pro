@@ -31,52 +31,18 @@
 $(document).ready(function(e) {
   
   if (CCM_EDIT_MODE === false) {
-      /**
-      * Detect Mobile Devices
-      */
-      var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+    /**
+    * ============================================
+    * YouTube Video:
+    * Trigger "on / off"
+    * ==============================================
+    *
+    * define video element wrapper
+    */
+    var playerID = 'div[data-animation="bgVideo"]';
 
-      // Conditional script here
-      if (typeof isMobile === 'undefined' || isMobile.matches === false) {
-      /**
-      * ============================================
-      * YouTube Video:
-      * Trigger "on / off" only when available on the viewport (inView)
-      * ==============================================
-      * define video wrapper
-      */
-      var playerID = 'div[data-animation="bgVideo"]';
+    // init YTPlayer
+    $(playerID).YTPlayer();
 
-      // init YTPlayer
-      var ytPlayer = $(playerID).YTPlayer();
-        ytPlayer.on("YTPReady", function() {
-
-          // jump to videoStart (seconds)
-          ytPlayer.YTPSeekTo(videoStartAt);
-
-          // stop video first when video Ready
-          var timer = setTimeout(function() {
-            ytPlayer.YTPPause();
-          }, 500);
-
-          // start video when wrapper in View
-          timer = setTimeout(function() {
-            var inview = new Waypoint.Inview({
-              element: $(ytPlayer),
-              enter: function(direction) {
-                ytPlayer.YTPPlay();
-              },
-              exited: function(direction) {
-                ytPlayer.YTPPause();
-              }
-            });
-          }, 1000);
-
-          if (typeof timer == 'undefined') {
-              timer = 0;
-              clearTimeout(timer);
-          }
-        });
-      }
-    }
+  }
 });

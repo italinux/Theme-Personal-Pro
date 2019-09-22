@@ -1345,7 +1345,12 @@ class Controller extends BlockController
                                    ration: '16/9',
                                    autoPlay: true,
                                    startAt: 0,
+                                   useOnMobile: false,
                                    stopMovieOnBlur: true,
+                                   playOnlyIfVisible: true,
+                                   realfullscreen: false,
+                                   optimizeDisplay: true,
+                                   abundance: 0,
                                    mute: true,
                                    loop: true,
                                    showControls: false,
@@ -1395,9 +1400,6 @@ class Controller extends BlockController
         $al->register('javascript', 'ytplayer-init', 'blocks/l5b_banner/jscript/YTPlayer.init.js', $pf, 'theme_lazy5basic');
         $al->register('css', 'ytplayer-style', 'blocks/l5b_banner/style/ytplayer/jquery.mb.YTPlayer.min.css', $pf, 'theme_lazy5basic');
 
-        // Register JS JQuery additionls
-        $al->register('javascript', 'jt.jquery.inview', 'blocks/l5b_banner/jscript/min/jquery.inview.min.js', $pf, 'theme_lazy5basic');
-
         $al->registerGroup(
             'jst.ytplayer', array(
                array(
@@ -1411,10 +1413,6 @@ class Controller extends BlockController
                array(
                    'javascript',
                    'ytplayer-init'
-               ),
-               array(
-                   'javascript',
-                   'jt.jquery.inview'
                ),
                array(
                    'css',

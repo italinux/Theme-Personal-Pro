@@ -52,7 +52,7 @@
 
     <?php echo $html->css($view->getStylesheet('main.less'))?>
 
-    <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/tools/c5-ui.css'); }?>
+    <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/build/tools/c5-ui.css'); }?>
 
     <?php View::element('header_required', $sPage)?>
 <?php

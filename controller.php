@@ -83,9 +83,14 @@ class Controller extends Package
         return 'Lazy5basic';
     }
 
-    public function getPackageBlockTypeSet()
+    public function getPackageBlockTypeSetID()
     {
-        return strtolower(str_replace(" ", "-", self::getPackageNameID()));
+        return strtolower(str_replace(" ", "_", self::getPackageNameID()));
+    }
+
+    public function getPackageBlockTypeSetName()
+    {
+        return self::getPackageNameID();
     }
 
     public function getPackagePrefix()
@@ -270,9 +275,9 @@ class Controller extends Package
 
         $this->pkg = parent::install();
 
-        if (BlockTypeSet::getByHandle($this->getPackageBlockTypeSet()) == false) {
-            BlockTypeSet::add($this->getPackageBlockTypeSet(), ucfirst($this->getPackageBlockTypeSet()), $this->pkg);
-            Theme::add($this->getPackageBlockTypeSet(), $this->pkg);
+        if (BlockTypeSet::getByHandle($this->getPackageBlockTypeSetID()) == false) {
+            BlockTypeSet::add($this->getPackageBlockTypeSetID(), $this->getPackageBlockTypeSetName(), $this->pkg);
+            Theme::add($this->getPackageBlockTypeSetID(), $this->pkg);
         }
 
         $this->configureBlocks();
