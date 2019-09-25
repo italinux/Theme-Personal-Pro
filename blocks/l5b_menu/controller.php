@@ -1036,7 +1036,7 @@ class Controller extends BlockController
     */
     public function getIsAnimationEnabled()
     {        
-        return ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false) ? 'true' : 'false';
+        return ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false) ? true : false;
     }
 
     public function getIsEditMode()
