@@ -1314,7 +1314,7 @@ class Controller extends BlockController
     public function registerViewAssets($outputContent = '')
     {
 
-        if ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false) {
+        if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
             $this->requireAsset('jst.animate.conf');
         }
@@ -1602,11 +1602,6 @@ class Controller extends BlockController
         foreach (array_keys(self::get_btStyles()) as $key) {
 
             switch ($key) {
-            case (lcfirst(substr($key, -3)) == 'sID'):
-                if (empty($args[$key])) {
-                    $args[$key] = 0;
-                }
-                break;
             case (lcfirst(substr($key, -3)) == 'fID'):
                 if (empty($args[$key])) {
                     $args[$key] = 0;

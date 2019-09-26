@@ -152,6 +152,9 @@ class Controller extends Package
         // JS init
         $al->register('javascript', 'jt.theme.init', self::_getJsPath() . 'init.js', $pf, $this);
 
+        // JS extra
+        $al->register('javascript', 'jt.theme.extra', self::_getJsPath() . 'extra.js', $pf, $this);
+
         // Import Bootstrap
         $al->register('css', 'cst.bootstrap', self::_getCssPath() . 'build/bootstrap/bootstrap.min.css', $ph, $this);
 
@@ -166,6 +169,10 @@ class Controller extends Package
                array(
                    'javascript',
                    'jt.theme.init'
+               ),
+               array(
+                   'javascript',
+                   'jt.theme.extra'
                ),
                array(
                    'css',

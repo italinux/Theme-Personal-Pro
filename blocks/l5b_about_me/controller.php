@@ -607,7 +607,7 @@ class Controller extends BlockController
     public function registerViewAssets($outputContent = '')
     {
 
-        if ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false) {
+        if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
             $this->requireAsset('jst.animate.conf');
         }

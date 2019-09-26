@@ -116,28 +116,36 @@ class Controller extends BlockController
           'title' => t('social profiles'),
           'subtitle' => t('follow me ..'),
            1 => array(
-             'isEnabled' => true,
+             'isEnabled' => false,
+              'linkType' => 'url',
                    'url' => 'https://facebook.com/mateus73',
                   'hash' => null,
+                'target' => 'blank',
                   'icon' => 'facebook',
            ),
            2 => array(
              'isEnabled' => true,
+              'linkType' => 'url',
                    'url' => null,
                   'hash' => '#contacts-more',
+                'target' => 'self',
                   'icon' => 'whatsapp',
            ),
            3 => array(
              'isEnabled' => true,
-                   'url' => 'https://instagram.com/italinux',
+              'linkType' => 'url',
+                   'url' => 'https://linkedin.com/in/italinux',
                   'hash' => null,
-                  'icon' => 'instagram',
+                'target' => 'blank',
+                  'icon' => 'linkedin',
            ),
            4 => array(
              'isEnabled' => true,
-                   'url' => 'https://linkedin.com/in/italinux',
+              'linkType' => 'url',
+                   'url' => 'https://instagram.com/italinux',
                   'hash' => null,
-                  'icon' => 'linkedin',
+                'target' => 'blank',
+                  'icon' => 'instagram',
            ),
         );
 
@@ -166,16 +174,24 @@ class Controller extends BlockController
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
              $o = array_merge($o, array(
+                  'o'.$i.'_linkType' => array(
+                      'label' => t($ordNum.' %s', t('Link type')),
+                      'allowEmpty' => false,
+                  ),
                   'o'.$i.'_url' => array(
-                      'label' => t($ordNum.' %s', t('Profile URL')),
+                      'label' => t($ordNum.' %s', t('item What I Do URL')),
                       'validCondition' => array('method' => 'isEnabled_ValidUrl',
                                                 'params' => array('o'.$i)),
                   ),
                   'o'.$i.'_hash' => array(
                       'label' => t($ordNum.' %s', t('Custom anchor')),
                   ),
+                  'o'.$i.'_target' => array(
+                      'label' => t($ordNum.' %s', t('Target of link')),
+                      'allowEmpty' => false,
+                  ),
                   'o'.$i.'_icon' => array(
-                      'label' => t($ordNum.' %s', t('Profile icon')),
+                      'label' => t($ordNum.' %s', t('Icon')),
                   ),
              ));
         };
@@ -205,6 +221,7 @@ class Controller extends BlockController
 
              $o = array_merge($o, array(
                  'o'.$i.'_isEnabled' => t($ordNum.' %s', t('Profile')),
+                 'o'.$i.'_pID' => t($ordNum.' %s', t('Select a Page')),
                  'o'.$i.'_fID' => t($ordNum.' %s', t('Custom image')),
              ));
         };
@@ -229,6 +246,12 @@ class Controller extends BlockController
             ),
             'itemsTotalTabs' => array(
                 'label' => t('Window Overlay Items Tabs'),
+            ),
+            'linkTypes' => array(
+                'label' => t('Link types list'),
+            ),
+            'linkTargets' => array(
+                'label' => t('Link targets list'),
             ),
         );
     }
@@ -365,9 +388,34 @@ class Controller extends BlockController
         return trim(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}));
     }
 
+    public function get_linkType($id)
+    {
+        $key  = 'linkType';
+        $cName  = 'o'.$id.'_'.$key;
+        $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
+        $dValue = self::getDefaultValue($id, $key);
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function get_pID($id)
+    {
+        return $this->{'o'.$id.'_pID'};
+    }
+
     public function get_hash($id)
     {
         $key  = 'hash';
+        $cName  = 'o'.$id.'_'.$key;
+        $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
+        $dValue = self::getDefaultValue($id, $key);
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function get_target($id)
+    {
+        $key  = 'target';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
         $dValue = self::getDefaultValue($id, $key);
@@ -405,13 +453,21 @@ class Controller extends BlockController
         if ($value[$key.'_isEnabled'] == true) {
 
             /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-            * URL is Valid?
+            * if Link Type (Select a Page / URL)
             */
-            if (trim($value[$key.'_url']) == true ) {
-                if (BlockUtils::getIsValidURL(trim($value[$key.'_url'])) === false) {
-                    $label = t('%s', $btFields[$key.'_url']['label']);
-                    $error = true;
+            switch($value[$key.'_linkType']) {
+            case 'url':
+
+                /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                * URL is Valid?
+                */
+                if (trim($value[$key.'_url']) == true ) {
+                    if (BlockUtils::getIsValidURL(trim($value[$key.'_url'])) === false) {
+                        $label = t('%s', $btFields[$key.'_url']['label']);
+                        $error = true;
+                    }
                 }
+                break;
             }
 
             // create error messages
@@ -447,6 +503,20 @@ class Controller extends BlockController
         };
 
         return $o;
+    }
+
+    public function getLinkTypes()
+    {
+        return array('url' => t('Type a URL'),
+                     'pID' => t('Select a Page'),
+                    );
+    }
+
+    public function getLinkTargets()
+    {
+        return array( 'self' => t('Same Page'),
+                     'blank' => t('New Page'),
+                    );
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -536,16 +606,44 @@ class Controller extends BlockController
     */
     protected function getClassByID($id)
     {
-        return trim($this->get_url($id)) == true ? 'goto' : 'scroll';
+        // scroll or goto
+        switch($this->get_target($id)) {
+        case "self":
+            switch($this->get_linkType($id)) {
+            case "pID":
+                $o = $this->get_pID($id) == false ? 'scroll' : null;
+                break;
+            case "url":
+                $o = $this->get_url($id) == false ? 'scroll' : null;
+                break;
+            }
+            break;
+        case "blank":
+            $o = 'goto';
+            break;
+        }
+
+        return $o;
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    * Get targhet for anchor (blank | self)
+    * Get link for anchor (image URL | page or URL)
     * @return string
     */
-    protected function getTargetByID($id)
+    protected function getLinkByID($id)
     {
-        return trim($this->get_url($id)) == true ? 'blank' : 'self';
+        // page or url
+        switch($this->get_linkType($id)) {
+        case "pID":
+            $page = ($this->get_pID($id) == true) ? BlockUtils::getPageObject($this->get_pID($id)) : null;
+            $o = is_object($page) == true ? BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page) : null;
+            break;
+        case "url":
+            $o = $this->get_url($id);
+            break;
+        }
+
+        return trim($o);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -581,9 +679,9 @@ class Controller extends BlockController
                  'col-sx' => $this->getBootstrapCol_SX_Config($offset),
                      'id' => self::getAnimateId($offset, $this->getAll_isEnabled($profiles)),
                   'class' => $this->getClassByID($key),
-                   'link' => $this->get_url($key),
+                   'link' => $this->getLinkByID($key),
                    'hash' => trim($this->get_hash($key)),
-                 'target' => '_' . $this->getTargetByID($key),
+                 'target' => '_' . $this->get_target($key),
                     'img' => array(
                        'src' => $this->getBlockForegroundImageURL($this->get_fID($key)),
                     ),
@@ -687,7 +785,7 @@ class Controller extends BlockController
     public function registerViewAssets($outputContent = '')
     {
 
-        if ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false) {
+        if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
             $this->requireAsset('jst.animate.conf');
         }

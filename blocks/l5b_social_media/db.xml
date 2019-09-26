@@ -12,73 +12,117 @@
     <field name="subtitle" type="string" size="50">
       <default value=""/>
     </field>
-    <field name="o1_fID" type="smallint">
-      <unsigned/>
-      <default value="0"/>
-    </field>
-    <field name="o1_hash" type="string" size="80">
-      <default value=""/>
-    </field>
-    <field name="o1_icon" type="string" size="25">
-      <default value=""/>
-    </field>
     <field name="o1_isEnabled" type="boolean">
       <unsigned/>
       <default value="0"/>
     </field>
-    <field name="o1_url" type="string" size="255">
-      <default value=""/>
+    <field name="o1_linkType" type="string" size="10">
+      <unsigned/>
+      <default value="pID"/>
     </field>
-    <field name="o2_fID" type="smallint">
+    <field name="o1_pID" type="smallint">
       <unsigned/>
       <default value="0"/>
     </field>
-    <field name="o2_hash" type="string" size="80">
+    <field name="o1_icon" type="string" size="25">
       <default value=""/>
     </field>
-    <field name="o2_icon" type="string" size="25">
+    <field name="o1_url" type="string" size="255">
       <default value=""/>
+    </field>
+    <field name="o1_hash" type="string" size="80">
+      <default value=""/>
+    </field>
+    <field name="o1_target" type="string" size="10">
+      <default value="self"/>
+    </field>
+    <field name="o1_fID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
     </field>
     <field name="o2_isEnabled" type="boolean">
       <unsigned/>
       <default value="0"/>
     </field>
-    <field name="o2_url" type="string" size="255">
-      <default value=""/>
+    <field name="o2_linkType" type="string" size="10">
+      <unsigned/>
+      <default value="pID"/>
     </field>
-    <field name="o3_fID" type="smallint">
+    <field name="o2_pID" type="smallint">
       <unsigned/>
       <default value="0"/>
     </field>
-    <field name="o3_hash" type="string" size="80">
+    <field name="o2_icon" type="string" size="25">
       <default value=""/>
     </field>
-    <field name="o3_icon" type="string" size="25">
+    <field name="o2_url" type="string" size="255">
       <default value=""/>
+    </field>
+    <field name="o2_hash" type="string" size="80">
+      <default value=""/>
+    </field>
+    <field name="o2_target" type="string" size="10">
+      <default value="self"/>
+    </field>
+    <field name="o2_fID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
     </field>
     <field name="o3_isEnabled" type="boolean">
       <unsigned/>
       <default value="0"/>
     </field>
-    <field name="o3_url" type="string" size="255">
-      <default value=""/>
+    <field name="o3_linkType" type="string" size="10">
+      <unsigned/>
+      <default value="pID"/>
     </field>
-    <field name="o4_fID" type="smallint">
+    <field name="o3_pID" type="smallint">
       <unsigned/>
       <default value="0"/>
     </field>
-    <field name="o4_hash" type="string" size="80">
+    <field name="o3_icon" type="string" size="25">
       <default value=""/>
     </field>
-    <field name="o4_icon" type="string" size="25">
+    <field name="o3_url" type="string" size="255">
       <default value=""/>
+    </field>
+    <field name="o3_hash" type="string" size="80">
+      <default value=""/>
+    </field>
+    <field name="o3_target" type="string" size="10">
+      <default value="self"/>
+    </field>
+    <field name="o3_fID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
     </field>
     <field name="o4_isEnabled" type="boolean">
       <unsigned/>
       <default value="0"/>
     </field>
+    <field name="o4_linkType" type="string" size="10">
+      <unsigned/>
+      <default value="pID"/>
+    </field>
+    <field name="o4_pID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
+    </field>
+    <field name="o4_icon" type="string" size="25">
+      <default value=""/>
+    </field>
     <field name="o4_url" type="string" size="255">
       <default value=""/>
+    </field>
+    <field name="o4_hash" type="string" size="80">
+      <default value=""/>
+    </field>
+    <field name="o4_target" type="string" size="10">
+      <default value="self"/>
+    </field>
+    <field name="o4_fID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
     </field>
    <field name="bgColorRGBA" type="string" size="30">
       <default value=""/>
@@ -100,14 +144,26 @@
     <index name="bgFID">
       <col>bgFID</col>
     </index>
+    <index name="o1_pID">
+      <col>o1_pID</col>
+    </index>
     <index name="o1_fID">
       <col>o1_fID</col>
+    </index>
+    <index name="o2_pID">
+      <col>o2_pID</col>
     </index>
     <index name="o2_fID">
       <col>o2_fID</col>
     </index>
+    <index name="o3_pID">
+      <col>o3_pID</col>
+    </index>
     <index name="o3_fID">
       <col>o3_fID</col>
+    </index>
+    <index name="o4_pID">
+      <col>o4_pID</col>
     </index>
     <index name="o4_fID">
       <col>o4_fID</col>
