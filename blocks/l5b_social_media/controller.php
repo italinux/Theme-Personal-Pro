@@ -179,8 +179,8 @@ class Controller extends BlockController
                       'allowEmpty' => false,
                   ),
                   'o'.$i.'_url' => array(
-                      'label' => t($ordNum.' %s', t('item What I Do URL')),
-                      'validCondition' => array('method' => 'isEnabled_ValidUrl',
+                      'label' => t($ordNum.' %s', t('Profile')) . ': ' . t('Social Profile URL'),
+                      'validCondition' => array('method' => 'isEnabled_ValidUrl_Hash_PageID',
                                                 'params' => array('o'.$i)),
                   ),
                   'o'.$i.'_hash' => array(
@@ -221,7 +221,7 @@ class Controller extends BlockController
 
              $o = array_merge($o, array(
                  'o'.$i.'_isEnabled' => t($ordNum.' %s', t('Profile')),
-                 'o'.$i.'_pID' => t($ordNum.' %s', t('Select a Page')),
+                 'o'.$i.'_pID' => t($ordNum.' %s', t('Profile')) . ': ' . t('Select a Page'),
                  'o'.$i.'_fID' => t($ordNum.' %s', t('Custom image')),
              ));
         };
@@ -436,11 +436,11 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * All Methods for Custom Validations
     */
-    public function getIsEnabled_ValidUrl($param, $value)
+    public function getIsEnabled_ValidUrl_Hash_PageID($param, $value)
     {
         $o = array();
 
-        $error = false;
+        $isError = false;
         $label = false;
 
         // Get first parameter
@@ -448,6 +448,7 @@ class Controller extends BlockController
 
         // Retrieve ALL fields (for labels)
         $btFields = self::get_btFields();
+        $btStyles = self::get_btStyles();
 
         // proceed only if Enabled (global CTA always is)
         if ($value[$key.'_isEnabled'] == true) {
@@ -464,15 +465,47 @@ class Controller extends BlockController
                 if (trim($value[$key.'_url']) == true ) {
                     if (BlockUtils::getIsValidURL(trim($value[$key.'_url'])) === false) {
                         $label = t('%s', $btFields[$key.'_url']['label']);
-                        $error = true;
+                        $isError = true;
+                        $error = t('Invalid URL');
+                    }
+                } else {
+                    $label = t('%s', $btFields[$key.'_url']['label']);
+                    $isError = true;
+                    $error = t('Cannot be empty');
+
+                    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    * Anchor is Valid?
+                    */
+                    if (trim($value[$key.'_hash']) == true ) {
+                        $isError = false;
+                        $label = false;
+                    }
+                }
+                break;
+            case 'pID':
+
+                /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                * PageID is Valid?
+                */
+                if (trim($value[$key.'_pID']) == false ) {
+                    $label = t('%s', $btStyles[$key.'_pID']);
+                    $isError = true;
+                    $error = t('Cannot be empty');
+
+                    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    * Anchor is Valid?
+                    */
+                    if (trim($value[$key.'_hash']) == true ) {
+                        $isError = false;
+                        $label = false;
                     }
                 }
                 break;
             }
 
             // create error messages
-            if ($error !== false) {
-                $o['error'] = t('Invalid URL');
+            if ($isError !== false) {
+                $o['error'] = $error;
             }
 
             // create labels
