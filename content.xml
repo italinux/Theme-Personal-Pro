@@ -337,25 +337,37 @@ Sunday: Closed]]></openHours>
                         <title><![CDATA[social profiles]]></title>
                         <subtitle><![CDATA[follow me ..]]></subtitle>
                         <o1_fID><![CDATA[0]]></o1_fID>
-                        <o1_hash />
                         <o1_icon><![CDATA[facebook]]></o1_icon>
                         <o1_isEnabled><![CDATA[1]]></o1_isEnabled>
+                        <o1_linkType><![CDATA[url]]></o1_linkType>
+                        <o1_pID><![CDATA[0]]></o1_pID>
                         <o1_url><![CDATA[https://facebook.com/mateus73]]></o1_url>
+                        <o1_hash />
+                        <o1_target><![CDATA[blank]]></o1_target>
                         <o2_fID><![CDATA[0]]></o2_fID>
-                        <o2_hash><![CDATA[#contacts-more]]></o2_hash>
                         <o2_icon><![CDATA[whatsapp]]></o2_icon>
                         <o2_isEnabled><![CDATA[1]]></o2_isEnabled>
+                        <o2_linkType><![CDATA[url]]></o2_linkType>
+                        <o2_pID><![CDATA[0]]></o2_pID>
                         <o2_url />
+                        <o2_hash><![CDATA[#contacts-more]]></o2_hash>
+                        <o2_target><![CDATA[self]]></o2_target>
                         <o3_fID><![CDATA[0]]></o3_fID>
-                        <o3_hash />
                         <o3_icon><![CDATA[instagram]]></o3_icon>
                         <o3_isEnabled><![CDATA[1]]></o3_isEnabled>
+                        <o3_linkType><![CDATA[url]]></o3_linkType>
+                        <o3_pID><![CDATA[0]]></o3_pID>
                         <o3_url><![CDATA[https://instagram.com/italinux]]></o3_url>
+                        <o3_hash />
+                        <o3_target><![CDATA[blank]]></o3_target>
                         <o4_fID><![CDATA[0]]></o4_fID>
-                        <o4_hash />
                         <o4_icon><![CDATA[linkedin]]></o4_icon>
                         <o4_isEnabled><![CDATA[1]]></o4_isEnabled>
+                        <o4_linkType><![CDATA[url]]></o4_linkType>
+                        <o4_pID><![CDATA[0]]></o4_pID>
                         <o4_url><![CDATA[https://linkedin.com/in/italinux]]></o4_url>
+                        <o4_hash />
+                        <o4_target><![CDATA[blank]]></o4_target>
                         <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                         <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                         <bgFID><![CDATA[0]]></bgFID>
@@ -381,7 +393,7 @@ Sunday: Closed]]></openHours>
                         <credits2ndName><![CDATA[Matteo]]></credits2ndName>
                         <credits2ndUrl><![CDATA[http://matteo-montanari.com/its-me]]></credits2ndUrl>
                         <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
-                        <bgColorOpacity><![CDATA[0.25]]></bgColorOpacity>
+                        <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                         <bgFID><![CDATA[0]]></bgFID>
                         <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                         <isAnimated><![CDATA[1]]></isAnimated>

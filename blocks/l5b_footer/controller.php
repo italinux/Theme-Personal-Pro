@@ -51,7 +51,7 @@ class Controller extends BlockController
     protected static $btStyleUploadThumbHeight = 650;
 
     // Style Background Over Image default Opacity
-    protected static $bgOverImageOpacity = 0.25;
+    protected static $bgOverImageOpacity = 1;
 
     // Window Overlay size: Width X Height (pixels)
     protected $btInterfaceWidth = "1050";
@@ -624,7 +624,7 @@ class Controller extends BlockController
     */
     protected function isCustomOverImageOpacity($value)
     {
-        return ($value == true && (self::$bgOverImageOpacity != $this->getBgColorOpacity())) === true ? true : false;
+        return ($value == true && ($this->getBgColorOpacity() !== 1)) === true ? true : false;
     }
 
     protected function getOverImageBgColor()
@@ -721,7 +721,7 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../themes/lazy5basic/css/tools/lazy-global-ui.css', 'css');
+        $this->addLocalAssets('../../../themes/lazy5basic/css/build/tools/lazy-global-ui.css', 'css');
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
