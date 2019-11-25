@@ -25,7 +25,6 @@ section.about-me.mobile_view_hide_image.page-block {
   padding-bottom: 3em;
 }
 section.about-me.mobile_view_hide_image.over-image {
-  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
