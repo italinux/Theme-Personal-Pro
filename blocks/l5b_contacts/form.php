@@ -415,7 +415,7 @@ $c = Page::getCurrentPage();
           </div>
           <div class="col-lg-12">
             <div class="form-group center double-space-top">
-              <?php echo $form->label('fbPageUrl', t('%1$s Page %2$s: %3$s', 'Facebook', 'url', '<span>(<u>http://fb.com/facelog.fr</u>)</span>'))?>
+              <?php echo $form->label('fbPageUrl', t('%1$s Page %2$s: %3$s', 'Facebook', 'url', '<span>(<u>http://fb.com/martin.smith</u>)</span>'))?>
               <div class="input-group center p80">
                 <?php echo $form->text('fbPageUrl', trim($fbPageUrl), array('maxlength' => '255'))?>
               </div>

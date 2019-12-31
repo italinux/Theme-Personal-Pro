@@ -30,7 +30,7 @@ echo $cStyle;
     <div class="row main">
 
       <div class="col-lg-6 about-me-left">
-        <div data-animation="photo" class="about-me-photo">
+        <div data-animation="photo" class="<?php echo $nopaque?> about-me-photo">
           <div class="loader"></div>
           <?php
             if ($image['default']) {
@@ -46,7 +46,7 @@ echo $cStyle;
         </div>
       </div>
       <div class="col-lg-6 about-me-right">
-        <div data-animation="text" class="about-me-text">
+        <div data-animation="text" class="<?php echo $nopaque?> about-me-text">
 
           <!-- title -->
           <?php echo (trim($title) == true ? "<h2>" . h($title) . "</h2>" : null)?>
@@ -57,7 +57,7 @@ echo $cStyle;
 
       <!-- global (unique) CTA button -->
       <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
-        <div data-animation="global-cta" class="global-cta">
+        <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta">
           <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
             <span>
               <?php echo h($CTA['text'])?>
