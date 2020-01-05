@@ -9,7 +9,7 @@
 |  @link:   http://matteo-montanari.com
 '---------------------------------------------------------------------'
 .---------------------------------------------------------------------------.
-| @copyright (c) 2019                                                       |
+| @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
 |           http://concrete5.org/help/legal/commercial_add-on_license       |
@@ -304,7 +304,7 @@ section.banner div[class^="container"] div.banner-photo img[src$=".png"] {
   box-shadow: none !important;
 }
 section.banner div.player {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   right: 0;
   left: 0;

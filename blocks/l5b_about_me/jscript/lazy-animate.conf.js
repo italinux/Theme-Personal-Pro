@@ -42,21 +42,19 @@
             "about-me": {
                 "photo": {
                     offset: 550,
-                    effect: "swing",
+                    effect: "fadeIn",
                     delay: 1.4,
                 },
-/*
                 "text": {
                     offset: 550,
-                    effect: "fadeInDown",
+                    effect: "none",
                     delay: 0.8,
                 },
                 "global-cta": {
                     offset: 550,
-                    effect: "bounceIn",
+                    effect: "none",
                     delay: 0,
                 },
-*/
             },
         });
     };
