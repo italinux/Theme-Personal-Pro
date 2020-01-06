@@ -43,7 +43,7 @@
                 "photo": {
                     offset: 550,
                     effect: "fadeIn",
-                    delay: 1.4,
+                    delay: 0.4,
                 },
                 "text": {
                     offset: 550,
