@@ -1382,6 +1382,12 @@ class Controller extends BlockController
     {
         $al = AssetList::getInstance();
 
+        $ph = Array(
+            'position' => Asset::ASSET_POSITION_HEADER,
+            'minify' => true,
+            'combine' => true
+        );
+
         $pf = Array(
             'position' => Asset::ASSET_POSITION_FOOTER,
             'minify' => true,
@@ -1398,7 +1404,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', 'ytplayer-conf', 'var videoStartAt = ' . rand(intval($this->getVideoStartFrom()), intval($this->getVideoStartTo())) . ';', $pf, 'theme_lazy5basic');
         $al->register('javascript', 'ytplayer-main', 'blocks/l5b_banner/jscript/min/jquery.mb.YTPlayer.min.js', $pf, 'theme_lazy5basic');
         $al->register('javascript', 'ytplayer-init', 'blocks/l5b_banner/jscript/YTPlayer.init.js', $pf, 'theme_lazy5basic');
-        $al->register('css', 'ytplayer-style', 'blocks/l5b_banner/style/ytplayer/jquery.mb.YTPlayer.min.css', $pf, 'theme_lazy5basic');
+        $al->register('css', 'ytplayer-style', 'blocks/l5b_banner/style/ytplayer/jquery.mb.YTPlayer.min.css', $ph, 'theme_lazy5basic');
 
         $al->registerGroup(
             'jst.ytplayer', array(
