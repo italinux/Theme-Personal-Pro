@@ -50,19 +50,19 @@
     <meta name="package" content="<?php echo $theme->getThemeDisplayName()?>">
     <meta name="version" content="<?php echo $theme->getVersion()?>">
 
-    <?php echo $html->css($view->getStylesheet('main.less'))?>
+    <?php View::element('header_required', $sPage)?>
 
     <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/build/tools/c5-ui.css'); }?>
 
-    <?php View::element('header_required', $sPage)?>
+    <?php echo $html->css($view->getStylesheet('main.less'))?>
 <?php
   /* - - - - - - - - - - - - - - - - - - -
   * Theme Colour (Mobile devices Address Bar)
   */
   $theme_color = \Config::get('app.config.theme-color');
 
+  // Theme Colour (Mobile devices Address Bar)
   if (isset($theme_color)) { ?>
-    <!-- Theme Colour (Mobile devices Address Bar) -->
     <meta name="theme-color" content="<?php echo $theme_color?>">
     <meta name="msapplication-navbutton-color" content="<?php echo $theme_color?>">
     <meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $theme_color?>">
