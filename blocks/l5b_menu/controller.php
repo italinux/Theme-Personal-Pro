@@ -591,8 +591,8 @@ class Controller extends BlockController
         );
 
         // Register Assets Animate Configuration
-        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/l5b_menu/jscript/lazy-animate.conf.js?t=' . $this->getSectionId(), $cf, 'theme_lazy5basic');
-        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimateInit();', $cf, 'theme_lazy5basic');
+        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/l5b_menu/jscript/lazy-animate.conf.js', $cf, 'theme_lazy5basic');
+        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getJSelectorBlock() . ');', $cf, 'theme_lazy5basic');
 
         $al->registerGroup(
             'jst.animate.conf', array(
@@ -872,6 +872,11 @@ class Controller extends BlockController
     protected function getJSelectorId()
     {
         return $this->getSectionId() . '.' . self::$btHandlerId;
+    }
+ 
+    protected function getJSelectorBlock()
+    {
+        return str_replace('-', '_', self::$btHandlerId);
     }
 
     protected function getCustomTemplateName()
