@@ -72,6 +72,49 @@ $(function() {
     }
 
 /** - - - - - - - - - - - - - - - - - - - - -
+*  SHOW PRE-LOADER on click CTA to external pages ONLY
+* - - - - - - - - - - - - - - - - - - - - -*/
+    if (CCM_EDIT_MODE === false) {
+
+        $("div.main-wrapper a").not(".scroll").not(".popup-image").not(".lightbox").not("[href^='#']").click(function() {
+
+            /** - - - - - - - - - - - - - - - - - -
+            * Additional Check on Hrefs
+            * if not _self, then show pre-loader
+            * - - - - - - - - - - - - - - - - - - -*/
+            var href = $(this).attr('href');
+
+            if ((typeof href !== typeof undefined && href !== false && href !== null) && (((href.substring(0, 1) === '/') || (href.substring(0, 4) === 'http')))) {
+
+                /** - - - - - - - - - - - - - - - - - -
+                * Additional Check on Targets
+                * if not _self, then show pre-loader
+                * - - - - - - - - - - - - - - - - - - -*/
+                var target = $(this).attr('target');
+
+                // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
+                if ((typeof target === typeof undefined || target === false || target === null) || (target == '_self') || (target == '')) {
+
+                    // show pre-loader
+                    $("div#preloader").fadeIn(100, function() {
+                        $(this).children().fadeIn(50);
+                    });
+                }
+            }
+        });
+    }
+
+/** - - - - - - - - - - - - - - - - - - - - -
+*  HIDE PRE-LOADER on double-click (security measure)
+* - - - - - - - - - - - - - - - - - - - - -*/
+    $(thisHandler).click(function() {
+        // hide pre-loader
+        $(this).hide(0, function() {
+            $(this).children().hide();
+        });
+    });
+
+/** - - - - - - - - - - - - - - - - - - - - -
 *  SCROLL-TOP show bottom arrow
 * - - - - - - - - - - - - - - - - - - - - -*/
     // get current handler
