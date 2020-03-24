@@ -37,7 +37,7 @@ echo $cStyle;
         <div class="row double-space-bottom">
 
           <div class="form-wrapper">
-            <form name="contacts" enctype="multipart/form-data" class="form-stacked miniSurveyView" id="miniSurveyView" method="post" action="<?php echo $view->action('submit_form').'#formblock'.$bID?>">
+            <form name="contacts" enctype="multipart/form-data" class="form-stacked miniSurveyView" id="miniSurveyView" method="post" action="<?php echo parse_url($view->action('submit_form'), PHP_URL_PATH) . '#formblock' . $bID?>">
               <?php
                 // Print Success OR Errors
                 if ($formSuccess == true) {

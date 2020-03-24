@@ -98,7 +98,7 @@ $(function() {
                     // show pre-loader
                     $("div#preloader").fadeIn(100, function() {
                         $(this).children().fadeIn(50);
-                    }).delay(500).fadeOut(300).hide(0);
+                    }).delay(1500).fadeOut(300).hide(0);
                 }
             }
         });

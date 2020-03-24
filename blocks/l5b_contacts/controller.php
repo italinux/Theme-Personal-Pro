@@ -493,7 +493,7 @@ class Controller extends BlockController
                   section<?php echo $this->getStyleSelector()?>.over-image {
                     <?php
                       if (BlockUtils::isValidImage($this->getBgFID())) { ?>
-                          background-image: url('<?php echo $this->getCustomStyleImagePath()?>') !important;
+                          background-image: url('<?php echo parse_url($this->getCustomStyleImagePath(), PHP_URL_PATH)?>') !important;
                     <?php } ?>
 
                     <?php

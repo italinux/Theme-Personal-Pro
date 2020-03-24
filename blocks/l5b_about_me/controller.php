@@ -591,7 +591,7 @@ class Controller extends BlockController
         switch($this->getCTA_linkType()) {
         case "pID":
             $page = ($this->getCTA_pID() == true) ? BlockUtils::getPageObject($this->getCTA_pID()) : null;
-            $o = is_object($page) == true ? BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page) : null;
+            $o = is_object($page) == true ? parse_url(BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page), PHP_URL_PATH) : null;
             break;
         case "url":
             $o = $this->getCTA_url();
@@ -734,7 +734,7 @@ class Controller extends BlockController
                   section<?php echo $this->getStyleSelector()?>.over-image {
                     <?php
                       if (BlockUtils::isValidImage($this->getBgFID())) { ?>
-                          background-image: url('<?php echo $this->getCustomStyleImagePath()?>') !important;
+                          background-image: url('<?php echo parse_url($this->getCustomStyleImagePath(), PHP_URL_PATH)?>') !important;
                     <?php } ?>
 
                     <?php
@@ -1034,7 +1034,7 @@ class Controller extends BlockController
         $height = ($h == false) ? self::$btCustomImageThumbHeight : $h;
 
         // get source thumbnail image
-        return (is_object($fID) ? BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src : null);
+        return (is_object($fID) ? parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src, PHP_URL_PATH) : null);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
