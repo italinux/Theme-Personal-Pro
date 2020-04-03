@@ -420,6 +420,9 @@ msgstr "Zaterdag: %s"
 msgid "Sunday: Closed"
 msgstr "Zondag: Gesloten"
 
+msgid "Please type the letters and numbers shown in the image. Click the image to see another captcha."
+msgstr "Typ de letters en cijfers die in de afbeelding worden weergegeven. Klik op de afbeelding om een ​​andere captcha te zien."
+
 # block Social Media
 msgid "social profiles"
 msgstr "sociale Profielen"
@@ -1064,3 +1067,6 @@ msgstr "documentatie:"
 
 msgid "an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
 msgstr "een %1$s anker %2$s om naar %1$s gedeelte %2$s van een pagina"
+
+msgid "button text"
+msgstr "knop tekst"

@@ -42,6 +42,33 @@ div.main-wrapper {
   }
 }
 
+/* Buttons Media: Mobiles
+---------------------------------------------------------*/
+@media screen and (max-width: 500px) {
+  div.main-wrapper {
+    .btn {
+      white-space: normal;
+    }
+    div.global-cta {
+      .btn {
+        width: 95% !important;
+        margin: 0px auto;
+        text-align: center;
+        &.goto {
+          > span {
+            max-width: 150px;
+            display: inline-block;
+          }
+          &::after {
+            vertical-align: text-top;
+            margin-right: -25px;
+          }
+        }
+      }
+    }
+  }
+}
+
 /**
 *  - - ALL BLOCKS HERE - - 
 *

@@ -420,6 +420,9 @@ msgstr "Sobota: %s"
 msgid "Sunday: Closed"
 msgstr "Ned&#283;le: zav&#345;eno"
 
+msgid "Please type the letters and numbers shown in the image. Click the image to see another captcha."
+msgstr "Zadejte pros&iacute;m p&iacute;smena a &#269;&iacute;sla uveden&aacute; na obr&aacute;zku. Kliknut&iacute;m na obr&aacute;zek zobraz&iacute;te dal&scaron;&iacute; captcha."
+
 # block Social Media
 msgid "social profiles"
 msgstr "soci&aacute;ln&iacute; profily"
@@ -1064,3 +1067,6 @@ msgstr "dokumentace:"
 
 msgid "an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
 msgstr "%1$s kotevn&iacute; %2$s p&#345;ejd&#283;te na %1$s odd&iacute;lu %2$s na str&aacute;nku"
+
+msgid "button text"
+msgstr "tla&#269;&iacute;tko text"

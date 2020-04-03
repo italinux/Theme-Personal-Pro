@@ -40,3 +40,9 @@ section.about-me.image_clean_left div.main > div.about-me-right {
 section.about-me.image_clean_left div.main > div.about-me-right > div.global-cta {
   text-align: left;
 }
+
+@media screen and (max-width: 1200px) {
+  section.about-me.image_clean_left div.main > div.about-me-right {
+    float: none;
+  }
+}

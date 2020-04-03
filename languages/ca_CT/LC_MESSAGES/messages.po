@@ -420,6 +420,9 @@ msgstr "Dissabte: %s"
 msgid "Sunday: Closed"
 msgstr "Diumenge: Tancat"
 
+msgid "Please type the letters and numbers shown in the image. Click the image to see another captcha."
+msgstr "Escriviu les lletres i els n&uacute;meros que apareixen a la imatge. Feu clic a la imatge per veure una altra captcha."
+
 # block Social Media
 msgid "social profiles"
 msgstr "perfils socials"
@@ -1064,3 +1067,6 @@ msgstr "documentaci&oacute;:"
 
 msgid "an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page"
 msgstr "una de %1$s &agrave;ncora %2$s per despla&ccedil;ar-vos a %1$s secci&oacute; de %2$s de la p&agrave;gina"
+
+msgid "button text"
+msgstr "text del bot&oacute;"

@@ -367,7 +367,7 @@ section.about-me div.main div.about-me-photo div.msg-default {
   z-index: 1;
 }
 section.about-me div.main div.about-me-text h2:first-of-type {
-  white-space: pre;
+  white-space: pre-line;
 }
 section.about-me div.main div.about-me-text big {
   font-size: 130%;
