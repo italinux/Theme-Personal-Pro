@@ -187,7 +187,7 @@ div.main-wrapper {
   .btn {
     font-weight: 400;
     text-decoration: none;
-    padding: 18px 35px;
+    padding: 18px 35px 20px;
     border-width: 0px;
     border-style: none;
     border-radius: 4px;
@@ -291,7 +291,7 @@ div.main-wrapper {
       height: 90px;
       margin: -45px 0 0 -45px;
       background-color: #fff;
-      background-image: url("../../../images/pre-loader.gif");
+      background-image: url("../../images/pre-loader.gif");
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-position: center center;
@@ -303,9 +303,6 @@ div.main-wrapper {
   /* Menu
 --------------------------------------------------------- */
   section.pre-hand.menu {
-    &.static {
-      background-color: @brand-menu-background-color;
-    }
     div.hamburger {
       .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
         background-color: @brand-menu-font-color;
@@ -314,7 +311,7 @@ div.main-wrapper {
     nav {
       li {
         &.highlight {
-          background-color: fade(@body-high-bg-color, 50%);
+          background-color: @body-high-bg-color;
           a {
             color: @body-high-font-color;
           }
@@ -328,12 +325,16 @@ div.main-wrapper {
   section.pre-hand.banner {
     h1, h2 {
       & when (round(@brand-banner-title-shadow-size/40) > 0) {
-        text-shadow: 0px 0px round(@brand-banner-title-shadow-size/40) lighten(@brand-banner-font-color, 40%);
+        text-shadow: 0px 0px round(@brand-banner-title-shadow-size/40) lighten(@body-high-font-color, 40%),
+        0px 0px round(@brand-banner-title-shadow-size/40) lighten(@body-high-font-color, 40%),
+        0px 0px round(@brand-banner-title-shadow-size/40) lighten(@body-high-font-color, 40%);
       }
     }
     h4, h5 {
       & when (round(@brand-banner-subtitle-shadow-size/40) > 0) {
-        text-shadow: 0px 0px round(@brand-banner-subtitle-shadow-size/40) lighten(@brand-banner-font-color, 40%);
+        text-shadow: 0px 0px round(@brand-banner-subtitle-shadow-size/40) lighten(@body-high-font-color, 40%),
+        0px 0px round(@brand-banner-subtitle-shadow-size/40) lighten(@body-high-font-color, 40%),
+        0px 0px round(@brand-banner-subtitle-shadow-size/40) lighten(@body-high-font-color, 40%);
       }
     }
     h5:last-of-type {
@@ -342,12 +343,16 @@ div.main-wrapper {
     a {
       &.CTA, &.CTA-arrow {
         & when (round(@brand-banner-CTA-shadow-size/40) > 0) {
-          text-shadow: 0px 0px round(@brand-banner-CTA-shadow-size/40) lighten(@brand-banner-font-color, 40%);
+          text-shadow: 0px 0px round(@brand-banner-CTA-shadow-size/40) lighten(@body-high-font-color, 40%),
+          0px 0px round(@brand-banner-CTA-shadow-size/40) lighten(@body-high-font-color, 40%),
+          0px 0px round(@brand-banner-CTA-shadow-size/40) lighten(@body-high-font-color, 40%);
         }
       }
       &.btn-primary {
         & when (round(@brand-banner-CTA-shadow-size/40) > 0) {
-          box-shadow: 0px 0px round(@brand-banner-CTA-shadow-size/40) 0px lighten(@brand-banner-font-color, 40%);
+          box-shadow: 0px 0px round(@brand-banner-CTA-shadow-size/40) 0px lighten(@body-high-font-color, 40%),
+          0px 0px round(@brand-banner-CTA-shadow-size/40) 0px lighten(@body-high-font-color, 40%),
+          0px 0px round(@brand-banner-CTA-shadow-size/40) 0px lighten(@body-high-font-color, 40%);
         }
       }
     }
@@ -422,10 +427,10 @@ div.main-wrapper {
     }
     div.credits {
       &.download {
-        opacity: 0.4;
+        opacity: 0.9;
       }
 
-      opacity: 0.2;
+      opacity: 0.6;
       text-shadow: 1px 1px 0 @brand-footer-background-rgb-color;
     }
   }
