@@ -231,7 +231,9 @@ class Controller extends Package
         $blocksAndTables = array();
 
         foreach (array_keys($this->getBlocksAvailable()) as $key) {
-            $blocksAndTables[$this->pkgPrefix . '_' . $key] = 'bt' . str_replace(' ', '', self::getPackageNameID()) . ucfirst(str_replace('_', '', mb_convert_case(mb_strtolower($key, "UTF-8"), MB_CASE_TITLE, "UTF-8")));
+            if (is_dir(__DIR__ . '/blocks/' . $this->pkgPrefix . '_' . $key)) {
+                $blocksAndTables[$this->pkgPrefix . '_' . $key] = 'bt' . str_replace(' ', '', self::getPackageNameID()) . ucfirst(str_replace('_', '', mb_convert_case(mb_strtolower($key, "UTF-8"), MB_CASE_TITLE, "UTF-8")));
+            }
         }
 
         return $blocksAndTables;
