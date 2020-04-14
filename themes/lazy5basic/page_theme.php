@@ -101,6 +101,20 @@ class PageTheme extends Theme
         return cPackage::create()->getAreasNames();
     }
 
+    public function getThemeAreaClasses()
+    {
+
+        $areaClasses = array();
+
+        $blockClasses = $this->getThemeBlockClasses();
+
+        foreach ($this->getAreasNames() as $value) {
+           $areaClasses[$value] = $blockClasses['*'];
+        }
+
+        return $areaClasses;
+    }
+
     public function getThemeBlockClasses()
     {
 
