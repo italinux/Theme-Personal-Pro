@@ -10,7 +10,6 @@
       <default value=""/>
     </field>
     <field name="cs_CTA_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="cs_CTA_pID" type="smallint">
@@ -47,7 +46,6 @@
       <default value=""/>
     </field>
     <field name="fs_CTA_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="fs_CTA_pID" type="smallint">
@@ -81,7 +79,6 @@
       <default value=""/>
     </field>
     <field name="iam_wid_CTA_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="iam_wid_CTA_pID" type="smallint">
@@ -124,7 +121,6 @@
       <default value=""/>
     </field>
     <field name="img_sd_CTA_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="img_sd_CTA_pID" type="smallint">
@@ -143,14 +139,17 @@
     <field name="img_sd_content" type="text" size="65535">
       <default value=""/>
     </field>
-    <field name="img_sd_fID" type="smallint">
-      <unsigned/>
-      <default value="0"/>
-    </field>
     <field name="img_sd_isVideoEnabled" type="boolean">
       <unsigned/>
       <default value="1"/>
       <notnull/>
+    </field>
+    <field name="img_sd_imageType" type="string" size="10">
+      <default value="fID"/>
+    </field>
+    <field name="img_sd_fID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
     </field>
     <field name="img_sd_sID" type="smallint">
       <unsigned/>

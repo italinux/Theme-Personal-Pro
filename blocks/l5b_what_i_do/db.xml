@@ -13,7 +13,6 @@
       <default value=""/>
     </field>
     <field name="CTA_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="CTA_pID" type="smallint">
@@ -37,7 +36,6 @@
       <default value="0"/>
     </field>
     <field name="o1_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="o1_pID" type="smallint">
@@ -74,7 +72,6 @@
       <default value="0"/>
     </field>
     <field name="o2_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="o2_pID" type="smallint">
@@ -111,7 +108,6 @@
       <default value="0"/>
     </field>
     <field name="o3_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="o3_pID" type="smallint">
@@ -148,7 +144,6 @@
       <default value="0"/>
     </field>
     <field name="o4_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="o4_pID" type="smallint">

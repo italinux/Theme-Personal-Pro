@@ -16,7 +16,6 @@
       <default value=""/>
     </field>
     <field name="CTA_linkType" type="string" size="10">
-      <unsigned/>
       <default value="pID"/>
     </field>
     <field name="CTA_pID" type="smallint">
@@ -31,6 +30,9 @@
     </field>
     <field name="CTA_url" type="string" size="255">
       <default value=""/>
+    </field>
+    <field name="o1_imageType" type="string" size="10">
+      <default value="fID"/>
     </field>
     <field name="o1_fID" type="smallint">
       <unsigned/>
