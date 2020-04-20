@@ -26,15 +26,15 @@
 * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 * ============================================
 */
-var linkTypeSwitch = {
+var thisTypeSwitch = {
     init: function () {
 
         // Get inputs Container
-        var container = $('div[id$="_linkTypes"]');
+        var containerLink = $('div[id$="_linkTypes"]');
 
         // - - - - - - - - - - - - - - - - - - - - - - - -
         // Select Link (url|page selector)
-        container.find('input[type="radio"]').change(function() {
+        containerLink.find('input[type="radio"]').change(function() {
 
             // prefix div ID selector
             var nID = 'div#' + this.name;

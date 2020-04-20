@@ -26,15 +26,15 @@
 * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 * ============================================
 */
-var linkTypeSwitch = {
+var thisTypeSwitch = {
     init: function () {
 
         // Get inputs Container
-        var container = $('div[id$="_linkTypes"]');
+        var containerLink = $('div[id$="_linkTypes"]');
 
         // - - - - - - - - - - - - - - - - - - - - - - - -
         // Select Link (url|page selector)
-        container.find('input[type="radio"]').change(function() {
+        containerLink.find('input[type="radio"]').change(function() {
 
             // prefix div ID selector
             var nID = 'div#' + this.name;
@@ -47,6 +47,28 @@ var linkTypeSwitch = {
             case 'pID':
                 $(nID + '_' + this.value).show();
                 $(nID + '_url').hide();
+                break;
+            }
+        });
+
+        // Get inputs Container
+        var containerImage = $('div[id$="_imageTypes"]');
+
+        // - - - - - - - - - - - - - - - - - - - - - - - -
+        // Select Image (random from fileset|single)
+        containerImage.find('input[type="radio"]').change(function() {
+
+            // prefix div ID selector
+            var nID = 'div#' + this.name;
+
+            switch(this.value) {
+            case 'sID':
+                $(nID + '_' + this.value).show();
+                $(nID + '_sID').hide();
+                break;
+            case 'fID':
+                $(nID + '_' + this.value).show();
+                $(nID + '_fID').hide();
                 break;
             }
         });
