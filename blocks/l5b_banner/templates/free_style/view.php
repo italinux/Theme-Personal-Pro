@@ -57,7 +57,7 @@ echo $cStyle;
         </h5>
       <?php }?>
 
-      <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
+      <?php if ((trim($CTA['link']) != '') || (trim($CTA['hash']) != '')) {?>
           <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="<?php echo $CTA['class']?> CTA-arrow CTA-clean" target="<?php echo $CTA['target']?>">
             <i data-animation="top-arrow" class="fa fa-angle-down fa-4x infinite <?php echo $nopaque?>"></i>
           </a>
