@@ -29,7 +29,7 @@ echo $cStyle;
   <div class="container-fluid" id="<?php echo $viewPoint?>">
     <div class="row block-header <?php echo (trim($title) || trim($subtitle) ? null : "hide")?>">
       <?php echo (trim($title) == true ? "<h2>" . h($title) . "</h2>" : null)?>
-      <?php echo (trim($subtitle) == true ? "<h5>" . h($subtitle) . "</h5>" : null)?>
+      <?php echo (trim($subtitle) == true ? "<h4>" . h($subtitle) . "</h4>" : null)?>
     </div>
     <div class="row main">
 
