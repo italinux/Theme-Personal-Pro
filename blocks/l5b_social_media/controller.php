@@ -456,7 +456,7 @@ class Controller extends BlockController
             /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
             * if Link Type (Select a Page / URL)
             */
-            switch($value[$key.'_linkType']) {
+            switch ($value[$key.'_linkType']) {
             case 'url':
 
                 /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -640,9 +640,9 @@ class Controller extends BlockController
     protected function getClassByID($id)
     {
         // scroll or goto
-        switch($this->get_target($id)) {
+        switch ($this->get_target($id)) {
         case "self":
-            switch($this->get_linkType($id)) {
+            switch ($this->get_linkType($id)) {
             case "pID":
                 $o = $this->get_pID($id) == false ? 'scroll' : null;
                 break;
@@ -666,7 +666,7 @@ class Controller extends BlockController
     protected function getLinkByID($id)
     {
         // page or url
-        switch($this->get_linkType($id)) {
+        switch ($this->get_linkType($id)) {
         case "pID":
             $page = ($this->get_pID($id) == true) ? BlockUtils::getPageObject($this->get_pID($id)) : null;
             $o = is_object($page) == true ? parse_url(BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page), PHP_URL_PATH) : null;
@@ -782,7 +782,7 @@ class Controller extends BlockController
              $o = ($key == 1 ? 'left' : 'right');
            break;
            case 3:
-             switch($key) {
+             switch ($key) {
                 case 1:
                   $o = 'left';
                 break;
@@ -794,7 +794,7 @@ class Controller extends BlockController
              }
            break;
            case 4:
-             switch($key) {
+             switch ($key) {
                 case 1:
                   $o = 'left';
                 break;

@@ -34,7 +34,7 @@ echo $cStyle;
     <div class="row main">
 
     <?php
-      foreach($allData as $key => $value) {
+      foreach ($allData as $key => $value) {
       ?>
 
       <div class="main-item

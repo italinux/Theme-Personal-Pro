@@ -671,7 +671,7 @@ class Controller extends BlockController
             $thisInput['input'] = $miniSurvey->loadInputType($row, false);
 
             // Make type names common-sensical
-            switch($row['inputType']) {
+            switch ($row['inputType']) {
             case 'text':
               $thisInput['type'] = 'textarea';
               $thisInput['input'] = str_replace('style="width:95%"', '', $thisInput['input']);
@@ -1073,7 +1073,7 @@ class Controller extends BlockController
         $q = "SELECT * FROM {$this->btFormTable} WHERE questionSetId = ? LIMIT 1";
         $r = $db->executeQuery($q, array($qsID));
 
-        foreach($r->fetchRow() as $key => $value) {
+        foreach ($r->fetchRow() as $key => $value) {
             $this->{$key} = $value;
         }
 
@@ -1251,7 +1251,7 @@ class Controller extends BlockController
                 */
                 $answerDisplay = '';
 
-                switch($row['inputType']) {
+                switch ($row['inputType']) {
                 case 'checkboxlist':
                     $answer = array();
                     $answerLong = "";

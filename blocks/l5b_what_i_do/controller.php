@@ -620,7 +620,7 @@ class Controller extends BlockController
             /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
             * if Link Type (Select a Page / URL)
             */
-            switch($value[$key.'_linkType']) {
+            switch ($value[$key.'_linkType']) {
             case 'url':
 
                 /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1115,9 +1115,9 @@ class Controller extends BlockController
     protected function getClassByID($id)
     {
         // scroll or goto
-        switch($this->get_target($id)) {
+        switch ($this->get_target($id)) {
         case "self":
-            switch($this->get_linkType($id)) {
+            switch ($this->get_linkType($id)) {
             case "pID":
                 $o = $this->get_pID($id) == false ? 'scroll' : null;
                 break;
@@ -1141,9 +1141,9 @@ class Controller extends BlockController
     protected function getCTA_class()
     {
         // scroll or goto
-        switch($this->getCTA_target()) {
+        switch ($this->getCTA_target()) {
         case "self":
-            switch($this->getCTA_linkType()) {
+            switch ($this->getCTA_linkType()) {
             case "pID":
                 $o = $this->getCTA_pID() == false ? 'scroll' : null;
                 break;
@@ -1167,7 +1167,7 @@ class Controller extends BlockController
     protected function getLinkByID($id)
     {
         // page or url
-        switch($this->get_linkType($id)) {
+        switch ($this->get_linkType($id)) {
         case "pID":
             $page = ($this->get_pID($id) == true) ? BlockUtils::getPageObject($this->get_pID($id)) : null;
             $o = is_object($page) == true ? parse_url(BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page), PHP_URL_PATH) : null;
@@ -1187,7 +1187,7 @@ class Controller extends BlockController
     protected function getCTA_link()
     {
         // page or url
-        switch($this->getCTA_linkType()) {
+        switch ($this->getCTA_linkType()) {
         case "pID":
             $page = ($this->getCTA_pID() == true) ? BlockUtils::getPageObject($this->getCTA_pID()) : null;
             $o = is_object($page) == true ? parse_url(BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page), PHP_URL_PATH) : null;

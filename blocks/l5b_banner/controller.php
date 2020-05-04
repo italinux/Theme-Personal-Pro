@@ -901,7 +901,7 @@ class Controller extends BlockController
         /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
         * if Link Type (Select a Page / URL)
         */
-        switch($value[$key.'_CTA_linkType']) {
+        switch ($value[$key.'_CTA_linkType']) {
         case 'url':
             /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
             * URL is Valid?
@@ -1111,7 +1111,7 @@ class Controller extends BlockController
 
         $o = t('Template Error: %s', t('Missing'));
 
-        foreach($tNames as $key => $value) {
+        foreach ($tNames as $key => $value) {
             if (preg_match('#^'.$key.'_#', $field) === 1) {
                 // Found Template which this field belongs
                 $o = $value;
@@ -1229,9 +1229,9 @@ class Controller extends BlockController
     protected function getClassByID($id)
     {
         // scroll or null
-        switch($this->{'get'.$id.'_target'}()) {
+        switch ($this->{'get'.$id.'_target'}()) {
         case "self":
-            switch($this->{'get'.$id.'_linkType'}()) {
+            switch ($this->{'get'.$id.'_linkType'}()) {
             case "pID":
                 $o = $this->{'get'.$id.'_pID'}() == false ? 'scroll' : null;
                 break;
@@ -1255,7 +1255,7 @@ class Controller extends BlockController
     protected function getLinkByID($id)
     {
         // page or url
-        switch($this->{'get'.$id.'_linkType'}()) {
+        switch ($this->{'get'.$id.'_linkType'}()) {
         case "pID":
             $page = ($this->{'get'.$id.'_pID'}() == true) ? BlockUtils::getPageObject($this->{'get'.$id.'_pID'}()) : null;
             $o = is_object($page) == true ? parse_url(BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page), PHP_URL_PATH) : null;
