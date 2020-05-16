@@ -55,16 +55,16 @@ $c = Page::getCurrentPage();
               <legend><?php echo t('Options')?></legend>
               <div class="form-group">
                 <?php echo $form->label('surveyName', t('Form Name'))?>
-                <?php echo $form->text('surveyName', $surveyName, array('maxlength' => '155'))?>
+                <?php echo $form->text('surveyName', $surveyName, array('maxlength' => 155))?>
               </div>
               <div class="form-group">
                   <?php echo $form->label('submitText', t('Submit Text'))?>
-                  <?php echo $form->text('submitText', $submitText, array('maxlength' => '50'))?>
+                  <?php echo $form->text('submitText', $submitText, array('maxlength' => 50))?>
               </div>
 
               <div class="form-group">
                   <?php echo $form->label('thankyouMsg', t('Message to display when completed'))?>
-                  <?php echo $form->textarea('thankyouMsg', $thankYouMessage, array('rows' => 3, 'maxlength' => '255'))?>
+                  <?php echo $form->textarea('thankyouMsg', $thankYouMessage, array('rows' => 3, 'maxlength' => 255))?>
               </div>
 
               <div class="form-group">
@@ -72,7 +72,7 @@ $c = Page::getCurrentPage();
                 <div class="input-group">
                   <span class="input-group-addon" style="z-index: 2000">
                   <?php echo $form->checkbox('notifyMeOnSubmission', 1, $miniSurveyInfo['notifyMeOnSubmission'] == 1, array('onclick' => "$('input[name=recipientEmail]').focus()"))?>
-                  </span><?php echo $form->text('recipientEmail', $miniSurveyInfo['recipientEmail'], array('style' => 'z-index:2000;', 'maxlength' => '155'))?>
+                  </span><?php echo $form->text('recipientEmail', $miniSurveyInfo['recipientEmail'], array('style' => 'z-index:2000;', 'maxlength' => 155))?>
                 </div>
                 <span class="help-block"><?php echo t('(Seperate multiple emails with a comma)')?></span>
               </div>
@@ -144,7 +144,7 @@ $c = Page::getCurrentPage();
 
               <div class="form-group">
                 <?php echo $form->label('question', t('Question'))?>
-                <?php echo $form->text('question', array('maxlength' => '255'))?>
+                <?php echo $form->text('question', array('maxlength' => 255))?>
               </div>
 
               <div class="form-group">
@@ -166,7 +166,7 @@ $c = Page::getCurrentPage();
               <div id="answerOptionsArea">
                 <div class="form-group">
                   <?php echo $form->label('answerOptions', t('Answer Options'))?>
-                  <?php echo $form->textarea('answerOptions', array('rows' => 3, 'maxlength' => '255'))?>
+                  <?php echo $form->textarea('answerOptions', array('rows' => 3, 'maxlength' => 255))?>
                   <span class="help-block"><?php echo t('Put each answer options on a new line')?></span>
                 </div>
               </div>
@@ -174,11 +174,11 @@ $c = Page::getCurrentPage();
               <div id="answerSettings" style="overflow:hidden">
                 <div class="form-group" style="width:50%; float:left">
                   <?php echo $form->label('width', t('Text Area Width'))?>
-                  <?php echo $form->text('width', 40, array('maxlength' => '4'))?>
+                  <?php echo $form->text('width', 40, array('maxlength' => 3))?>
                 </div>
                 <div class="form-group" style="width:50%; float:right">
                   <?php echo $form->label('height', t('Text Area Height'))?>
-                  <?php echo $form->text('height', 10, array('maxlength' => '3'))?>
+                  <?php echo $form->text('height', 10, array('maxlength' => 3))?>
                 </div>
               </div>
 
@@ -225,7 +225,7 @@ $c = Page::getCurrentPage();
               <fieldset>
                 <legend id="editQuestionTitle"><?php echo t('Edit Question')?></legend>
                 <div class="form-group">
-                  <?php echo $form->label('questionEdit', t('Question'))?><?php echo $form->text('questionEdit', array('maxlength' => '155'))?>
+                  <?php echo $form->label('questionEdit', t('Question'))?><?php echo $form->text('questionEdit', array('maxlength' => 155))?>
                 </div>
                 <div class="form-group">
                   <?php echo $form->label('answerTypeEdit', t('Answer Type'))?>
@@ -246,16 +246,16 @@ $c = Page::getCurrentPage();
                 <div id="answerOptionsAreaEdit">
                   <div class="form-group">
                     <?php echo $form->label('answerOptionsEdit', t('Answer Options'))?>
-                    <?php echo $form->textarea('answerOptionsEdit', array('rows' => 3, 'maxlength' => '255'))?>
+                    <?php echo $form->textarea('answerOptionsEdit', array('rows' => 3, 'maxlength' => 255))?>
                     <span class="help-block"><?php echo t('Put each answer options on a new line')?></span>
                   </div>
                 </div>
                 <div id="answerSettingsEdit">
                   <div class="form-group">
-                    <?php echo $form->label('widthEdit', t('Text Area Width'))?><?php echo $form->text('widthEdit', 40, array('maxlength' => '4'))?>
+                    <?php echo $form->label('widthEdit', t('Text Area Width'))?><?php echo $form->text('widthEdit', 40, array('maxlength' => 3))?>
                   </div>
                   <div class="form-group">
-                    <?php echo $form->label('heightEdit', t('Text Area Height'))?><?php echo $form->text('heightEdit', 10, array('maxlength' => '4'))?>
+                    <?php echo $form->label('heightEdit', t('Text Area Height'))?><?php echo $form->text('heightEdit', 10, array('maxlength' => 3))?>
                   </div>
                 </div>
                 <div id="answerDateDefaultEdit">
@@ -347,7 +347,7 @@ $c = Page::getCurrentPage();
               <div class="form-group center single-space-top">
                 <?php echo $form->label('title', t('Title: %s', '<span>(' . t('contact me') . ')</span>'))?>
                 <div class="input-group center">
-                  <?php echo $form->text('title', $title, array('maxlength' => '50'))?>
+                  <?php echo $form->text('title', $title, array('maxlength' => 50))?>
                 </div>
               </div>
             </div>
@@ -359,7 +359,7 @@ $c = Page::getCurrentPage();
                             'address',
                             trim($address), array(
                                 'rows' => 4,
-                                'maxlength' => '255',
+                                'maxlength' => 255,
                             ));
                         ?>
                   </div>
@@ -373,7 +373,7 @@ $c = Page::getCurrentPage();
                             'telephone',
                             trim($telephone), array(
                                 'rows' => 3,
-                                'maxlength' => '255',
+                                'maxlength' => 255,
                             ));
                         ?>
                   </div>
@@ -385,7 +385,7 @@ $c = Page::getCurrentPage();
               <div class="form-group center single-space-top">
                 <?php echo $form->label('subtitle', t('Subtitle: %s', '<span>(' . t('yeah, go ahead!') . ')</span>'))?>
                 <div class="input-group center">
-                  <?php echo $form->text('subtitle', $subtitle, array('maxlength' => '50'))?>
+                  <?php echo $form->text('subtitle', $subtitle, array('maxlength' => 50))?>
                 </div>
               </div>
             </div>
@@ -397,7 +397,7 @@ $c = Page::getCurrentPage();
                             'openHours',
                             trim($openHours), array(
                                 'rows' => 4,
-                                'maxlength' => '255',
+                                'maxlength' => 255,
                             ));
                         ?>
                   </div>
@@ -407,7 +407,7 @@ $c = Page::getCurrentPage();
                 <div class="form-group center single-space-top">
                   <?php echo $form->label('email', t('Email: %s', '<span>(' . t('my') . '@email.' . t('here') . ')</span>'))?>
                   <div class="input-group">
-                    <?php echo $form->text('email', trim($email), array('maxlength' => '55'))?>
+                    <?php echo $form->text('email', trim($email), array('maxlength' => 55))?>
                   </div>
                 </div>
               </div>
@@ -417,7 +417,7 @@ $c = Page::getCurrentPage();
             <div class="form-group center double-space-top">
               <?php echo $form->label('fbPageUrl', t('%1$s Page %2$s: %3$s', 'Facebook', 'url', '<span>(<u>http://fb.com/martin.smith</u>)</span>'))?>
               <div class="input-group center p80">
-                <?php echo $form->text('fbPageUrl', trim($fbPageUrl), array('maxlength' => '255'))?>
+                <?php echo $form->text('fbPageUrl', trim($fbPageUrl), array('maxlength' => 255))?>
               </div>
             </div>
           </div>

@@ -34,7 +34,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <div class="form-group center">
               <?php echo $form->label('title', t('Title: %s', '<span>(' . t('social profiles') . ')</span>'))?>
               <div class="input-group center p40">
-                <?php echo $form->text('title', $title, array('maxlength' => '50'))?>
+                <?php echo $form->text('title', $title, array('maxlength' => 50))?>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <div class="form-group center single-space-bottom">
               <?php echo $form->label('subtitle', t('Subtitle: %s', '<span>(' . t('join me ..') . ')</span>'))?>
               <div class="input-group center p50">
-                <?php echo $form->text('subtitle', $subtitle, array('maxlength' => '50'))?>
+                <?php echo $form->text('subtitle', $subtitle, array('maxlength' => 50))?>
               </div>
             </div>
           </div>
@@ -67,8 +67,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Tabs -->
             <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>" <?php echo ($i==1) ? ' style="display:block"' : null?>>
               <fieldset class="single-space-bottom">
-                <div class="col-lg-8">
-                  <div class="form-group center no-sides-spaces single-space-top link-block-opts">
+                <div class="col-lg-9">
+                  <div class="form-group center single-space-top link-block-opts" style="max-width: 750px;">
                     <label class="control-label"><?php echo t('Link to social profile')?>
                       <sup class="tooltip info">
                         <div>
@@ -76,11 +76,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <dt><?php echo t('Here you define:')?></dt>
                             <dd><?php echo t('link to a %1$s URL %2$s or to a %1$s Page %2$s', '<strong>', '</strong>')?></dd>
                             <dd><?php echo t('add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page', '<strong>', '</strong>')?></dd>
-                            <dd><?php echo t('open up to a %1$s new page %2$s or on the %1$s same page %2$s', '<strong>', '</strong>')?></dd>
                           </dl>
 
-                          <span><?php echo t('Leave it empty to hide it')?></span>
-                          <br /><br /><?php echo t('documentation:')?>
+                          <?php echo t('documentation:')?>
                           <a class="goto" href="http://italinux.com/theme-personal-pro/docs/links" target="_blank"><span><?php echo t('click here')?></span></a>
                         </div>
                       </sup>
@@ -104,10 +102,11 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                       </div>
                     </div>
+
                     <div class="row no-margins">
                       <div class="col-lg-6 no-sides-paddings">
                         <div id="o<?php echo $i?>_linkType_url" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
-                          <?php echo $form->text('o' . $i . '_url', ${"o" . $i . "_url"}, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                          <?php echo $form->text('o' . $i . '_url', ${"o" . $i . "_url"}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                         </div>
                         <div id="o<?php echo $i?>_linkType_pID" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
                           <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, 'ccm_selectSitemapNode')?>
@@ -115,7 +114,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                       <div class="col-lg-3 no-sides-paddings">
                         <div class="input-group center">
-                          <?php echo $form->text('o' . $i . '_hash', ${"o" . $i . "_hash"}, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                          <?php echo $form->text('o' . $i . '_hash', ${"o" . $i . "_hash"}, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                         </div>
                       </div>
                       <div class="col-lg-3 no-sides-paddings">
@@ -125,27 +124,65 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
-                  <div class="form-group no-margins">
-                    <?php echo $form->label('o' . $i . '_icon', t('Choose the related icon:'))?>
-                    <div class="input-group">
-                      <select name="o<?php echo $i?>_icon" multiple="true" style="height:210px">
-                        <?php
-                          if (is_array($itemsIcons)) {
-                            foreach ($itemsIcons as $key => $value) {
-                              if ($key > 0) {
-                                  echo ((is_int(($key) / 10)) == true ? '<option style="visibility:hidden"></option>' : null);
+
+                  <div class="form-group center single-space-top no-space-bottom">
+                    <label class="control-label">
+                      <?php echo t('Choose image')?>
+                    </label>
+                  </div>
+                  <div class="form-group center light-title no-paddings no-space-bottom link-block-opts">
+                    <div class="row no-margins">
+                      <div class="col-lg-11 no-right-space">
+                        <div id="<?php echo 'o' . $i . '_imageTypes'?>" class="input-group single-space-bottom no-right-space">
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('o' . $i . '_imageType', 'icon', ${"o" . $i . "_imageType"})?>
+                              <a><?php echo t($imageTypes['icon'])?></a>
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('o' . $i . '_imageType', 'fID', ${"o" . $i . "_imageType"})?>
+                              <a><?php echo t($imageTypes['fID'])?></a>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="o<?php echo $i?>_imageType_icon" class="input-group center current-<?php echo ${"o" . $i . "_imageType"}?>">
+                    <div class="form-group center single-space-bottom no-right-space light-title">
+                    <?php echo $form->label('o' . $i . '_icon', t("Choose an icon for this item"))?>
+                      <div class="input-group single-space-top">
+                        <select name="o<?php echo $i?>_icon" multiple="true" style="height:350px">
+                          <?php
+                            if (is_array($itemsIcons)) {
+                              foreach ($itemsIcons as $key => $value) {
+                                if ($key > 0) {
+                                    echo ((is_int(($key) / 10)) == true ? '<option style="visibility:hidden"></option>' : null);
+                                }
+                              ?>
+                          <option style="width:10%" value="<?php echo $value ?>" class="fa fa-<?php echo $value ?> fa-responsive" <?php echo ($value == ${"o" . $i . "_icon"}) == true ? 'selected="selected"' : null?>></option>
+                              <?php
                               }
-                            ?>
-                        <option style="width:10%" value="<?php echo $value ?>" class="fa fa-<?php echo $value ?> fa-responsive" <?php echo ($value == ${"o" . $i . "_icon"}) == true ? 'selected="selected"' : null?>></option>
-                            <?php
                             }
-                          }
-                        ?>
-                      </select>
+                          ?>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="o<?php echo $i?>_imageType_fID" class="input-group center current-<?php echo ${"o" . $i . "_imageType"}?>">
+                    <div class="form-group center single-space-bottom light-title">
+                      <?php echo $form->label('o' . $i . '_fID', t('stick a single image here'))?>
+                      <label><span>(<?php echo t('min size: %s', $customImageSizeInfo)?>)</span></label>
+                      <div class="input-group center p50">
+                        <?php echo $asset->image('ccm-b-image-o' . $i . '_fID', 'o' . $i . '_fID', t('Choose Image'), ${"o" . $i . "_fID"}, array())?>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 double-space-top">
+                <div class="col-lg-3 double-space-top">
                   <div class="form-group center single-space-top single-space-bottom is-it-visible">
                     <?php echo $form->label('o' . $i . '_isEnabled', t('Visible?'))?>
                     <div class="input-group">
@@ -161,12 +198,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <span class="off"><?php echo t('No')?></span>
                         </label>
                       </div>
-                    </div>
-                  </div>
-                  <div class="form-group center no-sides-paddings double-space-top">
-                    <?php echo $form->label('o' . $i . '_fID', t('Or stick a custom logo:') . '<br /><span>(' . t('min size:') . ' ' . $customImageSizeInfo .')<br />' . t('%1$sNB: %2$s%3$s ', '<strong class="nota-bene">', t('it has priority over the icon'), '</strong>') .'</span>')?>
-                    <div class="input-group center single-space-top p90">
-                      <?php echo $asset->image('ccm-b-image-o' . $i . '_fID', 'o' . $i . '_fID', t('Choose Image'), ${"o" . $i . "_fID"}, array())?>
                     </div>
                   </div>
                 </div>
@@ -188,6 +219,16 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group center light-title no-margins no-sides-paddings double-space-bottom single-space-top">
+                    <?php echo $form->label('layoutColumns', t('layout design'))?>
+                    <div class="input-group center p80">
+                      <!-- Select Layout Columns -->
+                      <?php echo $form->select('layoutColumns', $layoutColumnsOptions, $layoutColumns)?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-12 separator-top">
+                  <div class="form-group center light-title no-margins no-sides-paddings single-space-bottom double-space-top">
                     <?php echo $form->label('bgColorRGBA', t('background colour %s', '<br /><span>(' . t('with or without transparency') . ')</span>'))?>
                     <div class="input-group">
                       <!-- Show a Color Palette in RGB Color Format with Transparency Slider (RGBA) -->
@@ -196,7 +237,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                 </div>
 
-                <div class="col-lg-12 separator-top separator-bottom">
+                <div class="col-lg-12 separator-bottom">
                   <div class="form-group center light-title double-space-top">
                     <?php echo $form->label('bgFID', t('background image'))?>
                     <div class="input-group">

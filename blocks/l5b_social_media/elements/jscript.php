@@ -82,7 +82,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
                      "textarea",
                      "input:radio[id*=_isEnabled]",
                      "input:radio[id*=_isPopup]",
-                     "input:radio[id*=_linkType]" ], function(id, el) {
+                     "input:radio[id*=_linkType]",
+                     "input:radio[id*=_imageType]" ], function(id, el) {
 
              $("#ccm-tab-content-" + tabData).find(el).each(function () {
 
@@ -124,7 +125,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
        // Loop through fields indexes
        $.each( [ "input:radio[id*=_isEnabled]",
                  "input:radio[id*=_isPopup]",
-                 "input:radio[id*=_linkType]" ], function(key, el) {
+                 "input:radio[id*=_linkType]",
+                 "input:radio[id*=_imageType]" ], function(key, el) {
 
          $("#ccm-tab-content-" + tabData).find(el).each(function() {
 
@@ -189,7 +191,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
                    "textarea",
                    "input:radio[id*=_isEnabled]",
                    "input:radio[id*=_isPopup]",
-                   "input:radio[id*=_linkType]" ], function(id, el) {
+                   "input:radio[id*=_linkType]",
+                   "input:radio[id*=_imageType]" ], function(id, el) {
 
            $("#ccm-tab-content-" + tabData).find(el).each(function() {
 

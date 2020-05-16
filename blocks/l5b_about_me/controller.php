@@ -47,6 +47,10 @@ class Controller extends BlockController
     protected static $btCustomImageThumbWidth = 500;
     protected static $btCustomImageThumbHeight = 375;
 
+    // Custom Image Thumb Size (pixels) Min & Max
+    protected static $btCustomImageThumbSizeMin = 200;
+    protected static $btCustomImageThumbSizeMax = 1000;
+
     // Style Background & Foreground Colours
     protected static $btStyleOpacity = '0.82';
 
@@ -110,7 +114,11 @@ class Controller extends BlockController
                         " <b>" . t('bold type') . "</b>, " . t('%1$slarger%2$s or %3$ssmaller chars%4$s, images &amp; links', '<big>', '</big>', '<small>', '</small>') . "</p>".
                         "<p>" . t("People will get to know you better if your message is clear and straight forward.") . "</p>".
                         "<p>" . t("To start editing now") . " <a class='goto' href='" . Url::to('/login') . "'><span>" . t('click here') . "</span></a></p>",
-           'CTA' => array(
+         'imageType' => 'fID',
+        'imageWidth' => self::$btCustomImageThumbWidth,
+       'imageHeight' => self::$btCustomImageThumbHeight,
+  'isImageStretched' => false,
+          'CTA' => array(
               'linkType' => 'url',
                    'url' => null,
                   'hash' => '#contacts',
@@ -135,6 +143,22 @@ class Controller extends BlockController
             ),
             'content' => array(
                 'label' => t('Content'),
+            ),
+            'imageType' => array(
+                'label' => t('Image type'),
+                'allowEmpty' => false,
+            ),
+            'imageWidth' => array(
+                'label' => t('Image width'),
+                'allowEmpty' => false,
+                'validCondition' => array('method' => 'isValidImageSize',
+                                          'params' => array('imageWidth')),
+            ),
+            'imageHeight' => array(
+                'label' => t('Image height'),
+                'allowEmpty' => false,
+                'validCondition' => array('method' => 'isValidImageSize',
+                                          'params' => array('imageHeight')),
             ),
             'CTA_linkType' => array(
                 'label' => t('CTA %s', t('Link type')),
@@ -174,8 +198,9 @@ class Controller extends BlockController
             'fgColorRGB' => t('Foreground Colour'),
             'isAnimated' => t('Animation / Transition'),
             'CTA_pID' => t('CTA %s', t('Select a Page')),
-            'o1_sID' => t('1st %s',t('File Set ID')),
-            'o1_fID' => t('1st %s',t('Custom image')),
+            'isImageStretched' => t('Stretch image'),
+            'o1_sID' => t('File Set ID'),
+            'o1_fID' => t('Custom image'),
         );
 
         return $o;
@@ -209,6 +234,18 @@ class Controller extends BlockController
             ),
             'fileSetHowToURL' => array(
                 'label' => t('URL How to add a file set'),
+            ),
+            'imageTypes' => array(
+                'label' => t('Image types list'),
+            ),
+            'imageSizeLimit' => array(
+                'label' => t('Image size limit'),
+            ),
+            'imageWidthPlaceholder' => array(
+                'label' => t('Image width placeholder'),
+            ),
+            'imageHeightPlaceholder' => array(
+                'label' => t('Image height placeholder'),
             ),
             'linkTypes' => array(
                 'label' => t('Link types list'),
@@ -310,6 +347,42 @@ class Controller extends BlockController
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
+    public function getImageType()
+    {
+        $cName  = 'imageType';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = self::getDefaultValue($cName);
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function getImageWidth()
+    {
+        $cName  = 'imageWidth';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = self::getDefaultValue($cName);
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function getImageHeight()
+    {
+        $cName  = 'imageHeight';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = self::getDefaultValue($cName);
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function getIsImageStretched()
+    {
+        $cName = 'isImageStretched';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = self::getDefaultValue($cName);
+
+        return filter_var(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}), FILTER_VALIDATE_BOOLEAN);
+    }
+
     public function get_sID($id)
     {
         return $this->{'o'.$id.'_sID'};
@@ -391,6 +464,40 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * All Methods for Custom Validations
     */
+    public function getIsValidImageSize($param, $value)
+    {
+        $o = array();
+
+        $error = false;
+        $label = false;
+
+        // Get first parameter
+        $key = current($param);
+
+        // Retrieve ALL fields (for labels)
+        $btFields = self::get_btFields();
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * Image Size (width|height) are Valid?
+        */
+        if (BlockUtils::getIsValidImageSize(trim($value[$key]), self::$btCustomImageThumbSizeMin, self::$btCustomImageThumbSizeMax) === false) {
+            $label = t('%s', $btFields[$key]['label']);
+            $error = true;
+        }
+
+        // create error messages
+        if ($error !== false) {
+            $o['error'] = t('Invalid Image Size');
+        }
+
+        // create labels
+        if ($label !== false) {
+            $o['label'] = $label;
+        }
+
+        return $o;
+    }
+
     public function getIsEnabled_ValidUrl($param, $value)
     {
         $o = array();
@@ -438,6 +545,28 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Window Overlay Methods
     */
+    public function getImageTypes()
+    {
+        return array('fID' => t('Single image'),
+                     'sID' => t('Multiple images'),
+                    );
+    }
+
+    public function getImageSizeLimit()
+    {
+        return self::$btCustomImageThumbSizeMin;
+    }
+
+    public function getImageWidthPlaceholder()
+    {
+        return self::$btCustomImageThumbWidth;
+    }
+
+    public function getImageHeightPlaceholder()
+    {
+        return self::$btCustomImageThumbHeight;
+    }
+ 
     public function getLinkTypes()
     {
         return array('url' => t('Type a URL'),
@@ -477,6 +606,7 @@ class Controller extends BlockController
         if (is_object($fsObj)) {
 
             $fsFList = new FileList();
+ 
             $fsFList->filterBySet($fsObj);
             $fsFList->setItemsPerPage(1);
             $fsFList->sortBy('RAND()');
@@ -531,9 +661,20 @@ class Controller extends BlockController
     */
     protected function getThisBlockDefaultImageURL($id, $width = null, $height = null)
     {
-        $this->setFileSetRandomImage($id);
+        switch ($this->getImageType()) {
+        case 'sID':
 
-        $fID = ($this->get_sID($id) == true ? $this->getFileSetRandomImage($id) : $this->get_fID($id));
+            // Set File Set Random image
+            $this->setFileSetRandomImage($id);
+
+            // Get Random image from File Set
+            $fID = ($this->get_sID($id) == true ? $this->getFileSetRandomImage($id) : false);
+            break;
+        case 'fID':
+
+            $fID = $this->get_fID($id);
+            break;
+        }
 
         return ($fID == true ? array('path' => $this->getBlockForegroundImageURL($fID, $width, $height), 'default' => false) : array('path' => $this->getBlockDefaultImageURL($id), 'default' => true));
     }
@@ -644,11 +785,13 @@ class Controller extends BlockController
 
         // Set main values
         $this->set('popUpVideoURL', self::getPopUpVideoURL());
-        $this->set('image', $this->getThisBlockDefaultImageURL(1));
 
-        // polaroid image width / height
-        $this->set('imgWidth', self::$btCustomImageThumbWidth);
-        $this->set('imgHeight', self::$btCustomImageThumbHeight);
+        // image is stretched
+        $this->set('imageClass', $this->getIsImageStretched() == true ? 'with-stretched-image' : null);
+
+        // image path + width + height
+        $this->set('image', array_merge($this->getThisBlockDefaultImageURL(1), array( 'width' => $this->getImageWidth(),
+                                                                                     'height' => $this->getImageHeight())));
 
         // Play Animation (but ONLY in EditMode)
         $this->set('playNow', (Page::getCurrentPage()->isEditMode() == true) ? 'play-now' : null);
@@ -911,25 +1054,14 @@ class Controller extends BlockController
 
             switch ($key) {
             case (lcfirst(substr($key, -3)) == 'sID'):
-                if (empty($args[$key])) {
-                    $args[$key] = 0;
-                }
-                break;
             case (lcfirst(substr($key, -3)) == 'fID'):
-                if (empty($args[$key])) {
-                    $args[$key] = 0;
-                }
-                break;
             case (lcfirst(substr($key, -3)) == 'pID'):
+            case (substr($key, -16) == 'isImageStretched'):
                 if (empty($args[$key])) {
                     $args[$key] = 0;
                 }
                 break;
             case 'bgColorRGBA':
-                if (empty($args[$key])) {
-                    $args[$key] = 'transparent';
-                }
-                break;
             case 'fgColorRGB':
                 if (empty($args[$key])) {
                     $args[$key] = 'transparent';
@@ -1028,10 +1160,10 @@ class Controller extends BlockController
     protected function getBlockForegroundImageURL($fID, $w = null, $h = null)
     {
         // set thumbnail width
-        $width = ($w == false) ? self::$btCustomImageThumbWidth : $w;
+        $width = ($w ==  false) ? $this->getImageWidth() : $w;
 
         // set thumbnail height
-        $height = ($h == false) ? self::$btCustomImageThumbHeight : $h;
+        $height = ($h ==  false) ? $this->getImageHeight() : $h;
 
         // get source thumbnail image
         return (is_object($fID) ? parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src, PHP_URL_PATH) : null);

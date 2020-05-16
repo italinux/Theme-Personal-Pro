@@ -50,5 +50,32 @@ var thisTypeSwitch = {
                 break;
             }
         });
+
+        // Get inputs Container
+        var containerImage = $('div[id$="_imageTypes"]');
+
+        // - - - - - - - - - - - - - - - - - - - - - - - -
+        // Select Image (random from fileset|single)
+        containerImage.find('input[type="radio"]').change(function() {
+
+            // prefix div ID selector
+            var nID = 'div#' + this.name;
+
+            switch(this.value) {
+            case 'sID':
+                $(nID + '_' + this.value).show();
+                $(nID + '_fID').hide();
+                break;
+            case 'fID':
+                $(nID + '_' + this.value).show();
+                $(nID + '_sID').hide();
+                $(nID + '_icon').hide();
+                break;
+            case 'icon':
+                $(nID + '_' + this.value).show();
+                $(nID + '_fID').hide();
+                break;
+            }
+        });
     }
 };

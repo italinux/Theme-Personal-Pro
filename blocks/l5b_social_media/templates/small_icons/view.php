@@ -51,7 +51,9 @@ echo $cStyle;
           <a class="<?php echo (empty($value['img']['src']) == true ? 'fa fa-' . $value['icon']['tag'] . ' fa-3x ' : null); echo $value['class']?> CTA-clean"
             <?php echo (($value['link'] != '' || $value['hash'] != '') ? 'target="' . $value['target'] . '" ' : null)?>
             <?php echo (($value['link'] != '' || $value['hash'] != '') ? 'href="' . $value['link'] . $value['hash'] . '" ' : null)?>>
-            <?php echo (empty($value['img']['src']) == true ? null : '<img class="img-responsive" src="' . $value['img']['src'] . '" alt="" />')?>
+            <?php echo (empty($value['img']['src']) == true ? null : '<img class="img-responsive" src="' . $value['img']['src'] . '"
+                                                                                                width="' . $value['img']['width'] . '"
+                                                                                               height="' . $value['img']['height'] . '"  alt="" />')?>
           </a>
         </div>
       </div>

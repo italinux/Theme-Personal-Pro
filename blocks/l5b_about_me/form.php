@@ -33,42 +33,105 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <div class="form-group center single-margin-top">
               <?php echo $form->label('title', t('Title: %s', '<span>(' . t('hi everyone') . ')</span>'))?>
               <div class="input-group align-center p40">
-                <?php echo $form->text('title', $title, array('maxlength' => '50'))?>
+                <?php echo $form->text('title', $title, array('maxlength' => 50))?>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-4 col-lg-offset-0 col-sm-8 col-sm-offset-2 single-space-top">
+            <div class="col-lg-5 col-lg-offset-0 col-sm-8 col-sm-offset-2 double-space-top no-sides-paddings">
               <div class="form-group center single-margin-bottom">
-                <strong><?php echo t('Choose')?></strong>
+                <label class="control-label">
+                  <?php echo t('Choose image')?>
+                </label>
               </div>
-              <div class="form-group center light-title">
-                <?php
-                  if (empty($fileSetOptions) == false) {
-                    echo $form->label('o1_sID', t('random image from: %s', t('File Sets')));
-                  ?>
-                  <label>
-                    <span class="nota-bene"><?php echo t('%1$sNB:%2$s ', '<strong>','</strong>') . t('it has priority over single image')?></span>
-                  </label>
-                  <div class="input-group center single-space-top single-space-bottomi p80">
-                    <?php echo $form->select('o1_sID', $fileSetOptions, $o1_sID)?>
+              <div class="form-group center light-title no-paddings single-margin-bottom link-block-opts">
+                <div class="row no-margins">
+                  <div class="col-lg-12">
+                    <div id="_imageTypes" class="input-group single-space-bottom">
+                      <div class="radio">
+                        <label>
+                          <?php echo $form->radio('imageType', 'fID', $imageType)?>
+                          <a><?php echo t($imageTypes['fID'])?></a>
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <?php echo $form->radio('imageType', 'sID', $imageType)?>
+                          <a><?php echo t($imageTypes['sID'])?></a>
+                        </label>
+                      </div>
+                    </div>
                   </div>
-                  <?php
-                  }
-                ?>
-                <a href="<?php echo $fileSetHowToURL?>" target="_blank" class="btn goto"><span class="highlight"><?php echo t('How to add a %s', t('File Set'))?></span></a>
-              </div>
-              <div class="form-group center single-space-top no-space-bottom">
-                <strong><?php echo t('Otherwise')?></strong>
-              </div>
-              <div class="form-group center light-title">
-                  <?php echo $form->label('o1_fID', t('stick a single image here'))?>
-                  <div class="input-group center single-space-top single-space-bottom p70">
-                  <?php echo $asset->image('ccm-b-image-o1_fID', 'o1_fID', t('Choose Image'), $o1_fID, array())?>
                 </div>
+
+                <div class="row no-margins">
+                  <div class="col-lg-12 no-sides-paddings">
+                    <div id="imageType_fID" class="input-group center current-<?php echo $imageType?>">
+                      <div class="form-group center single-margin-bottom light-title">
+                        <?php echo $form->label('o1_fID', t('stick a single image here'))?>
+                        <div class="input-group center no-space-top single-space-bottom p60">
+                          <?php echo $asset->image('ccm-b-image-o1_fID', 'o1_fID', t('Choose Image'), $o1_fID, array())?>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="imageType_sID" class="input-group center current-<?php echo $imageType?>">
+                      <div class="form-group center single-margin-bottom light-title">
+                        <?php
+                          if (empty($fileSetOptions) == false) {
+                            echo $form->label('o1_sID', t('random image from: %s', t('File Sets')));
+                          ?>
+                          <div class="input-group center no-space-top single-space-bottom p60">
+                            <?php echo $form->select('o1_sID', $fileSetOptions, $o1_sID)?>
+                          </div>
+                          <?php
+                          }
+                        ?>
+                        <a href="<?php echo $fileSetHowToURL?>" target="_blank" class="btn goto"><span class="highlight"><?php echo t('How to add a %s', t('File Set'))?></span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row no-margins">
+                  <div class="col-lg-7 col-lg-offset-1 col-lg-push-1 no-paddings">
+                    <div class="form-group center single-space-top no-space-bottom">
+                      <label class="control-label single-margin-bottom"><?php echo t('Image Size')?>
+                        <br />
+                        <span><?php echo t('minimum: %s', '(' . $imageSizeLimit . 'x' . $imageSizeLimit . ')')?></span>
+                      </label>
+                    </div>
+                    <div class="row no-margins">
+                      <div class="col-lg-6 no-sides-paddings">
+                        <div class="input-group center float-left p60">
+                          <?php echo $form->text('imageWidth', $imageWidth, array('maxlength' => 3,  'placeholder' => $imageWidthPlaceholder))?>
+                        </div>
+                        <div class="input-group align-left p40">
+                          <span style="font-size: 1.4em">px</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 no-sides-paddings">
+                        <div class="input-group center float-left p60">
+                          <?php echo $form->text('imageHeight', $imageHeight, array('maxlength' => 3,  'placeholder' => $imageHeightPlaceholder))?>
+                        </div>
+                        <div class="input-group align-left p40">
+                          <span style="font-size: 1.4em">px</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 no-right-padding">
+                    <div class="form-group center single-space-top no-space-bottom">
+                      <label class="control-label single-space-top no-space-bottom" style="margin-top: 10px"><?php echo t('stretched?')?></label>
+                    </div>
+                    <div class="input-group center single-space-top">
+                    <?php echo $form->checkbox('isImageStretched', 1, (int) $isImageStretched)?>
+                    </div>
+                  </div>
+                </div>
+                
               </div>
             </div>
-            <div class="col-lg-8 col-sm-12">
+            <div class="col-lg-7 col-sm-12">
               <div class="form-group single-space-top">
                 <?php echo $form->label('content', t('Content: %s', '<span>(blah blah blah ..)</span>'))?>
                 <div class="input-group">
@@ -78,7 +141,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
               <div class="form-group center single-space-top">
                 <?php echo $form->label('CTA_text', t('Global Text Button: %s', '<span>(' . t('click here') . ')</span>'))?>
                 <div class="input-group align-center p40">
-                  <?php echo $form->text('CTA_text', $CTA_text, array('maxlength' => '30', 'placeholder' => t('click here')))?>
+                  <?php echo $form->text('CTA_text', $CTA_text, array('maxlength' => 30, 'placeholder' => t('click here')))?>
                 </div>
               </div>
               <div class="form-group center no-sides-paddings single-space-top double-space-bottom link-block-opts">
@@ -121,7 +184,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="row no-margins double-space-bottom">
                   <div class="col-lg-6 no-sides-paddings">
                     <div id="CTA_linkType_url" class="input-group center current-<?php echo $CTA_linkType?>">
-                      <?php echo $form->text('CTA_url', $CTA_url, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                      <?php echo $form->text('CTA_url', $CTA_url, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                     </div>
                     <div id="CTA_linkType_pID" class="input-group center current-<?php echo $CTA_linkType?>">
                       <?php echo $pageSelector->selectPage('CTA_pID', $CTA_pID, 'ccm_selectSitemapNode')?>
@@ -129,7 +192,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                   <div class="col-lg-3 no-sides-paddings">
                     <div class="input-group center">
-                      <?php echo $form->text('CTA_hash', $CTA_hash, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                      <?php echo $form->text('CTA_hash', $CTA_hash, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                     </div>
                   </div>
                   <div class="col-lg-3 no-sides-paddings">

@@ -72,6 +72,9 @@ class PageTheme extends Theme
         // Import Theme Assets CSS & JS
         $this->requireAsset('jst.theme.assets');
 
+        // Import Masonry
+        $this->requireAsset('jst.masonry.assets');
+
         // Import Animations Assets CSS & JS
         $this->requireAsset('jst.animate.assets');
     }

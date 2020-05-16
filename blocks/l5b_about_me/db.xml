@@ -31,8 +31,20 @@
     <field name="CTA_url" type="string" size="255">
       <default value=""/>
     </field>
-    <field name="o1_imageType" type="string" size="10">
+    <field name="imageType" type="string" size="10">
       <default value="fID"/>
+    </field>
+    <field name="imageWidth" type="smallint">
+      <unsigned/>
+      <default value="500"/>
+    </field>
+    <field name="imageHeight" type="smallint">
+      <unsigned/>
+      <default value="375"/>
+    </field>
+    <field name="isImageStretched" type="boolean">
+      <unsigned/>
+      <default value="0"/>
     </field>
     <field name="o1_fID" type="smallint">
       <unsigned/>
@@ -42,7 +54,7 @@
       <unsigned/>
       <default value="0"/>
     </field>
-   <field name="bgColorRGBA" type="string" size="30">
+    <field name="bgColorRGBA" type="string" size="30">
       <default value=""/>
     </field>
     <field name="bgColorOpacity" type="float" size="3.2">

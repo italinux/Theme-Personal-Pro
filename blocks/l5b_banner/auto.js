@@ -64,9 +64,14 @@ var thisTypeSwitch = {
             switch(this.value) {
             case 'sID':
                 $(nID + '_' + this.value).show();
-                $(nID + '_sID').hide();
+                $(nID + '_fID').hide();
                 break;
             case 'fID':
+                $(nID + '_' + this.value).show();
+                $(nID + '_sID').hide();
+                $(nID + '_icon').hide();
+                break;
+            case 'icon':
                 $(nID + '_' + this.value).show();
                 $(nID + '_fID').hide();
                 break;

@@ -264,6 +264,15 @@ msgstr "Mod&egrave;les de banni&egrave;re"
 msgid "all templates available are listed below"
 msgstr "tous les mod&egrave;les disponibles sont list&eacute;s ci-dessous"
 
+msgid "Template Error: %s"
+msgstr "Erreur de mod&egrave;le: %s"
+
+msgid "Warning in Template %s"
+msgstr "Avertissement dans le mod&egrave;le %s"
+
+msgid "Template Warning: %s"
+msgstr "Avertissement de mod&egrave;le: %s"
+
 # block What I Do
 msgid "I like doing .."
 msgstr "J'aime faire.."
@@ -441,6 +450,9 @@ msgstr "Profils sociaux"
 
 msgid "Link to social profile:"
 msgstr "Lien vers le profil social:"
+
+msgid "Social Profile"
+msgstr "Profil social"
 
 # block Footer
 msgid "you want this website template?"
@@ -1070,3 +1082,78 @@ msgstr "un %1$s ancre %2$s pour faire d&eacute;filer jusqu'&agrave; %1$s section
 
 msgid "button text"
 msgstr "texte du bouton"
+
+msgid "Image type"
+msgstr "Type d'image"
+
+msgid "Image types list"
+msgstr "Liste des types d'images"
+
+msgid "Stretch image"
+msgstr "&Eacute;tirer l'image"
+
+msgid "Image width"
+msgstr "Largeur de l'image"
+
+msgid "Image height"
+msgstr "Hauteur de l'image"
+
+msgid "Choose image"
+msgstr "Choisissez l'image"
+
+msgid "layout design"
+msgstr "mise en page"
+
+msgid "%d Column"
+msgstr "%d colonne"
+
+msgid "%d Columns"
+msgstr "%d colonnes"
+
+msgid "Layout Design"
+msgstr "Conception de la disposition"
+
+msgid "Options layout design columns"
+msgstr "Options des colonnes de conception de mise en page"
+
+msgid "Image Size"
+msgstr "Taille de l'image"
+
+msgid "is Stretched?"
+msgstr "est &eacute;tir&eacute;?"
+
+msgid "Stretched?"
+msgstr "&Eacute;tir&eacute;?"
+
+msgid "stretched?"
+msgstr "&eacute;tir&eacute;?"
+
+msgid "Single image"
+msgstr "Image unique"
+
+msgid "Multiple images"
+msgstr "Images multiples"
+
+msgid "pop-up has priority over Link to Page or URL"
+msgstr "la fen&ecirc;tre contextuelle a priorit&eacute; sur le lien vers la page ou l'URL"
+
+msgid "Choose the image link"
+msgstr "Choisissez le lien de l'image"
+
+msgid "Invalid Image Size"
+msgstr "Taille d'image non valide"
+
+msgid "Image width placeholder"
+msgstr "Espace r&eacute;serv&eacute; pour la largeur de l'image"
+
+msgid "Image height placeholder"
+msgstr "Espace r&eacute;serv&eacute; pour la hauteur de l'image"
+
+msgid "minimum: %s"
+msgstr "minimum: %s"
+
+msgid "Image size limit"
+msgstr ""
+
+msgid "Icon ready"
+msgstr "Ic&ocirc;ne pr&ecirc;te"

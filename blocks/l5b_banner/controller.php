@@ -47,6 +47,10 @@ class Controller extends BlockController
     protected static $btCustomImageThumbWidth = 520;
     protected static $btCustomImageThumbHeight = 520;
 
+    // Custom Image Thumb Size (pixels) Min & Max
+    protected static $btCustomImageThumbSizeMin = 200;
+    protected static $btCustomImageThumbSizeMax = 1000;
+
     // Style Background & Foreground Colours
     protected static $btStyleOpacity = '0.4';
 
@@ -112,7 +116,7 @@ class Controller extends BlockController
             'img_sd_CTA_pID' =>  t('Select a Page'),
             'img_sd_isVideoEnabled' =>  t('Video On / Off'),
             'img_sd_fID' =>  t('Custom Foreground image'),
-            'Img_sd_sID' =>  t('File Set ID'),
+            'img_sd_sID' =>  t('File Set ID'),
         );
     }
 
@@ -232,6 +236,20 @@ class Controller extends BlockController
                 'label' =>  t('Content'),
                 'allowEmpty' => false,
             ),
+            'img_sd_imageType' => array(
+                'label' => t('Image type'),
+                'allowEmpty' => false,
+            ),
+            'img_sd_imageWidth' => array(
+                'label' => t('Image width'),
+                'allowEmpty' => false,
+                'validCondition' => 'img_sd_isValidSize_imageWidth',
+            ),
+            'img_sd_imageHeight' => array(
+                'label' => t('Image height'),
+                'allowEmpty' => false,
+                'validCondition' => 'img_sd_isValidSize_imageHeight',
+            ),
             'img_sd_videoURL' => array(
                 'label' =>  t('YouTube Video Url'),
                 'validCondition' => 'img_sd_video_isEnabled_ValidUrl',
@@ -296,6 +314,18 @@ class Controller extends BlockController
             ),
             'templateNames' => array(
                 'label' => t('All Template names'),
+            ),
+            'imageTypes' => array(
+                'label' => t('Image types list'),
+            ),
+            'imageSizeLimit' => array(
+                'label' => t('Image size limit'),
+            ),
+            'imageWidthPlaceholder' => array(
+                'label' => t('Image width placeholder'),
+            ),
+            'imageHeightPlaceholder' => array(
+                'label' => t('Image height placeholder'),
             ),
             'linkTypes' => array(
                 'label' => t('Link types list'),
@@ -698,7 +728,37 @@ class Controller extends BlockController
         $dValue = "<p>" . t('This is a sample text') . "</p>";
         $dValue.= "<p>" . t('here you will write few information about you') . "</p>";
         $dValue.= "<p>" . t('or the concept of your website') . "</p>";
-        
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function getImg_sd_imageType()
+    {
+        $cName  = 'img_sd_imageType';
+        $pTempl = self::getAppConfigImg_sdTemplatePath();
+        $config = self::$btHandlerId . '.' . $pTempl . '.image.type';
+        $dValue = 'fID';
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function getImg_sd_imageWidth()
+    {
+        $cName  = 'img_sd_imageWidth';
+        $pTempl = self::getAppConfigImg_sdTemplatePath();
+        $config = self::$btHandlerId . '.' . $pTempl . '.image.width';
+        $dValue = self::$btCustomImageThumbWidth;
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function getImg_sd_imageHeight()
+    {
+        $cName  = 'img_sd_imageHeight';
+        $pTempl = self::getAppConfigImg_sdTemplatePath();
+        $config = self::$btHandlerId . '.' . $pTempl . '.image.height';
+        $dValue = self::$btCustomImageThumbHeight;
+
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
@@ -790,7 +850,7 @@ class Controller extends BlockController
     public function getImg_sd_sID()
     {
 
-        return $this->Img_sd_sID;
+        return $this->img_sd_sID;
     }
 
     public function getImg_sd_fID()
@@ -804,7 +864,55 @@ class Controller extends BlockController
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * All Methods for Custom Validations
-    *
+    */
+    public function getImg_sd_isValidSize_imageWidth($value)
+    {
+        return $this->getIsValidImageSize(array('img_sd', 'imageWidth'), $value);
+    }
+
+    public function getImg_sd_isValidSize_imageHeight($value)
+    {
+        return $this->getIsValidImageSize(array('img_sd', 'imageHeight'), $value);
+    }
+
+    public function getIsValidImageSize($param, $value)
+    {
+        $o = array();
+
+        $error = false;
+        $label = false;
+
+        // Get first parameter
+        $key = current($param);
+
+        // Get next parameter
+        $field = next($param);
+
+        // Retrieve ALL fields (for labels)
+        $btFields = self::get_btFields();
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * Image Size (width|height) are Valid?
+        */
+        if (BlockUtils::getIsValidImageSize(trim($value[$key.'_'.$field]), self::$btCustomImageThumbSizeMin, self::$btCustomImageThumbSizeMax) === false) {
+            $label = t('%s', $btFields[$key.'_'.$field]['label']);
+            $error = true;
+        }
+
+        // create error messages
+        if ($error !== false) {
+            $o['error'] = t('Invalid Image Size');
+        }
+
+        // create labels
+        if ($label !== false) {
+            $o['label'] = $label;
+        }
+
+        return $o;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * YouTube Video URL Valiation
     */
     public function getFs_video_isEnabled_ValidUrl($value)
@@ -846,7 +954,7 @@ class Controller extends BlockController
             */
             if (trim($value[$key.'_videoURL']) == true ) {
                 if (self::getIsValidYouTubeURL(trim($value[$key.'_videoURL'])) === false) {
-                    $label = t('%s', t($btFields[$key.'_videoURL']['label']));
+                    $label = t('%s', $btFields[$key.'_videoURL']['label']);
                     $error = true;
                 }
             }
@@ -908,7 +1016,7 @@ class Controller extends BlockController
             */
             if (trim($value[$key.'_CTA_url']) == true ) {
                 if (BlockUtils::getIsValidURL(trim($value[$key.'_CTA_url'])) === false) {
-                    $label = t('%s', t($btFields[$key.'_CTA_url']['label']));
+                    $label = t('%s', $btFields[$key.'_CTA_url']['label']);
                     $error = true;
                 }
             }
@@ -931,6 +1039,28 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Window Overlay Methods
     */
+    public function getImageTypes()
+    {
+        return array('fID' => t('Single image'),
+                     'sID' => t('Multiple images'),
+                    );
+    }
+
+    public function getImageSizeLimit()
+    {
+        return self::$btCustomImageThumbSizeMin;
+    }
+
+    public function getImageWidthPlaceholder()
+    {
+        return self::$btCustomImageThumbWidth;
+    }
+
+    public function getImageHeightPlaceholder()
+    {
+        return self::$btCustomImageThumbHeight;
+    }
+ 
     public function getLinkTypes()
     {
         return array('url' => t('Type a URL'),
@@ -970,6 +1100,7 @@ class Controller extends BlockController
         if (is_object($fsObj)) {
 
             $fsFList = new FileList();
+ 
             $fsFList->filterBySet($fsObj);
             $fsFList->setItemsPerPage(1);
             $fsFList->sortBy('RAND()');
@@ -1016,16 +1147,21 @@ class Controller extends BlockController
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    * Retrieve team image
+    * Retrieve foreground image URLs
     * @return object
     */
     protected function getThisBlockDefaultImageURL($id, $width = null, $height = null)
     {
-        $fID = ($this->{'get' . $id . '_sID'}() == true ? $this->getFileSetRandomImage($id) : $this->{'get' . $id . '_fID'}());
+        switch ($this->{'get' . $id . '_imageType'}()) {
+        case 'sID':
+            $fID = ($this->{'get' . $id . '_sID'}() == true ? $this->getFileSetRandomImage($id) : false);
+            break;
+        case 'fID':
+             $fID = $this->{'get' . $id . '_fID'}();
+            break;
+        }
 
-        $idx = (int) filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-
-        return ($fID == true ? array('path' => $this->getBlockForegroundImageURL($fID, $width, $height), 'default' => false) : array('path' => $this->getBlockDefaultImageURL($idx), 'default' => true));
+        return ($fID == true ? array('path' => $this->getBlockForegroundImageURL($id, $fID, $width, $height), 'default' => false) : array('path' => $this->getBlockDefaultImageURL(null), 'default' => true));
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1109,7 +1245,7 @@ class Controller extends BlockController
     {
         $tNames = self::getTemplateNames();
 
-        $o = t('Template Error: %s', t('Missing'));
+        $o = t('Template Warning: %s', t('Missing'));
 
         foreach ($tNames as $key => $value) {
             if (preg_match('#^'.$key.'_#', $field) === 1) {
@@ -1334,11 +1470,8 @@ class Controller extends BlockController
         $this->set('cTempl', $cTempl);
 
         // set foreground image
-        $this->set('image', $this->getThisBlockDefaultImageURL('Img_sd'));
-
-        // set foreground image width / height
-        $this->set('imgWidth', self::$btCustomImageThumbWidth);
-        $this->set('imgHeight', self::$btCustomImageThumbHeight);
+        $this->set('image', array_merge($this->getThisBlockDefaultImageURL('Img_sd'), array( 'width' => $this->getImg_sd_imageWidth(),
+                                                                                            'height' => $this->getImg_sd_imageHeight())));
 
         // set Video Parameters
         $this->set('videoParams', "containment: 'self',
@@ -1599,7 +1732,7 @@ class Controller extends BlockController
         // Allowed Empty?
         if (isset($value['allowEmpty']) && ($value['allowEmpty'] === false)) {
             if (empty($args[$key])) {
-                $e->add(t('Error in Template %s', t('%1$s%2$s%1$s', '"', self::getTemplateNameByField($key))));
+                $e->add(t('Warning in Template %s', t('%1$s%2$s%1$s', '"', self::getTemplateNameByField($key))));
                 $e->add(' -> ' . t('Cannot be empty: %s', $value['label']));
                 $e->add('&nbsp;');
             }
@@ -1609,7 +1742,7 @@ class Controller extends BlockController
         if (!empty($args[$key])) {
             if (isset($value['validateURL']) && ($value['validateURL'] === true)) {
                 if (BlockUtils::getIsValidURL($args[$key]) === false) {
-                    $e->add(t('Error in Template %s', t('%1$s%2$s%1$s', '"', self::getTemplateNameByField($key))));
+                    $e->add(t('Warning in Template %s', t('%1$s%2$s%1$s', '"', self::getTemplateNameByField($key))));
                     $e->add(' -> ' . t('Invalid URL: %s', $value['label']));
                     $e->add('&nbsp;');
                 }
@@ -1641,7 +1774,7 @@ class Controller extends BlockController
         */
         if ($validCond == true) {
             if (is_array($validCond) && array_key_exists('error', $validCond)) {
-                $e->add(t('Error in Template %s', t('%1$s%2$s%1$s', '"', self::getTemplateNameByField($key))));
+                $e->add(t('Warning in Template %s', t('%1$s%2$s%1$s', '"', self::getTemplateNameByField($key))));
                 $e->add(' -> ' . t($validCond['error'] .': %s', $validCond['label']));
                 $e->add('&nbsp;');
             }
@@ -1659,25 +1792,13 @@ class Controller extends BlockController
 
             switch ($key) {
             case (lcfirst(substr($key, -3)) == 'sID'):
-                if (empty($args[$key])) {
-                    $args[$key] = 0;
-                }
-                break;
             case (lcfirst(substr($key, -3)) == 'fID'):
-                if (empty($args[$key])) {
-                    $args[$key] = 0;
-                }
-                break;
             case (lcfirst(substr($key, -3)) == 'pID'):
                 if (empty($args[$key])) {
                     $args[$key] = 0;
                 }
                 break;
             case 'bgColorRGBA':
-                if (empty($args[$key])) {
-                    $args[$key] = 'transparent';
-                }
-                break;
             case 'fgColorRGB':
                 if (empty($args[$key])) {
                     $args[$key] = 'transparent';
@@ -1773,13 +1894,13 @@ class Controller extends BlockController
     *
     * @return image full Path (file system)
     */
-    protected function getBlockForegroundImageURL($fID, $w = null, $h = null)
+    protected function getBlockForegroundImageURL($id, $fID, $w = null, $h = null)
     {
         // set thumbnail width
-        $width = ($w == false) ? self::$btCustomImageThumbWidth : $w;
+        $width = ($w == false) ? $this->{'get' . $id . '_imageWidth'}() : $w;
 
         // set thumbnail height
-        $height = ($h == false) ? self::$btCustomImageThumbHeight : $h;
+        $height = ($h == false) ? $this->{'get' . $id . '_imageHeight'}() : $h;
 
         // get source thumbnail image
         return (is_object($fID) ? parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src, PHP_URL_PATH) : null);

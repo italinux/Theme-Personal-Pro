@@ -40,23 +40,12 @@ class Controller extends BlockController
     protected static $btHandlerId = "social-media";
     protected $btDefaultSet = 'lazy5basic';
 
-    /* Configure Block Grid per Media in View
-     *  key: Number of items
-     *  value: Max number of items per Media per row
-     *
-     *  LG = Large Screen, MD = Desktop, SM = Tablet, SX = Mobile
-     */
-    protected static $btItemsGrid = array(4 => array('lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
-                                          3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'sxMax' => 1),
-                                          2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
-                                          1 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1));
+    // Total layout number of Columns
+    protected static $btLayoutColsTotal = 4;
 
-    // Configure Offsets per Media (NB: depending on value above) if you want to CENTER the last ODD item
-    // e.g. if value above is one figure less than it's main key, add an offset below
-    // first key is items TOTAL COUNT, second key is OFFSET amount per Media
-    protected static $btItemsCount = array(3 => array('smOffset' => 1));
+    // Default layout number of Columns
+    protected static $btLayoutColsDefault = 4;
 
-    // Custom Image Thumb Width X Height (pixels)
     protected static $btCustomImageThumbWidth = 64;
     protected static $btCustomImageThumbHeight = 64;
 
@@ -117,6 +106,7 @@ class Controller extends BlockController
           'subtitle' => t('follow me ..'),
            1 => array(
              'isEnabled' => false,
+             'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => 'https://facebook.com/mateus73',
                   'hash' => null,
@@ -125,6 +115,7 @@ class Controller extends BlockController
            ),
            2 => array(
              'isEnabled' => true,
+             'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => null,
                   'hash' => '#contacts-more',
@@ -133,6 +124,7 @@ class Controller extends BlockController
            ),
            3 => array(
              'isEnabled' => true,
+             'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => 'https://linkedin.com/in/italinux',
                   'hash' => null,
@@ -141,6 +133,7 @@ class Controller extends BlockController
            ),
            4 => array(
              'isEnabled' => true,
+             'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => 'https://instagram.com/italinux',
                   'hash' => null,
@@ -174,6 +167,10 @@ class Controller extends BlockController
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
              $o = array_merge($o, array(
+                  'o'.$i.'_imageType' => array(
+                      'label' => t($ordNum.' %s', t('Image type')),
+                      'allowEmpty' => false,
+                  ),
                   'o'.$i.'_linkType' => array(
                       'label' => t($ordNum.' %s', t('Link type')),
                       'allowEmpty' => false,
@@ -207,6 +204,7 @@ class Controller extends BlockController
     protected static function get_btStyles()
     {
         $o = array(
+            'layoutColumns' => t('Layout Design'),
             'bgColorRGBA' => t('Background Colour'),
             'bgColorOpacity' => t('Adjust Background Opacity'),
             'bgFID' => t('Background Image'),
@@ -221,6 +219,7 @@ class Controller extends BlockController
 
              $o = array_merge($o, array(
                  'o'.$i.'_isEnabled' => t($ordNum.' %s', t('Profile')),
+                 'o'.$i.'_isImageStretched' => t($ordNum.' %s', t('Stretch image')),
                  'o'.$i.'_pID' => t($ordNum.' %s', t('Profile')) . ': ' . t('Select a Page'),
                  'o'.$i.'_fID' => t($ordNum.' %s', t('Custom image')),
              ));
@@ -235,6 +234,9 @@ class Controller extends BlockController
     protected static function get_btFormExtraValues()
     {
         return array(
+            'layoutColumnsOptions' => array(
+                'label' => t('Options layout design columns'),
+            ),
             'itemsIcons' => array(
                 'label' => t('Options icons'),
             ),
@@ -246,6 +248,9 @@ class Controller extends BlockController
             ),
             'itemsTotalTabs' => array(
                 'label' => t('Window Overlay Items Tabs'),
+            ),
+            'imageTypes' => array(
+                'label' => t('Image types list'),
             ),
             'linkTypes' => array(
                 'label' => t('Link types list'),
@@ -262,7 +267,9 @@ class Controller extends BlockController
     */
     protected static function get_btItemsTotal()
     {
-       return count(self::$btItemsGrid);
+       $btItemsLayout = BlockUtils::getBtItemsLayout(self::$btHandlerId, self::$btLayoutColsTotal);
+
+       return count($btItemsLayout['grid']);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -386,6 +393,16 @@ class Controller extends BlockController
         $dValue = self::getDefaultValue($id, $key);
 
         return trim(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}));
+    }
+
+    public function get_imageType($id)
+    {
+        $key  = 'imageType';
+        $cName  = 'o'.$id.'_'.$key;
+        $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
+        $dValue = self::getDefaultValue($id, $key);
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
     public function get_linkType($id)
@@ -536,6 +553,13 @@ class Controller extends BlockController
         };
 
         return $o;
+    }
+
+    public function getImageTypes()
+    {
+        return array('icon' => t('Icon ready'),
+                      'fID' => t('Single image'),
+                    );
     }
 
     public function getLinkTypes()
@@ -717,6 +741,8 @@ class Controller extends BlockController
                  'target' => '_' . $this->get_target($key),
                     'img' => array(
                        'src' => $this->getBlockForegroundImageURL($this->get_fID($key)),
+                     'width' => self::$btCustomImageThumbWidth,
+                    'height' => self::$btCustomImageThumbHeight,
                     ),
                    'icon' => array(
                        'tag' => $this->get_icon($key),
@@ -758,15 +784,17 @@ class Controller extends BlockController
         // Total number of items
         $items = count($array);
 
+        // Get this BlockType Items Layout GRID 
+        $btItemsLayout = BlockUtils::getBtItemsLayout(self::$btHandlerId, $this->getLayoutColumns());
+
         // Calculate the number of columns requited in the View Layout per number of items chosen
-        ${$key . 'Max'} = is_int(self::$btItemsGrid[$items][$key . 'Max']) ? (12 / self::$btItemsGrid[$items][$key . 'Max']) : null;
+        ${$key . 'Max'} = is_int($btItemsLayout['grid'][$items][$key . 'Max']) ? (12 / $btItemsLayout['grid'][$items][$key . 'Max']) : null;
 
         // Calculate Offset if required
-        ${$key . 'Offset'} = (isset(self::$btItemsCount[$offset][$key . 'Offset']) && ($items == $offset)) ? ($items * self::$btItemsCount[$offset][$key . 'Offset']) : 0;
+        ${$key . 'Offset'} = (isset($btItemsLayout['offset'][$offset][$key . 'Offset']) && ($items == $offset)) ? ($items * $btItemsLayout['offset'][$offset][$key . 'Offset']) : 0;
 
         // set the value into an array
         $data = ${$key . 'Max'} == true ? array(${$key . 'Max'}, 'offset' => ${$key . 'Offset'}) : array();
-
 
         return $data;
     }
@@ -1090,20 +1118,13 @@ class Controller extends BlockController
 
             switch ($key) {
             case (lcfirst(substr($key, -3)) == 'fID'):
-                if (empty($args[$key])) {
-                    $args[$key] = 0;
-                }
-                break;
             case (lcfirst(substr($key, -3)) == 'pID'):
+            case (substr($key, -16) == 'isImageStretched'):
                 if (empty($args[$key])) {
                     $args[$key] = 0;
                 }
                 break;
             case 'bgColorRGBA':
-                if (empty($args[$key])) {
-                    $args[$key] = 'transparent';
-                }
-                break;
             case 'fgColorRGB':
                 if (empty($args[$key])) {
                     $args[$key] = 'transparent';
@@ -1237,6 +1258,32 @@ class Controller extends BlockController
         $dValue = true;
 
         return filter_var(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}), FILTER_VALIDATE_BOOLEAN);
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Layout Design Columns
+    */
+    public function getLayoutColumns()
+    {
+        $cName  = 'layoutColumns';
+        $config = self::$btHandlerId . '.' . $cName;
+        $dValue = self::$btLayoutColsDefault;
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Layout Design Columns Options
+    */
+    public function getLayoutColumnsOptions()
+    {
+        $o = array();
+
+        foreach (range(1, self::$btLayoutColsTotal) as $key) {
+          $o[$key] = ($key == 1) ? t('%d Column', $key) : t('%d Columns', $key);
+        }
+
+        return $o;
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -

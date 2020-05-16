@@ -147,6 +147,14 @@
     <field name="img_sd_imageType" type="string" size="10">
       <default value="fID"/>
     </field>
+    <field name="img_sd_imageWidth" type="smallint">
+      <unsigned/>
+      <default value="520"/>
+    </field>
+    <field name="img_sd_imageHeight" type="smallint">
+      <unsigned/>
+      <default value="520"/>
+    </field>
     <field name="img_sd_fID" type="smallint">
       <unsigned/>
       <default value="0"/>
@@ -177,7 +185,7 @@
       <default value="5"/>
       <notnull/>
     </field>
-   <field name="bgColorRGBA" type="string" size="30">
+    <field name="bgColorRGBA" type="string" size="30">
       <default value=""/>
     </field>
     <field name="bgColorOpacity" type="float" size="3.2">

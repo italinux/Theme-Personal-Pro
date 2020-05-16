@@ -35,13 +35,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
               <div class="form-group center single-space-top">
                 <?php echo $form->label('title', t('Title: %s', '<span>(' . t('what I do') . ')</span>'))?>
                 <div class="input-group center p70">
-                  <?php echo $form->text('title', $title, array('maxlength' => '50'))?>
+                  <?php echo $form->text('title', $title, array('maxlength' => 50))?>
                 </div>
               </div>
               <div class="form-group center double-space-top double-space-bottom">
                 <?php echo $form->label('subtitle', t('Subtitle: %s', '<span>(' . t('I like doing ..') . ')</span>'))?>
                 <div class="input-group center p80">
-                  <?php echo $form->text('subtitle', $subtitle, array('maxlength' => '50'))?>
+                  <?php echo $form->text('subtitle', $subtitle, array('maxlength' => 50))?>
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
               <div class="form-group center">
                 <?php echo $form->label('CTA_text', t('Global Text Button: %s', '<span>(' . t('click here') . ')</span>'))?>
                 <div class="input-group align-center p40">
-                  <?php echo $form->text('CTA_text', $CTA_text, array('maxlength' => '30', 'placeholder' => t('click here')))?>
+                  <?php echo $form->text('CTA_text', $CTA_text, array('maxlength' => 30, 'placeholder' => t('click here')))?>
                 </div>
               </div>
               <div class="form-group center double-space-bottom link-block-opts">
@@ -92,7 +92,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="row no-margins">
                   <div class="col-lg-6 no-sides-paddings">
                     <div id="CTA_linkType_url" class="input-group center current-<?php echo $CTA_linkType?>">
-                      <?php echo $form->text('CTA_url', $CTA_url, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                      <?php echo $form->text('CTA_url', $CTA_url, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                     </div>
                     <div id="CTA_linkType_pID" class="input-group center current-<?php echo $CTA_linkType?>">
                       <?php echo $pageSelector->selectPage('CTA_pID', $CTA_pID, 'ccm_selectSitemapNode')?>
@@ -100,7 +100,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                   <div class="col-lg-3 no-sides-paddings">
                     <div class="input-group center">
-                      <?php echo $form->text('CTA_hash', $CTA_hash, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                      <?php echo $form->text('CTA_hash', $CTA_hash, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                     </div>
                   </div>
                   <div class="col-lg-3 no-sides-paddings">
@@ -132,11 +132,38 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Tabs -->
             <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>" <?php echo ($i==1) ? ' style="display:block"' : null?>>
               <fieldset>
-                  <div class="col-lg-7">
-                    <div class="form-group no-sides-spaces single-space-top">
-                      <?php echo $form->label('o' . $i . '_icon', t("Choose this item's icon"))?>
+                <div class="col-lg-7">
+
+                  <div class="form-group center single-space-top no-space-bottom">
+                    <label class="control-label">
+                      <?php echo t('Choose image')?>
+                    </label>
+                  </div>
+                  <div class="form-group center light-title no-paddings no-space-bottom link-block-opts">
+                    <div class="row no-margins">
+                      <div class="col-lg-11 no-right-space">
+                        <div id="<?php echo 'o' . $i . '_imageTypes'?>" class="input-group single-space-bottom no-right-space">
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('o' . $i . '_imageType', 'icon', ${"o" . $i . "_imageType"})?>
+                              <a><?php echo t($imageTypes['icon'])?></a>
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('o' . $i . '_imageType', 'fID', ${"o" . $i . "_imageType"})?>
+                              <a><?php echo t($imageTypes['fID'])?></a>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="o<?php echo $i?>_imageType_icon" class="input-group center current-<?php echo ${"o" . $i . "_imageType"}?>">
+                    <div class="form-group center single-space-bottom no-right-space light-title">
+                    <?php echo $form->label('o' . $i . '_icon', t("Choose an icon for this item"))?>
                       <div class="input-group single-space-top">
-                        <select name="o<?php echo $i?>_icon" multiple="true" style="height:300px">
+                        <select name="o<?php echo $i?>_icon" multiple="true" style="height:350px">
                           <?php
                             if (is_array($itemsIcons)) {
                               foreach ($itemsIcons as $key => $value) {
@@ -152,114 +179,113 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </select>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="form-group center single-space-top no-space-bottom">
-                      <strong><?php echo t('Otherwise')?></strong>
-                    </div>
+                  <div id="o<?php echo $i?>_imageType_fID" class="input-group center current-<?php echo ${"o" . $i . "_imageType"}?>">
                     <div class="form-group center single-space-bottom light-title">
                       <?php echo $form->label('o' . $i . '_fID', t('stick a single image here'))?>
-                      <label><span>(<?php echo t('min size:') . ' ' . $customImageSizeInfo?>)</span></label>
-                      <label><span class="nota-bene"><?php echo t('%1$sNB: %2$s%3$s ', '<strong>', t('it has priority over the icon'), '</strong>')?></span></label>
+                      <label><span>(<?php echo t('min size: %s', $customImageSizeInfo)?>)</span></label>
                       <div class="input-group center p50">
                         <?php echo $asset->image('ccm-b-image-o' . $i . '_fID', 'o' . $i . '_fID', t('Choose Image'), ${"o" . $i . "_fID"}, array())?>
                       </div>
                     </div>
-                    <div class="form-group center triple-space-top separator-top">
-                      <?php echo $form->label('o' . $i . '_button', t('Text Button: %s', '<span>(' . t('check it out') . ')</span>'))?>
-                      <div class="input-group align-center p50">
-                        <?php echo $form->text('o' . $i . '_button', ${"o" . $i . "_button"}, array('maxlength' => '30', 'placeholder' => t('check it out')))?>
+                  </div>
+                  <div class="form-group center triple-space-top separator-top">
+                    <?php echo $form->label('o' . $i . '_button', t('Text Button: %s', '<span>(' . t('check it out') . ')</span>'))?>
+                    <div class="input-group align-center p50">
+                      <?php echo $form->text('o' . $i . '_button', ${"o" . $i . "_button"}, array('maxlength' => 30, 'placeholder' => t('check it out')))?>
+                    </div>
+                  </div>
+                  <div class="form-group center no-sides-spaces single-space-top link-block-opts">
+                    <label class="control-label single-margin-bottom"><?php echo t('Link to Page or URL')?>
+                      <sup class="tooltip info">
+                        <div>
+                          <dl>
+                            <dt><?php echo t('Here you define:')?></dt>
+                            <dd><?php echo t('link to a %1$s URL %2$s or to a %1$s Page %2$s', '<strong>', '</strong>')?></dd>
+                            <dd><?php echo t('add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page', '<strong>', '</strong>')?></dd>
+                            <dd><?php echo t('open up to a %1$s new page %2$s or on the %1$s same page %2$s', '<strong>', '</strong>')?></dd>
+                          </dl>
+
+                          <span><?php echo t('Leave it empty to hide it')?></span>
+                          <br /><br /><?php echo t('documentation:')?>
+                          <a class="goto" href="http://italinux.com/theme-personal-pro/docs/links" target="_blank"><span><?php echo t('click here')?></span></a>
+                        </div>
+                      </sup>
+                    </label>
+
+                    <div class="row no-margins single-space-top">
+                      <div class="col-lg-12 no-sides-paddings">
+                        <div id="<?php echo 'o' . $i . '_linkTypes'?>" class="input-group single-space-bottom">
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('o' . $i . '_linkType', 'url', ${"o" . $i . "_linkType"})?>
+                              <span><?php echo t($linkTypes['url'])?></span>
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('o' . $i . '_linkType', 'pID', ${"o" . $i . "_linkType"})?>
+                              <span><?php echo t($linkTypes['pID'])?></span>
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="form-group center no-sides-spaces single-space-top link-block-opts">
-                      <label class="control-label"><?php echo t('Link to Page or URL')?>
-                        <sup class="tooltip info">
-                          <div>
-                            <dl>
-                              <dt><?php echo t('Here you define:')?></dt>
-                              <dd><?php echo t('link to a %1$s URL %2$s or to a %1$s Page %2$s', '<strong>', '</strong>')?></dd>
-                              <dd><?php echo t('add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page', '<strong>', '</strong>')?></dd>
-                              <dd><?php echo t('open up to a %1$s new page %2$s or on the %1$s same page %2$s', '<strong>', '</strong>')?></dd>
-                            </dl>
-
-                            <span><?php echo t('Leave it empty to hide it')?></span>
-                            <br /><br /><?php echo t('documentation:')?>
-                            <a class="goto" href="http://italinux.com/theme-personal-pro/docs/links" target="_blank"><span><?php echo t('click here')?></span></a>
-                          </div>
-                        </sup>
-                      </label>
-
-                      <div class="row no-margins single-space-top">
-                        <div class="col-lg-12 no-sides-paddings">
-                          <div id="<?php echo 'o' . $i . '_linkTypes'?>" class="input-group single-space-bottom">
-                            <div class="radio">
-                              <label>
-                                <?php echo $form->radio('o' . $i . '_linkType', 'url', ${"o" . $i . "_linkType"})?>
-                                <span><?php echo t($linkTypes['url'])?></span>
-                              </label>
-                            </div>
-                            <div class="radio">
-                              <label>
-                                <?php echo $form->radio('o' . $i . '_linkType', 'pID', ${"o" . $i . "_linkType"})?>
-                                <span><?php echo t($linkTypes['pID'])?></span>
-                              </label>
-                            </div>
-                          </div>
+                    <div class="row no-margins">
+                      <div class="col-lg-6 no-sides-paddings">
+                        <div id="o<?php echo $i?>_linkType_url" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
+                          <?php echo $form->text('o' . $i . '_url', ${"o" . $i . "_url"}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                        </div>
+                        <div id="o<?php echo $i?>_linkType_pID" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
+                          <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, 'ccm_selectSitemapNode')?>
                         </div>
                       </div>
-                      <div class="row no-margins">
-                        <div class="col-lg-6 no-sides-paddings">
-                          <div id="o<?php echo $i?>_linkType_url" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
-                            <?php echo $form->text('o' . $i . '_url', ${"o" . $i . "_url"}, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
-                          </div>
-                          <div id="o<?php echo $i?>_linkType_pID" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
-                            <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, 'ccm_selectSitemapNode')?>
-                          </div>
+                      <div class="col-lg-3 no-sides-paddings">
+                        <div class="input-group center">
+                          <?php echo $form->text('o' . $i . '_hash', ${"o" . $i . "_hash"}, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                         </div>
-                        <div class="col-lg-3 no-sides-paddings">
-                          <div class="input-group center">
-                            <?php echo $form->text('o' . $i . '_hash', ${"o" . $i . "_hash"}, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 no-sides-paddings">
-                          <div class="input-group center p90">
-                            <?php echo $form->select('o' . $i . '_target', $linkTargets, ${"o" . $i . "_target"})?>
-                          </div>
+                      </div>
+                      <div class="col-lg-3 no-sides-paddings">
+                        <div class="input-group center p90">
+                          <?php echo $form->select('o' . $i . '_target', $linkTargets, ${"o" . $i . "_target"})?>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="col-lg-5">
-                    <div class="form-group center single-margin-top single-space-bottom is-it-visible" style="width: 50%">
-                      <?php echo $form->label('o' . $i . '_isEnabled', t('Visible?'))?>
-                      <div class="input-group">
-                        <div class="radio">
-                          <label>
-                            <?php echo $form->radio('o' . $i . '_isEnabled', 1, (int) ${"o" . $i . "_isEnabled"})?>
-                            <span class="on"><?php echo t('Yes')?></span>
-                          </label>
-                        </div>
-                        <div class="radio">
-                          <label>
-                            <?php echo $form->radio('o' . $i . '_isEnabled', 0, (int) ${"o" . $i . "_isEnabled"})?>
-                            <span class="off"><?php echo t('No')?></span>
-                          </label>
-                        </div>
+                <div class="col-lg-5">
+                  <div class="form-group center single-margin-top single-space-bottom is-it-visible" style="width: 50%">
+                    <?php echo $form->label('o' . $i . '_isEnabled', t('Visible?'))?>
+                    <div class="input-group">
+                      <div class="radio">
+                        <label>
+                          <?php echo $form->radio('o' . $i . '_isEnabled', 1, (int) ${"o" . $i . "_isEnabled"})?>
+                          <span class="on"><?php echo t('Yes')?></span>
+                        </label>
                       </div>
-                    </div>
-                    <div class="form-group center single-space-bottom">
-                      <?php echo $form->label('o' . $i . '_title', t('item Title: %s', '<br /><span>(' . t('hiking, travelling') . ')</span>'))?>
-                      <div class="input-group align-center p70">
-                        <?php echo $form->text('o' . $i . '_title', ${"o" . $i . "_title"}, array('maxlength' => '255'))?>
-                      </div>
-                    </div>
-                    <div class="form-group center no-paddings">
-                      <?php echo $form->label('o' . $i . '_content', t('Content: %s', '<span>(blah blah .. )</span>'))?>
-                      <div class="input-group">
-                          <?php echo $editor->outputStandardEditor('o' . $i . '_content', ${"o" . $i . "_content"})?>
+                      <div class="radio">
+                        <label>
+                          <?php echo $form->radio('o' . $i . '_isEnabled', 0, (int) ${"o" . $i . "_isEnabled"})?>
+                          <span class="off"><?php echo t('No')?></span>
+                        </label>
                       </div>
                     </div>
                   </div>
+                  <div class="form-group center single-space-bottom">
+                    <?php echo $form->label('o' . $i . '_title', t('item Title: %s', '<br /><span>(' . t('hiking, travelling') . ')</span>'))?>
+                    <div class="input-group align-center p70">
+                      <?php echo $form->text('o' . $i . '_title', ${"o" . $i . "_title"}, array('maxlength' => 255))?>
+                    </div>
+                  </div>
+                  <div class="form-group center no-paddings">
+                    <?php echo $form->label('o' . $i . '_content', t('Content: %s', '<span>(blah blah .. )</span>'))?>
+                    <div class="input-group">
+                        <?php echo $editor->outputStandardEditor('o' . $i . '_content', ${"o" . $i . "_content"})?>
+                    </div>
+                  </div>
+                </div>
 
               </fieldset>
             </div>
@@ -279,6 +305,16 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group center light-title no-margins no-sides-paddings double-space-bottom single-space-top">
+                    <?php echo $form->label('layoutColumns', t('layout design'))?>
+                    <div class="input-group center p80">
+                      <!-- Select Layout Columns -->
+                      <?php echo $form->select('layoutColumns', $layoutColumnsOptions, $layoutColumns)?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-12 separator-top">
+                  <div class="form-group center light-title no-margins no-sides-paddings single-space-bottom double-space-top">
                     <?php echo $form->label('bgColorRGBA', t('background colour %s', '<br /><span>(' . t('with or without transparency') . ')</span>'))?>
                     <div class="input-group">
                       <!-- Show a Color Palette in RGB Color Format with Transparency Slider (RGBA) -->
@@ -287,7 +323,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                 </div>
 
-                <div class="col-lg-12 separator-top separator-bottom">
+                <div class="col-lg-12 separator-bottom">
                   <div class="form-group center light-title double-space-top">
                     <?php echo $form->label('bgFID', t('background image'))?>
                     <div class="input-group">

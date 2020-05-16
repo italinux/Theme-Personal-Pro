@@ -51,6 +51,9 @@
     <field name="o1_target" type="string" size="10">
       <default value="self"/>
     </field>
+    <field name="o1_imageType" type="string" size="10">
+      <default value="icon"/>
+    </field>
     <field name="o1_fID" type="smallint">
       <unsigned/>
       <default value="0"/>
@@ -86,6 +89,9 @@
     </field>
     <field name="o2_target" type="string" size="10">
       <default value="self"/>
+    </field>
+    <field name="o2_imageType" type="string" size="10">
+      <default value="icon"/>
     </field>
     <field name="o2_fID" type="smallint">
       <unsigned/>
@@ -123,6 +129,9 @@
     <field name="o3_target" type="string" size="10">
       <default value="self"/>
     </field>
+    <field name="o3_imageType" type="string" size="10">
+      <default value="icon"/>
+    </field>
     <field name="o3_fID" type="smallint">
       <unsigned/>
       <default value="0"/>
@@ -159,6 +168,9 @@
     <field name="o4_target" type="string" size="10">
       <default value="self"/>
     </field>
+    <field name="o4_imageType" type="string" size="10">
+      <default value="icon"/>
+    </field>
     <field name="o4_fID" type="smallint">
       <unsigned/>
       <default value="0"/>
@@ -175,7 +187,11 @@
     <field name="o4_button" type="string" size="30">
       <default value=""/>
     </field>
-   <field name="bgColorRGBA" type="string" size="30">
+    <field name="layoutColumns" type="smallint">
+      <unsigned/>
+      <default value="4"/>
+    </field>
+    <field name="bgColorRGBA" type="string" size="30">
       <default value=""/>
     </field>
     <field name="bgColorOpacity" type="float" size="3.2">

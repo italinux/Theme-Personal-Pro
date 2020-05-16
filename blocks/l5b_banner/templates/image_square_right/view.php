@@ -62,7 +62,7 @@ echo $cStyle;
       <div class="col-sm-6 col-md-6 banner-right">
         <div data-animation="photo" class="banner-photo <?php echo $nopaque?>">
           <picture>
-            <img class="img-responsive" width="<?php echo $imgWidth?>" height="<?php echo $imgHeight?>" src="<?php echo $image['path']?>" alt="" />
+            <img class="img-responsive" width="<?php echo $image['width']?>" height="<?php echo $image['height']?>" src="<?php echo $image['path']?>" alt="" />
           </picture>
         </div>
       </div>

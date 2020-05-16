@@ -111,7 +111,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
-                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => '30', 'placeholder' => t('find out more')))?>
+                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => 30, 'placeholder' => t('find out more')))?>
                       </div>
                     </div>
                     <div class="form-group center double-space-bottom single-space-top link-block-opts">
@@ -154,7 +154,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       <div class="row no-margins">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
@@ -162,7 +162,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
                           <div class="input-group center">
-                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -231,7 +231,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center double-space-top">
                       <?php echo $form->label($cTempl . '_title', t('Title: %s', '<span>(' . t('cool name') . ')</span>'))?>
                       <div class="input-group center p40">
-                        <?php echo $form->text($cTempl . '_title', ${$cTempl . '_title'}, array('maxlength' => '50', 'placeholder' => t('cool name')))?>
+                        <?php echo $form->text($cTempl . '_title', ${$cTempl . '_title'}, array('maxlength' => 50, 'placeholder' => t('cool name')))?>
                       </div>
                     </div>
                   </div>
@@ -239,7 +239,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-bottom">
                       <?php echo $form->label($cTempl . '_subtitle', t('Subtitle: %s', '<span>(' . t('a catchy slogan') . ')</span>'))?>
                       <div class="input-group center p50">
-                        <?php echo $form->text($cTempl . '_subtitle', ${$cTempl . '_subtitle'}, array('maxlength' => '50', 'placeholder' => t('a catchy slogan')))?>
+                        <?php echo $form->text($cTempl . '_subtitle', ${$cTempl . '_subtitle'}, array('maxlength' => 50, 'placeholder' => t('a catchy slogan')))?>
                       </div>
                     </div>
                   </div>
@@ -247,7 +247,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
-                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => '30', 'placeholder' => t('find out more')))?>
+                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => 30, 'placeholder' => t('find out more')))?>
                       </div>
                     </div>
                     <div class="form-group center double-space-bottom single-space-top link-block-opts">
@@ -290,7 +290,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       <div class="row no-margins">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
@@ -298,7 +298,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
                           <div class="input-group center">
-                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -367,7 +367,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center double-space-top">
                       <?php echo $form->label($cTempl . '_iam', t('I am: %s', '<span>(' . t('my name is') . ')</span>'))?>
                       <div class="input-group center p25">
-                        <?php echo $form->text($cTempl . '_iam', ${$cTempl . '_iam'}, array('maxlength' => '25', 'placeholder' => t('I am')))?>
+                        <?php echo $form->text($cTempl . '_iam', ${$cTempl . '_iam'}, array('maxlength' => 25, 'placeholder' => t('I am')))?>
                       </div>
                     </div>
                   </div>
@@ -375,7 +375,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center">
                       <?php echo $form->label($cTempl . '_title', t('Title: %s', '<span>(' . t('cool name') . ')</span>'))?>
                       <div class="input-group center p40">
-                        <?php echo $form->text($cTempl . '_title', ${$cTempl . '_title'}, array('maxlength' => '50', 'placeholder' => t('cool name')))?>
+                        <?php echo $form->text($cTempl . '_title', ${$cTempl . '_title'}, array('maxlength' => 50, 'placeholder' => t('cool name')))?>
                       </div>
                     </div>
                   </div>
@@ -383,7 +383,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_ido', t('I do: %s', '<span>(' . t('I like') . ')</span>'))?>
                       <div class="input-group center p25">
-                        <?php echo $form->text($cTempl . '_ido', ${$cTempl . '_ido'}, array('maxlength' => '25', 'placeholder' => t('I do')))?>
+                        <?php echo $form->text($cTempl . '_ido', ${$cTempl . '_ido'}, array('maxlength' => 25, 'placeholder' => t('I do')))?>
                       </div>
                     </div>
                   </div>
@@ -391,7 +391,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center">
                       <?php echo $form->label($cTempl . '_subtitle', t('Subtitle: %s', '<span>(' . t('playing guitar') . ')</span>'))?>
                       <div class="input-group center p50">
-                        <?php echo $form->text($cTempl . '_subtitle', ${$cTempl . '_subtitle'}, array('maxlength' => '50', 'placeholder' => t('playing guitar')))?>
+                        <?php echo $form->text($cTempl . '_subtitle', ${$cTempl . '_subtitle'}, array('maxlength' => 50, 'placeholder' => t('playing guitar')))?>
                       </div>
                     </div>
                   </div>
@@ -399,7 +399,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
-                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => '30', 'placeholder' => t('find out more')))?>
+                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => 30, 'placeholder' => t('find out more')))?>
                       </div>
                     </div>
                     <div class="form-group center double-space-bottom single-space-top link-block-opts">
@@ -442,7 +442,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       <div class="row no-margins">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
@@ -450,7 +450,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
                           <div class="input-group center">
-                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -519,7 +519,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center double-space-top">
                       <?php echo $form->label($cTempl . '_title', t('Title: %s', '<span>(' . t('cool name') . ')</span>'))?>
                       <div class="input-group center p40">
-                        <?php echo $form->text($cTempl . '_title', ${$cTempl . '_title'}, array('maxlength' => '50', 'placeholder' => t('cool name')))?>
+                        <?php echo $form->text($cTempl . '_title', ${$cTempl . '_title'}, array('maxlength' => 50, 'placeholder' => t('cool name')))?>
                       </div>
                     </div>
                   </div>
@@ -527,14 +527,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-bottom">
                       <?php echo $form->label($cTempl . '_subtitle', t('Subtitle: %s', '<span>(' . t('a catchy slogan') . ')</span>'))?>
                       <div class="input-group center p50">
-                        <?php echo $form->text($cTempl . '_subtitle', ${$cTempl . '_subtitle'}, array('maxlength' => '50', 'placeholder' => t('a catchy slogan')))?>
+                        <?php echo $form->text($cTempl . '_subtitle', ${$cTempl . '_subtitle'}, array('maxlength' => 50, 'placeholder' => t('a catchy slogan')))?>
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="row">
-                      <div class="col-lg-7">
-                        <div class="form-group center single-space-top">
+                      <div class="col-lg-7 no-right-space">
+                        <div class="form-group center single-space-top no-right-space">
                           <?php echo $form->label($cTempl . '_content', t('Content: %s', '<span>(blah blah .. )</span>'))?>
                           <div class="input-group">
                             <?php echo $editor->outputStandardEditor($cTempl . '_content', ${$cTempl . '_content'})?>
@@ -543,32 +543,88 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                       <div class="col-lg-5 col-lg-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
                         <div class="form-group center double-space-top no-space-bottom">
-                          <strong><?php echo t('Choose')?></strong>
+                          <label class="control-label">
+                            <?php echo t('Choose image')?>
+                          </label>
                         </div>
-                        <div class="form-group center light-title">
-                          <?php
-                            if (empty($fileSetOptions) == false) {
-                              echo $form->label('Img_sd_sID', t('random image from: %s', t('File Sets')));
-                            ?>
-                            <label>
-                              <span class="nota-bene"><?php echo t('%1$sNB:%2$s ', '<strong>','</strong>') . t('it has priority over single image')?></span>
-                            </label>
-                            <div class="input-group center single-space-top single-space-bottom">
-                              <?php echo $form->select('Img_sd_sID', $fileSetOptions, $Img_sd_sID)?>
+                        <div class="form-group center light-title no-paddings single-margin-bottom link-block-opts">
+                          <div class="row no-margins">
+                            <div class="col-lg-11 no-sides-spaces">
+                              <div id="<?php echo $cTempl . '_imageTypes'?>" class="input-group single-space-bottom no-right-space">
+                                <div class="radio">
+                                  <label>
+                                    <?php echo $form->radio($cTempl . '_imageType', 'fID', ${$cTempl . '_imageType'})?>
+                                    <a><?php echo t($imageTypes['fID'])?></a>
+                                  </label>
+                                </div>
+                                <div class="radio">
+                                  <label>
+                                    <?php echo $form->radio($cTempl . '_imageType', 'sID', ${$cTempl . '_imageType'})?>
+                                    <a><?php echo t($imageTypes['sID'])?></a>
+                                  </label>
+                                </div>
+                              </div>
                             </div>
-                            <?php
-                            }
-                          ?>
-                          <a href="<?php echo $fileSetHowToURL?>" target="_blank" class="goto single-space-top"><span class="highlight"><?php echo t('How to add a %s', t('File Set'))?></span></a>
-                        </div>
-                        <div class="form-group center single-space-top no-space-bottom">
-                          <strong><?php echo t('Otherwise')?></strong>
-                        </div>
-                        <div class="form-group center light-title">
-                          <?php echo $form->label($cTempl . '_fID', t('stick a single image here'))?>
-                          <div class="input-group center single-space-top single-space-bottom p90">
-                            <?php echo $asset->image('ccm-b-image-' . $cTempl . '_fID', $cTempl . '_fID', t('Choose Image'), ${$cTempl . '_fID'}, array())?>
                           </div>
+
+                          <div class="row no-margins">
+                            <div class="col-lg-12 no-sides-paddings">
+                              <div id="<?php echo $cTempl . '_imageType_fID'?>" class="input-group center current-<?php echo ${$cTempl . '_imageType'}?>">
+                                <div class="form-group center single-margin-bottom light-title">
+                                  <?php echo $form->label($cTempl . '_fID', t('stick a single image here'))?>
+                                  <div class="input-group center single-space-top single-space-bottom p90">
+                                    <?php echo $asset->image('ccm-b-image-' . $cTempl . '_fID', $cTempl . '_fID', t('Choose Image'), ${$cTempl . '_fID'}, array())?>
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="<?php echo $cTempl . '_imageType_sID'?>" class="input-group center current-<?php echo ${$cTempl . '_imageType'}?>">
+                                <div class="form-group center single-margin-bottom light-title">
+                                  <?php
+                                    if (empty($fileSetOptions) == false) {
+                                      echo $form->label($cTempl . '_sID', t('random image from: %s', t('File Sets')));
+                                    ?>
+                                    <div class="input-group center single-space-top single-margin-bottom p90">
+                                      <?php echo $form->select($cTempl . '_sID', $fileSetOptions, ${$cTempl . '_sID'})?>
+                                    </div>
+                                    <?php
+                                    }
+                                  ?>
+                                  <a href="<?php echo $fileSetHowToURL?>" target="_blank" class="btn goto"><span class="highlight"><?php echo t('How to add a %s', t('File Set'))?></span></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row no-margins">
+                            <div class="col-lg-12 no-paddings">
+                              <div class="form-group center single-space-top no-space-bottom">
+                                <label class="control-label single-margin-bottom"><?php echo t('Image Size')?>
+                                  <br />
+                                  <span><?php echo t('minimum: %s', '(' . $imageSizeLimit . 'x' . $imageSizeLimit . ')')?></span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row no-margins">
+                            <div class="col-lg-5 col-lg-offset-1">
+                              <div class="input-group center float-left p70">
+                                <?php echo $form->text($cTempl . '_imageWidth', ${$cTempl . "_imageWidth"}, array('maxlength' => 3,  'placeholder' => $imageWidthPlaceholderPlaceholder))?>
+                              </div>
+                              <div class="input-group align-left p30">
+                                <span style="font-size: 1.4em">px</span>
+                              </div>
+                            </div>
+                            <div class="col-lg-5">
+                              <div class="input-group center float-left p70">
+                                <?php echo $form->text($cTempl . '_imageHeight', ${$cTempl . "_imageHeight"}, array('maxlength' => 3,  'placeholder' => $imageHeightPlaceholderPlaceholder))?>
+                              </div>
+                              <div class="input-group align-left p30">
+                                <span style="font-size: 1.4em">px</span>
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -577,7 +633,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
-                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => '30', 'placeholder' => t('find out more')))?>
+                        <?php echo $form->text($cTempl . '_CTA_text', ${$cTempl . '_CTA_text'}, array('maxlength' => 30, 'placeholder' => t('find out more')))?>
                       </div>
                     </div>
                     <div class="form-group center double-space-bottom single-space-top link-block-opts">
@@ -620,7 +676,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       <div class="row no-margins">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => '255',  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
+                            <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
@@ -628,7 +684,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
                           <div class="input-group center">
-                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => '80',  'placeholder' => '#' . t('anchor-name')))?>
+                            <?php echo $form->text($cTempl . '_CTA_hash', ${$cTempl . '_CTA_hash'}, array('maxlength' => 80,  'placeholder' => '#' . t('anchor-name')))?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">

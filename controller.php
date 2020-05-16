@@ -190,6 +190,20 @@ class Controller extends Package
         );
 
         /**
+        * Register Assets: Masonry
+        */
+        $al->register('javascript', 'masonry-lib', self::_getJsPath() . 'min/jquery.masonry.min.js', $pf, $this);
+
+        $al->registerGroup(
+            'jst.masonry.assets', array(
+               array(
+                   'javascript',
+                   'masonry-lib'
+               ),
+            )
+        );
+
+        /**
         * Required JS + CSS Animate for this Theme
         */
         $al->register('javascript', 'jt.jquery.waypoints', self::_getJsPath() . 'min/jquery.waypoints.min.js', $pf, $this);

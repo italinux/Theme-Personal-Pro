@@ -30,7 +30,7 @@ echo $cStyle;
     <div class="row main">
 
       <div class="col-lg-6 about-me-left">
-        <div data-animation="photo" class="<?php echo $nopaque?> about-me-photo">
+        <div data-animation="photo" class="<?php echo $nopaque?> about-me-photo <?php echo $imageClass?>">
           <div class="loader"></div>
           <?php
             if ($image['default']) {
@@ -42,7 +42,7 @@ echo $cStyle;
             <?php
             }
           ?>
-          <img class="img-responsive <?php echo $playNow?>" width="<?php echo $imgWidth?>" height="<?php echo $imgHeight?>" src="<?php echo $image['path']?>" alt="" />
+          <img class="img-responsive <?php echo $playNow?>" width="<?php echo $image['width']?>" height="<?php echo $image['height']?>" src="<?php echo $image['path']?>" alt="" />
         </div>
       </div>
       <div class="col-lg-6 about-me-right">

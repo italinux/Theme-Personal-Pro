@@ -54,9 +54,52 @@ class Utils {
 
         } else {
 
+            /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            * Detect base path config: concrete | app
+            */
             $config = (current(explode(".", $key)) == 'concrete' ? null : 'app.') . $key;
+
+            /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            * Retrieve DIRECT value (e.g. app.team.item.1.imageWidth)
+            */
             $o = Config::get(trim($config));
 
+            /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            * IF empty AND 'item' (CHILD) THEN Retrieve PARENT value
+            */
+            if (empty($o)) {
+
+              $full = explode(".", $config);
+
+              // Check IF it's 'item' (CHILD)
+              if ($full[2] == 'item') {
+
+                switch ($full[4]) {
+                /** - - - - - - - - - - - - - - - - - - - - - - - - -
+                * Add entries HERE to AVOID climbing up to PARENT value (e.g. title)
+                */
+                case 'title':
+                    break;
+                default:
+                  /** - - - - - - - - - - - - - - - - - - - - - - - - -
+                  * NOW climb up to PARENT value (e.g. app.team.imageWidth)
+                  */
+                  array_splice($full, 2, 2);
+                  $o = Config::get(trim(implode(".", $full)));
+
+                  /** - - - - - - - - - - - - - - - - - - - - - - - - -
+                  * Swap value if numeric
+                  */
+                  if (is_numeric($o) === true) {
+                    $value = $o;
+                  }
+                }
+              }
+            }
+
+            /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            * Retrieve VALUE
+            */
             $o = (is_bool($o) === true) ? ((int) $o) : (((empty($o) === true) || is_numeric($o)) ? $value : t($o));
         }
 
@@ -222,6 +265,16 @@ class Utils {
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Check if is a valid image size
+    * @return boolean (true | false)
+    */
+    public static function getIsValidImageSize($value, $min, $max)
+    {
+
+        return (is_numeric($value) ? (filter_var($value, FILTER_VALIDATE_INT, array("options" => array("min_range" => $min, "max_range" => $max))) ? true : false) : false);
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Custom inline Style Config (window overlay)
     * Background Colours Palette
     */
@@ -297,5 +350,92 @@ class Utils {
                     )
               )
         );
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Configure Block Type Grid per each Media in View
+    *
+    *  [ GRID ]
+    *
+    *     id: Number of items enabled
+    *    key: Number of items to show
+    *  value: Max number of items per Media per row
+    *
+    *  LG = Large Screen, MD = Desktop, SM = Tablet, SX = Mobile
+    *
+    *  [ OFFSET ]
+    *
+    *  Configure Offsets per Media (NB: depending on value above) if you want to CENTER the last ODD item
+    *  e.g. if value above is one figure less than it's main key, add an offset below
+    *  first key is items TOTAL COUNT, second key is OFFSET amount per Media
+    *
+    *
+    * - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Get Layout Grid based on chosen number of columns
+    *
+    * @param   $key = block type (e.g. what-i-do)
+    * @param $value = number of column chosen (e.g. 1, 2, 3, 4)
+    * @return array (bootstrap grid & offset)  
+    */
+    public static function getBtItemsLayout($key, $value)
+    {
+
+          $grid = array();
+        $offset = array();
+
+        switch ($key) {
+
+       /** - - - - - - - - - - - - - -
+        * BLOCK TYPES: VARIOUS
+        */
+        case 'what-i-do':
+        case 'social-media':
+ 
+           /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            * switch config among numbers of column chosen by user
+            */
+            switch ($value) {
+            case 4:
+
+                $grid = array(4 => array('lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
+                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'sxMax' => 1),
+                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1));
+
+              $offset = array(3 => array('smOffset' => 1));
+
+                break;
+            case 3:
+
+                $grid = array(4 => array('lgMax' => 3, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
+                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'sxMax' => 1),
+                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1));
+
+              $offset = array(4 => array('lgOffset' => 1),
+                              3 => array('smOffset' => 1));
+                break;
+            case 2:
+
+                $grid = array(4 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
+                              3 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
+                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1));
+
+              $offset = array(3 => array('lgOffset' => 1,
+                                         'mdOffset' => 1,
+                                         'smOffset' => 1));
+                break;
+            case 1:
+
+                $grid = array(4 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1),
+                              3 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1),
+                              2 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1));
+                break;
+            }
+
+            break;
+        }
+
+        $shared = array(1 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1));
+
+        return array('grid' => array_replace_recursive($grid, $shared), 'offset' => $offset);
     }
 }
