@@ -101,10 +101,13 @@ $(function() {
                     // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
                     if ((typeof target === typeof undefined || target === false || target === null) || (target == '_self') || (target == '')) {
 
+                        // Maximum delay before preloader eventually fades out
+                        var maxDelayInFadeOutMsecs = 15000;
+
                         // show pre-loader
                         $("div#preloader").fadeIn(100, function() {
                             $(this).children().fadeIn(50);
-                        }).delay(1500).fadeOut(300).hide(0);
+                        }).delay(maxDelayInFadeOutMsecs).fadeOut(300).hide(0);
                     }
                 }
             }

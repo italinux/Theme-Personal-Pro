@@ -171,7 +171,7 @@ $(function() {
         var offsetConfig;
         var thisHandler;
 
-        var thisHash = $(location).attr("hash");
+        var thisHash = $(location).attr("hash").split('?')[0];
 
         /**
         *  if smooth scrolling is called from another page (Multipage)

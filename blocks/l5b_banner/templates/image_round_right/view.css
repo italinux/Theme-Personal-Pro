@@ -283,6 +283,10 @@ section.banner div[class^="container"] div.videoStatus {
   display: none;
 }
 section.banner div[class^="container"] div.videoStatus.show {
+  -webkit-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+     -moz-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+       -o-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+          animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
   display: block;
 }
 section.banner div[class^="container"] div.videoStatus span {
@@ -334,6 +338,38 @@ section.banner a.CTA-arrow {
   padding: 10px 25px;
   display: inline-block;
   z-index: 3;
+}
+@-webkit-keyframes videostatusfadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes videostatusfadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes videostatusfadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes videostatusfadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @media screen and (max-width: 1280px) {
   section.banner.over-image {
