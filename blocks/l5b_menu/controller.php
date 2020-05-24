@@ -165,6 +165,7 @@ class Controller extends BlockController
              'portfolio' => array('name' => 'Portfolio',        'installed' => false),
                 'prices' => array('name' => 'Prices',           'installed' => false),
                'clients' => array('name' => 'Clients',          'installed' => false),
+          'testimonials' => array('name' => 'Testimonials',     'installed' => false),
               'contacts' => array('name' => 'Contacts',         'installed' => true),
           'social-media' => array('name' => 'Social Media',     'installed' => true),
                 'footer' => array('name' => 'Footer',           'installed' => true),
