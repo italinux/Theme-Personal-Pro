@@ -486,6 +486,32 @@ section.pre-hand.prices {
   }
 }
 
+/* Testimonials
+--------------------------------------------------------- */
+section.pre-hand.testimonials {
+  color: @brand-testimonials-font-color;
+  a {
+    color: @brand-testimonials-link-color;
+  }
+  &.over-image {
+    .smart-background-image(@brand-testimonials-background-image);
+    background-color: @brand-testimonials-background-color;
+    &::before {
+      background-color: @brand-testimonials-background-color;
+      opacity: 0.75;
+    }
+  }
+  ol.carousel-indicators {
+    > li {
+      background-color: @body-high-bg-color;
+      border-color: @body-high-bg-color;
+      &.active {
+        background-color: @body-high-font-color;
+      }
+    }
+  }
+}
+
 /* Contacts
 --------------------------------------------------------- */
 section.pre-hand.contacts {
