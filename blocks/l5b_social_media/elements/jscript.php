@@ -222,10 +222,116 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
      // - - - - - - - - - - - - - - - - - - - - - - - - -
      // Additional functions with JQuery UI Sortable
+     //
      $("ul.nav-tabs").sortable("refresh");
      $("ul.nav-tabs").sortable("refreshPositions");
      $("ul.nav-tabs").disableSelection();
-     $("ul.nav-tabs > li").prepend('<span class="fa fa-arrows"></span>');
 
+     $("ul.nav-tabs > li").prepend('<span class="fa fa-minus"></span>');
+      $("ul.nav-tabs > li").append('<span class="fa fa-arrows"></span>');
+
+      // max tabs reached, so hide plus
+      if ($("ul.nav-tabs > li.hide").length == 0) {
+          var plusHide = 'hide';
+      }
+
+      $("ul.nav-tabs").append('<li class="' + plusHide + ' plus"><span class="fa fa-plus fa-2x"></span></li>');
+
+      // - - - - - - - - - - - - - - - - - - - - - - - - -
+      // Show new data-tab (function)
+      //
+      // @p1 action type (plus|minus)
+      // @p2 animation is milliseconds
+      //
+      $.fn.activeTab = function(p1, p2) {
+
+        var animSecs = (p2 !== undefined && p2 !== null) ? p2 : 1000;
+
+        var dataTab = this.siblings('.active').eq(0).children('a').attr('data-tab');
+
+        this.parent().siblings('div.ccm-tab-content').hide(0, function() {
+          if ($(this).attr('id') == 'ccm-tab-content-' + dataTab) {
+
+            if (p1 == 'plus') {
+              $(this).changeStatusItem(1);
+            }
+            $(this).fadeIn(animSecs, 'swing');
+          }
+        });
+
+        if (p1 == 'minus') {
+          $('div#ccm-tab-content-' + this.children('a').attr('data-tab')).changeStatusItem(0);
+        }
+      };
+
+      // - - - - - - - - - - - - - - - - - - - - - - - - -
+      // Status item change (function)
+      // 
+      // @return true|false (enabled|disabled)
+      //
+      $.fn.changeStatusItem = function(value) {
+
+        var $thisRadio = $(this).find("input:radio[id*=_isEnabled]");
+
+            $thisRadio.prop("value", value);
+            $thisRadio.prop("checked", true);
+            $thisRadio.prop("data-check", true);
+            $thisRadio.prop("data-value", value);
+      };
+
+      // - - - - - - - - - - - - -
+      // ADD new Tab (PLUS)
+      //
+      $("ul.nav-tabs > li > span.fa-plus").on("click", function() {
+
+        var $thisParent = $(this).parent();
+
+        $thisParent.siblings().removeClass('only active');
+        $thisParent.siblings('.hide').eq(0).addClass('active').removeClass('hide');
+
+        // - - - - - - - - - - - - -
+        // Show new data-tab
+        //
+        $thisParent.activeTab('plus');
+
+        // max tabs reached, so hide plus
+        if ($thisParent.siblings('.hide').length == false) {
+            $(this).parent().hide();
+        }
+      });
+
+      // - - - - - - - - - - - - -
+      // REMOVE this Tab (MINUS)
+      //
+      $("ul.nav-tabs > li > span.fa-minus").on("click", function() {
+
+        var $thisParent = $(this).parent();
+
+        if ($thisParent.hasClass('active')) {
+
+          var $thisTab = ($thisParent.nextAll('li:not(.hide, .plus):first').length == true) ? $thisParent.nextAll('li:not(.hide, .plus):first') : $thisParent.prevAll('li:not(.hide, .plus):first');
+              $thisTab.addClass('active');
+        }
+
+        // - - - - - - - - - - - - -
+        // Show new data-tab
+        //
+        $thisParent.activeTab('minus', 200);
+
+        // hide current tab control
+        $thisParent.removeClass('active').addClass('hide');
+
+        // min tabs reached, so hide minus
+        var $minTabs = $thisParent.siblings('li:not(.hide, .plus)');
+
+        if ($minTabs.length == 1) {
+            $minTabs.addClass('active only');
+
+            $thisParent.activeTab('minus', 0);
+        }
+
+        // show always plus tab
+        $thisParent.siblings('li.plus').removeClass('hide');
+      });
    });
 </script>

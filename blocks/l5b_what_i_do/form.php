@@ -125,7 +125,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- END JS SCRIPT -->
 
             <?php
-              echo $hUI->tabs($itemsTotalTabs);
+              // display Tabs control
+              echo $hUI::tabs($itemsTotalTabs);
 
               for ($i=1; $i<(count($itemsTotalTabs)+1); $i++) {
             ?>

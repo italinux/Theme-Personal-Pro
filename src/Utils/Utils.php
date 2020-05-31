@@ -353,6 +353,44 @@ class Utils {
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * @param array $tabs
+    * @param bool $jstabs
+    * @param string $callback
+    *
+    * @return string
+    */
+    public static function tabs($tabs, $jstabs = true, $callback = 'ccm_activateTabBar')
+    {
+
+        $tcn = rand(0, getrandmax());
+
+        $html = '<ul class="nav-tabs nav" id="ccm-tabs-' . $tcn . '">';
+
+        foreach ($tabs as $tab) {
+
+            $dt = $tab[0];
+            $href = '#';
+
+            if ($jstabs == false) {
+                $dt = '';
+                $href = $tab[0];
+            }
+
+            $html .= '<li class="' . (($tab[2] === true) ? $tab[4] . ' active' : (($tab[3] === false) ? 'hide' : null)) . '">';
+            $html .= '  <a href="' . $href . '" data-tab="' . $dt . '">' . $tab[1] . '</a>';
+            $html .= '</li>';
+        }
+
+        $html .= '</ul>';
+
+        if ($jstabs) {
+            $html .= '<script type="text/javascript">$(function() { ' . $callback . '($(\'#ccm-tabs-' . $tcn . '\'));});</script>';
+        }
+
+        return $html;
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Configure Block Type Grid per each Media in View
     *
     *  [ GRID ]

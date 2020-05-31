@@ -673,14 +673,21 @@ class Controller extends BlockController
     {
         $o = array();
 
+        // only child
+        $only = (count($this->getAll_isEnabled(range(1, self::get_btItemsTotal()))) == 1) ? 'only' : null;
+
         for ($i=1; $i<(self::get_btItemsTotal()+1); $i++) {
 
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
+             // active
              $value = ($i===1) ? true : false;
 
+             // show
+             $show = $this->get_isEnabled($i);
+
              array_push($o, array(
-                  'item_'.$i, t($ordNum . ' %s', t('item What I Do')), $value,
+                  'item_'.$i, t($ordNum . ' %s', t('item What I Do')), $value, $show, $only,
              ));
         };
 
@@ -1966,7 +1973,7 @@ class Controller extends BlockController
         $this->set('pageSelector', BlockUtils::getThisApp()->make('helper/form/page_selector'));
 
         // User Interface
-        $this->set('hUI', BlockUtils::getThisApp()->make('helper/concrete/ui'));
+        $this->set('hUI', new BlockUtils());
 
         $this->addFormDefaultValues();
         $this->addFormExtraValues();
