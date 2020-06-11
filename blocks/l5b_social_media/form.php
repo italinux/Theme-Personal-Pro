@@ -13,7 +13,7 @@
 | @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           https://concrete5.org/help/legal/commercial_add-on_license       |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
 |                                                                           |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
@@ -28,7 +28,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
   <section>
     <div>
       <div class="row main">
-        <div class="col-lg-10 col-sm-8 col-xs-12 no-spaces">
+        <div class="col-lg-9 col-sm-8 col-xs-12 no-spaces">
 
           <div class="col-lg-12">
             <div class="form-group center">
@@ -67,8 +67,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
             ?>
             <!-- Tabs -->
             <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>" <?php echo ($i==1) ? ' style="display:block"' : null?>>
-              <fieldset class="single-space-bottom">
-                <div class="col-lg-9">
+              <fieldset class="triple-space-bottom">
+                <div class="col-lg-11">
                   <div class="form-group center single-space-top link-block-opts" style="max-width: 750px;">
                     <label class="control-label"><?php echo t('Link to social profile')?>
                       <sup class="tooltip info">
@@ -183,22 +183,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-3 double-space-top">
-                  <div class="form-group center single-space-top single-space-bottom is-it-visible">
-                    <?php echo $form->label('o' . $i . '_isEnabled', t('Visible?'))?>
+                <div class="col-lg-1">
+                  <div class="form-group center no-space-top no-space-bottom is-it-visible">
                     <div class="input-group">
-                      <div class="radio">
-                        <label>
-                          <?php echo $form->radio('o' . $i . '_isEnabled', 1, (int) ${"o" . $i . "_isEnabled"})?>
-                          <span class="on"><?php echo t('Yes')?></span>
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <?php echo $form->radio('o' . $i . '_isEnabled', 0, (int) ${"o" . $i . "_isEnabled"})?>
-                          <span class="off"><?php echo t('No')?></span>
-                        </label>
-                      </div>
+                      <?php echo $form->hidden('o' . $i . '_isEnabled', (int) ${"o" . $i . "_isEnabled"}, array('maxlength' => 0))?>
                     </div>
                   </div>
                 </div>
@@ -211,7 +199,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
 <!-- END row -->
         </div>
-        <div class="col-lg-2 col-sm-4 col-xs-12 no-spaces">
+        <div class="col-lg-3 col-sm-4 col-xs-12 no-spaces">
           <section class="style">
             <div>
               <div class="row main">

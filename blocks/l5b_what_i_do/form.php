@@ -13,7 +13,7 @@
 | @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           https://concrete5.org/help/legal/commercial_add-on_license       |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
 |                                                                           |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
@@ -257,21 +257,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 </div>
 
                 <div class="col-lg-5">
-                  <div class="form-group center single-margin-top single-space-bottom is-it-visible" style="width: 50%">
-                    <?php echo $form->label('o' . $i . '_isEnabled', t('Visible?'))?>
+                  <div class="form-group center no-space-top no-space-bottom is-it-visible" style="width: 50%">
                     <div class="input-group">
-                      <div class="radio">
-                        <label>
-                          <?php echo $form->radio('o' . $i . '_isEnabled', 1, (int) ${"o" . $i . "_isEnabled"})?>
-                          <span class="on"><?php echo t('Yes')?></span>
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <?php echo $form->radio('o' . $i . '_isEnabled', 0, (int) ${"o" . $i . "_isEnabled"})?>
-                          <span class="off"><?php echo t('No')?></span>
-                        </label>
-                      </div>
+                      <?php echo $form->hidden('o' . $i . '_isEnabled', (int) ${"o" . $i . "_isEnabled"}, array('maxlength' => 0))?>
                     </div>
                   </div>
                   <div class="form-group center single-space-bottom">

@@ -106,7 +106,7 @@ $(function() {
 
                         // show pre-loader
                         $("div#preloader").fadeIn(100, function() {
-                            $(this).children().fadeIn(50);
+                            $(this).children().fadeIn(300);
                         }).delay(maxDelayInFadeOutMsecs).fadeOut(300).hide(0);
                     }
                 }

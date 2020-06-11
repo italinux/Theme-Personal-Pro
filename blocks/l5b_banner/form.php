@@ -13,7 +13,7 @@
 | @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           https://concrete5.org/help/legal/commercial_add-on_license       |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
 |                                                                           |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
@@ -59,9 +59,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   <div class="col-lg-12">
                     <section class="video <?php echo $cTempl?>">
                       <div>
-                        <div class="row main">
+                        <div class="row main single-space-top">
                           <div class="col-lg-6">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoURL', t('Background Video Url: %s', '<span>(YouTube)</span>'))?>
                               <div class="input-group">
                                 <?php echo $form->text($cTempl . '_videoURL', ${$cTempl . '_videoURL'})?>
@@ -69,7 +69,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3 col-lg-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoHQ', t('Quality'))?>
                               <div class="input-group">
                                 <?php echo $form->select($cTempl . '_videoHQ', $optionsVideoHQ, ${$cTempl . '_videoHQ'})?>
@@ -77,7 +77,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -187,9 +187,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   <div class="col-lg-12">
                     <section class="video <?php echo $cTempl?>">
                       <div>
-                        <div class="row main">
+                        <div class="row main single-space-top">
                           <div class="col-lg-6">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoURL', t('Background Video Url: %s', '<span>(YouTube)</span>'))?>
                               <div class="input-group">
                                 <?php echo $form->text($cTempl . '_videoURL', ${$cTempl . '_videoURL'})?>
@@ -197,7 +197,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3 col-lg-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoHQ', t('Quality'))?>
                               <div class="input-group">
                                 <?php echo $form->select($cTempl . '_videoHQ', $optionsVideoHQ, ${$cTempl . '_videoHQ'})?>
@@ -205,7 +205,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -323,9 +323,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   <div class="col-lg-12">
                     <section class="video <?php echo $cTempl?>">
                       <div>
-                        <div class="row main">
+                        <div class="row main single-space-top">
                           <div class="col-lg-6">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoURL', t('Background Video Url: %s', '<span>(YouTube)</span>'))?>
                               <div class="input-group">
                                 <?php echo $form->text($cTempl . '_videoURL', ${$cTempl . '_videoURL'})?>
@@ -333,7 +333,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3 col-lg-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoHQ', t('Quality'))?>
                               <div class="input-group">
                                 <?php echo $form->select($cTempl . '_videoHQ', $optionsVideoHQ, ${$cTempl . '_videoHQ'})?>
@@ -341,7 +341,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -475,9 +475,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   <div class="col-lg-12">
                     <section class="video <?php echo $cTempl?>">
                       <div>
-                        <div class="row main">
+                        <div class="row main single-space-top">
                           <div class="col-lg-6">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoURL', t('Background Video Url: %s', '<span>(YouTube)</span>'))?>
                               <div class="input-group">
                                 <?php echo $form->text($cTempl . '_videoURL', ${$cTempl . '_videoURL'})?>
@@ -485,7 +485,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3 col-lg-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_videoHQ', t('Quality'))?>
                               <div class="input-group">
                                 <?php echo $form->select($cTempl . '_videoHQ', $optionsVideoHQ, ${$cTempl . '_videoHQ'})?>
@@ -493,7 +493,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center">
+                            <div class="form-group center double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -609,7 +609,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <div class="row no-margins">
                             <div class="col-lg-5 col-lg-offset-1">
                               <div class="input-group center float-left p70">
-                                <?php echo $form->text($cTempl . '_imageWidth', ${$cTempl . "_imageWidth"}, array('maxlength' => 3,  'placeholder' => $imageWidthPlaceholderPlaceholder))?>
+                                <?php echo $form->text($cTempl . '_imageWidth', ${$cTempl . "_imageWidth"}, array('maxlength' => 3,  'placeholder' => $imageWidthPlaceholder))?>
                               </div>
                               <div class="input-group align-left p30">
                                 <span style="font-size: 1.4em">px</span>
@@ -617,7 +617,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                             <div class="col-lg-5">
                               <div class="input-group center float-left p70">
-                                <?php echo $form->text($cTempl . '_imageHeight', ${$cTempl . "_imageHeight"}, array('maxlength' => 3,  'placeholder' => $imageHeightPlaceholderPlaceholder))?>
+                                <?php echo $form->text($cTempl . '_imageHeight', ${$cTempl . "_imageHeight"}, array('maxlength' => 3,  'placeholder' => $imageHeightPlaceholder))?>
                               </div>
                               <div class="input-group align-left p30">
                                 <span style="font-size: 1.4em">px</span>

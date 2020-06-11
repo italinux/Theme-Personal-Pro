@@ -13,7 +13,7 @@
 | @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           https://concrete5.org/help/legal/commercial_add-on_license       |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
 |                                                                           |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
@@ -31,6 +31,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
      // JQuery UI Sortable Tabs drag & drop
      //
      $("ul.nav-tabs").sortable({
+        items: "li:not(.ui-sortable-disabled)",
         start: function(e, ui) {},
          stop: function(e, ui) {
 
@@ -39,7 +40,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
            var endPosition = ui.item.index();
 
            // Targets
-           var listTarget = $(this).children("li");
+           var listTarget = $(this).children("li:not(.ui-sortable-disabled)");
            var thisTarget = listTarget.eq(endPosition);
 
            var tabData = thisTarget.children('a').attr('data-tab');
@@ -64,7 +65,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
          // - - - - - - - - - - - - - - - - - - - - - - - - -
          // Reset Tab text Titles
-         $("ul.nav-tabs > li").each(function (key, value) {
+         $("ul.nav-tabs > li:not(.ui-sortable-disabled)").each(function (key, value) {
 
            // Target anchor
            aTarget = $(this).children('a');
@@ -80,7 +81,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
            $.each( [ "input:not(:radio)",
                      "select",
                      "textarea",
-                     "input:radio[id*=_isEnabled]",
                      "input:radio[id*=_isPopup]",
                      "input:radio[id*=_linkType]",
                      "input:radio[id*=_imageType]" ], function(id, el) {
@@ -117,14 +117,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
      // - - - - - - - - - - - - - - - - - - - - - - - - -
      // Radio inputs event on Change
      //
-     $("ul.nav-tabs > li").each(function() {
+     $("ul.nav-tabs > li:not(.ui-sortable-disabled)").each(function() {
 
      tabData = $(this).children('a').attr('data-tab');
 
        // - - - - - - - - - - - - - - - - - - - - - - - - -
        // Loop through fields indexes
-       $.each( [ "input:radio[id*=_isEnabled]",
-                 "input:radio[id*=_isPopup]",
+       $.each( [ "input:radio[id*=_isPopup]",
                  "input:radio[id*=_linkType]",
                  "input:radio[id*=_imageType]" ], function(key, el) {
 
@@ -179,7 +178,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
        // - - - - - - - - - - - - - - - - - - - - - - - - -
        // Loop through Tabs indexes
-       $("ul.nav-tabs > li").each(function() {
+       $("ul.nav-tabs > li:not(.ui-sortable-disabled)").each(function() {
 
          // Target anchor
          tabData = $(this).children('a').attr('data-tab');
@@ -189,7 +188,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
          $.each( [ "input:not(:radio)",
                    "select",
                    "textarea",
-                   "input:radio[id*=_isEnabled]",
                    "input:radio[id*=_isPopup]",
                    "input:radio[id*=_linkType]",
                    "input:radio[id*=_imageType]" ], function(id, el) {
@@ -227,15 +225,18 @@ defined('C5_EXECUTE') or die("Access Denied.");
      $("ul.nav-tabs").sortable("refreshPositions");
      $("ul.nav-tabs").disableSelection();
 
-     $("ul.nav-tabs > li").prepend('<span class="fa fa-minus"></span>');
-      $("ul.nav-tabs > li").append('<span class="fa fa-arrows"></span>');
+     $("ul.nav-tabs > li:not(.plus)").prepend('<span class="fa fa-minus"></span>');
+      $("ul.nav-tabs > li:not(.plus)").append('<span class="fa fa-arrows"></span>');
+
+
+      var plusHide = '';
 
       // max tabs reached, so hide plus
       if ($("ul.nav-tabs > li.hide").length == 0) {
-          var plusHide = 'hide';
+          plusHide = 'hide';
       }
 
-      $("ul.nav-tabs").append('<li class="' + plusHide + ' plus"><span class="fa fa-plus fa-2x"></span></li>');
+      $("ul.nav-tabs").append('<li class="ui-sortable-disabled ' + plusHide + ' plus"><span class="fa fa-plus fa-2x"></span></li>');
 
       // - - - - - - - - - - - - - - - - - - - - - - - - -
       // Show new data-tab (function)
@@ -271,12 +272,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
       //
       $.fn.changeStatusItem = function(value) {
 
-        var $thisRadio = $(this).find("input:radio[id*=_isEnabled]");
+        var $thisEnabled = $(this).find("input:hidden[id*=_isEnabled]");
 
-            $thisRadio.prop("value", value);
-            $thisRadio.prop("checked", true);
-            $thisRadio.prop("data-check", true);
-            $thisRadio.prop("data-value", value);
+            $thisEnabled.attr("value", value);
+            $thisEnabled.attr("data-value", value);
       };
 
       // - - - - - - - - - - - - -
@@ -296,7 +295,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         // max tabs reached, so hide plus
         if ($thisParent.siblings('.hide').length == false) {
-            $(this).parent().hide();
+            $(this).parent().hide(0);
         }
       });
 
@@ -331,7 +330,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
         }
 
         // show always plus tab
-        $thisParent.siblings('li.plus').removeClass('hide');
+        $thisParent.siblings('li.plus').removeClass('hide').show(0);
       });
    });
 </script>

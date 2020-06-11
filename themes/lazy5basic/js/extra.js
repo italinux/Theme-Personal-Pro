@@ -152,6 +152,7 @@ $(function() {
                 'curriculum-vitae-skills': { desktop: 120, mobile: 150 },
                 'curriculum-vitae-resume': { desktop: 120, mobile: 150 },
             'portfolio': {},
+            'testimonials': {},
             'clients': {},
             'prices': {},
             'social-media': {},

@@ -24,7 +24,7 @@
     <field name="fbPageUrl" type="string" size="255">
       <default value=""/>
     </field>
-    <field name="openHours" type="string" size="255">
+    <field name="openHours" type="string" size="500">
       <default value=""/>
     </field>
     <field name="telephone" type="string" size="255">

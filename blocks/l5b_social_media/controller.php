@@ -13,7 +13,7 @@
 | @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           http://concrete5.org/help/legal/commercial_add-on_license       |
+|           https://concrete5.org/help/legal/commercial_add-on_license       |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
 |                                                                           |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
@@ -63,8 +63,8 @@ class Controller extends BlockController
     protected static $bgOverImageOpacity = 1;
 
     // Window Overlay size: Width X Height (pixels)
-    protected $btInterfaceWidth = "1420";
-    protected $btInterfaceHeight = "900";
+    protected $btInterfaceWidth = "1300";
+    protected $btInterfaceHeight = "760";
 
     protected $btWrapperClass = 'ccm-ui';
     protected $btWrapperForm = 'lazy-ui';
@@ -541,6 +541,9 @@ class Controller extends BlockController
     {
         $o = array();
 
+        // activated flag
+        $activated = false;
+
         // only child
         $only = (count($this->getAll_isEnabled(range(1, self::get_btItemsTotal()))) == 1) ? 'only' : null;
 
@@ -549,7 +552,12 @@ class Controller extends BlockController
              $ordNum = BlockUtils::getOrdinalNumberShort($i);
 
              // active
-             $value = ($i===1) ? true : false;
+             if (($this->get_isEnabled($i) === true) && ($activated === false)) {
+                  $value = true;
+              $activated = true;
+             } else {
+                  $value = false;
+             }
 
              // show
              $show = $this->get_isEnabled($i);
