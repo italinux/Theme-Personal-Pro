@@ -13,7 +13,7 @@
 | @copyright (c) 2020                                                       |
 | ------------------------------------------------------------------------- |
 | @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           https://concrete5.org/help/legal/commercial_add-on_license       |
+|           https://concrete5.org/help/legal/commercial_add-on_license      |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
 |                                                                           |
 | This program is distributed in the hope that it will be useful - WITHOUT  |
@@ -436,7 +436,7 @@ class Controller extends BlockController
 
         // Register Assets Animate Configuration
         $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/l5b_contacts/jscript/lazy-animate.conf.js', $cf, 'theme_lazy5basic');
-        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getJSelectorBlock() . ');', $cf, 'theme_lazy5basic');
+        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, 'theme_lazy5basic');
 
         $al->registerGroup(
             'jst.animate.conf', array(
@@ -1493,7 +1493,7 @@ class Controller extends BlockController
         return $this->getSectionId() . '.' . self::$btHandlerId;
     }
  
-    protected function getJSelectorBlock()
+    protected function getSelectorBlock()
     {
         return str_replace('-', '_', self::$btHandlerId);
     }
@@ -1515,9 +1515,9 @@ class Controller extends BlockController
         return (BlockUtils::isValidColor($this->fgColorRGB) ? 'cfg-color' : null);
     }
 
-    public static function getBlockHandle()
+    protected function getBlockHandle()
     {
-        return strtolower(basename(dirname(__FILE__)));
+        return 'l5b_' . $this->getSelectorBlock();
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1606,7 +1606,7 @@ class Controller extends BlockController
     */
     public function getBlockAssetsURL()
     {
-        $bt = BlockType::getByHandle(self::getBlockHandle());
+        $bt = BlockType::getByHandle($this->getBlockHandle());
         $bPath = BlockUtils::getThisApp()->make('helper/concrete/urls')->getBlockTypeAssetsURL($bt);
 
         return $bPath;
@@ -1623,18 +1623,11 @@ class Controller extends BlockController
     protected function addFormDefaultValues()
     {
         // Retrieve defaults Values
-        if (method_exists(__CLASS__, 'get_btFields')) {
-
-            foreach (array_keys(self::get_btFields()) as $key) {
-
-                if (method_exists($this, 'get' . ucfirst($key))) {
-
-                    $o = $this->{'get' . ucfirst($key)}();
-
-                    $o = is_array($o) ? $o : trim($o);
-
-                    $this->set($key, $o);
-                }
+        foreach (array_keys(self::get_btFields()) as $key) {
+            if (method_exists($this, 'get' . ucfirst($key))) {
+                $o = $this->{'get' . ucfirst($key)}();
+                $o = is_array($o) ? $o : trim($o);
+                $this->set($key, $o);
             }
         }
     }
@@ -1645,20 +1638,16 @@ class Controller extends BlockController
     protected function addFormExtraValues()
     {
         // Retrieve defaults Values
-        if (method_exists(__CLASS__, 'get_btStyles')) {
-            foreach (array_keys(self::get_btStyles()) as $key) {
-                if (method_exists($this, 'get' . ucfirst($key))) {
-                    $this->set($key, $this->{'get' . ucfirst($key)}());
-                }
+        foreach (array_keys(self::get_btStyles()) as $key) {
+            if (method_exists($this, 'get' . ucfirst($key))) {
+                $this->set($key, $this->{'get' . ucfirst($key)}());
             }
         }
 
         // Retrieve extra Values
-        if (method_exists(__CLASS__, 'get_btFormExtraValues')) {
-            foreach (array_keys(self::get_btFormExtraValues()) as $key) {
-                if (method_exists($this, 'get' . ucfirst($key))) {
-                    $this->set($key, $this->{'get' . ucfirst($key)}());
-                }
+        foreach (array_keys(self::get_btFormExtraValues()) as $key) {
+            if (method_exists($this, 'get' . ucfirst($key))) {
+                $this->set($key, $this->{'get' . ucfirst($key)}());
             }
         }
     }
