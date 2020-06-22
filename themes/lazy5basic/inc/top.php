@@ -50,6 +50,8 @@
     <meta name="package" content="<?php echo $theme->getThemeDisplayName()?>">
     <meta name="version" content="<?php echo $theme->getVersion()?>">
 
+    <link rel="preload" href="<?php echo $view->getStylesheet('main.less')?>" as="style">
+
     <?php View::element('header_required', $sPage)?>
 
     <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/build/tools/c5-ui.css'); }?>
