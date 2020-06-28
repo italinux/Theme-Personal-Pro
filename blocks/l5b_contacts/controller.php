@@ -122,8 +122,11 @@ class Controller extends BlockController
             'subtitle' => array(
                 'label' => t('Subtitle'),
             ),
+            'telephoneType' => array(
+                'label' => t('Telephone type'),
+            ),
             'telephone' => array(
-                'label' => t('Telephone'),
+                'label' => t('Telephone number'),
             ),
             'address' => array(
                 'label' => t('Address'),
@@ -154,6 +157,9 @@ class Controller extends BlockController
             ),
             'bgColorOpacityOptions' => array(
                 'label' => t('Options adjust background opacity'),
+            ),
+            'telephoneTypes' => array(
+                'label' => t('Telephone types list'),
             ),
         );
     }
@@ -211,10 +217,19 @@ class Controller extends BlockController
         return BlockUtils::getDefaultValue($config, $dValue);
     }
 
+    public function getTelephoneType()
+    {
+        $cName  = 'telephoneType';
+        $config = self::$btHandlerId . '.telephone.type';
+        $dValue = 'telephone';
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
     public function getTelephone()
     {
         $cName  = 'telephone';
-        $config = self::$btHandlerId . '.' . $cName;
+        $config = self::$btHandlerId . '.telephone.number';
         $dValue = '+0 (1)2 34 56 78';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
@@ -258,6 +273,27 @@ class Controller extends BlockController
         $dValue = t('%1$s@email.%2$s', t('your'), t('here'));
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Window Overlay Methods
+    */
+    public function getTelephoneTypes()
+    {
+        return array( 'mobile' => t('Mobile'),
+                   'telephone' => t('Telephone'),
+                    );
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * This block additional View Method
+    */
+    public function getTelephoneTitle()
+    {
+        $types = $this->getTelephoneTypes();
+          $key = $this->getTelephoneType();
+
+        return $types[$key];
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -381,6 +417,8 @@ class Controller extends BlockController
 
         // Set main values
         // Sanitize some of the main values
+        $this->set('telephoneTitle', $this->getTelephoneTitle());
+
         $this->set('telephone', str_replace(PHP_EOL, "<br />", $this->getTelephone()));
         $this->set('address', str_replace(PHP_EOL, "<br />", $this->getAddress()));
         $this->set('openHours', str_replace(PHP_EOL, "<br />", $this->getOpenHours()));

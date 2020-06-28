@@ -112,7 +112,7 @@ echo $cStyle;
         <div id="<?php echo $viewPoint?>-more-mobile" data-animation="other-mobile" class="col-md-12 col-sm-12">
           <div class="col-sx-12">
             <div class="col-md-12">
-              <h4><?php echo t('Mobile')?>:</h4>
+              <h4><?php echo $telephoneTitle?>:</h4>
             </div>
             <div class="col-md-12">
               <h4>

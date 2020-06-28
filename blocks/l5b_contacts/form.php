@@ -367,8 +367,8 @@ $c = Page::getCurrentPage();
               </div>
               <div class="row">
                 <div class="form-group center single-space-top">
-                  <?php echo $form->label('telephone', t('Telephone: %s', '<span>(+33 (0)1 22 33 44 55)</span>'))?>
-                  <div class="input-group">
+                  <div class="input-group center">
+                    <?php echo $form->select('telephoneType', $telephoneTypes, $telephoneType)?>
                     <?php echo $form->textarea(
                             'telephone',
                             trim($telephone), array(

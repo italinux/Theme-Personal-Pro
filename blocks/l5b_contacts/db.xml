@@ -27,6 +27,9 @@
     <field name="openHours" type="string" size="500">
       <default value=""/>
     </field>
+    <field name="telephoneType" type="string" size="50">
+      <default value="telephone"/>
+    </field>
     <field name="telephone" type="string" size="255">
       <default value=""/>
     </field>

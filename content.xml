@@ -337,6 +337,7 @@ France]]></address>
                 <openHours><![CDATA[Monday - Friday: 9am - 6pm
 Saturday: 9am - 2pm
 Sunday: Closed]]></openHours>
+                <telephoneType><![CDATA[telephone]]></telephoneType>
                 <telephone><![CDATA[+0 (1)2 34 56 78]]></telephone>
                 <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>

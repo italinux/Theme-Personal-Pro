@@ -35,7 +35,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
           </div>
 
           <!-- START Tabs row -->
-          <div class="col-lg-12 wrap-tab-<?php echo count($templateDefaultTab)?>">
+          <div class="col-lg-12 wrap-tab-<?php echo count($templateDefaultTab)?> no-grab">
 
             <div class="double-space-bottom info-items-list-title">
               <h4><?php echo t('all templates available are listed below')?></h4>
@@ -788,3 +788,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
     </div>
   </section>
 </div>
+
+<!-- Current Template mark -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("ul.nav-tabs > li.active").prepend("<span class='active highlight'><?php echo t('current template')?></span><span class='fa fa-angle-down'></span>");
+  });
+</script>
