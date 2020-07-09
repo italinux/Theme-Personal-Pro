@@ -71,9 +71,125 @@ $(function() {
         });
     }
 
-/** - - - - - - - - - - - - - - - - - - - - -
-*  SHOW PRE-LOADER on click CTA to external pages ONLY
-* - - - - - - - - - - - - - - - - - - - - -*/
+    /**
+    * ============================================
+    * INTERNAL: CTA buttons / targeting anchors
+    * ============================================
+    */
+    $(".scroll").click(function(e) {
+
+        e.preventDefault();
+
+        var speedFactor = 2; // + o - speed (play with decimals first)
+
+        // minimum animation duration in millisecs
+        var animDurationMsecsDefault = 400;
+
+        /**
+        * Add a base offset in case of elements changing positions while scrolling
+        * (e.g. Sticky Menu)
+        */
+        var baseOffset = 0;
+
+        /**
+        * Then change default Offset to match the dynamic element height
+        */
+        if (document.querySelector('section.static.menu') !== null) {
+            baseOffset = -50;
+        }
+
+        // default offset target destination
+        var offsetDefault = { desktop: 70, mobile: 50 };
+
+        // config offset target destination
+        var offsetConfig = {};
+
+        // get current anchor hash 
+        var thisHash =  this.hash.substring(1);
+
+        // Exceptions
+        switch(thisHash) {
+            case 'what-i-do-more':
+                offsetConfig = { desktop: 165 };
+                thisHash = "what-i-do";
+            break;
+            case 'about-me':
+                offsetConfig = { desktop: 120};
+                break;
+            case 'curriculum-vitae':
+                offsetConfig = { desktop: 120, mobile: 40 };
+                break;
+            case 'curriculum-vitae-skills':
+                offsetConfig = { desktop: 120, mobile: 100 };
+                break;
+            case 'curriculum-vitae-resume':
+                offsetConfig = { desktop: 120, mobile: 150 };
+                break;
+            case 'contacts-more':
+                case 'contacts-more-mobile':
+                case 'contacts-more-address':
+                case 'contacts-more-email':
+                    offsetConfig = { desktop: 120, mobile: 150 };
+                    break;
+        }
+
+        // get current handler for this add-on
+        var thisHandler = "#" + thisHash;
+
+        // detect handler if Any
+        if ($(thisHandler).length) {
+
+            // get handler Offset
+            var thisHandlerOffset = $(thisHandler).first().offset().top;
+
+            // get current element offset
+            var thisElementOffset = $(this).offset().top;
+
+            // calculate speed (animation)
+            var animDurationMsecs = Math.ceil((thisHandlerOffset - thisElementOffset) / speedFactor);
+
+            // final speed (animation)
+            var thisAnimDurationMsecs = (animDurationMsecs < animDurationMsecsDefault) ? animDurationMsecsDefault : animDurationMsecs;
+
+            /**
+            * ============================================
+            * Media Queries:
+            *   calculate position offset
+            * ============================================
+            */
+            var isMobile = window.matchMedia("only screen and (max-width: 800px)");
+
+            var thisOffsetDefault = (isMobile.matches) ? offsetDefault.mobile : offsetDefault.desktop;
+
+            var thisOffsetConfig = (isMobile.matches) ? ('mobile' in offsetConfig) ? offsetConfig.mobile : 0 : ('desktop' in offsetConfig) ? offsetConfig.desktop : 0;
+
+            // END Media Queries
+
+
+            var postOffset = baseOffset + ((thisOffsetConfig) ? thisOffsetConfig : thisOffsetDefault);
+
+            // Scroll Animate
+            $("html, body").animate({
+                scrollTop: thisHandlerOffset - postOffset
+            }, {
+               duration: thisAnimDurationMsecs,
+               easing: "swing",
+               complete: function(){
+                 // close menu hamburger
+                 $("nav").find(".hamburger").removeClass("is-active");
+
+                 // hide toggle menu (fullscreen)
+                 $("nav").find(".fixed").removeClass('animated').fadeOut(250, "swing", function() {
+                     $(this).removeClass("fixed").addClass('animated');
+                 });
+               }
+            });
+        }
+    });
+
+    /** - - - - - - - - - - - - - - - - - - - - -
+    *  SHOW PRE-LOADER on click CTA to external pages ONLY
+    * - - - - - - - - - - - - - - - - - - - - -*/
     if (CCM_EDIT_MODE === false) {
 
         $("div.main-wrapper a").not(".scroll").not(".scroll-up").not(".popup-image").not(".lightbox").not("[href^='#']").on("click", function(e) {
@@ -114,9 +230,9 @@ $(function() {
         });
     }
 
-/** - - - - - - - - - - - - - - - - - - - - -
-*  HIDE PRE-LOADER on double-click (security measure)
-* - - - - - - - - - - - - - - - - - - - - -*/
+    /** - - - - - - - - - - - - - - - - - - - - -
+    *  HIDE PRE-LOADER on double-click (security measure)
+    * - - - - - - - - - - - - - - - - - - - - -*/
     $(thisHandler).click(function() {
         // hide pre-loader
         $(this).hide(0, function() {
@@ -124,9 +240,9 @@ $(function() {
         });
     });
 
-/** - - - - - - - - - - - - - - - - - - - - -
-*  SCROLL-TOP show bottom arrow
-* - - - - - - - - - - - - - - - - - - - - -*/
+    /** - - - - - - - - - - - - - - - - - - - - -
+    *  SCROLL-TOP show bottom arrow
+    * - - - - - - - - - - - - - - - - - - - - -*/
     // get current handler
     thisHandler = '#scroll-top';
     transMsecs = 0;
@@ -155,9 +271,9 @@ $(function() {
         }
     });
 
-/** - - - - - - - - - - - - - - - - - - - - -
-*  SCROLL-TOP on click bottom arrow
-* - - - - - - - - - - - - - - - - - - - - -*/
+    /** - - - - - - - - - - - - - - - - - - - - -
+    *  SCROLL-TOP on click bottom arrow
+    * - - - - - - - - - - - - - - - - - - - - -*/
     $(".scroll-up").click(function(e) {
 
         e.preventDefault();
