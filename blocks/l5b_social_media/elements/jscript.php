@@ -58,10 +58,11 @@ defined('C5_EXECUTE') or die("Access Denied.");
        update: function(e, ui) {
 
          // Target anchor
-         var aTarget, tabData, tabText;
+         var aTarget, aID, ordNum, tabData, tabText;
 
          // Target input name & value
          var inputName, inputValue;
+
 
          // - - - - - - - - - - - - - - - - - - - - - - - - -
          // Reset Tab text Titles
@@ -71,10 +72,30 @@ defined('C5_EXECUTE') or die("Access Denied.");
            aTarget = $(this).children('a');
 
            tabData = aTarget.attr('data-tab');
-           tabText = aTarget.text();
 
-           // Update Tab text Title
-           aTarget.text((key + 1) + tabText.substring(1, tabText.length));
+           // Strip all current digits to be replaced
+           tabText = aTarget.text().replace(/\d+/g, '');
+
+           // new ID
+           aID = (key + 1);
+
+           // Ordinal Numbers
+           switch(aID.toString().slice(-1)) {
+             case "1":
+               ordNum = 'st';
+               break;
+             case "2":
+               ordNum = 'nd';
+               break;
+             case "3":
+               ordNum = 'rd';
+               break;
+             default:
+               ordNum = 'th';
+           }
+
+           // Update Tab text Title (sorted)
+           aTarget.text(aID + ordNum + tabText.substring(2, tabText.length));
 
            // - - - - - - - - - - - - - - - - - - - - - - - - -
            // Reset tab content fields indexes

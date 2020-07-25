@@ -53,6 +53,7 @@ class Controller extends BlockController
     public $btFormAnswersTablename = 'btFormAnswers';
 
     protected $btExportTables = array('btLazy5basicContacts');
+ 
 
     protected static $btHandlerId = "contacts";
     protected $btDefaultSet = 'lazy5basic';

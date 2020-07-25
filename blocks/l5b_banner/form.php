@@ -37,7 +37,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
           <!-- START Tabs row -->
           <div class="col-lg-12 wrap-tab-<?php echo count($templateDefaultTab)?> no-grab">
 
-            <div class="double-space-bottom info-items-list-title">
+            <div class="single-space-bottom info-items-list-title">
               <h4><?php echo t('all templates available are listed below')?></h4>
             </div>
 

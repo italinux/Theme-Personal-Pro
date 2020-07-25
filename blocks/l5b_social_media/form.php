@@ -51,7 +51,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 <!-- START row-->
           <div class="col-lg-12 wrap-tab-<?php echo count($itemsTotalTabs)?>">
 
-            <div class="double-space-bottom info-items-list-title">
+            <div class="single-space-bottom info-items-list-title">
               <h4><?php echo t('all your %s are listed below', t('social profiles'))?></h4>
             </div>
 
