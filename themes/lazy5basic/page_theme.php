@@ -7,7 +7,7 @@
 |  @docs:    http://italinux.com/theme-personal-pro
 |
 |  @author: Matteo Montanari <matteo@italinux.com>
-|  @link:   http://matteo-montanari.com
+|  @link:   https://matteo-montanari.com
 '---------------------------------------------------------------------'
 .---------------------------------------------------------------------------.
 | @copyright (c) 2020                                                       |
@@ -132,6 +132,7 @@ class PageTheme extends Theme
             'double-space-bottom',
             'no-sides-spaces',
             'strict',
+            'fix-spaces-buttons',
         );
 
         return array('*' => $blockClasses);
