@@ -386,6 +386,12 @@ class Controller extends BlockController
     public function registerViewAssets($outputContent = '')
     {
 
+        // Import this Block CSS view
+        $this->requireAsset('css', self::$btHandlerId . '-view');
+
+        /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        * load assets if animation required:
+        */
         // Import JQuery UI
         // $this->requireAsset('javascript', 'jquery/ui');
         // $this->requireAsset('css', 'jquery/ui');

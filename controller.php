@@ -190,6 +190,15 @@ class Controller extends Package
         );
 
         /**
+        * Required JS + CSS these Blocks
+        */
+        foreach (array_keys($this->getBlocksAvailable()) as $key) {
+            if (is_dir(__DIR__ . '/blocks/' . $this->pkgPrefix . '_' . $key)) {
+                $al->register('css', str_replace("_", "-", $key) . '-view', 'blocks/' . $this->pkgPrefix . '_' . $key . '/style/view.css', $ph, $this);
+            }
+        }
+
+        /**
         * Register Assets: Masonry
         */
         $al->register('javascript', 'masonry-lib', self::_getJsPath() . 'min/jquery.masonry.min.js', $pf, $this);
