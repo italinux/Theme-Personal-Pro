@@ -104,6 +104,11 @@ class PageTheme extends Theme
         return cPackage::create()->getAreasNames();
     }
 
+    public function getPackagePath()
+    {
+        return cPackage::create()->getRelativePath();
+    }
+
     public function getThemeAreaClasses()
     {
 

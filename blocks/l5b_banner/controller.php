@@ -1540,10 +1540,10 @@ class Controller extends BlockController
         );
 
         // Register Assets this Block: YTPlayer
-        $al->register('javascript-inline', 'ytplayer-conf', 'var videoStartAt = ' . rand(intval($this->getVideoStartFrom()), intval($this->getVideoStartTo())) . ';', $pf, 'theme_lazy5basic');
-        $al->register('javascript', 'ytplayer-main', 'blocks/l5b_banner/jscript/min/jquery.mb.YTPlayer.min.js', $pf, 'theme_lazy5basic');
-        $al->register('javascript', 'ytplayer-init', 'blocks/l5b_banner/jscript/YTPlayer.init.js', $pf, 'theme_lazy5basic');
-        $al->register('css', 'ytplayer-style', 'blocks/l5b_banner/style/ytplayer/jquery.mb.YTPlayer.min.css', $ph, 'theme_lazy5basic');
+        $al->register('javascript-inline', 'ytplayer-conf', 'var videoStartAt = ' . rand(intval($this->getVideoStartFrom()), intval($this->getVideoStartTo())) . ';', $pf, $this->getPackageHandle());
+        $al->register('javascript', 'ytplayer-main', 'blocks/' . $this->getBlockHandle() . '/jscript/min/jquery.mb.YTPlayer.min.js', $pf, $this->getPackageHandle());
+        $al->register('javascript', 'ytplayer-init', 'blocks/' . $this->getBlockHandle() . '/jscript/YTPlayer.init.js', $pf, $this->getPackageHandle());
+        $al->register('css', 'ytplayer-style', 'blocks/' . $this->getBlockHandle() . '/style/ytplayer/jquery.mb.YTPlayer.min.css', $ph, $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.ytplayer', array(
@@ -1567,8 +1567,8 @@ class Controller extends BlockController
         );
 
         // Register Assets Animate Configuration
-        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/l5b_banner/jscript/lazy-animate.conf.js', $cf, 'theme_lazy5basic');
-        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, 'theme_lazy5basic');
+        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/' . $this->getBlockHandle() . '/jscript/lazy-animate.conf.js', $cf, $this->getPackageHandle());
+        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.animate.conf', array(
@@ -1888,6 +1888,11 @@ class Controller extends BlockController
     protected function getCustomFgColorClassName()
     {
         return (BlockUtils::isValidColor($this->fgColorRGB) ? 'cfg-color' : null);
+    }
+
+    protected function getPackageHandle()
+    {
+        return $this->getBlockObject()->getPackageHandle();
     }
 
     protected function getBlockHandle()
@@ -2211,7 +2216,7 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../themes/lazy5basic/css/build/tools/lazy-global-ui.css', 'css');
+        $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -

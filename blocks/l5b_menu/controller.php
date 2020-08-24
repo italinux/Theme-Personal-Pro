@@ -576,14 +576,14 @@ class Controller extends BlockController
         );
 
         // Register Assets this Block
-        $al->register('css', 'cst.flags', 'blocks/l5b_menu/style/flags.css', $ph, 'theme_lazy5basic');
+        $al->register('css', 'cst.flags', 'blocks/' . $this->getBlockHandle() . '/style/flags.css', $ph, $this->getPackageHandle());
 
         // Register Assets this Block
-        $al->register('javascript', 'jst.scroll-top', 'blocks/l5b_menu/jscript/scroll-top.js', $pf,'theme_lazy5basic');
+        $al->register('javascript', 'jst.scroll-top', 'blocks/' . $this->getBlockHandle() . '/jscript/scroll-top.js', $pf, $this->getPackageHandle());
 
         // Register Assets this Block
-        $al->register('javascript', 'hamburgers-init', 'blocks/l5b_menu/jscript/hamburgers.init.js', $cf, 'theme_lazy5basic');
-        $al->register('css', 'hamburgers-style',  'blocks/l5b_menu/style/hamburgers.min.css', $ph, 'theme_lazy5basic');
+        $al->register('javascript', 'hamburgers-init', 'blocks/' . $this->getBlockHandle() . '/jscript/hamburgers.init.js', $cf, $this->getPackageHandle());
+        $al->register('css', 'hamburgers-style',  'blocks/' . $this->getBlockHandle() . '/style/hamburgers.min.css', $ph, $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.hamburgers', array(
@@ -599,8 +599,8 @@ class Controller extends BlockController
         );
 
         // Register Assets Animate Configuration
-        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/l5b_menu/jscript/lazy-animate.conf.js', $cf, 'theme_lazy5basic');
-        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, 'theme_lazy5basic');
+        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/' . $this->getBlockHandle() . '/jscript/lazy-animate.conf.js', $cf, $this->getPackageHandle());
+        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.animate.conf', array(
@@ -900,6 +900,11 @@ class Controller extends BlockController
         return (BlockUtils::isValidColor($this->fgColorRGB) ? 'cfg-color' : null);
     }
 
+    protected function getPackageHandle()
+    {
+        return $this->getBlockObject()->getPackageHandle();
+    }
+
     protected function getBlockHandle()
     {
         return 'l5b_' . $this->getSelectorBlock();
@@ -1186,7 +1191,7 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../themes/lazy5basic/css/build/tools/lazy-global-ui.css', 'css');
+        $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -

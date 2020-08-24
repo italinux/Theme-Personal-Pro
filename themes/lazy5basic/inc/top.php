@@ -54,7 +54,7 @@
 
     <?php View::element('header_required', $sPage)?>
 
-    <?php if (User::isLoggedIn()) { echo $html->css($this->getThemePath() . '/css/build/tools/c5-ui.css'); }?>
+    <?php if (User::isLoggedIn()) { echo $html->css($theme->getPackagePath() . '/css/build/tools/c5-ui.css'); }?>
 
     <?php echo $html->css($view->getStylesheet('main.less'))?>
 <?php

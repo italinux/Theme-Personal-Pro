@@ -477,11 +477,11 @@ class Controller extends BlockController
 
         // Register Assets this Block
         // Submit & AutoScrolling to form Result
-        $al->register('javascript', 'jst.contacts-main', 'blocks/l5b_contacts/jscript/contacts-main.js', $pf, 'theme_lazy5basic');
+        $al->register('javascript', 'jst.contacts-main', 'blocks/' . $this->getBlockHandle() . '/jscript/contacts-main.js', $pf, $this->getPackageHandle());
 
         // Register Assets Animate Configuration
-        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/l5b_contacts/jscript/lazy-animate.conf.js', $cf, 'theme_lazy5basic');
-        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, 'theme_lazy5basic');
+        $al->register('javascript', $this->getJSelectorId() . '.animate-conf', 'blocks/' . $this->getBlockHandle() . '/jscript/lazy-animate.conf.js', $cf, $this->getPackageHandle());
+        $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.animate.conf', array(
@@ -1560,6 +1560,11 @@ class Controller extends BlockController
         return (BlockUtils::isValidColor($this->fgColorRGB) ? 'cfg-color' : null);
     }
 
+    protected function getPackageHandle()
+    {
+        return $this->getBlockObject()->getPackageHandle();
+    }
+
     protected function getBlockHandle()
     {
         return 'l5b_' . $this->getSelectorBlock();
@@ -1727,7 +1732,7 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../themes/lazy5basic/css/build/tools/lazy-global-ui.css', 'css');
+        $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
