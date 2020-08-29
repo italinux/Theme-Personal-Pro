@@ -1223,7 +1223,7 @@ class Controller extends BlockController
 
     protected function getPackageHandle()
     {
-        return $this->getBlockObject()->getPackageHandle();
+        return 'theme_' . $this->btDefaultSet;
     }
 
     protected function getBlockHandle()
