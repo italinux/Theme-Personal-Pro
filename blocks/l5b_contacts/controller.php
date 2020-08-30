@@ -192,15 +192,6 @@ class Controller extends BlockController
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
-    public function getTitlePreview()
-    {
-        
-        $config = self::$btHandlerId . '.preview.title';
-        $dValue = t('please add fields');
-
-        return BlockUtils::getDefaultValue($config, $dValue);
-    }
-
     public function getSubtitle()
     {
         $cName  = 'subtitle';
@@ -208,14 +199,6 @@ class Controller extends BlockController
         $dValue = t('yeah, go ahead!');
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
-    }
-
-    public function getSubtitlePreview()
-    {
-        $config = self::$btHandlerId . '.preview.subtitle';
-        $dValue = t('in your contact form here');
-
-        return BlockUtils::getDefaultValue($config, $dValue);
     }
 
     public function getTelephoneType()
@@ -695,9 +678,6 @@ class Controller extends BlockController
             );
 
         $this->set('disabled', 'disabled');
-
-        $this->set('title', $this->getTitlePreview());
-        $this->set('subtitle', $this->getSubtitlePreview());
 
         return (array) $allFakeFormInputs;
     }
