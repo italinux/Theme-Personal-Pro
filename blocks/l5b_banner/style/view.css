@@ -20,153 +20,6 @@
 | FITNESS FOR A PARTICULAR PURPOSE.                                         |
 '---------------------------------------------------------------------------'
 */
-/** - - - - - - - - - - - - - - - - - - - - -
-* Import Google Font
-*/
-/** - - - - - - - - - - - - - - - - - - - - -
-* Set Typography
-*/
-/** - - - - - - - - - - - - - - - - - - - - -
-* Additional Configuration
-*
-* See related: presets/*.less 
-* and replace values here:
-*/
-/** - - - - - - - - - - - - - - - - - - - - -
-* Local font
-*/
-/* oleo-script-regular - latin */
-@font-face {
-  font-family: 'Oleo Script';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('oleo-script/oleo-script-v5-latin-regular.eot');
-  /* IE9 Compat Modes */
-  src: local('Oleo Script'), local('OleoScript-Regular'), url('oleo-script/oleo-script-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('oleo-script/oleo-script-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('oleo-script/oleo-script-v5-latin-regular.woff') format('woff'), /* Modern Browsers */ url('oleo-script/oleo-script-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('oleo-script/oleo-script-v5-latin-regular.svg#OleoScript') format('svg');
-  /* Legacy iOS */
-}
-/* oleo-script-700 - latin */
-@font-face {
-  font-family: 'Oleo Script';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('oleo-script/oleo-script-v5-latin-700.eot');
-  /* IE9 Compat Modes */
-  src: local('Oleo Script Bold'), local('OleoScript-Bold'), url('oleo-script/oleo-script-v5-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('oleo-script/oleo-script-v5-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('oleo-script/oleo-script-v5-latin-700.woff') format('woff'), /* Modern Browsers */ url('oleo-script/oleo-script-v5-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('oleo-script/oleo-script-v5-latin-700.svg#OleoScript') format('svg');
-  /* Legacy iOS */
-}
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  GLOBAL Colours
-*
-*  ODD backgrounds SECTIONS: (default: darks)
-*  + Primary Colours: ODDS, Menu, Banner, Footer etc ..
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  GLOBAL Font Sizes
-*
-*  Tag: <body>
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Headings Banner (default font-weight)
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  GLOBAL Spaces top / bottom
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*   - - START Colors - -
-*  GLOBAL Catalyst Colors
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-*  GLOBAL basic Colours RGBA / RGB
-*
-*  ODD (default: darks)
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-*  HowTo Video INTRO
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  GLOBAL blocks colours CONFIG
-*
-*  Menu
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Banner
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  What i do
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Team
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Services
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Fb page posts
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  About me
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Adverts
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Bookmarks
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  My skills
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Curriculum vitae
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Portfolio
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  My works
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Map
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Content free
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Prices
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Testimonials
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Contacts
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Clients
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Social media
-*/
-/** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*  Footer
-*/
-/** Minix control colors
---------------------------------------------------------- */
-/**
-* SMART ITEM LIGHTER COLORS
-* --------------------------------------------------------- */
-/**
-* SMART ITEM DEFAULT COLORS
-* --------------------------------------------------------- */
-/**
-* SMART ITEM LOW SATURATION COLORS
-* --------------------------------------------------------- */
-/**
-* SMART ITEM COLORS for PORTFOLIO, TEAM
-* --------------------------------------------------------- */
-/* Banner
----------------------------------------------------------*/
 .single-space-bottom > section.banner.page-block,
 .double-space-bottom > section.banner.page-block,
 .no-spaces > section.banner.page-block,
@@ -352,32 +205,24 @@ section.banner .nopaque {
 section.banner .opaque {
   opacity: 1;
 }
-/* Media Desktop
----------------------------------------------------------*/
 @media screen and (max-width: 1600px) {
   section.banner.page-block {
     padding-left: 6%;
     padding-right: 6%;
   }
 }
-/* Media Desktop
----------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
   section.banner.page-block {
     padding-left: 4%;
     padding-right: 4%;
   }
 }
-/* Media Tablets
----------------------------------------------------------*/
 @media screen and (max-width: 1024px) {
   section.banner.page-block {
     padding-left: 3%;
     padding-right: 3%;
   }
 }
-/* Media Mobiles
----------------------------------------------------------*/
 section.banner[class^="mobile_view"].page-block {
   padding-left: 2%;
   padding-right: 2%;
@@ -394,10 +239,10 @@ section.banner {
 }
 section.banner.over-image::before {
   background-image: -webkit-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: -moz-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: -ms-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: -o-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: linear-gradient(to bottom, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:    -moz-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:     -ms-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:      -o-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:         linear-gradient(to bottom, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
 }
 section.banner.over-image {
   background-clip: content-box;
@@ -455,9 +300,9 @@ section.banner div[class^="container"] div.videoStatus {
 }
 section.banner div[class^="container"] div.videoStatus.show {
   -webkit-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-  -moz-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-  -o-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-  animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+     -moz-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+       -o-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+          animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
   display: block;
 }
 section.banner div[class^="container"] div.videoStatus span {
@@ -542,15 +387,11 @@ section.banner a.CTA-arrow {
     opacity: 0;
   }
 }
-/* Media Tablet
----------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
   section.banner.over-image {
     background-attachment: scroll;
   }
 }
-/* Media Mobile
----------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   section.banner h1 {
     margin-left: auto;
@@ -584,27 +425,22 @@ section.banner a.CTA-arrow {
   }
   section.banner div[class^="container"] a.CTA-arrow .fa {
     -webkit-animation: 0s ease 0s normal none 1 running none;
-    -moz-animation: 0s ease 0s normal none 1 running none;
-    -o-animation: 0s ease 0s normal none 1 running none;
-    animation: 0s ease 0s normal none 1 running none;
+       -moz-animation: 0s ease 0s normal none 1 running none;
+         -o-animation: 0s ease 0s normal none 1 running none;
+            animation: 0s ease 0s normal none 1 running none;
     -webkit-transform: none;
-    -moz-transform: none;
-    -o-transform: none;
-    transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
     -webkit-transition-property: none;
-    -moz-transition-property: none;
-    -o-transition-property: none;
-    transition-property: none;
+       -moz-transition-property: none;
+         -o-transition-property: none;
+            transition-property: none;
   }
 }
-/*--------------------- Templates -----------------------*/
-/* i_am_what_i_do
----------------------------------------------------------*/
 section.banner.i_am_what_i_do > div[class^="container"] {
   padding-top: 10%;
 }
-/* image_round_right
----------------------------------------------------------*/
 section.banner.image_round_right > div[class^="container"] {
   padding-top: 6%;
 }
@@ -625,8 +461,6 @@ section.banner.image_round_right > div[class^="container"] div.banner-photo img 
   border-radius: 50%;
   box-shadow: 2px 4px 5px 1px rgba(0, 0, 0, 0.5);
 }
-/* image_square_right
----------------------------------------------------------*/
 section.banner.image_square_right > div[class^="container"] {
   padding-top: 6%;
 }
@@ -647,8 +481,6 @@ section.banner.image_square_right > div[class^="container"] div.banner-photo img
   border-radius: 0px;
   box-shadow: 2px 4px 5px 1px rgba(0, 0, 0, 0.5);
 }
-/* Media Mobile - Templates: i_am_what_i_do
----------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
   section.banner.i_am_what_i_do > div[class^="container"] {
     padding-top: 8%;
@@ -674,8 +506,6 @@ section.banner.image_square_right > div[class^="container"] div.banner-photo img
     padding-top: 15%;
   }
 }
-/* Media Tablets - Templates: image_round_right
----------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
   section.banner.image_round_right > div[class^="container"] {
     padding-top: 4%;
@@ -686,8 +516,6 @@ section.banner.image_square_right > div[class^="container"] div.banner-photo img
     padding-top: 10%;
   }
 }
-/* Media Mobiles - Templates: image_round_right
----------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   section.banner.image_round_right > div[class^="container"] {
     padding-top: 15%;
@@ -705,8 +533,6 @@ section.banner.image_square_right > div[class^="container"] div.banner-photo img
     padding-bottom: 2.4em;
   }
 }
-/* Media Tablets - Templates: image_square_right
----------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
   section.banner.image_square_right > div[class^="container"] {
     padding-top: 4%;
@@ -717,8 +543,6 @@ section.banner.image_square_right > div[class^="container"] div.banner-photo img
     padding-top: 10%;
   }
 }
-/* Media Mobiles - Templates: image_square_right
----------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   section.banner.image_square_right > div[class^="container"] {
     padding-top: 15%;
