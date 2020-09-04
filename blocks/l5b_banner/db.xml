@@ -185,6 +185,13 @@
       <default value="5"/>
       <notnull/>
     </field>
+    <field name="bg_imageType" type="string" size="10">
+      <default value="fID"/>
+    </field>
+    <field name="bgSID" type="smallint">
+      <unsigned/>
+      <default value="0"/>
+    </field>
     <field name="bgColorRGBA" type="string" size="30">
       <default value=""/>
     </field>
@@ -204,6 +211,9 @@
     </field>
     <index name="bgFID">
       <col>bgFID</col>
+    </index>
+    <index name="bgSID">
+      <col>bgSID</col>
     </index>
     <index name="fs_CTA_pID">
       <col>fs_CTA_pID</col>

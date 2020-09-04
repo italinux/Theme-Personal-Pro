@@ -105,6 +105,7 @@ class Controller extends BlockController
             'bgColorRGBA' => t('Background Colour'),
             'bgColorOpacity' => t('Adjust Background Opacity'),
             'bgFID' => t('Background Image'),
+            'bgSID' =>  t('Background File Set ID'),
             'fgColorRGB' => t('Foreground Colour'),
             'isAnimated' => t('Animation / Transition'),
             'fs_CTA_pID' =>  t('Select a Page'),
@@ -276,6 +277,10 @@ class Controller extends BlockController
             'img_sd_CTA_text' => array(
                 'label' =>  t('Link name'),
             ),
+            'bg_imageType' => array(
+                'label' => t('Background Image type'),
+                'allowEmpty' => false,
+            ),
         );
     }
 
@@ -294,6 +299,12 @@ class Controller extends BlockController
     protected static function get_btFormExtraValues()
     {
         return array(
+            'img_sd_imageObject' => array(
+                'label' => t('Custom Foreground image'),
+            ),
+            'bgImageObject' => array(
+                'label' => t('Background Image'),
+            ),
             'bgColorOpacityOptions' => array(
                 'label' => t('Options adjust background opacity'),
             ),
@@ -855,11 +866,26 @@ class Controller extends BlockController
 
     public function getImg_sd_fID()
     {
+
+        return $this->img_sd_fID;
+    }
+
+    public function getImg_sd_imageObject()
+    {
         if ($this->img_sd_fID > 0) {
             $fObj = BlockUtils::getFileObject($this->img_sd_fID);
         }
 
         return (isset($fObj) && is_object($fObj)) ? $fObj : null;
+    }
+
+    public function getBg_imageType()
+    {
+        $cName  = 'bg_imageType';
+        $config = self::$btHandlerId . '.bgImageType';
+        $dValue = 'fID';
+
+        return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1090,11 +1116,11 @@ class Controller extends BlockController
         return "http://italinux.com/howto/fileset";
     }
 
-    protected function getFileSetRandomImage($id)
+    protected function getFileSetRandomImage($el)
     {
         $files = array();
 
-        $fsObj = BlockUtils::getFileSetObject($this->{'get' . $id . '_sID'}());
+        $fsObj = BlockUtils::getFileSetObject($this->{'get' . $el}());
 
         // Check whether fileset object exists
         if (is_object($fsObj)) {
@@ -1126,9 +1152,7 @@ class Controller extends BlockController
             }
         }
 
-        $this->{'item' . $id . '_sID'} = ((is_array($files) && count($files) > 0) ? current($files) : false);
-
-        return $this->{'item' . $id . '_sID'};
+        return ((is_array($files) && count($files) > 0) ? current($files) : false);
     }
 
     protected function getFileSetOptions()
@@ -1148,20 +1172,23 @@ class Controller extends BlockController
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Retrieve foreground image URLs
-    * @return object
+    *
+    * @return array
     */
     protected function getThisBlockDefaultImageURL($id, $width = null, $height = null)
     {
         switch ($this->{'get' . $id . '_imageType'}()) {
         case 'sID':
-            $fID = ($this->{'get' . $id . '_sID'}() == true ? $this->getFileSetRandomImage($id) : false);
+
+            $fObj = (($this->{'get' . $id . '_sID'}() == true) ? $this->getFileSetRandomImage($id . '_sID') : false);
             break;
         case 'fID':
-             $fID = $this->{'get' . $id . '_fID'}();
+
+            $fObj = $this->{'get' . $id . '_fID'}();
             break;
         }
 
-        return ($fID == true ? array('path' => $this->getBlockForegroundImageURL($id, $fID, $width, $height), 'default' => false) : array('path' => $this->getBlockDefaultImageURL(null), 'default' => true));
+        return (is_object($fObj) ? array('path' => $this->getBlockForegroundImageURL($id, $fObj, $width, $height), 'default' => false) : array('path' => $this->getBlockDefaultImageURL(null), 'default' => true));
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1386,6 +1413,7 @@ class Controller extends BlockController
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Get link for anchor (image URL | html URL)
+    *
     * @return string
     */
     protected function getLinkByID($id)
@@ -1393,10 +1421,13 @@ class Controller extends BlockController
         // page or url
         switch ($this->{'get'.$id.'_linkType'}()) {
         case "pID":
+
             $page = ($this->{'get'.$id.'_pID'}() == true) ? BlockUtils::getPageObject($this->{'get'.$id.'_pID'}()) : null;
+
             $o = is_object($page) == true ? parse_url(BlockUtils::getThisApp()->make('helper/navigation')->getLinkToCollection($page), PHP_URL_PATH) : null;
             break;
         case "url":
+
             $o = $this->{'get'.$id.'_url'}();
             break;
         }
@@ -1593,8 +1624,8 @@ class Controller extends BlockController
         $o=null;
         
         if (BlockUtils::isValidColor($this->bgColorRGBA) ||
-            BlockUtils::isValidImage($this->getBgFID()) ||
             BlockUtils::isValidColor($this->fgColorRGB) ||
+            BlockUtils::isValidImage($this->getCustomStyleImage()) ||
             $this->isCustomOverImageOpacity($this->bgColorOpacity)) {
 
             ob_start();
@@ -1622,14 +1653,14 @@ class Controller extends BlockController
               <?php } ?>
 
               <?php
-                if (BlockUtils::isValidImage($this->getBgFID()) ||
-                    BlockUtils::isValidColor($this->bgColorRGBA) ||
-                    BlockUtils::isValidColor($this->fgColorRGB)) {
+                if (BlockUtils::isValidColor($this->bgColorRGBA) ||
+                    BlockUtils::isValidColor($this->fgColorRGB) ||
+                    BlockUtils::isValidImage($this->getCustomStyleImage())) {
                 ?>
                   section<?php echo $this->getStyleSelector()?>.over-image {
                     <?php
-                      if (BlockUtils::isValidImage($this->getBgFID())) { ?>
-                          background-image: url('<?php echo parse_url($this->getCustomStyleImagePath(), PHP_URL_PATH)?>') !important;
+                      if (BlockUtils::isValidImage($this->getCustomStyleImage())) { ?>
+                          background-image: url('<?php echo $this->getCustomStyleImagePath()?>') !important;
                     <?php } ?>
 
                     <?php
@@ -1901,11 +1932,11 @@ class Controller extends BlockController
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    * Block - Foreground Custom Images PATHs
+    * Retrieve foreground image relative path
     *
-    * @return image full Path (file system)
+    * @return string
     */
-    protected function getBlockForegroundImageURL($id, $fID, $w = null, $h = null)
+    protected function getBlockForegroundImageURL($id, $fObj, $w = null, $h = null)
     {
         // set thumbnail width
         $width = ($w == false) ? $this->{'get' . $id . '_imageWidth'}() : $w;
@@ -1914,7 +1945,7 @@ class Controller extends BlockController
         $height = ($h == false) ? $this->{'get' . $id . '_imageHeight'}() : $h;
 
         // get source thumbnail image
-        return (is_object($fID) ? parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src, PHP_URL_PATH) : null);
+        return (is_object($fObj) ? parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fObj, $width, $height, true)->src, PHP_URL_PATH) : null);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2044,7 +2075,19 @@ class Controller extends BlockController
     * Custom inline Style Methods
     * Background inline Styles Methods
     */
+    public function getBgSID()
+    {
+
+        return $this->bgSID;
+    }
+
     public function getBgFID()
+    {
+
+        return $this->bgFID;
+    }
+
+    public function getBgImageObject()
     {
         if ($this->bgFID > 0) {
             $fObj = BlockUtils::getFileObject($this->bgFID);
@@ -2103,9 +2146,36 @@ class Controller extends BlockController
         );
     }
 
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Retrieve custom style background image relative path
+    *
+    * @return string
+    */
     protected function getCustomStyleImagePath()
     {
-        return BlockUtils::getThisApp()->make('helper/image')->getThumbnail($this->getBgFID(), self::$btStyleUploadThumbWidth, self::$btStyleUploadThumbHeight, false)->src;
+        // get custom style background image relative path
+        return parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($this->getCustomStyleImage(), self::$btStyleUploadThumbWidth, self::$btStyleUploadThumbHeight, false)->src, PHP_URL_PATH);
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Retrieve custom style background image object
+    *
+    * @return object
+    */
+    protected function getCustomStyleImage()
+    {
+        switch ($this->getBg_imageType()) {
+        case 'sID':
+
+            $fObj = (($this->getBgSID() == true) ? $this->getFileSetRandomImage('BgSID') : false);
+            break;
+        case 'fID':
+
+             $fObj = $this->getBgImageObject();
+            break;
+        }
+
+        return $fObj;
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -

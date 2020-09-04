@@ -28,7 +28,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
   <section>
     <div>
       <div class="row main">
-        <div class="no-spaces col-lg-9 col-sm-8 col-xs-12">
+        <div class="no-spaces col-lg-8 col-sm-7 col-xs-12">
           <div class="col-lg-12 single-space-bottom" style="text-align: center">
             <h3 class="no-paddings"><?php echo t('Banner templates')?></h3>
             <p><a href="<?php echo $templatesHowToURL?>" target="_blank" class="btn goto"><span class="highlight"><?php echo t('How to choose a %s', t('template'))?></span></a></p>
@@ -77,7 +77,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center double-margin-botom">
+                            <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -99,7 +99,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </section>
                   </div>
-                  <div class="col-lg-8 col-lg-offset-2 col-sm-12">
+                  <div class="col-lg-10 col-lg-offset-1 col-sm-12">
                     <div class="form-group center double-space-top">
                       <?php echo $form->label($cTempl . '_content', t('Content: %s', '<span>(blah blah .. )</span>'))?>
                       <div class="input-group center">
@@ -107,7 +107,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-10 col-lg-offset-1">
+                  <div class="col-lg-12">
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
@@ -205,7 +205,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center double-margin-botom">
+                            <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -243,7 +243,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-10 col-lg-offset-1">
+                  <div class="col-lg-12">
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
@@ -341,7 +341,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center double-margin-botom">
+                            <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -395,7 +395,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-10 col-lg-offset-1">
+                  <div class="col-lg-12">
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
@@ -493,7 +493,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                           </div>
                           <div class="col-lg-3">
-                            <div class="form-group center double-margin-botom">
+                            <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
                               <div class="input-group">
                                 <div class="radio">
@@ -573,7 +573,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                                 <div class="form-group center single-margin-bottom light-title">
                                   <?php echo $form->label($cTempl . '_fID', t('stick a single image here'))?>
                                   <div class="input-group center single-space-top single-space-bottom p90">
-                                    <?php echo $asset->image('ccm-b-image-' . $cTempl . '_fID', $cTempl . '_fID', t('Choose Image'), ${$cTempl . '_fID'}, array())?>
+                                    <?php echo $asset->image('ccm-b-image-' . $cTempl . '_fID', $cTempl . '_fID', t('Choose Image'), ${$cTempl . '_imageObject'}, array())?>
                                   </div>
                                 </div>
                               </div>
@@ -583,7 +583,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                                     if (empty($fileSetOptions) == false) {
                                       echo $form->label($cTempl . '_sID', t('random image from: %s', t('File Sets')));
                                     ?>
-                                    <div class="input-group center single-space-top single-margin-bottom p90">
+                                    <div class="input-group center single-space-top single-space-bottom p90">
                                       <?php echo $form->select($cTempl . '_sID', $fileSetOptions, ${$cTempl . '_sID'})?>
                                     </div>
                                     <?php
@@ -629,7 +629,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-10 col-lg-offset-1">
+                  <div class="col-lg-12">
                     <div class="form-group center single-space-top">
                       <?php echo $form->label($cTempl . '_CTA_text', t('Text Button: %s', '<span>(' . t('find out more') . ')</span>'))?>
                       <div class="input-group align-center p30">
@@ -703,7 +703,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
           <!-- End Tabs row -->
 
         </div>
-        <div class="col-lg-3 col-sm-4 col-xs-12">
+        <div class="col-lg-4 col-sm-5 col-xs-12">
           <section class="style">
             <div>
               <div class="row main">
@@ -720,34 +720,58 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                 </div>
 
-                <div class="col-lg-12 separator-top separator-bottom">
-                  <div class="form-group center light-title double-space-top">
-                    <?php echo $form->label('bgFID', t('background image'))?>
-                    <div class="input-group">
-                      <?php echo $asset->image('ccm-b-image-bgFID', 'bgFID', t('Choose Image'), $bgFID, array())?>
-                    </div>
+                <div class="col-lg-12 separator-top separator-bottom single-space-bottom">
+                  <div class="form-group center double-space-top light-title no-space-bottom">
+                    <label class="control-label">
+                      <?php echo t('background image')?>
+                    </label>
                   </div>
-                  <div class="form-group center light-title no-margins no-sides-paddings single-space-bottom">
-                    <?php echo $form->label('bgColorOpacity', t('adjust top opacity'))?>
-                    <div class="input-group">
-                      <!-- Adjust Background Color (top) Opacity: Over Image -->
-                      <?php
-                        if (is_array($bgColorOpacityOptions)) {
-                          foreach ($bgColorOpacityOptions as $key => $value) {
-                        ?>
-                      <div class="col-xs-3 no-paddings">
-                        <div class="radio">
-                          <span style="color:#333"><?php echo t($key)?></span>
-                          <br />
-                          <label>
-                            <?php echo $form->radio('bgColorOpacity', $value, (float) $bgColorOpacity)?>
-                          </label>
+                  <div class="form-group center light-title no-spaces link-block-opts">
+                    <div class="row no-margins">
+                      <div class="col-lg-12 no-spaces">
+                        <div id="bg_imageTypes" class="input-group single-space-bottom no-margins">
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('bg_imageType', 'fID', $bg_imageType)?>
+                              <a><?php echo t($imageTypes['fID'])?></a>
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <?php echo $form->radio('bg_imageType', 'sID', $bg_imageType)?>
+                              <a><?php echo t($imageTypes['sID'])?></a>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <?php
-                          }
-                        }
-                        ?>
+                    </div>
+
+                    <div class="row no-margins">
+                      <div class="col-lg-12 no-sides-paddings">
+                        <div id="bg_imageType_fID" class="input-group center current-<?php echo $bg_imageType?>">
+                          <div class="form-group center single-margin-bottom light-title">
+                            <?php echo $form->label('bgFID', t('stick a single image here'))?>
+                            <div class="input-group center no-space-top single-space-bottom p70">
+                              <?php echo $asset->image('ccm-b-image-bgFID', 'bgFID', t('Choose Image'), $bgImageObject, array())?>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="bg_imageType_sID" class="input-group center current-<?php echo $bg_imageType?>">
+                          <div class="form-group center single-margin-bottom light-title">
+                            <?php
+                              if (empty($fileSetOptions) == false) {
+                                echo $form->label('bgSID', t('random image from: %s', t('File Sets')));
+                              ?>
+                              <div class="input-group center no-space-top single-space-bottom p70">
+                                <?php echo $form->select('bgSID', $fileSetOptions, $bgSID)?>
+                              </div>
+                              <?php
+                              }
+                            ?>
+                            <a href="<?php echo $fileSetHowToURL?>" target="_blank" class="btn goto"><span class="highlight"><?php echo t('How to add a %s', t('File Set'))?></span></a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -761,7 +785,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-8 col-lg-offset-2">
                   <div class="form-group center light-title single-space-bottom">
                     <?php echo $form->label('isAnimated', t('with Animation'))?>
                     <div class="input-group">
