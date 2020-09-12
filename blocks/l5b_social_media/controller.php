@@ -105,7 +105,7 @@ class Controller extends BlockController
           'title' => t('social profiles'),
           'subtitle' => t('follow me ..'),
            1 => array(
-             'isEnabled' => false,
+             'isEnabled' => true,
              'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => 'https://facebook.com/mateus73',
@@ -123,7 +123,7 @@ class Controller extends BlockController
                   'icon' => 'whatsapp',
            ),
            3 => array(
-             'isEnabled' => true,
+             'isEnabled' => false,
              'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => 'https://linkedin.com/in/italinux',
@@ -132,7 +132,7 @@ class Controller extends BlockController
                   'icon' => 'linkedin',
            ),
            4 => array(
-             'isEnabled' => true,
+             'isEnabled' => false,
              'imageType' => 'icon',
               'linkType' => 'url',
                    'url' => 'https://instagram.com/italinux',

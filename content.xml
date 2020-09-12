@@ -356,7 +356,7 @@ Sunday: Closed]]></openHours>
               <record>
                 <title><![CDATA[social profiles]]></title>
                 <subtitle><![CDATA[follow me ..]]></subtitle>
-                <o1_isEnabled><![CDATA[0]]></o1_isEnabled>
+                <o1_isEnabled><![CDATA[1]]></o1_isEnabled>
                 <o1_linkType><![CDATA[url]]></o1_linkType>
                 <o1_pID><![CDATA[0]]></o1_pID>
                 <o1_icon><![CDATA[facebook]]></o1_icon>
@@ -374,7 +374,7 @@ Sunday: Closed]]></openHours>
                 <o2_target><![CDATA[self]]></o2_target>
                 <o2_imageType><![CDATA[icon]]></o2_imageType>
                 <o2_fID><![CDATA[0]]></o2_fID>
-                <o3_isEnabled><![CDATA[1]]></o3_isEnabled>
+                <o3_isEnabled><![CDATA[0]]></o3_isEnabled>
                 <o3_linkType><![CDATA[url]]></o3_linkType>
                 <o3_pID><![CDATA[0]]></o3_pID>
                 <o3_icon><![CDATA[linkedin]]></o3_icon>
@@ -383,7 +383,7 @@ Sunday: Closed]]></openHours>
                 <o3_target><![CDATA[blank]]></o3_target>
                 <o3_imageType><![CDATA[icon]]></o3_imageType>
                 <o3_fID><![CDATA[0]]></o3_fID>
-                <o4_isEnabled><![CDATA[1]]></o4_isEnabled>
+                <o4_isEnabled><![CDATA[0]]></o4_isEnabled>
                 <o4_linkType><![CDATA[url]]></o4_linkType>
                 <o4_pID><![CDATA[0]]></o4_pID>
                 <o4_icon><![CDATA[instagram]]></o4_icon>
