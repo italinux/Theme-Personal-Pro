@@ -111,7 +111,7 @@ section.social-media.over-image::before {
 }
 section.social-media.over-image {
   background-color: transparent;
-  background-image: url("images/background.jpg");
+  background-image: url("../images/background.jpg");
   background-repeat: repeat;
   background-attachment: scroll;
   background-size: auto;

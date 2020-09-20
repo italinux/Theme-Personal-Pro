@@ -43,7 +43,7 @@ echo $cStyle;
       <!-- global (unique) CTA button -->
       <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
         <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta">
-          <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
+          <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
             <span>
               <?php echo h($CTA['text'])?>
             </span>

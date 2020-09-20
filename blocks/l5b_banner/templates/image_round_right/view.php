@@ -50,7 +50,7 @@ echo $cStyle;
           <?php
             if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
               <div data-animation="cta" class="double-space-bottom <?php echo $nopaque?>">
-                <a  href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
+                <a  href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
                   <?php echo h($CTA['text'])?>
                 </a>
               </div>

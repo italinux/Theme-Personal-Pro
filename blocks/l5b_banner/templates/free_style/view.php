@@ -48,7 +48,7 @@ echo $cStyle;
         ?>
         <h5 data-animation="cta" class="no-margin-bottom double-space-top <?php echo $nopaque?>">
           <?php if (trim($CTA['link']) != '' || trim($CTA['hash']) != '') {?>
-            <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="<?php echo $CTA['class']?> CTA-arrow-top CTA-clean" target="<?php echo $CTA['target']?>">
+            <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="<?php echo $CTA['class']?> CTA-arrow-top CTA-clean" target="<?php echo $CTA['target']?>">
           <?php }
                 echo h($CTA['text']);
                 if (trim($CTA['link']) != '' || trim($CTA['hash']) != '') {?>
@@ -58,7 +58,7 @@ echo $cStyle;
       <?php }?>
 
       <?php if ((trim($CTA['link']) != '') || (trim($CTA['hash']) != '')) {?>
-          <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="<?php echo $CTA['class']?> CTA-arrow CTA-clean" target="<?php echo $CTA['target']?>">
+          <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="<?php echo $CTA['class']?> CTA-arrow CTA-clean" target="<?php echo $CTA['target']?>">
             <i data-animation="top-arrow" class="fa fa-angle-down fa-4x infinite <?php echo $nopaque?>"></i>
           </a>
       <?php }?>

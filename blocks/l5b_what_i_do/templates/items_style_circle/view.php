@@ -88,7 +88,7 @@ echo $cStyle;
 <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
     <div class="row">
       <div data-animation="global-cta" class="global-cta col-xs-12">
-        <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
+        <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
           <span>
             <?php echo h($CTA['text'])?>
           </span>
