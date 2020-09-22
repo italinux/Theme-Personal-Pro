@@ -60,7 +60,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         <dt><?php echo t('Here you define:')?></dt>
                         <dd><?php echo t('link to a %1$s URL %2$s or to a %1$s Page %2$s', '<strong>', '</strong>')?></dd>
                         <dd><?php echo t('add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page', '<strong>', '</strong>')?></dd>
-                        <dd><?php echo t('open up to a %1$s new page %2$s or on the %1$s same page %2$s', '<strong>', '</strong>')?></dd>
+                        <dd><?php echo t('open up to a %1$s new window %2$s or on the %1$s same window %2$s', '<strong>', '</strong>')?></dd>
                       </dl>
 
                       <span><?php echo t('Leave it empty to hide it')?></span>
@@ -205,7 +205,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <dt><?php echo t('Here you define:')?></dt>
                             <dd><?php echo t('link to a %1$s URL %2$s or to a %1$s Page %2$s', '<strong>', '</strong>')?></dd>
                             <dd><?php echo t('add an %1$s anchor %2$s to scroll to a %1$s section %2$s of a page', '<strong>', '</strong>')?></dd>
-                            <dd><?php echo t('open up to a %1$s new page %2$s or on the %1$s same page %2$s', '<strong>', '</strong>')?></dd>
+                            <dd><?php echo t('open up to a %1$s new window %2$s or on the %1$s same window %2$s', '<strong>', '</strong>')?></dd>
                           </dl>
 
                           <span><?php echo t('Leave it empty to hide it')?></span>

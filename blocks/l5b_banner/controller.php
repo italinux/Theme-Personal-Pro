@@ -1096,8 +1096,8 @@ class Controller extends BlockController
 
     public function getLinkTargets()
     {
-        return array( 'self' => t('Same Page'),
-                     'blank' => t('New Page'),
+        return array( 'self' => t('Same window'),
+                     'blank' => t('New window'),
                     );
     }
 

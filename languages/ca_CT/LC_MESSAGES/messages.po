@@ -273,6 +273,9 @@ msgstr "Advert&egrave;ncia a la plantilla %s"
 msgid "Template Warning: %s"
 msgstr "Av&iacute;s de la plantilla: %s"
 
+msgid "current template"
+msgstr "plantilla actual"
+
 # block What I Do
 msgid "I like doing .."
 msgstr "M'agrada fer.."
@@ -431,6 +434,15 @@ msgstr "Diumenge: Tancat"
 
 msgid "Please type the letters and numbers shown in the image. Click the image to see another captcha."
 msgstr "Escriviu les lletres i els n&uacute;meros que apareixen a la imatge. Feu clic a la imatge per veure una altra captcha."
+
+msgid "Telephone types list"
+msgstr "Llista de tipus de tel&egrave;fon"
+
+msgid "Telephone type"
+msgstr "Tipus de tel&egrave;fon"
+
+msgid "Telephone number"
+msgstr "Tel&egrave;fon"
 
 # block Social Media
 msgid "social profiles"
@@ -1071,6 +1083,9 @@ msgstr "afegir un %1$s &agrave;ncora %2$s per despla&ccedil;ar-vos a %1$s secci&
 msgid "open up to a %1$s new page %2$s or on the %1$s same page %2$s"
 msgstr "obrir-se a %1$s noves de la p&agrave;gina de %2$s o a les %1$s mateixa p&agrave;gina a %2$s"
 
+msgid "open up to a %1$s new window %2$s or on the %1$s same window %2$s"
+msgstr "obrir-se a una %1$s finestra nova %2$s o a les %1$s mateixa finestra %2$s"
+
 msgid "Leave it empty to hide it"
 msgstr "Deixeu-la buida per amagar-la"
 
@@ -1181,3 +1196,9 @@ msgstr "p&agrave;gina principal"
 
 msgid "homepage"
 msgstr "p&agrave;gina principal"
+
+msgid "Background File Set ID"
+msgstr "ID de conjunt de fitxers de fons"
+
+msgid "Background Image type"
+msgstr "Tipus d'imatge de fons"

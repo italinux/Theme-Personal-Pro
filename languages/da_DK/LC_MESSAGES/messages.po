@@ -273,6 +273,9 @@ msgstr "Advarsel i skabelon %s"
 msgid "Template Warning: %s"
 msgstr "Skabelonadvarsel: %s"
 
+msgid "current template"
+msgstr "aktuel skabelon"
+
 # block What I Do
 msgid "I like doing .."
 msgstr "Jeg kan lide at g&oslash;re.."
@@ -431,6 +434,15 @@ msgstr "S&oslash;ndag: Lukket"
 
 msgid "Please type the letters and numbers shown in the image. Click the image to see another captcha."
 msgstr "Indtast bogstaverne og tallene i billedet. Klik p&aring; billedet for at se en anden captcha."
+
+msgid "Telephone types list"
+msgstr "Liste over telefontyper"
+
+msgid "Telephone type"
+msgstr "Telefontype"
+
+msgid "Telephone number"
+msgstr "Telefonnummer"
 
 # block Social Media
 msgid "social profiles"
@@ -1071,6 +1083,9 @@ msgstr "f&oslash;j en %1$s anker %2$s for at rulle til %1$s afsnit %2$s af en si
 msgid "open up to a %1$s new page %2$s or on the %1$s same page %2$s"
 msgstr "&aring;ben op til %1$s nye side med '%2$s eller %1$s samme side %2$s"
 
+msgid "open up to a %1$s new window %2$s or on the %1$s same window %2$s"
+msgstr "&aring;bne op til et %1$s nyt vindue %2$s eller i vinduet %1$s samme vindue %2$s"
+
 msgid "Leave it empty to hide it"
 msgstr "Efterlade den tom for at skjule det"
 
@@ -1181,3 +1196,9 @@ msgstr "hjemmeside"
 
 msgid "homepage"
 msgstr "hjemmeside"
+
+msgid "Background File Set ID"
+msgstr "Baggrundsfil-id"
+
+msgid "Background Image type"
+msgstr "Baggrundsbilledetype"

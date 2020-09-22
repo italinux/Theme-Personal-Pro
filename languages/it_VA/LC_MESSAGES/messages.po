@@ -273,6 +273,9 @@ msgstr "Avviso nel modello %s"
 msgid "Template Warning: %s"
 msgstr "Avviso modello: %s"
 
+msgid "current template"
+msgstr "modello corrente"
+
 # block What I Do
 msgid "I like doing .."
 msgstr "Mi piace fare.."
@@ -431,6 +434,15 @@ msgstr "Domenica: chiuso"
 
 msgid "Please type the letters and numbers shown in the image. Click the image to see another captcha."
 msgstr "Si prega di digitare le lettere e i numeri mostrati nell'immagine. Clicca l'immagine per vedere un altro captcha."
+
+msgid "Telephone types list"
+msgstr "Elenco dei tipi di telefono"
+
+msgid "Telephone type"
+msgstr "Tipo di telefono"
+
+msgid "Telephone number"
+msgstr "Numero di telefono"
 
 # block Social Media
 msgid "social profiles"
@@ -1071,6 +1083,9 @@ msgstr "aggiungi un' %1$s ancora %2$s per scorrere ad una %1$s sezione %2$s di p
 msgid "open up to a %1$s new page %2$s or on the %1$s same page %2$s"
 msgstr "apri in una %1$s nuova pagina %2$s o nella %1$s stessa pagina %2$s"
 
+msgid "open up to a %1$s new window %2$s or on the %1$s same window %2$s"
+msgstr "apri in una %1$s nuova finestra %2$s o nella %1$s stessa finestra %2$s"
+
 msgid "Leave it empty to hide it"
 msgstr "Lasciare vuoto per nasconderlo"
 
@@ -1181,3 +1196,9 @@ msgstr "home"
 
 msgid "homepage"
 msgstr "homepage"
+
+msgid "Background File Set ID"
+msgstr "Background File Set ID"
+
+msgid "Background Image type"
+msgstr "Tipo di immagine di sfondo"
