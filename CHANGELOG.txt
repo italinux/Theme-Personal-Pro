@@ -11,5 +11,5 @@
  ------------------------------------------------
  13/09/2020 , 1.4   , FIX Translation language: German / Controller / Assets
  ------------------------------------------------
- 24/09/2020 , 1.4.1 , Added fonts and mixin variables
+ 25/09/2020 , 1.4.1 , Added fonts and mixin variables
  ------------------------------------------------
