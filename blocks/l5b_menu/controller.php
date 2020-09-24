@@ -176,7 +176,7 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Block Fields: (Styles)
     * @description Labels for additonal Fields
-    * @return Array
+    * @return array
     */
     protected static function get_btStyles()
     {
@@ -195,7 +195,7 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Block Fields: (Main)
     * @description Labels & Validation
-    * @return Array
+    * @return array
     */
     protected static function get_btFields()
     {
@@ -209,7 +209,7 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * Block Fields: (Items)
     * @description Labels & TableItems Fields
-    * @return Array
+    * @return array
     */
     protected static function get_btTableItems()
     {
@@ -487,8 +487,8 @@ class Controller extends BlockController
     public function registerViewAssets($outputContent = '')
     {
 
-        // Import this Block CSS view
-        $this->requireAsset('css', self::$btHandlerId . '-view');
+        // Import this Block view Assets (css|js)
+        $this->requireAsset('jst.block.' . $this->getBlockAssetsHandle() . '-view.assets');
 
         /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
         * load assets if animation required:
@@ -557,19 +557,19 @@ class Controller extends BlockController
     {
         $al = AssetList::getInstance();
 
-        $pf = Array(
+        $pf = array(
             'position' => Asset::ASSET_POSITION_FOOTER,
             'minify' => true,
             'combine' => true
         );
 
-        $ph = Array(
+        $ph = array(
             'position' => Asset::ASSET_POSITION_HEADER,
             'minify' => true,
             'combine' => true
         );
 
-        $cf = Array(
+        $cf = array(
             'position' => Asset::ASSET_POSITION_FOOTER,
             'minify' => false,
             'combine' => false
@@ -908,6 +908,11 @@ class Controller extends BlockController
     protected function getBlockHandle()
     {
         return 'l5b_' . $this->getSelectorBlock();
+    }
+
+    protected function getBlockAssetsHandle()
+    {
+        return self::$btHandlerId;
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -

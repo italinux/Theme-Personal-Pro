@@ -34,7 +34,7 @@ $(document).ready(function(e) {
 * CTA click on FocusIn
 */
   $('section.banner a[class*="CTA"]').focusin(function() {
-    $(this).click();
+    $(this).get(0).click();
   });
 });
 
