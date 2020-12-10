@@ -55,6 +55,7 @@ class Controller extends Package
 
     protected $presetBlocks = array(
         'banner',
+        'main',
         'menu',
         'what_i_do',
         'about_me',

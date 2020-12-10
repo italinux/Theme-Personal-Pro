@@ -108,8 +108,8 @@ class Controller extends BlockController
           'content'  => "<p>" . t('This is the %1$sAbout Me%2$s sample section,', '<q>', '</q>') . "<br />".
                         t('here you will write information about yourself or your business.') . "</p>".
                         "<p>" . t('With the inline rich-text editor in %1$sedit mode%2$s', '<a class="info" data-concrete5-link-lightbox="iframe"
-                                                                                                            data-concrete5-link-lightbox-height="520"
-                                                                                                            data-concrete5-link-lightbox-width="900" target="lightbox" href="' . self::getPopUpVideoURL() . '"><span>', '</span></a> ').
+                                                                                                            data-concrete5-link-lightbox-height="720"
+                                                                                                            data-concrete5-link-lightbox-width="1280" target="lightbox" href="' . self::getPopUpVideoURL() . '"><span>', '</span></a> ').
                         t('you can edit this text, add fonts, %1$sstyle italic%2$s,', '<em>', '</em>').
                         " <b>" . t('bold type') . "</b>, " . t('%1$slarger%2$s or %3$ssmaller chars%4$s, images &amp; links', '<big>', '</big>', '<small>', '</small>') . "</p>".
                         "<p>" . t("People will get to know you better if your message is clear and straight forward.") . "</p>".
