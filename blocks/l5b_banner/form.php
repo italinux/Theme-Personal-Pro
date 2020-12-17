@@ -774,6 +774,29 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
+                  <div class="form-group center light-title no-margins no-sides-paddings single-space-top single-space-bottom">
+                    <?php echo $form->label('bgColorOpacity', t('adjust top opacity'))?>
+                    <div class="input-group">
+                      <!-- Adjust Background Color (top) Opacity: Over Image -->
+                      <?php
+                        if (is_array($bgColorOpacityOptions)) {
+                          foreach ($bgColorOpacityOptions as $key => $value) {
+                        ?>
+                      <div class="col-xs-3 no-paddings">
+                        <div class="radio">
+                          <span style="color:#333"><?php echo t($key)?></span>
+                          <br />
+                          <label>
+                            <?php echo $form->radio('bgColorOpacity', $value, (float) $bgColorOpacity)?>
+                          </label>
+                        </div>
+                      </div>
+                      <?php
+                          }
+                        }
+                        ?>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="col-lg-12">
