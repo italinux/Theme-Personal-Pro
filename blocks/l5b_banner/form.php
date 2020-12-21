@@ -774,7 +774,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       </div>
                     </div>
                   </div>
-                  <div class="form-group center light-title no-margins no-sides-paddings single-space-top single-space-bottom">
+                  <div class="form-group center light-title no-margins no-sides-paddings single-space-top single-space-bottom max-width-300px">
                     <?php echo $form->label('bgColorOpacity', t('adjust top opacity'))?>
                     <div class="input-group">
                       <!-- Adjust Background Color (top) Opacity: Over Image -->
