@@ -197,6 +197,8 @@
                 <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
+                <bgSID><![CDATA[0]]></bgSID>
+                <bg_imageType><![CDATA[fID]]></bg_imageType>
                 <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
