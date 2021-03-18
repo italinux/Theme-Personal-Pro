@@ -1184,7 +1184,7 @@ class Controller extends BlockController
             break;
         case 'fID':
 
-            $fObj = $this->{'get' . $id . '_fID'}();
+            $fObj = (($this->{'get' . $id . '_fID'}() == true) ? $this->getImg_sd_imageObject() : false);
             break;
         }
 
