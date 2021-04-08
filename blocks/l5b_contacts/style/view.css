@@ -241,6 +241,12 @@ section.contacts > div.disabled {
   background-color: transparent;
   background-image: none;
 }
+section.contacts div.main div.form-group.captcha {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+  overflow: hidden;
+}
 section.contacts div.main div.form-group.captcha > label {
   margin-bottom: 12px;
 }
