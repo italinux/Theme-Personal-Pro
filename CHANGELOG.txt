@@ -1,8 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 10/05/2016 , 0.9.3 , Added 5 new presets
- ------------------------------------------------
  08/07/2017 , 0.9.8 , FIX Window Overlay / Controller / View
  ------------------------------------------------
  12/06/2018 , 1.0.2 , Added fonts and mixin variables
@@ -16,4 +14,6 @@
  22/03/2021 , 1.4.2 , FIX Banner foreground image on templates
  ------------------------------------------------
  14/04/2021 , 1.4.3 , FIX Theme Assets CSS / Edit Mode
+ ------------------------------------------------
+ 14/04/2021 , 1.4.4 , FIX Window Overlay / Controller / View
  ------------------------------------------------
