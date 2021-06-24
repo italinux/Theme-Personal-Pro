@@ -28,7 +28,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
   <div class="container-fluid">
     <div class="row block-header">
       <h2><?php echo t('where to start')?></h2>
-      <?php echo (User::isLoggedIn() == false ? "<h5>" . t('%1$s %2$slogin%3$s', t('Watch this and then'), '<a target="_self" href="' . URL::to("/login") . '">', '</a>') . "</h5>": null)?>
+      <?php echo (User::isLoggedIn() == false ? "<h5>" . t('%1$s %2$slogin%3$s', t('Watch this video and then'), '<a target="_self" href="' . URL::to("/login") . '">', '</a>') . "</h5>": null)?>
     </div>
     <div class="row main">
       <div class="col-xs-12">
@@ -43,6 +43,8 @@ defined('C5_EXECUTE') or die("Access Denied.");
       </div>
       <div class="col-xs-12" style="margin:0.8em 0px; text-align: center">
         <p>
+          <strong><?php echo $theme->getThemeDisplayName()?></strong>
+          <br />
           <?php echo t('%1$sFull documentation: %2$s %3$s', '<b>', '</b>', '<a class="goto" target="_blank" href="http://matteo-montanari.com/theme-' . $theme->getThemePrefix() . '/docs"><span>' . t('click here') . '</span></a>')?>
         </p>
       </div>

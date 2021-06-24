@@ -115,7 +115,7 @@ echo $cStyle;
         <div data-animation="other-opening" class="col-md-4 col-sx-12" style="text-align: center">
           <div>
             <div class="col-lg-8">
-              <h4><?php echo t('Opening')?>:</h4>
+              <h4><?php echo t('Openings')?>:</h4>
             </div>
             <div class="col-lg-4">
               <h4>

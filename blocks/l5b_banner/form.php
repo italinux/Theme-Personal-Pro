@@ -28,7 +28,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
   <section>
     <div>
       <div class="row main">
-        <div class="no-spaces col-lg-8 col-sm-7 col-xs-12">
+        <div class="no-spaces col-lg-9 col-sm-7 col-xs-12">
           <div class="col-lg-12 single-space-bottom" style="text-align: center">
             <h3 class="no-paddings"><?php echo t('Banner templates')?></h3>
             <p><a href="<?php echo $templatesHowToURL?>" target="_blank" class="btn goto"><span class="highlight"><?php echo t('How to choose a %s', t('template'))?></span></a></p>
@@ -703,7 +703,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
           <!-- End Tabs row -->
 
         </div>
-        <div class="col-lg-4 col-sm-5 col-xs-12">
+        <div class="col-lg-3 col-sm-5 col-xs-12">
           <section class="style">
             <div>
               <div class="row main">
@@ -720,7 +720,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                 </div>
 
-                <div class="col-lg-12 separator-top separator-bottom single-space-bottom">
+                <div class="col-lg-12 separator-top separator-bottom single-space-bottom no-sides-spaces">
                   <div class="form-group center double-space-top light-title no-space-bottom">
                     <label class="control-label">
                       <?php echo t('background image')?>
@@ -809,7 +809,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   </div>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2">
-                  <div class="form-group center light-title single-space-bottom">
+                  <div class="form-group center light-title single-space-bottom no-sides-paddings">
                     <?php echo $form->label('isAnimated', t('with Animation'))?>
                     <div class="input-group">
                       <div class="radio col-sm-6 col-sm-offset-0 col-xs-3 col-xs-offset-3">

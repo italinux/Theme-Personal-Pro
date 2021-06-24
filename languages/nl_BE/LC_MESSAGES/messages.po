@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # - - - - - - - - - - - - - - - - - - -
-# Site limavadymemorials.com
+# Site inkymess.de
 
 # Theme Lazy5basic
 # next entry is Editable in-place
@@ -115,19 +115,22 @@ msgid "%1$s Note: %2$s %3$s"
 msgstr "%1$s Opmerking: %2$s %3$s"
 
 msgid "Choose how to start"
-msgstr ""
+msgstr "Kies hoe u wilt beginnen"
 
 msgid "This is how to start your theme installation on your server"
-msgstr ""
+msgstr "Zo start u uw thema-installatie op uw server"
 
 msgid "No Content"
-msgstr ""
+msgstr "Geen inhoud"
 
 msgid "Full Content"
-msgstr ""
+msgstr "Volledige inhoud"
 
 msgid "All images on the demo are replaced by placeholders in your server"
-msgstr ""
+msgstr "Alle afbeeldingen op de demo worden vervangen door tijdelijke aanduidingen op uw server"
+
+msgid "Watch this video and then"
+msgstr "Bekijk deze video en dan"
 
 # block Menu
 msgid "Delete this Menu item"

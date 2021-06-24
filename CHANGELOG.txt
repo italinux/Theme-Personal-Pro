@@ -1,10 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 08/07/2017 , 0.9.8 , FIX Window Overlay / Controller / View
- ------------------------------------------------
- 12/06/2018 , 1.0.2 , Added fonts and mixin variables
- ------------------------------------------------
  02/09/2019 , 1.1.4 , Added 1 new preset
  ------------------------------------------------
  13/09/2020 , 1.4   , FIX Translation language: German / Controller / Assets
@@ -15,5 +11,9 @@
  ------------------------------------------------
  14/04/2021 , 1.4.3 , FIX Theme Assets CSS / Edit Mode
  ------------------------------------------------
- 29/04/2021 , 1.4.4 , FIX Window Overlay / Controller / View
+ 30/05/2021 , 1.4.4 , FIX Theme Default intro documentation page
+ ------------------------------------------------
+ 11/06/2021 , 1.4.5 , FIX Banner assets CSS on templates
+ ------------------------------------------------
+ 24/06/2021 , 1.4.6 , Added 3 new presets
  ------------------------------------------------

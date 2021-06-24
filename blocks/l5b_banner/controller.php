@@ -1481,15 +1481,21 @@ class Controller extends BlockController
     public function view()
     {
 
+        // this block this template prefix
+        $cTempl = $this->getThisBlockTemplatePrefix();
+
         if ($this->getIsAnimationEnabled() === true) {
             // class which master animation at its best
             $this->set('nopaque', 'nopaque');
+
+            // let the animation to deal with video opacity
+            $this->set('videopaque', null);
         } else {
             $this->set('nopaque', null);
-        }
 
-        // this block this template prefix
-        $cTempl = $this->getThisBlockTemplatePrefix();
+            // class which master video animation at its best (if video is enabled, force full opacity)
+            $this->set('videopaque', (($this->{'get' . ucfirst($cTempl) . '_IsVideoEnabled'}() == true) ? 'opaque' : null));
+        }
 
         // Set style values
         $this->set('sID', $this->getSectionId());

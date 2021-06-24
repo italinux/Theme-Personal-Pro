@@ -24,45 +24,43 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 ?>
 
-<!DOCTYPE html>
-<html lang="<?php echo Localization::activeLanguage()?>">
+<?php
+  /**
+  * Check Areas Blocks
+  * if all are unset or empty then return false
+  */
+  $totBlocks = array();
 
-  <!--=== loading headers ===-->
-  <?php $this->inc('inc/top.php')?>
-  <body>
-    <div class="main-wrapper <?php echo $c->getPageWrapperClass()?>">
+  // Loop all Areas and Display
+  foreach ($theme->getAreasNames() as $value) {
 
-      <!--=== preloader ===-->
-      <div id="preloader" <?php echo (User::isLoggedIn() == true) ? 'style="display: none"' : null?>>
-        <div class="spinner"></div>
-      </div>
+     $a = new Area($value);
+     if ($a->getTotalBlocksInArea($c) > 0 ) {
 
-      <!--=== Areas ===-->
-      <?php
-        require_once('inc/main.php');
-      ?>
+         // Check if block is empty
+         $blockContent = Array();
+         foreach ($a->getAreaBlocksArray($c) as $block) {
 
-      <!--=== load Intro ===-->
-      <?php
-        if ( ! in_array(true, $totBlocks, true) && ($c->isEditMode() === false)) {
-            $this->inc('inc/intro.php');
-        }
-      ?>
+            // Check if is a core block and has content
+            if (method_exists($block->getInstance(), 'getContent')) {
+                $blockContent[] = (trim($block->getInstance()->getContent()) === "" ? false : true);
+            } else {
+                // we assume it has content
+                $blockContent[] = true;
+            }
+       }
+       // return false if block is empty, true otherwise
+       $totBlocks[] = in_array(true, $blockContent, true);
 
-      <!--=== scroll to top (button) ===-->
-      <?php
-        if ($c->isEditMode() == false) {
-        ?>
-        <div id="scroll-top" class="scroll-up">
-          <i class="fa fa-arrow-up"></i>
-        </div>
-        <?php
-        }
-      ?>
+     } else {
+         // return false as NO block is present
+         $totBlocks[] = false;
+     }
 
-    </div>
+     // Set Option for Area
+     $a->setAreaGridMaximumColumns(12);  
 
-    <!--=== bottom ===-->
-    <?php $this->inc('inc/bottom.php')?>
-  </body>
-</html>
+     // Display Area
+     $a->display($c);
+  }
+?>

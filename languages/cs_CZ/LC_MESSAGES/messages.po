@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 # - - - - - - - - - - - - - - - - - - -
-# Site limavadymemorials.com
+# Site inkymess.de
 
 # Theme Lazy5basic
 # next entry is Editable in-place
@@ -118,16 +118,19 @@ msgid "Choose how to start"
 msgstr "Vyberte, jak za&#269;&iacute;t"
 
 msgid "This is how to start your theme installation on your server"
-msgstr "Takto mů&#382;ete spustit instalaci t&eacute;matu na va&scaron;em serveru"
+msgstr "T&iacute;mto způsobem zah&aacute;j&iacute;te instalaci motivu na serveru"
 
 msgid "No Content"
 msgstr "Ž&aacute;dn&yacute; obsah"
 
 msgid "Full Content"
-msgstr "Pln&yacute; obsah"
+msgstr "Cel&yacute; obsah"
 
 msgid "All images on the demo are replaced by placeholders in your server"
-msgstr "V&scaron;echny obr&aacute;zky v demo jsou nahrazeny z&aacute;stupn&yacute;mi symboly na va&scaron;em serveru"
+msgstr "V&scaron;echny obr&aacute;zky v uk&aacute;zce jsou nahrazeny z&aacute;stupn&yacute;mi symboly na va&scaron;em serveru"
+
+msgid "Watch this video and then"
+msgstr "Pod&iacute;vejte se na toto video a pot&eacute;"
 
 # block Menu
 msgid "Delete this Menu item"

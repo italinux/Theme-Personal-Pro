@@ -158,7 +158,7 @@ echo $cStyle;
         <div data-animation="other-opening" class="col-md-12 col-sm-4">
           <div class="col-sx-12">
             <div class="col-md-8">
-              <h4><?php echo t('Opening')?>:</h4>
+              <h4><?php echo t('Openings')?>:</h4>
             </div>
             <div class="col-md-4">
               <h4>

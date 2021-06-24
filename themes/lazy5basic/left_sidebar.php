@@ -54,14 +54,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
           </div>
           <div class="col-sm-10">
             <?php
-              $totBlocks = array();
-
-              foreach ($theme->getAreasNames() as $value) {
-                 $a = new Area($value);
-                 $totBlocks[] = ($a->getTotalBlocksInArea($c) > 0 ? true : false);
-                 $a->setAreaGridMaximumColumns(12);
-                 $a->display($c);
-              }
+              require_once('inc/main.php');
             ?>
           </div>
         </div>

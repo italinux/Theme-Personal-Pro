@@ -28,7 +28,7 @@ echo $cStyle;
 <section id="<?php echo $sID?>" class="<?php echo $cTemplate?> pre-hand over-image <?php echo $cFgColorClass?> banner with-fade">
 
   <?php if (${$cTempl . '_isVideoEnabled'} == true) { ?>
-     <div data-animation="bgVideo" class="player" data-property="{videoURL: '<?php echo ${$cTempl . '_videoURL'}?>', quality: '<?php echo ${$cTempl . '_videoHQ'}?>',<?php echo $videoParams?>}"></div>
+     <div data-animation="bgVideo" class="player <?php echo $videopaque?>" data-property="{videoURL: '<?php echo ${$cTempl . '_videoURL'}?>', quality: '<?php echo ${$cTempl . '_videoHQ'}?>',<?php echo $videoParams?>}"></div>
   <?php } ?>
 
   <div class="container-fluid" id="<?php echo $viewPoint?>">

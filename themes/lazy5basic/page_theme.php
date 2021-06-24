@@ -140,7 +140,14 @@ class PageTheme extends Theme
             'fix-spaces-buttons',
         );
 
-        return array('*' => $blockClasses);
+        $bannerClasses = array(
+            'video-fixed',
+            'hidden-on-mobile',
+        );
+
+        return array('*' => $blockClasses,
+                     'l5b_banner' => $bannerClasses,
+                     'lazy_banner' => $bannerClasses);
     }
 
     public function getThemeResponsiveImageMap() 

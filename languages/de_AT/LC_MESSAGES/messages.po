@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # - - - - - - - - - - - - - - - - - - -
-# Site limavadymemorials.com
+# Site inkymess.de
 
 # Theme Lazy5basic
 # next entry is Editable in-place
@@ -115,10 +115,10 @@ msgid "%1$s Note: %2$s %3$s"
 msgstr "%1$s Hinweis: %2$s %3$s"
 
 msgid "Choose how to start"
-msgstr "W&auml;hlen Sie, wie gestartet werden soll"
+msgstr "W&auml;hlen Sie, wie Sie beginnen m&ouml;chten"
 
 msgid "This is how to start your theme installation on your server"
-msgstr "So starten Sie die Theme-Installation auf Ihrem Server"
+msgstr "So starten Sie Ihre Theme-Installation auf Ihrem Server"
 
 msgid "No Content"
 msgstr "Kein Inhalt"
@@ -127,7 +127,10 @@ msgid "Full Content"
 msgstr "Vollst&auml;ndiger Inhalt"
 
 msgid "All images on the demo are replaced by placeholders in your server"
-msgstr "Alle Bilder auf der Demo werden durch Platzhalter in Ihrem Server ersetzt"
+msgstr "Alle Bilder auf der Demo werden durch Platzhalter auf Ihrem Server ersetzt"
+
+msgid "Watch this video and then"
+msgstr "Schau dir dieses Video an und dann"
 
 # block Menu
 msgid "Delete this Menu item"
@@ -302,7 +305,7 @@ msgid "you can edit this text, add fonts, %1$sstyle italic%2$s,"
 msgstr "sie k&ouml;nnen diesen Text bearbeiten, fonts hinzuf&uuml;gen, %1$sstyle italic%2$s,"
 
 msgid "%1$slarger%2$s or %3$ssmaller chars%4$s, images &amp; links"
-msgstr "%1$sGr&ouml;&szlig;ere%2$s oder %3$skleinere Zeichen%4$s, Bilder  &amp; Links"
+msgstr "%1$sGr&ouml;&szlig;ere%2$s oder %3$skleinere Zeichen%4$s, Bilder  & amp; Links"
 
 msgid "People will get to know you better if your message is clear and straight forward."
 msgstr "Die Leute werden dich besser kennenlernen, wenn deine Botschaft klar und einfach ist."
