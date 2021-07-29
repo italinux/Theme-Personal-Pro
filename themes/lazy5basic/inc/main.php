@@ -63,4 +63,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
      // Display Area
      $a->display($c);
   }
+
+  // Save totBlocks value in session
+  $session->set('totBlocks', $totBlocks)
 ?>

@@ -51,7 +51,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
       <!--=== load Intro ===-->
       <?php
-        if (!in_array(true, $totBlocks, true) && $c->isEditMode() == false) {
+        if ( ! in_array(true, $totBlocks, true) && $c->isEditMode() == false) {
             $this->inc('inc/intro.php');
         }
       ?>

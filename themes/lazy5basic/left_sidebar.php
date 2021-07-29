@@ -22,6 +22,13 @@
 '---------------------------------------------------------------------------'
 */
 defined('C5_EXECUTE') or die("Access Denied.");
+
+// Create the session
+$session = Core::make('app')->make('session');
+// Remove totBlocks session value
+$session->remove('totBlocks');
+// Save totBlocks session value (default)
+$session->set('totBlocks', array());
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +61,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
           </div>
           <div class="col-sm-10">
             <?php
-              require_once('inc/main.php');
+              $this->inc('inc/main.php', array('session' => $session));
             ?>
           </div>
         </div>
@@ -62,7 +69,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
       <!--=== load Intro ===-->
       <?php
-        if (!in_array(true, $totBlocks, true) && $c->isEditMode() == false) {
+        if ( ! in_array(true, $session->get('totBlocks'), true) && $c->isEditMode() == false) {
             $this->inc('inc/intro.php');
         }
       ?>
