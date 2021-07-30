@@ -1,8 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 02/09/2019 , 1.1.4 , Added 1 new preset
- ------------------------------------------------
  13/09/2020 , 1.4   , FIX Translation language: German / Controller / Assets
  ------------------------------------------------
  19/02/2021 , 1.4.1 , FIX Window Overlay / Banner images style
@@ -16,4 +14,6 @@
  11/06/2021 , 1.4.5 , FIX Banner assets CSS on templates
  ------------------------------------------------
  29/07/2021 , 1.4.6 , FIX Assets CSS Package / Block Footer
+ ------------------------------------------------
+ 30/07/2021 , 1.4.7 , Added fonts and mixin Assets to variables
  ------------------------------------------------
