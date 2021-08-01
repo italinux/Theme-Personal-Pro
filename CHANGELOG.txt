@@ -15,5 +15,5 @@
  ------------------------------------------------
  29/07/2021 , 1.4.6 , FIX Assets CSS Package / Block Footer
  ------------------------------------------------
- 30/07/2021 , 1.4.7 , Added fonts and mixin Assets to variables
+ 01/08/2021 , 1.4.7 , Added fonts and mixin Assets to variables
  ------------------------------------------------
