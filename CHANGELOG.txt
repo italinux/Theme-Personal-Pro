@@ -13,7 +13,7 @@
  ------------------------------------------------
  11/06/2021 , 1.4.5 , FIX Banner assets CSS on templates
  ------------------------------------------------
- 29/07/2021 , 1.4.6 , FIX Assets CSS Package / Block Footer
+ 09/08/2021 , 1.4.6 , FIX Assets CSS Package / Block Footer
  ------------------------------------------------
- 01/08/2021 , 1.4.7 , Added fonts and mixin Assets to variables
+ 12/08/2021 , 1.4.7 , Added 3 new presets
  ------------------------------------------------
