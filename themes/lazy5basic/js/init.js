@@ -192,38 +192,41 @@ $(function() {
     * - - - - - - - - - - - - - - - - - - - - -*/
     if (CCM_EDIT_MODE === false) {
 
-        $("div.main-wrapper a").not(".scroll").not(".scroll-up").not(".popup-image").not(".lightbox").not("[href^='#']").on("click", function(e) {
+        $("body").on("click", "a", function() {
 
-            /** - - - - - - - - - - - - - - - - - -
-            * Additional Check on anchor Class
-            * if NOT mobile devices (tablets & mobiles), then show pre-loader
-            * - - - - - - - - - - - - - - - - - - -*/
-            if ($(this).hasClass('dropdown-on-mobiles') == false) {
+            if ($(this).not(".scroll").not(".scroll-up").not(".popup-image").not(".lightbox").not("[href^='#']")) {
 
                 /** - - - - - - - - - - - - - - - - - -
-                * Additional Check on Hrefs
-                * if not _self, then show pre-loader
+                * Additional Check on anchor Class
+                * if NOT mobile devices (tablets & mobiles), then show pre-loader
                 * - - - - - - - - - - - - - - - - - - -*/
-                var href = $(this).attr('href');
-
-                if ((typeof href !== typeof undefined && href !== false && href !== null) && (((href.substring(0, 1) === '/') || (href.substring(0, 4) === 'http')))) {
+                if ($(this).hasClass('dropdown-on-mobiles') == false) {
 
                     /** - - - - - - - - - - - - - - - - - -
-                    * Additional Check on Targets
+                    * Additional Check on Hrefs
                     * if not _self, then show pre-loader
                     * - - - - - - - - - - - - - - - - - - -*/
-                    var target = $(this).attr('target');
+                    var href = $(this).attr('href');
 
-                    // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
-                    if ((typeof target === typeof undefined || target === false || target === null) || (target == '_self') || (target == '')) {
+                    if ((typeof href !== typeof undefined && href !== false && href !== null) && (((href.substring(0, 1) === '/') || (href.substring(0, 4) === 'http')))) {
 
-                        // Maximum delay before preloader eventually fades out
-                        var maxDelayInFadeOutMsecs = 15000;
+                        /** - - - - - - - - - - - - - - - - - -
+                        * Additional Check on Targets
+                        * if not _self, then show pre-loader
+                        * - - - - - - - - - - - - - - - - - - -*/
+                        var target = $(this).attr('target');
 
-                        // show pre-loader
-                        $("div#preloader").fadeIn(100, function() {
-                            $(this).children().fadeIn(300);
-                        }).delay(maxDelayInFadeOutMsecs).fadeOut(300).hide(0);
+                        // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
+                        if ((typeof target === typeof undefined || target === false || target === null) || (target == '_self') || (target == '')) {
+
+                            // Maximum delay before preloader eventually fades out
+                            var maxDelayInFadeOutMsecs = 15000;
+
+                            // show pre-loader
+                            $("div#preloader").fadeIn(100, function() {
+                                $(this).children().fadeIn(300);
+                            }).delay(maxDelayInFadeOutMsecs).fadeOut(300).hide(0);
+                        }
                     }
                 }
             }
