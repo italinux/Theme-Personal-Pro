@@ -194,7 +194,7 @@ $(function() {
 
         $("body").on("click", "a", function() {
 
-            if ($(this).not(".scroll").not(".scroll-up").not(".popup-image").not(".lightbox").not("[href^='#']")) {
+             if ( ! $(this).filter('.scroll, .scroll-up, .popup-image, .lightbox, [href^="#"]').length) {
 
                 /** - - - - - - - - - - - - - - - - - -
                 * Additional Check on anchor Class
