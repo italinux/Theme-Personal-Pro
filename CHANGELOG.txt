@@ -15,5 +15,5 @@
  ------------------------------------------------
  17/08/2021 , 1.4.7 , FIX Assets JS Package / init.js
  ------------------------------------------------
- 28/08/2021 , 1.4.8 , Added fonts and mixin Assets to variables
+ 05/09/2021 , 1.4.8 , Added fonts and mixin Assets to variables
  ------------------------------------------------
