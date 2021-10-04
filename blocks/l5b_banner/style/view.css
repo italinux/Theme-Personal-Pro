@@ -239,10 +239,10 @@ section.banner {
 }
 section.banner.over-image::before {
   background-image: -webkit-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: -moz-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: -ms-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: -o-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
-  background-image: linear-gradient(to bottom, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:    -moz-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:     -ms-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:      -o-linear-gradient(top, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
+  background-image:         linear-gradient(to bottom, rgba(68, 79, 139, 0.6) 40%, rgba(255, 255, 255, 0) 96%);
 }
 section.banner.over-image {
   background-clip: content-box;
@@ -300,9 +300,9 @@ section.banner div[class^="container"] div.videoStatus {
 }
 section.banner div[class^="container"] div.videoStatus.show {
   -webkit-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-  -moz-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-  -o-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-  animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+     -moz-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+       -o-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+          animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
   display: block;
 }
 section.banner div[class^="container"] div.videoStatus span {
@@ -440,17 +440,17 @@ section.banner a.CTA-arrow {
   }
   section.banner div[class^="container"] a.CTA-arrow .fa {
     -webkit-animation: 0s ease 0s normal none 1 running none;
-    -moz-animation: 0s ease 0s normal none 1 running none;
-    -o-animation: 0s ease 0s normal none 1 running none;
-    animation: 0s ease 0s normal none 1 running none;
+       -moz-animation: 0s ease 0s normal none 1 running none;
+         -o-animation: 0s ease 0s normal none 1 running none;
+            animation: 0s ease 0s normal none 1 running none;
     -webkit-transform: none;
-    -moz-transform: none;
-    -o-transform: none;
-    transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
     -webkit-transition-property: none;
-    -moz-transition-property: none;
-    -o-transition-property: none;
-    transition-property: none;
+       -moz-transition-property: none;
+         -o-transition-property: none;
+            transition-property: none;
   }
 }
 section.banner.i_am_what_i_do > div[class^="container"] {
