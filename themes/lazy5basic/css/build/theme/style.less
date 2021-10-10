@@ -185,9 +185,10 @@ div.main-wrapper {
   }
 
   .btn {
+    min-width: 150px;
     font-weight: 400;
     text-decoration: none;
-    padding: 18px 35px;
+    padding: 18px 35px 20px;
     border-width: 0px;
     border-style: none;
     border-radius: 4px;
@@ -201,6 +202,8 @@ div.main-wrapper {
       box-shadow: none;
     }
     &.btn-primary {
+      color: @body-high-font-color !important;
+      background-color: @body-high-bg-color;
       background-image: none;
       background-repeat: no-repeat;
       box-shadow: none;
@@ -217,23 +220,13 @@ div.main-wrapper {
       &.active, &:active, &.active:focus {
         box-shadow: none;
       }
+      &:active, &.active, &:focus, &.focus, &[disabled]:hover {
+        background-color: @body-high-bg-color;
+      }
       &.disabled, &[disabled], fieldset[disabled] & {
         &, &:hover, &:focus, &.focus, &:active, &.active {
           background-image: none;
         }
-      }
-    }
-  }
-
-  section.pre-hand {
-    .btn {
-      min-width: 150px;
-    }
-    .btn-primary {
-      color: @body-high-font-color !important;
-      background-color: @body-high-bg-color;
-      &:active, &.active, &:focus, &.focus, &[disabled]:hover {
-        background-color: @body-high-bg-color;
       }
     }
   }
