@@ -1,8 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 19/02/2021 , 1.4.1 , FIX Window Overlay / Banner images style
- ------------------------------------------------
  22/03/2021 , 1.4.2 , FIX Banner foreground image on templates
  ------------------------------------------------
  14/04/2021 , 1.4.3 , FIX Theme Assets CSS / Edit Mode
@@ -16,4 +14,6 @@
  17/08/2021 , 1.4.7 , FIX Assets JS Package / init.js
  ------------------------------------------------
  12/10/2021 , 1.4.8 , FIX Global Bootstrap btn styles / typography
+ ------------------------------------------------
+ 17/10/2021 , 1.4.9 , FIX Assets Package / Blocks
  ------------------------------------------------
