@@ -1,11 +1,10 @@
 /**
 * ============================================
 * File type: Theme Extra
-* File provides: Smooth Scrolling on querying direct UrLs with anchor
-*           es1: http://localhost/#contacts (Single Page)
-*           es2: http://localhost/page/#contacts (Multi Pages)
 *
-* Suggested: .haccess for cleaner URLs
+* File provides:
+*  1. Banner Image FadeIn when Ready
+*  2. Scrolling through Direct Url EXTERNAL
 *
 * @author: Matteo Montanari <matteo@italinux.com>
 *
@@ -34,13 +33,11 @@
 $(function() {
 
     /**
-    * @preserve
     * Banner Image FadeIn when Ready
     */
     initBannerFadeIn();
 
     /**
-    * @preserve
     * INIT Scrolling on URL
     */
     if ($(location).attr("hash")) {
@@ -61,7 +58,6 @@ $(function() {
     }
 
     /**
-    * @preserve
     * ============================================
     *   Banner Image FadeIn when Ready
     * ============================================
@@ -88,7 +84,6 @@ $(function() {
     }
 
     /**
-    * @preserve
     * ============================================
     * EXTERNAL:
     *   Scrolling through Direct Url INTERNET
@@ -132,7 +127,6 @@ $(function() {
         var offsetDefault = { desktop: 70, mobile: 50 };
 
         /**
-        * @preserve
         * List of Handlers for Scrolling Direct
         * Add or Edit with new viewpoint / new add-ons
         *
