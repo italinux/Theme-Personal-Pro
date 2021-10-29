@@ -137,12 +137,11 @@
 */
 @brand-odd-background-rgba-color: fade(@body-odd-bg-color, @body-odd-bg-color-opacity);
 @brand-odd-background-rgb-color: @body-odd-bg-color;
-@brand-odd-font-color: @body-odd-font-color;
 
 // EVEN (default: light)
 @brand-even-background-rgba-color: fade(@body-even-bg-color, @body-even-bg-color-opacity);
 @brand-even-background-rgb-color: @body-even-bg-color;
-@brand-even-font-color: @body-type-color;
+@body-even-font-color: @body-type-color;
 
 /** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 *  HowTo Video INTRO
@@ -174,7 +173,7 @@
 @brand-banner-background-shadow-color: fade(@brand-odd-background-rgb-color, 0%);
 @brand-banner-background-attachment: fixed;
 @brand-banner-background-size: cover;
-@brand-banner-font-color: @brand-odd-font-color;
+@brand-banner-font-color: @body-odd-font-color;
 @brand-banner-link-color: @body-odd-link-color;
 @brand-banner-height-base-size: 500px;
 @brand-banner-height-add-size: 440px;
@@ -188,7 +187,7 @@
 @brand-menu-background-rgb-color: @brand-odd-background-rgb-color;
 @brand-menu-background-attachment: scroll;
 @brand-menu-background-size: auto;
-@brand-menu-font-color: @brand-odd-font-color;
+@brand-menu-font-color: @body-odd-font-color;
 @brand-menu-link-color: @body-odd-link-color;
 @brand-menu-type-font-family: @this-preset-font-family;
 @brand-menu-type-font-size: 1.5em;
@@ -202,7 +201,7 @@
 @brand-what-i-do-background-image: none;
 @brand-what-i-do-background-attachment: fixed;
 @brand-what-i-do-background-size: auto;
-@brand-what-i-do-font-color: @brand-even-font-color;
+@brand-what-i-do-font-color: @body-even-font-color;
 @brand-what-i-do-link-color: @body-even-link-color;
 @what-i-do-1st-color: lighten(spin(@body-odd-bg-color, -70), 1%);
 @what-i-do-2nd-color: lighten(spin(@body-odd-bg-color, -30), 1%);
@@ -217,7 +216,7 @@
 @brand-team-background-image: none;
 @brand-team-background-attachment: fixed;
 @brand-team-background-size: cover;
-@brand-team-font-color: @brand-even-font-color;
+@brand-team-font-color: @body-even-font-color;
 @brand-team-link-color: @body-even-link-color;
 @team-1st-color: lighten(spin(@body-odd-bg-color, -70), 1%);
 @team-2nd-color: lighten(spin(@body-odd-bg-color, -20), 1%);
@@ -232,7 +231,7 @@
 @brand-services-background-image: none;
 @brand-services-background-attachment: fixed;
 @brand-services-background-size: cover;
-@brand-services-font-color: @brand-even-font-color;
+@brand-services-font-color: @body-even-font-color;
 @brand-services-link-color: @body-even-link-color;
 @services-1st-color: lighten(spin(@body-odd-bg-color, 130), 1%);
 @services-2nd-color: lighten(spin(@body-odd-bg-color, 180), 1%);
@@ -247,7 +246,7 @@
 @brand-about-me-background-image: 'images/background.jpg';
 @brand-about-me-background-attachment: scroll;
 @brand-about-me-background-size: auto;
-@brand-about-me-font-color: @brand-odd-font-color;
+@brand-about-me-font-color: @body-odd-font-color;
 @brand-about-me-link-color: @body-odd-link-color;
 
 /** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -258,7 +257,7 @@
 @brand-my-skills-background-image: none;
 @brand-my-skills-background-attachment: fixed;
 @brand-my-skills-background-size: auto;
-@brand-my-skills-font-color: @brand-even-font-color;
+@brand-my-skills-font-color: @body-even-font-color;
 @brand-my-skills-link-color: @body-even-link-color;
 @my-skills-1st-color: lighten(spin(@body-odd-bg-color, 30), 1%);
 @my-skills-2nd-color: lighten(spin(@body-odd-bg-color, 70), 1%);
@@ -273,7 +272,7 @@
 @brand-curriculum-vitae-background-image: none;
 @brand-curriculum-vitae-background-attachment: fixed;
 @brand-curriculum-vitae-background-size: auto;
-@brand-curriculum-vitae-font-color: @brand-even-font-color;
+@brand-curriculum-vitae-font-color: @body-even-font-color;
 @brand-curriculum-vitae-link-color: @body-even-link-color;
 @curriculum-vitae-1st-color: spin(@body-odd-bg-color, -120);
 @curriculum-vitae-2nd-color: spin(@body-odd-bg-color, -70);
@@ -290,7 +289,7 @@
 @brand-portfolio-background-image: none;
 @brand-portfolio-background-attachment: scroll;
 @brand-portfolio-background-size: auto;
-@brand-portfolio-font-color: @brand-even-font-color;
+@brand-portfolio-font-color: @body-even-font-color;
 @brand-portfolio-link-color: @body-even-link-color;
 @portfolio-1st-color: lighten(spin(@body-odd-bg-color, -70), 1%);
 @portfolio-2nd-color: lighten(spin(@body-odd-bg-color, -20), 1%);
@@ -310,7 +309,7 @@
 @brand-prices-background-image: none;
 @brand-prices-background-attachment: fixed;
 @brand-prices-background-size: auto;
-@brand-prices-font-color: @brand-even-font-color;
+@brand-prices-font-color: @body-even-font-color;
 @brand-prices-link-color: @body-even-link-color;
 @prices-1st-color: spin(@body-odd-bg-color, 110);
 @prices-2nd-color: spin(@body-odd-bg-color, -10);
@@ -325,7 +324,7 @@
 @brand-testimonials-background-image: none;
 @brand-testimonials-background-attachment: scroll;
 @brand-testimonials-background-size: auto;
-@brand-testimonials-font-color: @brand-even-font-color;
+@brand-testimonials-font-color: @body-even-font-color;
 @brand-testimonials-link-color: @body-even-link-color;
 
 /** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -336,7 +335,7 @@
 @brand-contacts-background-image: none;
 @brand-contacts-background-attachment: fixed;
 @brand-contacts-background-size: auto;
-@brand-contacts-font-color: @brand-even-font-color;
+@brand-contacts-font-color: @body-even-font-color;
 @brand-contacts-link-color: @body-even-link-color;
 
 /** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -347,7 +346,7 @@
 @brand-clients-background-image: none;
 @brand-clients-background-attachment: fixed;
 @brand-clients-background-size: cover;
-@brand-clients-font-color: @brand-even-font-color;
+@brand-clients-font-color: @body-even-font-color;
 @brand-clients-link-color: @body-even-link-color;
 
 /** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -358,7 +357,7 @@
 @brand-social-media-background-image: 'images/background.jpg';
 @brand-social-media-background-attachment: scroll;
 @brand-social-media-background-size: auto;
-@brand-social-media-font-color: @brand-odd-font-color;
+@brand-social-media-font-color: @body-odd-font-color;
 @brand-social-media-link-color: @body-odd-link-color;
 
 /** - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -369,6 +368,6 @@
 @brand-footer-background-image: 'images/background.png';
 @brand-footer-background-attachment: scroll;
 @brand-footer-background-size: auto;
-@brand-footer-font-color: @brand-odd-font-color;
+@brand-footer-font-color: @body-odd-font-color;
 @brand-footer-link-color: @body-odd-link-color;
 
