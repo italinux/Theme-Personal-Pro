@@ -37,17 +37,32 @@
 var what_i_do = {
     "what-i-do": {
         "icon": {
-            offset: 550,
-            effect: "bounceIn",
-            delay: 0,
+            0: {
+                offset: 650,
+                effect: "fadeIn",
+                delay: 0.2,
+            },
+            1: {
+                offset: 650,
+                effect: "fadeIn",
+                delay: 0.4,
+            },
+            2: {
+                offset: 650,
+                effect: "fadeIn",
+                delay: 0.3,
+            },
+            3: {
+                offset: 650,
+                effect: "fadeIn",
+                delay: 0.5,
+            },
         },
-        /*
          "title": {
-             offset: 350,
-             effect: "bounceIn",
+             offset: 750,
+             effect: "none",
              delay: 0,
          },
-        */
         "content": {
             0: {
                 offset: 650,
@@ -70,12 +85,10 @@ var what_i_do = {
                 delay: 0,
             },
         },
-        /*
          "cta": {
-             offset: 350,
-             effect: "bounceIn",
+             offset: 750,
+             effect: "none",
              delay: 0,
          },
-        */
     },
 };

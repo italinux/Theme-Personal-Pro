@@ -47,7 +47,7 @@ echo $cStyle;
         <?php echo 'col-sx-' . $value['col-sx'][0]?>
         <?php echo 'col-sx-offset-' . $value['col-sx']['offset']?>">
 
-        <div data-animation="<?php echo ($id == 0 ? 'top' : 'bottom')?>-<?php echo $value['id']?>" class="service-icon">
+        <div data-animation="<?php echo ($id == 0 ? 'top' : 'bottom')?>-<?php echo $value['id']?>" class="service-icon <?php echo $nopaque?>">
           <a class="<?php echo (empty($value['img']['src']) == true ? 'fa fa-' . $value['icon']['tag'] . ' fa-3x ' : null); echo $value['class']?> CTA-clean"
             <?php echo (($value['link'] != '' || $value['hash'] != '') ? 'target="' . $value['target'] . '" ' : null)?>
             <?php echo (($value['link'] != '' || $value['hash'] != '') ? 'href="' . $value['link'] . $value['hash'] . '" ' : null)?>>

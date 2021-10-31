@@ -36,7 +36,7 @@ echo $cStyle;
             if ($image['default']) {
             ?>
             <div class="msg-default <?php echo $playNow?>">
-              <h5><?php echo t('No image selected')?></h5>
+              <h4><?php echo t('No image selected')?></h4>
               <h4><?php echo t('this is default')?></h4>
             </div>
             <?php
@@ -58,7 +58,7 @@ echo $cStyle;
       <!-- global (unique) CTA button -->
       <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
         <div data-animation="global-cta" class="global-cta">
-          <a href="<?php echo $CTA['link']?><?php echo $CTA['hash']?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
+          <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
             <span>
               <?php echo h($CTA['text'])?>
             </span>

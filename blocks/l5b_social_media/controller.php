@@ -879,6 +879,13 @@ class Controller extends BlockController
     public function view()
     {
 
+        if ($this->getIsAnimationEnabled() === true) {
+            // class which master animation at its best
+            $this->set('nopaque', 'nopaque');
+        } else {
+            $this->set('nopaque', null);
+        }
+
         // Set style values
         $this->set('sID', $this->getSectionId());
         $this->set('viewPoint', self::getViewPointId());
