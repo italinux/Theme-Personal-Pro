@@ -99,17 +99,21 @@ $(function() {
         */
         if ((document.querySelector('section.sticky.menu') !== null) && (isTablet.matches === false)) {
 
-            // GET MENU Offset to Top
-            var stickyOffsetTop = $('section.sticky.menu').offset().top;
+            // Check if FIXED already
+            if ( ! $('section.sticky.menu').hasClass('sticky-fixed')) {
 
-            // SET Menu Height
-            var stickyOffsetPlus = 40;
+                // GET MENU Offset to Top
+                var stickyOffsetTop = $('section.sticky.menu').offset().top;
 
-            /**
-            * Then change default Offset to match the dynamic element height
-            */
-            if ($(document).scrollTop() < (stickyOffsetTop + stickyOffsetPlus)) {
-                 baseOffset = 80;
+                // SET Menu Height
+                var stickyOffsetPlus = 40;
+
+                /**
+                * Then change default Offset to match the dynamic element height
+                */
+                if ($(document).scrollTop() < (stickyOffsetTop + stickyOffsetPlus)) {
+                    baseOffset = 80;
+                }
             }
         }
 
