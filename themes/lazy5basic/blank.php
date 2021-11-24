@@ -37,24 +37,16 @@ defined('C5_EXECUTE') or die("Access Denied.");
         <div class="spinner"></div>
       </div>
 
-      <!--=== Areas ===-->
-      <?php
-        $totBlocks = array();
-
-        foreach (array('Menu', 'Main', 'Footer') as $value) {
-           $a = new Area($value);
-           $totBlocks[] = ($a->getTotalBlocksInArea($c) > 0 ? true : false);
-           $a->setAreaGridMaximumColumns(12);
-           $a->display($c);
-        }
-      ?>
-
-      <!--=== load Intro ===-->
-      <?php
-        if ( ! in_array(true, $totBlocks, true) && $c->isEditMode() == false) {
-            $this->inc('inc/intro.php');
-        }
-      ?>
+      <!--=== content ===-->
+      <section class="page-block">
+        <div class="container-fluid">
+          <div class="row main">
+            <div class="col-xs-12">
+              <?php echo $innerContent?>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!--=== scroll to top (button) ===-->
       <?php

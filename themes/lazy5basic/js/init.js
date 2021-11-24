@@ -90,6 +90,30 @@ $(function() {
         var baseOffset = 0;
 
         /**
+        * Check devices resolutions where that's the case
+        */
+        var isTablet = window.matchMedia("only screen and (max-width: 1024px)");
+
+        /**
+        * Then change base Offset to match the dynamic element height
+        */
+        if ((document.querySelector('section.sticky.menu') !== null) && (isTablet.matches === false)) {
+
+            // GET MENU Offset to Top
+            var stickyOffsetTop = $('section.sticky.menu').offset().top;
+
+            // SET Menu Height
+            var stickyOffsetPlus = 40;
+
+            /**
+            * Then change default Offset to match the dynamic element height
+            */
+            if ($(document).scrollTop() < (stickyOffsetTop + stickyOffsetPlus)) {
+                 baseOffset = 80;
+            }
+        }
+
+        /**
         * Then change default Offset to match the dynamic element height
         */
         if (document.querySelector('section.static.menu') !== null) {
