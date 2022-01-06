@@ -50,9 +50,12 @@ $(function() {
 
             // Wait till all images are loaded
             $thisElement.find('div.main').imagesLoaded().always(function() {
-                initScrollURL();
+ 
+            // init to EXTERNAL URL
+            initScrollURL();
             });
         } else {
+            // init to EXTERNAL URL
             initScrollURL();
         }
     }
@@ -228,12 +231,12 @@ $(function() {
 
                     var thisOffsetDefault = (isMobile.matches) ? offsetDefault.mobile : offsetDefault.desktop;
 
-                    var thisOffsetConfig = (isMobile.matches) ? ('mobile' in offsetConfig) ? offsetConfig.mobile : 0 : ('desktop' in offsetConfig) ? offsetConfig.desktop : 0;
+                    var thisOffsetConfig = (isMobile.matches) ? ('mobile' in offsetConfig) ? offsetConfig.mobile : null : ('desktop' in offsetConfig) ? offsetConfig.desktop : null;
 
                     // END Media Queries
 
 
-                    var postOffset = baseOffset + ((thisOffsetConfig) ? thisOffsetConfig : thisOffsetDefault);
+                    var postOffset = baseOffset + ((thisOffsetConfig === undefined || thisOffsetConfig === null) ? thisOffsetDefault : thisOffsetConfig);
 
                     // Scroll Animate
                     clearTimeout(timer);
