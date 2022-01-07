@@ -52,6 +52,8 @@
 
     <link rel="preload" href="<?php echo $view->getStylesheet('main.less')?>" as="style">
 
+    <link rel="preload" href="/packages/theme_lazy5basic/themes/lazy5basic/images/pre-loader.gif" as="image">
+
     <?php View::element('header_required', $sPage)?>
 
     <?php if (User::isLoggedIn()) { echo $html->css($theme->getPackagePath() . '/css/tools/c5-ui.css'); }?>
