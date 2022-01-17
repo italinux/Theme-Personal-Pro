@@ -1176,10 +1176,10 @@ class Controller extends BlockController
     protected function getBlockForegroundImageURL($fID, $w = null, $h = null)
     {
         // set thumbnail width
-        $width = ($w ==  false) ? $this->getImageWidth() : $w;
+        $width = ($w == false) ? $this->getImageWidth() : $w;
 
         // set thumbnail height
-        $height = ($h ==  false) ? $this->getImageHeight() : $h;
+        $height = ($h == false) ? $this->getImageHeight() : $h;
 
         // get source thumbnail image
         return (is_object($fID) ? parse_url(BlockUtils::getThisApp()->make('helper/image')->getThumbnail($fID, $width, $height, true)->src, PHP_URL_PATH) : null);
