@@ -1725,6 +1725,10 @@ class Controller extends BlockController
             $args[$key] = LinkAbstractor::translateTo($args[$key]);
         }
 
+        // Sort inputs (all items) before saving
+        $args = BlockUtils::getSortItemsBeforeSaving(self::get_btItemsTotal(), $args);
+
+        // now save
         parent::save($args);
     }
  

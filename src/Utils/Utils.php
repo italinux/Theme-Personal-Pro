@@ -476,4 +476,50 @@ class Utils {
 
         return array('grid' => array_replace_recursive($grid, $shared), 'offset' => $offset);
     }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * @param int $btItemsTotal
+    * @param array $args
+    *
+    * @return array
+    */
+    public static function getSortItemsBeforeSaving($btItemsTotal, $args)
+    {
+
+        // BUILD MIRROR ARRAY with SORTED KEYS
+        $a=array();
+
+        // Loop multiple items to Map new OUTPUT
+        for ($i=1; $i<($btItemsTotal+1); $i++) {
+            $a['o'.$i.'_'] = ($args['o'.$i.'_isEnabled'] == 1) ? 1 : 0;
+        }
+
+        // preserve arrays keys for later use
+        $ar1= array_keys($a);
+
+        // preserve array's values for later use
+        $ar2= array_values($a);
+
+        // perform sorting by value and then by key
+        array_multisort($ar2, SORT_DESC, $ar1, SORT_ASC);
+
+        // combine sorted values and keys arrays to new array
+        $a = array_combine($ar1, $ar2);
+
+        $b = array_keys($a);
+
+        // SHIFT ARRAY to KEY 1 (one) rather than 0 (zero)
+        array_unshift($b, null);
+        unset($b[0]);
+
+        // SORT and REPLACE
+        $o=array();
+
+        // Loop multiple items to CREATE now OUTPUT
+        foreach ($args as $key => $value) {
+            $o['o' . array_search(strtok($key, '_') . '_', $b) . strstr($key, '_', false)] = $value;
+        }
+
+        return array_replace($args, $o);
+    }
 }
