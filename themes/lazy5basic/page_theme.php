@@ -109,6 +109,13 @@ class PageTheme extends Theme
         return cPackage::create()->getRelativePath();
     }
 
+    public function getThemePath()
+    {
+        $app = cPackage::create();
+
+        return $app->getRelativePath() . '/' . $app->_getThemePath();
+    }
+
     public function getThemeAreaClasses()
     {
 

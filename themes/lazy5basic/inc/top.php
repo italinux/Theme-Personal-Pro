@@ -24,23 +24,36 @@
   defined('C5_EXECUTE') or die("Access Denied.");
 
   /* - - - - - - - - - - - - - - - - - - - 
-  * SEO Metatags info page
+  * SEO Metatags - Default app.php
   */
   $seo = \Config::get('app.config.SEO');
   $sPage = (is_array($seo['page']) == false ? array() : array_map('html_entity_decode', array_map("t", $seo['page'])));
   $domain = trim(strtolower(\Config::get('app.config.domain')));
 
-  // Fetch site name
-  // 1. app.php
-  // 2. dashboard
-  $siteName = ($seo['siteName'] == true ? $seo['siteName'] : \Config::get('concrete.site'));
+  /* - - - - - - - - - - - - - - - - - - -
+  * SEO Metatags - Dashboard
+  */
+  // Title
+  $sPage['pageTitle'] = ($c->getAttribute('meta_title') == true) ? $c->getAttribute('meta_title') : $sPage['pageTitle'];
 
-  // Add domain to title (is enabled)
+  // Description
+  $sPage['pageDescription'] = ($c->getAttribute('meta_description') == true) ? $c->getAttribute('meta_description') : $sPage['pageDescription'];
+
+  // Keywords
+  $sPage['pageKeywords'] = ($c->getAttribute('meta_keywords') == true) ? $c->getAttribute('meta_keywords') : $sPage['pageKeywords'];
+
+  /* - - - - - - - - - - - - - - - - - - -
+  * SEO additionals
+  */
+  // Add domain to title (if enabled)
   if (isset($sPage['pageTitle']) && ($seo['showDomain'] == true)) {
       $sPage['pageTitle'] = sprintf('%1$s %2$s %3$s', t($sPage['pageTitle']), '-', $domain);
   }
 
-  // Add site name to title (is enabled)
+  // Fetch site name
+  $siteName = ($seo['siteName'] == true ? $seo['siteName'] : null);
+
+  // Add site name to title (if enabled)
   if (isset($sPage['pageTitle']) && ($siteName == true)) {
       $sPage['pageTitle'] = sprintf('%3$s %2$s %1$s', t($sPage['pageTitle']), '-', $siteName);
   }
@@ -52,7 +65,7 @@
 
     <link rel="preload" href="<?php echo $view->getStylesheet('main.less')?>" as="style">
 
-    <link rel="preload" href="/packages/theme_lazy5basic/themes/lazy5basic/images/pre-loader.gif" as="image">
+    <link rel="preload" href="<?php echo $theme->getThemePath()?>/images/pre-loader.gif" as="image">
 
     <?php View::element('header_required', $sPage)?>
 

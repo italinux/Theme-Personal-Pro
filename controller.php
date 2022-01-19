@@ -112,7 +112,7 @@ class Controller extends Package
     /** * * * * * * * * * * * * * * * * * * * * * * * * * *
     * Assets paths
     */
-    private static function _getThemePath() 
+    public static function _getThemePath() 
     {
         return 'themes/' . strtolower(str_replace(" ", "_", self::getPackageNameID())) . '/';
     }
