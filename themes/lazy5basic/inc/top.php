@@ -51,7 +51,7 @@
   }
 
   // Fetch site name
-  $siteName = ($seo['siteName'] == true ? $seo['siteName'] : null);
+  $siteName = ($seo['siteName'] == true) ? $seo['siteName'] : null;
 
   // Add site name to title (if enabled)
   if (isset($sPage['pageTitle']) && ($siteName == true)) {
