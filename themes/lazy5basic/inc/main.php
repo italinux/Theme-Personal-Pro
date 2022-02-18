@@ -43,7 +43,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
             // Check if is a core block and has content
             if (method_exists($block->getInstance(), 'getContent')) {
-                $blockContent[] = (trim($block->getInstance()->getContent()) === "" ? false : true);
+
+                // Check if this core block is an empty string
+                $coreBlockContent = $block->getInstance()->getContent();
+                  $blockContent[] = ( ! is_array($coreBlockContent) && trim($coreBlockContent === "")) ? false : true;
             } else {
                 // we assume it has content
                 $blockContent[] = true;
