@@ -216,6 +216,11 @@ $(function() {
                     // get handler Offset
                     var thisHandlerOffset = $(thisHandler).first().offset().top;
 
+                    // IF web use has done manual scrolling already, keep it as a target
+                    if ($(window).scrollTop() > 5) {
+                        thisHandlerOffset = $(window).scrollTop();
+                    }
+
                     // calculate speed (animation)
                     var animDurationMsecs = Math.ceil(thisHandlerOffset / speedFactor);
 
