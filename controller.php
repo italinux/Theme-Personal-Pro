@@ -114,17 +114,17 @@ class Controller extends Package
     */
     public static function _getThemePath() 
     {
-        return 'themes/' . strtolower(str_replace(" ", "_", self::getPackageNameID())) . '/';
+        return 'themes/' . strtolower(str_replace(" ", "_", self::getPackageNameID()));
     }
     
     private static function _getJsPath() 
     {
-        return self::_getThemePath() . self::$_jsPath . '/';
+        return self::_getThemePath() . '/' . self::$_jsPath;
     }
 
     private static function _getCssPath()
     {
-        return self::_getThemePath() . self::$_cssPath . '/';
+        return self::_getThemePath() . '/' . self::$_cssPath;
     }
 
     /** * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -151,19 +151,19 @@ class Controller extends Package
         * Required JS + CSS this Theme
         */
         // JS init
-        $al->register('javascript', 'jt.theme.init', self::_getJsPath() . 'init.js', $pf, $this);
+        $al->register('javascript', 'jt.theme.init', self::_getJsPath() . '/init.js', $pf, $this);
 
         // JS extra
-        $al->register('javascript', 'jt.theme.extra', self::_getJsPath() . 'extra.js', $pf, $this);
+        $al->register('javascript', 'jt.theme.extra', self::_getJsPath() . '/extra.js', $pf, $this);
 
         // Import Bootstrap
-        $al->register('css', 'cst.bootstrap', self::_getCssPath() . 'build/bootstrap/bootstrap.min.css', $ph, $this);
+        $al->register('css', 'cst.bootstrap', self::_getCssPath() . '/build/bootstrap/bootstrap.min.css', $ph, $this);
 
         // Import Bootstrap Theme
-        $al->register('css', 'cst.bootstrap-theme', self::_getCssPath() . 'build/bootstrap/bootstrap-theme.min.css', $ph, $this);
+        $al->register('css', 'cst.bootstrap-theme', self::_getCssPath() . '/build/bootstrap/bootstrap-theme.min.css', $ph, $this);
 
         // CSS font-awesome
-        $al->register('css', 'font-awesome', self::_getCssPath() . 'font-awesome/min/font-awesome.min.css', $ph, $this);
+        $al->register('css', 'font-awesome', self::_getCssPath() . '/font-awesome/min/font-awesome.min.css', $ph, $this);
 
         $al->registerGroup(
             'jst.theme.assets', array(
@@ -242,7 +242,7 @@ class Controller extends Package
         /**
         * Register Assets: Masonry
         */
-        $al->register('javascript', 'masonry-lib', self::_getJsPath() . 'min/jquery.masonry.min.js', $pf, $this);
+        $al->register('javascript', 'masonry-lib', self::_getJsPath() . '/min/jquery.masonry.min.js', $pf, $this);
 
         $al->registerGroup(
             'jst.masonry.assets', array(
@@ -256,13 +256,13 @@ class Controller extends Package
         /**
         * Required JS + CSS Animate for this Theme
         */
-        $al->register('javascript', 'jt.jquery.waypoints', self::_getJsPath() . 'min/jquery.waypoints.min.js', $pf, $this);
+        $al->register('javascript', 'jt.jquery.waypoints', self::_getJsPath() . '/min/jquery.waypoints.min.js', $pf, $this);
 
         // Register Assets Animate
-        $al->register('javascript', 'animate-lib', self::_getJsPath() . 'min/jquery.lazy.animate.min.js', $pf, $this);
+        $al->register('javascript', 'animate-lib', self::_getJsPath() . '/min/jquery.lazy.animate.min.js', $pf, $this);
 
-        $al->register('css', 'style.animate', self::_getCssPath() . 'build/animate/animate.min.css', $ph, $this);
-        $al->register('css', 'style.animate.delay', self::_getCssPath() . 'build/animate/animate.delay.min.css', $ph, $this);
+        $al->register('css', 'style.animate', self::_getCssPath() . '/build/animate/animate.min.css', $ph, $this);
+        $al->register('css', 'style.animate.delay', self::_getCssPath() . '/build/animate/animate.delay.min.css', $ph, $this);
 
         $al->registerGroup(
             'jst.animate.assets', array(
