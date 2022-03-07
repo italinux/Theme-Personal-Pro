@@ -51,8 +51,8 @@ $(function() {
             // Wait till all images are loaded
             $thisElement.find('div.main').imagesLoaded().always(function() {
  
-            // init to EXTERNAL URL
-            initScrollURL();
+                // init to EXTERNAL URL
+                initScrollURL();
             });
         } else {
             // init to EXTERNAL URL
