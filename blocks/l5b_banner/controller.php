@@ -401,7 +401,7 @@ class Controller extends BlockController
         $cName  = 'fs_videoURL';
         $pTempl = self::getAppConfigFsTemplatePath();
         $config = self::$btHandlerId . '.' . $pTempl . '.video.URL';
-        $dValue = 'http://youtu.be/SWAbthUf68o';
+        $dValue = 'http://youtu.be/3IQ0m6yC2h0';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -506,7 +506,7 @@ class Controller extends BlockController
         $cName  = 'cs_videoURL';
         $pTempl = self::getAppConfigCsTemplatePath();
         $config = self::$btHandlerId . '.' . $pTempl . '.video.URL';
-        $dValue = 'http://youtu.be/eR1K_TbUkbc';
+        $dValue = 'http://youtu.be/kQ5HGvQqtKs';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -778,7 +778,7 @@ class Controller extends BlockController
         $cName  = 'img_sd_videoURL';
         $pTempl = self::getAppConfigImg_sdTemplatePath();
         $config = self::$btHandlerId . '.' . $pTempl . '.video.URL';
-        $dValue = 'http://youtu.be/SWAbthUf68o';
+        $dValue = 'http://youtu.be/3IQ0m6yC2h0';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
