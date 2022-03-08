@@ -778,7 +778,7 @@ class Controller extends BlockController
         $cName  = 'img_sd_videoURL';
         $pTempl = self::getAppConfigImg_sdTemplatePath();
         $config = self::$btHandlerId . '.' . $pTempl . '.video.URL';
-        $dValue = 'http://youtu.be/3IQ0m6yC2h0';
+        $dValue = 'http://youtu.be/SWAbthUf68o';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
