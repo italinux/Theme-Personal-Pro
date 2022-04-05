@@ -36,7 +36,6 @@
 */
 var contacts = {
     "contacts": {
-        /*
          "subtitle": {
              offset: 500,
              effect: "lightSpeedIn",
@@ -47,7 +46,6 @@ var contacts = {
              effect: "bounceInRight",
              delay: 0,
          },
-        */
         "other-mobile": {
             offset: 640,
             effect: "bounceInRight",
