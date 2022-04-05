@@ -58,11 +58,11 @@ var what_i_do = {
                 delay: 0.5,
             },
         },
-         "title": {
-             offset: 750,
-             effect: "none",
-             delay: 0,
-         },
+        "title": {
+            offset: 750,
+            effect: "none",
+            delay: 0,
+        },
         "content": {
             0: {
                 offset: 650,
@@ -85,10 +85,10 @@ var what_i_do = {
                 delay: 0,
             },
         },
-         "cta": {
-             offset: 750,
-             effect: "none",
-             delay: 0,
-         },
+        "cta": {
+            offset: 750,
+            effect: "none",
+            delay: 0,
+        },
     },
 };

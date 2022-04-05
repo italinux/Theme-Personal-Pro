@@ -36,16 +36,16 @@
 */
 var contacts = {
     "contacts": {
-         "subtitle": {
-             offset: 500,
-             effect: "lightSpeedIn",
-             delay: 0,
-         },
-         "others": {
-             offset: 750,
-             effect: "bounceInRight",
-             delay: 0,
-         },
+        "subtitle": {
+            offset: 500,
+            effect: "lightSpeedIn",
+            delay: 0,
+        },
+        "others": {
+            offset: 750,
+            effect: "bounceInRight",
+            delay: 0,
+        },
         "other-mobile": {
             offset: 640,
             effect: "bounceInRight",
