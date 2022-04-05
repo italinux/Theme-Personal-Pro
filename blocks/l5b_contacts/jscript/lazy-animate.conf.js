@@ -43,7 +43,7 @@ var contacts = {
              delay: 0,
          },
          "others": {
-             offset: 550,
+             offset: 750,
              effect: "bounceInRight",
              delay: 0,
          },

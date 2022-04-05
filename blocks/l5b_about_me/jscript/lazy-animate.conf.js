@@ -37,17 +37,17 @@
 var about_me = {
     "about-me": {
         "photo": {
-            offset: 550,
+            offset: 750,
             effect: "fadeIn",
             delay: 0.4,
         },
         "text": {
-            offset: 550,
+            offset: 750,
             effect: "none",
             delay: 0.8,
         },
         "global-cta": {
-            offset: 550,
+            offset: 750,
             effect: "none",
             delay: 0,
         },

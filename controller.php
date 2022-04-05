@@ -263,6 +263,7 @@ class Controller extends Package
 
         $al->register('css', 'style.animate', self::_getCssPath() . '/build/animate/animate.min.css', $ph, $this);
         $al->register('css', 'style.animate.delay', self::_getCssPath() . '/build/animate/animate.delay.min.css', $ph, $this);
+        $al->register('css', 'style.animate.duration', self::_getCssPath() . '/build/animate/animate.duration.min.css', $ph, $this);
 
         $al->registerGroup(
             'jst.animate.assets', array(
@@ -281,6 +282,10 @@ class Controller extends Package
                array(
                    'css',
                    'style.animate.delay'
+               ),
+               array(
+                   'css',
+                   'style.animate.duration'
                ),
             )
         );
