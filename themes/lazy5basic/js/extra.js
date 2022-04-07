@@ -172,6 +172,16 @@ $(function() {
         var thisHash = $(location).attr("hash").split('?')[0];
 
         /**
+        *      IF auto smooth scrolling parameter giver (anchor #wyp-)
+        *  AND IF web use has done manual scrolling already
+        * THEN DO NOT proceed with ANY auto smooth scrolling
+        */
+        if ((thisHash.substring(0, 5) == '#wyp-') && ($(window).scrollTop() > 5)) {
+            // EXIT function SUCCESS
+            return true;
+        }
+
+        /**
         *  if smooth scrolling is called from another page (Multipage)
         *  we add prefix #wyp- to adjust the target
         */
@@ -215,11 +225,6 @@ $(function() {
 
                     // get handler Offset
                     var thisHandlerOffset = $(thisHandler).first().offset().top;
-
-                    // IF web use has done manual scrolling already, keep it as a target
-                    if ($(window).scrollTop() > 5) {
-                        thisHandlerOffset = $(window).scrollTop();
-                    }
 
                     // calculate speed (animation)
                     var animDurationMsecs = Math.ceil(thisHandlerOffset / speedFactor);
