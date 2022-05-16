@@ -37,7 +37,7 @@ echo $cStyle;
       foreach ($allData as $key => $value) {
       ?>
 
-      <div class="main-item col-lg-12 col-md-12 col-sm-12 col-sx-12">
+      <div class="main-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <div class="wid-item-<?php echo $key?> service-item single-space-top double-space-bottom">
           <div data-animation="icon" class="service-icon <?php echo $nopaque?>">

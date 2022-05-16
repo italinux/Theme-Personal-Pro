@@ -37,7 +37,7 @@ echo $cStyle;
       foreach ($allData as $value) {
       ?>
 
-      <div class="main-item col-lg-12 col-md-12 col-sm-12 col-sx-12">
+      <div class="main-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <div data-animation="<?php echo ($id == 0 ? 'top' : 'bottom')?>-<?php echo $value['id']?>" class="service-icon <?php echo $nopaque?>">
           <a class="<?php echo (empty($value['img']['src']) == true ? 'fa fa-' . $value['icon']['tag'] . ' fa-3x ' : null); echo $value['class']?> CTA-clean"

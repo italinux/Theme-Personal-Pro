@@ -748,7 +748,7 @@ class Controller extends BlockController
                  'col-lg' => $this->getBootstrapCol_LG_Config($offset),
                  'col-md' => $this->getBootstrapCol_MD_Config($offset),
                  'col-sm' => $this->getBootstrapCol_SM_Config($offset),
-                 'col-sx' => $this->getBootstrapCol_SX_Config($offset),
+                 'col-xs' => $this->getBootstrapCol_XS_Config($offset),
                      'id' => self::getAnimateId($offset, $this->getAll_isEnabled($profiles)),
                   'class' => $this->getClassByID($key),
                    'link' => $this->getLinkByID($key),
@@ -786,9 +786,9 @@ class Controller extends BlockController
         return $this->getBootstrapCol_Config($offset, 'sm');
     }
 
-    public function getBootstrapCol_SX_Config($offset)
+    public function getBootstrapCol_XS_Config($offset)
     {
-        return $this->getBootstrapCol_Config($offset, 'sx');
+        return $this->getBootstrapCol_Config($offset, 'xs');
     }
 
     public function getBootstrapCol_Config($offset, $key)

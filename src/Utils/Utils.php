@@ -399,7 +399,7 @@ class Utils {
     *    key: Number of items to show
     *  value: Max number of items per Media per row
     *
-    *  LG = Large Screen, MD = Desktop, SM = Tablet, SX = Mobile
+    *  LG = Large Screen, MD = Desktop, SM = Tablet, XS = Mobile
     *
     *  [ OFFSET ]
     *
@@ -435,27 +435,27 @@ class Utils {
             switch ($value) {
             case 4:
 
-                $grid = array(4 => array('lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
-                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'sxMax' => 1),
-                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1));
+                $grid = array(4 => array('lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'xsMax' => 1),
+                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
 
               $offset = array(3 => array('smOffset' => 1));
 
                 break;
             case 3:
 
-                $grid = array(4 => array('lgMax' => 3, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
-                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'sxMax' => 1),
-                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1));
+                $grid = array(4 => array('lgMax' => 3, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'xsMax' => 1),
+                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
 
               $offset = array(4 => array('lgOffset' => 1),
                               3 => array('smOffset' => 1));
                 break;
             case 2:
 
-                $grid = array(4 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
-                              3 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1),
-                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'sxMax' => 1));
+                $grid = array(4 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              3 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
 
               $offset = array(3 => array('lgOffset' => 1,
                                          'mdOffset' => 1,
@@ -463,16 +463,16 @@ class Utils {
                 break;
             case 1:
 
-                $grid = array(4 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1),
-                              3 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1),
-                              2 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1));
+                $grid = array(4 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1),
+                              3 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1),
+                              2 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1));
                 break;
             }
 
             break;
         }
 
-        $shared = array(1 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'sxMax' => 1));
+        $shared = array(1 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1));
 
         return array('grid' => array_replace_recursive($grid, $shared), 'offset' => $offset);
     }
