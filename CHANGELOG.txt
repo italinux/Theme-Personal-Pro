@@ -15,5 +15,5 @@
  ------------------------------------------------
  10/04/2022 , 1.5.1 , FIX Assets Package / Controllers / Blocks
  ------------------------------------------------
- 17/05/2022 , 1.5.2 , FIX Assets JS Window Overlay / Controller
+ 17/05/2022 , 1.5.2 , FIX Bootstrap Mobile XS on View / Controller
  ------------------------------------------------
