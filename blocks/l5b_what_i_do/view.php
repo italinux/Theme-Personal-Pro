@@ -49,13 +49,32 @@ echo $cStyle;
 
         <div class="wid-item-<?php echo $key?> service-item single-space-top double-space-bottom">
           <div data-animation="icon" class="service-icon <?php echo $nopaque?>">
-            <a class="<?php echo (empty($value['img']['src']) == true ? 'fa fa-' . $value['icon']['tag'] . ' fa-4x ' : null); echo $value['class']?> CTA-clean"
-              <?php echo (($value['link'] != '' || $value['hash'] != '') ? 'target="' . $value['target'] . '" ' : null)?>
-              <?php echo (($value['link'] != '' || $value['hash'] != '') ? 'href="' . $value['link'] . $value['hash'] . '" ' : null)?>>
-              <?php echo (empty($value['img']['src']) == true ? null : '<img class="img-responsive" src="' . $value['img']['src'] . '"
-                                                                                                  width="' . $value['img']['width'] . '"
-                                                                                                 height="' . $value['img']['height'] . '"  alt="" />')?>
-            </a>
+            <?php
+              // Set link attributes (target & href)
+              $linkAttr = ($value['link'] != '' || $value['hash'] != '') ? 'target="' . $value['target'] . '" href="' . $value['link'] . $value['hash'] . '" ' : null;
+
+              // Set icon attributes (font-awesome class)
+              $iconAttr = 'fa fa-' . $value['icon']['tag'] . ' fa-4x';
+
+              // Get type (image or icon)
+              switch ($value['imageType']) {
+              case 'fID':
+              ?>
+                <a class="<?php echo (empty($value['img']['src']) == true ? $iconAttr : null)?>
+                          <?php echo $value['class']?> CTA-clean"
+                          <?php echo $linkAttr?>>
+                          <?php echo (empty($value['img']['src']) == true ? null : '<img class="img-responsive" src="' . $value['img']['src'] . '"
+                                                                                                              width="' . $value['img']['width'] . '"
+                                                                                                             height="' . $value['img']['height'] . '"  alt="" />')?></a>
+              <?php
+                  break;
+              case 'icon':
+              ?>
+                <a class="<?php echo $iconAttr?> <?php echo $value['class']?> CTA-clean" <?php echo $linkAttr?>></a>
+              <?php
+                  break;
+              }
+            ?>
           </div>
 
           <h3 data-animation="title" class="<?php echo $nopaque?>">

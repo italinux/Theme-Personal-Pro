@@ -754,6 +754,7 @@ class Controller extends BlockController
                    'link' => $this->getLinkByID($key),
                    'hash' => trim($this->get_hash($key)),
                  'target' => '_' . $this->get_target($key),
+              'imageType' => $this->get_imageType($key),
                     'img' => array(
                        'src' => $this->getBlockForegroundImageURL($this->get_fID($key)),
                      'width' => self::$btCustomImageThumbWidth,
