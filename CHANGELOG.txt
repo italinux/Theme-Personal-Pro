@@ -1,8 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 11/06/2021 , 1.4.5 , FIX Banner assets CSS on templates
- ------------------------------------------------
  09/08/2021 , 1.4.6 , FIX Assets CSS Package / Block Footer
  ------------------------------------------------
  17/08/2021 , 1.4.7 , FIX Assets JS Package / init.js
@@ -15,5 +13,7 @@
  ------------------------------------------------
  10/04/2022 , 1.5.1 , FIX Assets Package / Controllers / Blocks
  ------------------------------------------------
- 22/05/2022 , 1.5.2 , FIX Bootstrap Mobile XS on View / Controller
+ 23/05/2022 , 1.5.2 , FIX Bootstrap Mobile XS on View / Controller
+ ------------------------------------------------
+ 23/05/2022 , 1.5.3 , FIX Assets JS Window Overlay / Controller
  ------------------------------------------------
