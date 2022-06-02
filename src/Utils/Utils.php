@@ -24,7 +24,6 @@
 namespace Concrete\Package\ThemeLazy5basic\Src\Utils;
 
 use Concrete\Core\Page\Page;
-use HtmlObject\Element;
 use Concrete\Core\File\File;
 use Concrete\Core\File\Set\Set as FileSet;
 use Concrete\Core\Support\Facade\Application;
@@ -354,51 +353,41 @@ class Utils {
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    * @param $tabs
-    * @param null|string $id
+    * @param array $tabs
+    * @param bool $jstabs
+    * @param string $callback
     *
     * @return string
     */
-    public function tabs($tabs, $id = null)
+    public static function tabs($tabs, $jstabs = true, $callback = 'ccm_activateTabBar')
     {
-        $ul = new Element("ul");
-        $ul->addClass("nav");
-        $ul->addClass("nav-tabs mb-3 nav-fill");
-        $ul->setAttribute("role", "tablist");
 
-        if ($id !== null) {
-            $ul->setAttribute("id", $id);
-        }
+        $tcn = rand(0, getrandmax());
+
+        $html = '<ul class="nav-tabs nav" id="ccm-tabs-' . $tcn . '">';
 
         foreach ($tabs as $tab) {
-            $a = new Element("a");
-            $a->addClass("nav-link");
 
-            if ((isset($tab[2]) && $tab[2])) {
-                $a->addClass("active");
+            $dt = $tab[0];
+            $href = '#';
+
+            if ($jstabs == false) {
+                $dt = '';
+                $href = $tab[0];
             }
 
-            if (strpos($tab[0], "/") !== false) {
-                $a->setAttribute("href", $tab[0]);
-            } else {
-                $a->setAttribute("href", "#" . $tab[0]);
-                $a->setAttribute("data-bs-toggle", "tab");
-            }
-
-            $a->setAttribute("id", $tab[0] . "-tab");
-            $a->setAttribute("aria-controls", $tab[0]);
-            $a->setAttribute("data-tab", $tab[0]);
-            $a->setAttribute("role", "tab");
-            $a->setAttribute("aria-selected", (isset($tab[2]) && $tab[2]) ? "true" : "false");
-            $a->setValue($tab[1]);
-
-            $li = new Element("li");
-            $li->addClass("nav-item");
-            $li->appendChild($a);
-            $ul->appendChild($li);
+            $html .= '<li class="' . (($tab[2] === true) ? $tab[4] . ' active' : (($tab[3] === false) ? 'hide' : null)) . '">';
+            $html .= '  <a href="' . $href . '" data-tab="' . $dt . '">' . $tab[1] . '</a>';
+            $html .= '</li>';
         }
 
-        return (string)$ul;
+        $html .= '</ul>';
+
+        if ($jstabs) {
+            $html .= '<script type="text/javascript">$(function() { ' . $callback . '($(\'#ccm-tabs-' . $tcn . '\'));});</script>';
+        }
+
+        return $html;
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -

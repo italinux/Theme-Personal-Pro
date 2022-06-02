@@ -187,7 +187,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       <?php echo $form->text('CTA_url', $CTA_url, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                     </div>
                     <div id="CTA_linkType_pID" class="input-group center current-<?php echo $CTA_linkType?>">
-                      <?php echo $pageSelector->selectPage('CTA_pID', $CTA_pID, array())?>
+                      <?php echo $pageSelector->selectPage('CTA_pID', $CTA_pID, 'ccm_selectSitemapNode')?>
                     </div>
                   </div>
                   <div class="col-lg-3 no-sides-paddings">

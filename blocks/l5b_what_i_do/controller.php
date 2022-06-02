@@ -1366,7 +1366,7 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . self::$btHandlerId . '.conf');
+            $this->requireAsset('jst.animate.conf');
         }
 
         if ($this->getAll_hasLightbox(range(1, self::get_btItemsTotal())) == true) {
@@ -1381,7 +1381,7 @@ class Controller extends BlockController
         */
         if ((preg_match('/(^mobile_view)|(hidden_info|hidden|hide)$/', $this->getCustomTemplateName()) == false) && ($this->getLayoutColumns() != 1)) {
             // Import Masonry Configuration
-            $this->requireAsset('jst.masonry.' . self::$btHandlerId . '.init');
+            $this->requireAsset('jst.masonry.init');
         }
     }
 
@@ -1438,7 +1438,7 @@ class Controller extends BlockController
         $al->register('javascript', self::getViewPointId() . '.masonry-init', 'blocks/' . $this->getBlockHandle() . '/jscript/masonry.init.js', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.masonry.' . self::$btHandlerId . '.init', array(
+            'jst.masonry.init', array(
                array(
                    'javascript',
                    self::getViewPointId() . '.masonry-init'
@@ -1451,7 +1451,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . self::$btHandlerId . '.conf', array(
+            'jst.animate.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -2006,7 +2006,6 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');
         $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 

@@ -180,49 +180,23 @@ div.main-wrapper {
   }
 }
 
-/* Buttons Media: Custom class "fix-spaces-buttons"
----------------------------------------------------------*/
-div.main-wrapper {
-  .fix-spaces-buttons {
-    .btn {
-      white-space: normal;
-    }
-    div.global-cta {
-      .btn {
-        width: 70%;
-        margin: 0px auto;
-        text-align: center;
-        &.goto {
-          > span {
-            max-width: 150px;
-            display: inline-block;
-          }
-          &::after {
-            vertical-align: text-top;
-            margin-right: -25px;
-          }
-        }
-      }
-    }
+/* Banner
+--------------------------------------------------------- */
+section.pre-hand.banner {
+  color: @brand-banner-font-color;
+  a {
+    color: @brand-banner-link-color;
   }
-}
-
-/* Global Sections
----------------------------------------------------------*/
-section {
   &.over-image {
+    background-color: @brand-banner-background-color;
     &::before {
-      z-index: auto;
+      background-image: -webkit-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:    -moz-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:     -ms-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:      -o-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
+      background-image:         linear-gradient(to bottom, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
     }
   }
-}
-
-div[data-animation] {
-   -webkit-transform: scale(1);
-      -moz-transform: scale(1);
-       -ms-transform: scale(1);
-        -o-transform: scale(1);
-           transform: scale(1);
 }
 
 /* Menu
@@ -242,25 +216,6 @@ section.pre-hand.menu {
       div.menu-wrapper.fixed {
         background-color: @brand-menu-background-color;
       }
-    }
-  }
-}
-
-/* Banner
---------------------------------------------------------- */
-section.pre-hand.banner {
-  color: @brand-banner-font-color;
-  a {
-    color: @brand-banner-link-color;
-  }
-  &.over-image {
-    background-color: @brand-banner-background-color;
-    &::before {
-      background-image: -webkit-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
-      background-image:    -moz-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
-      background-image:     -ms-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
-      background-image:      -o-linear-gradient(top, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
-      background-image:         linear-gradient(to bottom, fade(@brand-banner-background-rgb-color, @brand-banner-background-image-opacity) @brand-banner-background-shadow-top, @brand-banner-background-shadow-color @brand-banner-background-shadow-bottom);
     }
   }
 }
@@ -556,7 +511,6 @@ section.pre-hand.testimonials {
       border-color: @body-high-bg-color;
       &.active {
         background-color: @body-high-font-color;
-        border-color: fade(@body-high-bg-color, 50%);
       }
     }
   }

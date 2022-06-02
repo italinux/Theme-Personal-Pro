@@ -61,12 +61,12 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
             <?php
               // display Tabs control
-              echo $hUI->tabs($itemsTotalTabs);
+              echo $hUI::tabs($itemsTotalTabs);
 
               for ($i=1; $i<(count($itemsTotalTabs)+1); $i++) {
             ?>
             <!-- Tabs -->
-            <div class="ccm-tab-content no-space-bottom <?php echo ($i==1) ? 'active' : null?>" id="item_<?php echo $i?>">
+            <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>" <?php echo ($i==1) ? ' style="display:block"' : null?>>
               <fieldset class="triple-space-bottom">
                 <div class="col-lg-11">
                   <div class="form-group center single-space-top link-block-opts" style="max-width: 750px;">
@@ -110,7 +110,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <?php echo $form->text('o' . $i . '_url', ${"o" . $i . "_url"}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                         </div>
                         <div id="o<?php echo $i?>_linkType_pID" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
-                          <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, array())?>
+                          <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, 'ccm_selectSitemapNode')?>
                         </div>
                       </div>
                       <div class="col-lg-3 no-sides-paddings">

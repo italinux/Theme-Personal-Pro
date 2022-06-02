@@ -53,7 +53,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: Clean Style -->
             <?php $cTempl = 'fs'?>
 
-            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_1">
+            <div class="ccm-tab-content" id="ccm-tab-content-item_1">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -157,7 +157,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -181,7 +181,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: Clean Style -->
             <?php $cTempl = 'cs'?>
 
-            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_2">
+            <div class="ccm-tab-content" id="ccm-tab-content-item_2">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -293,7 +293,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -317,7 +317,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: I am What I do -->
             <?php $cTempl = 'iam_wid'?>
 
-            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_3">
+            <div class="ccm-tab-content" id="ccm-tab-content-item_3">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -445,7 +445,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -469,7 +469,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: Image Shape dimension -->
             <?php $cTempl = 'img_sd'?>
 
-            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_4">
+            <div class="ccm-tab-content" id="ccm-tab-content-item_4">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -679,7 +679,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">

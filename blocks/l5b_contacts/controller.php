@@ -381,7 +381,7 @@ class Controller extends BlockController
 
         if ($this->getIsAnimated() === true && Page::getCurrentPage()->isEditMode() == false && Request::request('qsID') == false) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . self::$btHandlerId . '.conf');
+            $this->requireAsset('jst.animate.conf');
         }
 
         // CSS Captcha
@@ -467,7 +467,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . self::$btHandlerId . '.conf', array(
+            'jst.animate.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -691,7 +691,7 @@ class Controller extends BlockController
         $allFormInputs = array();
         $rec = $miniSurvey->loadQuestions($this->questionSetId, $this->bID);
 
-        while ($row = $rec->fetchAll()) {
+        while ($row = $rec->fetchRow()) {
             $thisInput = $row;
             $thisInput['input'] = $miniSurvey->loadInputType($row, false);
 
@@ -1717,7 +1717,6 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');
         $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 
