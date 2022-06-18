@@ -43,17 +43,17 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
             <?php
               echo $hUI->tabs(array(
-                  array('item_1', t('Free Style'), $templateDefaultTab['fs']),
-                  array('item_2', t('Clean Style'), $templateDefaultTab['cs']),
-                  array('item_3', t('I am What I do'), $templateDefaultTab['iam_wid']),
-                  array('item_4', t('Image on the Right'), $templateDefaultTab['img_sd']),
+                  array('item_1', t('Free Style'), $templateDefaultTab['fs'], true),
+                  array('item_2', t('Clean Style'), $templateDefaultTab['cs'], true),
+                  array('item_3', t('I am What I do'), $templateDefaultTab['iam_wid'], true),
+                  array('item_4', t('Image on the Right'), $templateDefaultTab['img_sd'], true),
               ));
             ?>
 
             <!-- Start Tab: Clean Style -->
             <?php $cTempl = 'fs'?>
 
-            <div class="ccm-tab-content" id="ccm-tab-content-item_1">
+            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_1">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -79,7 +79,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <div class="col-lg-3">
                             <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
-                              <div class="input-group">
+                              <div class="input-group center display-inline">
                                 <div class="radio">
                                   <label>
                                     <?php echo $form->radio($cTempl . '_isVideoEnabled', 1, (int) ${$cTempl . '_isVideoEnabled'})?>
@@ -151,13 +151,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                       </div>
 
-                      <div class="row no-margins">
+                      <div class="row no-margins single-sides-spaces">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -181,7 +181,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: Clean Style -->
             <?php $cTempl = 'cs'?>
 
-            <div class="ccm-tab-content" id="ccm-tab-content-item_2">
+            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_2">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -207,7 +207,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <div class="col-lg-3">
                             <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
-                              <div class="input-group">
+                              <div class="input-group center display-inline">
                                 <div class="radio">
                                   <label>
                                     <?php echo $form->radio($cTempl . '_isVideoEnabled', 1, (int) ${$cTempl . '_isVideoEnabled'})?>
@@ -287,13 +287,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                       </div>
 
-                      <div class="row no-margins">
+                      <div class="row no-margins single-sides-spaces">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -317,7 +317,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: I am What I do -->
             <?php $cTempl = 'iam_wid'?>
 
-            <div class="ccm-tab-content" id="ccm-tab-content-item_3">
+            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_3">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -343,7 +343,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <div class="col-lg-3">
                             <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
-                              <div class="input-group">
+                              <div class="input-group center display-inline">
                                 <div class="radio">
                                   <label>
                                     <?php echo $form->radio($cTempl . '_isVideoEnabled', 1, (int) ${$cTempl . '_isVideoEnabled'})?>
@@ -439,13 +439,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                       </div>
 
-                      <div class="row no-margins">
+                      <div class="row no-margins single-sides-spaces">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -469,7 +469,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
             <!-- Start Tab: Image Shape dimension -->
             <?php $cTempl = 'img_sd'?>
 
-            <div class="ccm-tab-content" id="ccm-tab-content-item_4">
+            <div class="ccm-tab-content <?php echo ($templateDefaultTab[$cTempl] === true) ? 'active' : null?>" id="item_4">
               <fieldset>
                 <div class="row">
                   <div class="col-lg-12">
@@ -495,7 +495,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <div class="col-lg-3">
                             <div class="form-group center no-sides-spaces double-margin-botom">
                               <?php echo $form->label($cTempl . '_isVideoEnabled', t('Video Enabled?'))?>
-                              <div class="input-group">
+                              <div class="input-group center display-inline">
                                 <div class="radio">
                                   <label>
                                     <?php echo $form->radio($cTempl . '_isVideoEnabled', 1, (int) ${$cTempl . '_isVideoEnabled'})?>
@@ -673,13 +673,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
                         </div>
                       </div>
 
-                      <div class="row no-margins">
+                      <div class="row no-margins single-sides-spaces">
                         <div class="col-lg-6 no-sides-paddings">
                           <div id="<?php echo $cTempl?>_CTA_linkType_url" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
                             <?php echo $form->text($cTempl . '_CTA_url', ${$cTempl . '_CTA_url'}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                           </div>
                           <div id="<?php echo $cTempl?>_CTA_linkType_pID" class="input-group center current-<?php echo ${$cTempl . '_CTA_linkType'}?>">
-                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, 'ccm_selectSitemapNode')?>
+                            <?php echo $pageSelector->selectPage($cTempl . '_CTA_pID', ${$cTempl . '_CTA_pID'}, array())?>
                           </div>
                         </div>
                         <div class="col-lg-3 no-sides-paddings">
@@ -713,7 +713,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="col-lg-12">
                   <div class="form-group center light-title no-margins no-sides-paddings double-space-bottom single-space-top">
                     <?php echo $form->label('bgColorRGBA', t('background colour %s', '<br /><span>(' . t('with or without transparency') . ')</span>'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format with Transparency Slider (RGBA) -->
                       <?php $color->output('bgColorRGBA', $bgColorRGBA, $bgColorPalette)?>
                     </div>
@@ -730,13 +730,13 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="row no-margins">
                       <div class="col-lg-12 no-spaces">
                         <div id="bg_imageTypes" class="input-group single-space-bottom no-margins">
-                          <div class="radio">
+                          <div class="single-sides-spaces radio">
                             <label>
                               <?php echo $form->radio('bg_imageType', 'fID', $bg_imageType)?>
                               <a><?php echo t($imageTypes['fID'])?></a>
                             </label>
                           </div>
-                          <div class="radio">
+                          <div class="single-sides-spaces radio">
                             <label>
                               <?php echo $form->radio('bg_imageType', 'sID', $bg_imageType)?>
                               <a><?php echo t($imageTypes['sID'])?></a>
@@ -802,7 +802,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="col-lg-12">
                   <div class="form-group center light-title single-space-bottom double-space-top">
                     <?php echo $form->label('fgColorRGB', t('font colour'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format -->
                       <?php $color->output('fgColorRGB', $fgColorRGB, $fgColorPalette)?>
                     </div>
@@ -839,6 +839,6 @@ defined('C5_EXECUTE') or die("Access Denied.");
 <!-- Current Template mark -->
 <script type="text/javascript">
   $(document).ready(function() {
-    $("ul.nav-tabs > li.active").prepend("<span class='active highlight'><?php echo t('current template')?></span><span class='fa fa-angle-down'></span>");
+    $("ul.nav-tabs > li.active").prepend("<span class='current highlight'><?php echo t('current template')?></span><span class='fa fa-angle-down'></span>");
   });
 </script>

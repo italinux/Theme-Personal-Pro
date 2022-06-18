@@ -24,6 +24,7 @@
 namespace Concrete\Package\ThemeLazy5basic\Src\Utils;
 
 use Concrete\Core\Page\Page;
+use HtmlObject\Element;
 use Concrete\Core\File\File;
 use Concrete\Core\File\Set\Set as FileSet;
 use Concrete\Core\Support\Facade\Application;
@@ -353,41 +354,60 @@ class Utils {
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    * @param array $tabs
-    * @param bool $jstabs
-    * @param string $callback
+    * @param $tabs
+    * @param null|string $id
     *
     * @return string
     */
-    public static function tabs($tabs, $jstabs = true, $callback = 'ccm_activateTabBar')
+    public function tabs($tabs, $id = null)
     {
+        $ul = new Element("ul");
+        $ul->addClass("nav");
+        $ul->addClass("nav-tabs mb-3 nav-fill");
+        $ul->setAttribute("role", "tablist");
 
-        $tcn = rand(0, getrandmax());
-
-        $html = '<ul class="nav-tabs nav" id="ccm-tabs-' . $tcn . '">';
+        if ($id !== null) {
+            $ul->setAttribute("id", $id);
+        }
 
         foreach ($tabs as $tab) {
+            $a = new Element("a");
+            $a->addClass("nav-link");
 
-            $dt = $tab[0];
-            $href = '#';
-
-            if ($jstabs == false) {
-                $dt = '';
-                $href = $tab[0];
+            if ((isset($tab[2]) && $tab[2])) {
+                $a->addClass("active");
             }
 
-            $html .= '<li class="' . (($tab[2] === true) ? $tab[4] . ' active' : (($tab[3] === false) ? 'hide' : null)) . '">';
-            $html .= '  <a href="' . $href . '" data-tab="' . $dt . '">' . $tab[1] . '</a>';
-            $html .= '</li>';
+            if (strpos($tab[0], "/") !== false) {
+                $a->setAttribute("href", $tab[0]);
+            } else {
+                $a->setAttribute("href", "#" . $tab[0]);
+                $a->setAttribute("data-bs-toggle", "tab");
+            }
+
+            $a->setAttribute("id", $tab[0] . "-tab");
+            $a->setAttribute("aria-controls", $tab[0]);
+            $a->setAttribute("data-tab", $tab[0]);
+            $a->setAttribute("role", "tab");
+            $a->setAttribute("aria-selected", (isset($tab[2]) && $tab[2]) ? "true" : "false");
+            $a->setValue($tab[1]);
+
+            $li = new Element("li");
+            $li->addClass("nav-item");
+
+            if ((isset($tab[2]) && $tab[2])) {
+                $li->addClass("active");
+            }
+
+            if ((! isset($tab[3]) || (! $tab[3]))) {
+                $li->addClass("hide");
+            }
+
+            $li->appendChild($a);
+            $ul->appendChild($li);
         }
 
-        $html .= '</ul>';
-
-        if ($jstabs) {
-            $html .= '<script type="text/javascript">$(function() { ' . $callback . '($(\'#ccm-tabs-' . $tcn . '\'));});</script>';
-        }
-
-        return $html;
+        return (string)$ul;
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -435,44 +455,48 @@ class Utils {
             switch ($value) {
             case 4:
 
-                $grid = array(4 => array('lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
-                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'xsMax' => 1),
-                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
+                $grid = array(4 => array('xxlMax' => 4, 'xlMax' => 4, 'lgMax' => 4, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              3 => array('xxlMax' => 3, 'xlMax' => 3, 'lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'xsMax' => 1),
+                              2 => array('xxlMax' => 2, 'xlMax' => 2, 'lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
 
               $offset = array(3 => array('smOffset' => 1));
 
                 break;
             case 3:
 
-                $grid = array(4 => array('lgMax' => 3, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
-                              3 => array('lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'xsMax' => 1),
-                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
+                $grid = array(4 => array('xxlMax' => 3, 'xlMax' => 3, 'lgMax' => 3, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              3 => array('xxlMax' => 3, 'xlMax' => 3, 'lgMax' => 3, 'mdMax' => 3, 'smMax' => 2, 'xsMax' => 1),
+                              2 => array('xxlMax' => 2, 'xlMax' => 2, 'lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
 
-              $offset = array(4 => array('lgOffset' => 1),
+              $offset = array(4 => array('xxlOffset' => 1,
+                                          'xlOffset' => 1,
+                                          'lgOffset' => 1),
                               3 => array('smOffset' => 1));
                 break;
             case 2:
 
-                $grid = array(4 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
-                              3 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
-                              2 => array('lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
+                $grid = array(4 => array('xxlMax' => 2, 'xlMax' => 2, 'lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              3 => array('xxlMax' => 2, 'xlMax' => 2, 'lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1),
+                              2 => array('xxlMax' => 2, 'xlMax' => 2, 'lgMax' => 2, 'mdMax' => 2, 'smMax' => 2, 'xsMax' => 1));
 
-              $offset = array(3 => array('lgOffset' => 1,
-                                         'mdOffset' => 1,
-                                         'smOffset' => 1));
+              $offset = array(3 => array('xxlOffset' => 1,
+                                          'xlOffset' => 1,
+                                          'lgOffset' => 1,
+                                          'mdOffset' => 1,
+                                          'smOffset' => 1));
                 break;
             case 1:
 
-                $grid = array(4 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1),
-                              3 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1),
-                              2 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1));
+                $grid = array(4 => array('xxlMax' => 1, 'xlMax' => 1, 'lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1),
+                              3 => array('xxlMax' => 1, 'xlMax' => 1, 'lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1),
+                              2 => array('xxlMax' => 1, 'xlMax' => 1, 'lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1));
                 break;
             }
 
             break;
         }
 
-        $shared = array(1 => array('lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1));
+        $shared = array(1 => array('xxlMax' => 1, 'xlMax' => 1, 'lgMax' => 1, 'mdMax' => 1, 'smMax' => 1, 'xsMax' => 1));
 
         return array('grid' => array_replace_recursive($grid, $shared), 'offset' => $offset);
     }

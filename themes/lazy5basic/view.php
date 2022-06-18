@@ -41,7 +41,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
       <section class="page-block">
         <div class="container-fluid">
           <div class="row main">
-            <div class="col-xs-12">
+            <div class="col-12">
               <?php echo $innerContent?>
             </div>
           </div>

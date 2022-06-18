@@ -29,8 +29,8 @@ echo $cStyle;
   <div class="container-fluid" id="<?php echo $viewPoint?>">
     <div class="row main">
 
-      <div class="col-xs-12 about-me-left">
-        <div data-animation="photo" class="about-me-photo <?php echo $imageClass?>">
+      <div class="col-12 about-me-left">
+        <div data-animation="photo" class="<?php echo $nopaque?> about-me-photo <?php echo $imageClass?>">
           <div class="loader"></div>
           <?php
             if ($image['default']) {
@@ -45,8 +45,8 @@ echo $cStyle;
           <img class="img-responsive <?php echo $playNow?>" width="<?php echo $image['width']?>" height="<?php echo $image['height']?>" src="<?php echo $image['path']?>" alt="" />
         </div>
       </div>
-      <div class="col-xs-12 about-me-right">
-        <div data-animation="text" class="about-me-text">
+      <div class="col-12 about-me-right">
+        <div data-animation="text" class="<?php echo $nopaque?> about-me-text">
 
           <!-- title -->
           <?php echo (trim($title) == true ? "<h2>" . h($title) . "</h2>" : null)?>
@@ -57,7 +57,7 @@ echo $cStyle;
 
       <!-- global (unique) CTA button -->
       <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
-        <div data-animation="global-cta" class="global-cta">
+        <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta">
           <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
             <span>
               <?php echo h($CTA['text'])?>

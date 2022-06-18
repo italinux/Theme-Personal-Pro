@@ -28,11 +28,3 @@ section.about-me.mobile_view_image_clean div.about-me-photo img {
   border: none;
   border-radius: 0%;
 }
-
-section.about-me.mobile_view_image_clean div.main > div.about-me-left {
-  float: left;
-}
-
-section.about-me.mobile_view_image_clean div.main > div.about-me-right {
-  float: right;
-}
