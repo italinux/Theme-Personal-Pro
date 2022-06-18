@@ -15,5 +15,5 @@
  ------------------------------------------------
  23/05/2022 , 1.5.2 , FIX Bootstrap Mobile XS on View / Controller
  ------------------------------------------------
- 18/06/2022 , 2.5.3 , Ready for Concrete CMS Version 9
+ 18/06/2022 , 1.5.3 , FIX Assets JS Window Overlay / Controller
  ------------------------------------------------

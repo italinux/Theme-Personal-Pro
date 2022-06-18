@@ -1280,8 +1280,6 @@ class Controller extends BlockController
         $offset++;
 
             $o[$key] = array(
-                'col-xxl' => $this->getBootstrapCol_XXL_Config($offset),
-                 'col-xl' => $this->getBootstrapCol_XL_Config($offset),
                  'col-lg' => $this->getBootstrapCol_LG_Config($offset),
                  'col-md' => $this->getBootstrapCol_MD_Config($offset),
                  'col-sm' => $this->getBootstrapCol_SM_Config($offset),
@@ -1311,16 +1309,6 @@ class Controller extends BlockController
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
     * This block GRID Methods
     */
-    public function getBootstrapCol_XXL_Config($offset)
-    {
-        return $this->getBootstrapCol_Config($offset, 'xxl');
-    }
-
-    public function getBootstrapCol_XL_Config($offset)
-    {
-        return $this->getBootstrapCol_Config($offset, 'xl');
-    }
-
     public function getBootstrapCol_LG_Config($offset)
     {
         return $this->getBootstrapCol_Config($offset, 'lg');
@@ -1378,12 +1366,12 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . self::$btHandlerId . '.conf');
+            $this->requireAsset('jst.animate.conf');
         }
 
         if ($this->getAll_hasLightbox(range(1, self::get_btItemsTotal())) == true) {
             // load Magnific-popup : Css & JS
-            $this->requireAsset('feature/imagery/frontend');
+            $this->requireAsset('core/lightbox');
         }
 
         /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1393,7 +1381,7 @@ class Controller extends BlockController
         */
         if ((preg_match('/(^mobile_view)|(hidden_info|hidden|hide)$/', $this->getCustomTemplateName()) == false) && ($this->getLayoutColumns() != 1)) {
             // Import Masonry Configuration
-            $this->requireAsset('jst.masonry.' . self::$btHandlerId . '.init');
+            $this->requireAsset('jst.masonry.init');
         }
     }
 
@@ -1450,7 +1438,7 @@ class Controller extends BlockController
         $al->register('javascript', self::getViewPointId() . '.masonry-init', 'blocks/' . $this->getBlockHandle() . '/jscript/masonry.init.js', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.masonry.' . self::$btHandlerId . '.init', array(
+            'jst.masonry.init', array(
                array(
                    'javascript',
                    self::getViewPointId() . '.masonry-init'
@@ -1463,7 +1451,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . self::$btHandlerId . '.conf', array(
+            'jst.animate.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -1703,7 +1691,7 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = null;
+                    $args[$key] = 'transparent';
                 }
                 break;
             }
@@ -2018,7 +2006,6 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');
         $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 

@@ -74,10 +74,10 @@
                 <showLogo><![CDATA[1]]></showLogo>
                 <o1_fID><![CDATA[0]]></o1_fID>
                 <showLanguage><![CDATA[0]]></showLanguage>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>
@@ -194,12 +194,12 @@
                 <img_sd_videoURL><![CDATA[http://youtu.be/SWAbthUf68o]]></img_sd_videoURL>
                 <videoStartFrom><![CDATA[1]]></videoStartFrom>
                 <videoStartTo><![CDATA[5]]></videoStartTo>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
                 <bgSID><![CDATA[0]]></bgSID>
                 <bg_imageType><![CDATA[fID]]></bg_imageType>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>
@@ -268,10 +268,10 @@
                 <o4_content><![CDATA[<p>Laeva successorio <strong>Euphratis dextra</strong> cum limes cognomentum regna efficaciae</p>]]></o4_content>
                 <o4_button><![CDATA[check it out]]></o4_button>
                 <layoutColumns><![CDATA[4]]></layoutColumns>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>
@@ -307,10 +307,10 @@ here you will write information about yourself or your business.</p>
                 <isImageStretched><![CDATA[1]]></isImageStretched>
                 <o1_fID><![CDATA[0]]></o1_fID>
                 <o1_sID><![CDATA[0]]></o1_sID>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>
@@ -341,10 +341,10 @@ Saturday: 9am - 2pm
 Sunday: Closed]]></openHours>
                 <telephoneType><![CDATA[telephone]]></telephoneType>
                 <telephone><![CDATA[+0 (1)2 34 56 78]]></telephone>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>
@@ -395,10 +395,10 @@ Sunday: Closed]]></openHours>
                 <o4_imageType><![CDATA[icon]]></o4_imageType>
                 <o4_fID><![CDATA[0]]></o4_fID>
                 <layoutColumns><![CDATA[4]]></layoutColumns>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>
@@ -419,10 +419,10 @@ Sunday: Closed]]></openHours>
                 <credits2ndMessage><![CDATA[developed with ♥ by]]></credits2ndMessage>
                 <credits2ndName><![CDATA[Matteo]]></credits2ndName>
                 <credits2ndUrl><![CDATA[http://matteo-montanari.com/its-me]]></credits2ndUrl>
-                <bgColorRGBA><![CDATA[]]></bgColorRGBA>
+                <bgColorRGBA><![CDATA[transparent]]></bgColorRGBA>
                 <bgColorOpacity><![CDATA[1]]></bgColorOpacity>
                 <bgFID><![CDATA[0]]></bgFID>
-                <fgColorRGB><![CDATA[]]></fgColorRGB>
+                <fgColorRGB><![CDATA[transparent]]></fgColorRGB>
                 <isAnimated><![CDATA[1]]></isAnimated>
               </record>
             </data>

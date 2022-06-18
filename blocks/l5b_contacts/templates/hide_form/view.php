@@ -33,17 +33,17 @@ echo $cStyle;
     </div>
 
     <div class="row main">
-      <div id="<?php echo $viewPoint?>-more" data-animation="others" class="others col-12">
+      <div id="<?php echo $viewPoint?>-more" data-animation="others" class="others col-xs-12">
 
       <?php 
         if ((trim($telephone) == true) || (trim($email) == true) || (trim($fbPageUrl) == true)) {
         ?>
-        <div class="col-xxl-3 offset-xxl-1 col-md-4 offset-md-0 col-12">
+        <div class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-0 col-xs-12">
 
         <?php
           if (trim($telephone) == true) {
           ?>
-          <div id="<?php echo $viewPoint?>-more-mobile" data-animation="other-mobile" class="col-12">
+          <div id="<?php echo $viewPoint?>-more-mobile" data-animation="other-mobile" class="col-xs-12">
             <div class="col-lg-8">
               <h4><?php echo $telephoneTitle?>:</h4>
             </div>
@@ -63,7 +63,7 @@ echo $cStyle;
         <?php
           if (trim($email) == true) {
           ?>
-          <div id="<?php echo $viewPoint?>-more-email" data-animation="other-email" class="col-12">
+          <div id="<?php echo $viewPoint?>-more-email" data-animation="other-email" class="col-xs-12">
             <div class="col-lg-8">
               <h4><?php echo t('E-mail')?>:</h4>
             </div>
@@ -85,7 +85,7 @@ echo $cStyle;
         <?php
           if (trim($fbPageUrl) == true) {
           ?>
-          <div data-animation="other-facebook" class="col-12">
+          <div data-animation="other-facebook" class="col-xs-12">
             <div>
               <div class="col-lg-8">
                 <h4>Facebook:</h4>
@@ -112,7 +112,7 @@ echo $cStyle;
       <?php
         if (trim($openHours) == true) {
         ?>
-        <div data-animation="other-opening" class="col-md-4 col-12" style="text-align: center">
+        <div data-animation="other-opening" class="col-md-4 col-xs-12" style="text-align: center">
           <div>
             <div class="col-lg-8">
               <h4><?php echo t('Openings')?>:</h4>
@@ -136,7 +136,7 @@ echo $cStyle;
       <?php
         if (trim($address) == true) {
         ?>
-        <div id="<?php echo $viewPoint?>-more-address" data-animation="other-address" class="col-xxl-3 offset-xxl-1 col-md-4 offset-md-0 col-12">
+        <div id="<?php echo $viewPoint?>-more-address" data-animation="other-address" class="col-lg-3 col-lg-offset-1 col-md-4 col-md-offset-0 col-xs-12">
           <div>
             <div class="col-lg-8">
               <h4><?php echo t('Address')?>:</h4>

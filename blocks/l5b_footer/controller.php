@@ -250,7 +250,7 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . self::$btHandlerId . '.conf');
+            $this->requireAsset('jst.animate.conf');
         }
     }
 
@@ -310,7 +310,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("footer#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . self::$btHandlerId . '.conf', array(
+            'jst.animate.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -492,7 +492,7 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = null;
+                    $args[$key] = 'transparent';
                 }
                 break;
             }
@@ -727,13 +727,12 @@ class Controller extends BlockController
         $this->set('btWrapperForm', $this->btWrapperForm);
 
         // User Interface
-        $this->set('hUI', new BlockUtils());
+        $this->set('hUI', BlockUtils::getThisApp()->make('helper/concrete/ui'));
 
         $this->addFormDefaultValues();
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');
         $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 

@@ -360,12 +360,6 @@ section.about-me div.about-me-photo img {
     transform: rotate(360deg);
   }
 }
-section.about-me div.main > div {
-  overflow: hidden;
-}
-section.about-me div.main div.about-me-photo.with-stretched-image {
-  width: 100%;
-}
 section.about-me div.main div.about-me-photo {
   width: fit-content;
   margin-left: auto;
@@ -375,6 +369,9 @@ section.about-me div.main div.about-me-photo {
   padding-left: 7%;
   padding-right: 7%;
   text-align: center;
+}
+section.about-me div.main div.about-me-photo.with-stretched-image {
+  width: 100%;
 }
 section.about-me div.main div.about-me-photo div.msg-default {
   position: absolute;
