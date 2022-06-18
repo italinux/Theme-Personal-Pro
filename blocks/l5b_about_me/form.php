@@ -123,7 +123,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                     <div class="form-group center single-space-top no-space-bottom">
                       <label class="control-label single-space-top no-space-bottom" style="margin-top: 10px"><?php echo t('stretched?')?></label>
                     </div>
-                    <div class="input-group center single-space-top">
+                    <div class="input-group center single-space-top display-inline">
                     <?php echo $form->checkbox('isImageStretched', 1, (int) $isImageStretched)?>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                       <?php echo $form->text('CTA_url', $CTA_url, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                     </div>
                     <div id="CTA_linkType_pID" class="input-group center current-<?php echo $CTA_linkType?>">
-                      <?php echo $pageSelector->selectPage('CTA_pID', $CTA_pID, 'ccm_selectSitemapNode')?>
+                      <?php echo $pageSelector->selectPage('CTA_pID', $CTA_pID, array())?>
                     </div>
                   </div>
                   <div class="col-lg-3 no-sides-paddings">
@@ -215,7 +215,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="col-lg-12">
                   <div class="form-group center light-title no-margins no-sides-paddings double-space-bottom single-space-top">
                     <?php echo $form->label('bgColorRGBA', t('background colour %s', '<br /><span>(' . t('with or without transparency') . ')</span>'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format with Transparency Slider (RGBA) -->
                       <?php $color->output('bgColorRGBA', $bgColorRGBA, $bgColorPalette)?>
                     </div>
@@ -257,7 +257,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="col-lg-12">
                   <div class="form-group center light-title single-space-bottom double-space-top">
                     <?php echo $form->label('fgColorRGB', t('font colour'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format -->
                       <?php $color->output('fgColorRGB', $fgColorRGB, $fgColorPalette)?>
                     </div>

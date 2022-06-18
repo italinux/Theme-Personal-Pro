@@ -110,7 +110,7 @@ echo $cStyle;
         if (trim($telephone) == true) {
         ?>
         <div id="<?php echo $viewPoint?>-more-mobile" data-animation="other-mobile" class="col-md-12 col-sm-12">
-          <div class="col-xs-12">
+          <div class="col-12">
             <div class="col-md-12">
               <h4><?php echo $telephoneTitle?>:</h4>
             </div>
@@ -132,7 +132,7 @@ echo $cStyle;
         if (trim($address) == true) {
         ?>
         <div id="<?php echo $viewPoint?>-more-address" data-animation="other-address" class="col-md-12 col-sm-12">
-          <div class="col-xs-12">
+          <div class="col-12">
             <div class="col-md-12">
               <h4><?php echo t('Address')?>:</h4>
             </div>
@@ -156,7 +156,7 @@ echo $cStyle;
         if (trim($openHours) == true) {
         ?>
         <div data-animation="other-opening" class="col-md-12 col-sm-12">
-          <div class="col-xs-12">
+          <div class="col-12">
             <div class="col-md-12">
               <h4><?php echo t('Opening')?>:</h4>
             </div>
@@ -180,7 +180,7 @@ echo $cStyle;
         if (trim($fbPageUrl) == true) {
         ?>
         <div data-animation="other-facebook" class="col-md-12 col-sm-12">
-          <div class="col-xs-12">
+          <div class="col-12">
             <div class="col-md-12">
               <h4>Facebook:</h4>
             </div>
@@ -204,7 +204,7 @@ echo $cStyle;
         if (trim($email) == true) {
         ?>
         <div id="<?php echo $viewPoint?>-more-email" data-animation="other-email" class="col-md-12 col-sm-12">
-          <div class="col-xs-12">
+          <div class="col-12">
             <div class="col-md-12">
               <h4><?php echo t('E-mail')?>:</h4>
             </div>

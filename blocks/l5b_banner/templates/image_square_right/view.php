@@ -36,7 +36,7 @@ echo $cStyle;
       <span class="<?php echo $videoStatus['class']?>"></span>
     </div>
     <div class="row main">
-      <div class="col-sm-6 col-md-4 col-md-offset-1 banner-left">
+      <div class="col-md-4 offset-md-1 col-sm-6 banner-left">
         <div class="banner-text">
           <?php echo (trim(${$cTempl . '_title'}) == true ? '<h1 data-animation="title" class="' . $nopaque . '">' . h(${$cTempl . '_title'}) . "</h1>" : null)?>
           <?php echo (trim(${$cTempl . '_subtitle'}) == true ? '<h4 data-animation="subtitle" class="' . $nopaque . '">' . h(${$cTempl . '_subtitle'}) . "</h4>" : null)?>

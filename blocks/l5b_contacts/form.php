@@ -50,7 +50,7 @@ $c = Page::getCurrentPage();
           <input type="hidden" id="msqID" name="msqID" type="text" value="<?php echo intval($msqID)?>" />
       
 <!-- Tab Options -->
-          <div class="ccm-tab-content" id="ccm-tab-content-item_4">
+          <div class="ccm-tab-content" id="item_4">
             <fieldset>
               <legend><?php echo t('Options')?></legend>
               <div class="form-group">
@@ -80,7 +80,7 @@ $c = Page::getCurrentPage();
           </div>
 
 <!-- Tab Captha -->
-          <div class="ccm-tab-content" id="ccm-tab-content-item_5">
+          <div class="ccm-tab-content" id="item_5">
             <fieldset>
               <legend><?php echo t('Captcha')?></legend>
 
@@ -134,7 +134,7 @@ $c = Page::getCurrentPage();
           </div>
 
 <!-- Tab Add -->
-          <div class="ccm-tab-content" id="ccm-tab-content-item_1">
+          <div class="ccm-tab-content" id="item_1">
             <fieldset id="newQuestionBox">
               <legend><?php echo t('New Question')?></legend>                
               
@@ -217,7 +217,7 @@ $c = Page::getCurrentPage();
           </div> 
 
 <!-- Tab Edit -->
-          <div class="ccm-tab-content" id="ccm-tab-content-item_2">
+          <div class="ccm-tab-content" id="item_2">
             <div class="alert alert-success" id="questionEditedMsg" style="display:none">
               <?php echo t('Your question has been saved.')?>
             </div>
@@ -301,7 +301,7 @@ $c = Page::getCurrentPage();
             </div>
           </div>
                   
-          <div class="ccm-tab-content" id="ccm-tab-content-item_3">
+          <div class="ccm-tab-content" id="item_3">
             <fieldset>
               <legend><?php echo t('Preview Survey')?></legend>
               <div id="miniSurveyPreviewWrap"></div>
@@ -432,7 +432,7 @@ $c = Page::getCurrentPage();
                 <div class="col-lg-12">
                   <div class="form-group center light-title no-margins no-sides-paddings double-space-bottom single-space-top">
                     <?php echo $form->label('bgColorRGBA', t('background colour %s', '<br /><span>(' . t('with or without transparency') . ')</span>'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format with Transparency Slider (RGBA) -->
                       <?php $color->output('bgColorRGBA', $bgColorRGBA, $bgColorPalette)?>
                     </div>
@@ -474,7 +474,7 @@ $c = Page::getCurrentPage();
                 <div class="col-lg-12">
                   <div class="form-group center light-title single-space-bottom double-space-top">
                     <?php echo $form->label('fgColorRGB', t('font colour'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format -->
                       <?php $color->output('fgColorRGB', $fgColorRGB, $fgColorPalette)?>
                     </div>
