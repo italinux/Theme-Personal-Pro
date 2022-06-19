@@ -37,7 +37,7 @@ echo $cStyle;
       foreach ($allData as $key => $value) {
       ?>
 
-      <div class="main-item col-12">
+      <div class="main-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
         <div class="wid-item-<?php echo $key?> service-item single-space-top double-space-bottom">
           <div data-animation="icon" class="service-icon <?php echo $nopaque?>">
@@ -98,7 +98,7 @@ echo $cStyle;
 <!-- global (unique) CTA button -->
 <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
     <div class="row">
-      <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta col-12">
+      <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta col-xs-12">
         <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
           <span>
             <?php echo h($CTA['text'])?>

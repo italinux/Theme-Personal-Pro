@@ -1449,7 +1449,7 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . $this->getBlockAssetsId() . '.conf');
+            $this->requireAsset('jst.animate.conf');
         }
 
         /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1464,7 +1464,7 @@ class Controller extends BlockController
 
             if ($this->getHasLightbox($cTempl) == true) {
                 // load Magnific-popup : Css & JS
-                $this->requireAsset('feature/imagery/frontend');
+                $this->requireAsset('core/lightbox');
             }
         }
 
@@ -1608,7 +1608,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . $this->getBlockAssetsId() . '.conf', array(
+            'jst.animate.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -1844,7 +1844,7 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = null;
+                    $args[$key] = 'transparent';
                 }
                 break;
             }
@@ -1903,11 +1903,6 @@ class Controller extends BlockController
     protected function getJSelectorId()
     {
         return $this->getSectionId() . '.' . self::$btHandlerId;
-    }
-
-    protected function getBlockAssetsId()
-    {
-        return $this->getJSelectorId();
     }
  
     protected function getSelectorBlock()
@@ -2296,13 +2291,12 @@ class Controller extends BlockController
         $this->set('pageSelector', BlockUtils::getThisApp()->make('helper/form/page_selector'));
 
         // User Interface
-        $this->set('hUI', new BlockUtils());
+        $this->set('hUI', BlockUtils::getThisApp()->make('helper/concrete/ui'));
 
         $this->addFormDefaultValues();
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
-        $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');
         $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 

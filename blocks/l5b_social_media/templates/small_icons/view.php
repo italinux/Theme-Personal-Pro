@@ -38,18 +38,14 @@ echo $cStyle;
       ?>
 
       <div class="main-item
-        <?php echo 'col-xxl-' . $value['col-xxl'][0]?>
-        <?php echo 'offset-xxl-' . $value['col-xxl']['offset']?>
-        <?php echo 'col-xl-' . $value['col-xl'][0]?>
-        <?php echo 'offset-xl-' . $value['col-xl']['offset']?>
         <?php echo 'col-lg-' . $value['col-lg'][0]?>
-        <?php echo 'offset-lg-' . $value['col-lg']['offset']?>
+        <?php echo 'col-lg-offset-' . $value['col-lg']['offset']?>
         <?php echo 'col-md-' . $value['col-md'][0]?>
-        <?php echo 'offset-md-' . $value['col-md']['offset']?>
+        <?php echo 'col-md-offset-' . $value['col-md']['offset']?>
         <?php echo 'col-sm-' . $value['col-sm'][0]?>
-        <?php echo 'offset-sm-' . $value['col-sm']['offset']?>
-        <?php echo 'col-' . $value['col-xs'][0]?>
-        <?php echo 'offset-' . $value['col-xs']['offset']?>">
+        <?php echo 'col-sm-offset-' . $value['col-sm']['offset']?>
+        <?php echo 'col-xs-' . $value['col-xs'][0]?>
+        <?php echo 'col-xs-offset-' . $value['col-xs']['offset']?>">
 
         <div data-animation="<?php echo ($id == 0 ? 'top' : 'bottom')?>-<?php echo $value['id']?>" class="service-icon <?php echo $nopaque?>">
           <?php

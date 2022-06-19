@@ -38,18 +38,14 @@ echo $cStyle;
       ?>
 
       <div class="main-item
-        <?php echo 'col-xxl-' . $value['col-xxl'][0]?>
-        <?php echo 'offset-xxl-' . $value['col-xxl']['offset']?>
-        <?php echo 'col-xl-' . $value['col-xl'][0]?>
-        <?php echo 'offset-xl-' . $value['col-xl']['offset']?>
         <?php echo 'col-lg-' . $value['col-lg'][0]?>
-        <?php echo 'offset-lg-' . $value['col-lg']['offset']?>
+        <?php echo 'col-lg-offset-' . $value['col-lg']['offset']?>
         <?php echo 'col-md-' . $value['col-md'][0]?>
-        <?php echo 'offset-md-' . $value['col-md']['offset']?>
+        <?php echo 'col-md-offset-' . $value['col-md']['offset']?>
         <?php echo 'col-sm-' . $value['col-sm'][0]?>
-        <?php echo 'offset-sm-' . $value['col-sm']['offset']?>
-        <?php echo 'col-' . $value['col-xs'][0]?>
-        <?php echo 'offset-' . $value['col-xs']['offset']?>">
+        <?php echo 'col-sm-offset-' . $value['col-sm']['offset']?>
+        <?php echo 'col-xs-' . $value['col-xs'][0]?>
+        <?php echo 'col-xs-offset-' . $value['col-xs']['offset']?>">
 
         <div class="wid-item-<?php echo $key?> service-item single-space-top double-space-bottom">
           <div data-animation="icon" class="service-icon <?php echo $nopaque?>">
@@ -110,7 +106,7 @@ echo $cStyle;
 <!-- global (unique) CTA button -->
 <?php if ((trim($CTA['text']) != '') && ((trim($CTA['link']) != '') || (trim($CTA['hash']) != ''))) {?>
     <div class="row">
-      <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta col-12">
+      <div data-animation="global-cta" class="<?php echo $nopaque?> global-cta col-xs-12">
         <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="btn btn-primary <?php echo $CTA['class']?>" target="<?php echo $CTA['target']?>">
           <span>
             <?php echo h($CTA['text'])?>
