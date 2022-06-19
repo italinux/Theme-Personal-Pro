@@ -181,7 +181,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
      // - - - - - - - - - - - - - - - - - - - - - - - - -
      // JQuery function BEFORE form submission
      //
-     $("form").on("submit", function(e){
+     //  ADD & EDIT: <form method="post" id="ccm-block-form" class="validate" enctype="multipart/form-data">
+     //
+     //  ADD SUBMIT: <input type="submit" name="ccm-add-block-submit" value="submit" style="display: none" id="ccm-form-submit-button">
+     // EDIT SUBMIT: <input type="submit" name="ccm-edit-block-submit" value="submit" style="display: none" id="ccm-form-submit-button">
+     //
+     $("form input[type=submit]").on('click', function(e) {
+
+       // - - - - - - - - - - - - - - - - - - - - - - - - -
        // this will prevent the default submit
        // commented because on insert would not work otherwise !important
        // e.preventDefault();
@@ -259,6 +266,22 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
       $("ul.nav-tabs").append('<li class="ui-sortable-disabled ' + plusHide + ' plus"><span class="fa fa-plus fa-2x"></span></li>');
 
+      // - - - - - - - - - - - - -
+      // ACTIVATE this Tab (A)
+      //
+      $("ul.nav-tabs > li > a").on("click", function() {
+
+        var $thisParent = $(this).parent();
+
+        // remove active class from all Tabs controls
+        $thisParent.siblings('li').children('a').removeClass('active');
+        $thisParent.siblings('li').removeClass('active');
+
+        // add active class to current tab control
+        $(this).addClass('active');
+        $thisParent.addClass('active');
+      });
+
       // - - - - - - - - - - - - - - - - - - - - - - - - -
       // Show new data-tab (function)
       //
@@ -277,6 +300,12 @@ defined('C5_EXECUTE') or die("Access Denied.");
             if (p1 == 'plus') {
               $(this).changeStatusItem(1);
             }
+
+            // remove active class from all Tabs
+            $(this).siblings().removeClass('active');
+
+            // add active class to this Tab + animate (fadeIn)
+            $(this).addClass('active');
             $(this).fadeIn(animSecs, 'swing');
           }
         });

@@ -112,7 +112,7 @@ class Controller extends BlockController
                    'url' => null,
                   'hash' => null,
                 'target' => 'self',
-                 'icon'  => 'pencil',
+                 'icon'  => 'pencil-square-o',
                  'title' => t('paperbacks'),
                'content' => '<p>Crebritate tunica die et armatis nihil muros <strong>mandato obscuro</strong> Polam prope celeri</p>',
                 'button' => t('check it out'),
@@ -814,8 +814,6 @@ class Controller extends BlockController
             'clone',
             'close',
             'cloud',
-            'cloud-download',
-            'cloud-upload',
             'code',
             'code-fork',
             'coffee',
@@ -824,8 +822,6 @@ class Controller extends BlockController
             'comment',
             'comment-o',
             'comments',
-            'comments-o',
-            'commenting',
             'commenting-o',
             'compass',
             'copyright',
@@ -836,8 +832,6 @@ class Controller extends BlockController
             'crosshairs',
             'cube',
             'cubes',
-            'cutlery',
-            'dashboard',
             'database',
             'deaf',
             'desktop',
@@ -855,12 +849,9 @@ class Controller extends BlockController
             'envelope-open-o',
             'envelope-square',
             'eraser',
-            'exchange',
             'exclamation',
             'exclamation-circle',
             'exclamation-triangle',
-            'external-link',
-            'external-link-square',
             'eye',
             'eye-slash',
             'eyedropper',
@@ -938,8 +929,6 @@ class Controller extends BlockController
             'leaf',
             'legal',
             'lemon-o',
-            'level-down',
-            'level-up',
             'life-saver',
             'lightbulb-o',
             'line-chart',
@@ -949,14 +938,12 @@ class Controller extends BlockController
             'magic',
             'magnet',
             'mail-forward',
-            'mail-reply',
             'mail-reply-all',
             'male',
             'map',
             'map-o',
             'map-pin',
             'map-signs',
-            'map-marker',
             'meh-o',
             'microchip',
             'microphone',
@@ -965,7 +952,6 @@ class Controller extends BlockController
             'minus-circle',
             'minus-square',
             'minus-square-o',
-            'mobile',
             'money',
             'moon-o',
             'mortar-board',
@@ -980,7 +966,6 @@ class Controller extends BlockController
             'paper-plane',
             'paper-plane-o',
             'paw',
-            'pencil',
             'pencil-square',
             'pencil-square-o',
             'percent',
@@ -1026,14 +1011,11 @@ class Controller extends BlockController
             'share-alt-square',
             'share-square',
             'share-square-o',
-            'shield',
             'ship',
             'shopping-bag',
             'shopping-basket',
             'shopping-cart',
             'shower',
-            'sign-in',
-            'sign-out',
             'sign-language',
             'signal',
             'sitemap',
@@ -1043,16 +1025,12 @@ class Controller extends BlockController
             'soccer-ball-o',
             'sort',
             'sort-alpha-asc',
-            'sort-alpha-desc',
             'sort-amount-asc',
-            'sort-amount-desc',
             'sort-asc',
             'sort-desc',
             'sort-numeric-asc',
-            'sort-numeric-desc',
             'space-shuttle',
             'spinner',
-            'spoon',
             'square',
             'square-o',
             'star',
@@ -1065,8 +1043,6 @@ class Controller extends BlockController
             'suitcase',
             'sun-o',
             'support',
-            'tablet',
-            'tachometer',
             'tag',
             'tags',
             'tasks',
@@ -1080,17 +1056,14 @@ class Controller extends BlockController
             'thumbs-down',
             'thumbs-o-up',
             'thumbs-up',
-            'ticket',
             'times',
             'times-circle',
             'times-circle-o',
-            'times-rectangle',
             'times-rectangle-o',
             'tint',
             'toggle-off',
             'toggle-on',
             'trademark',
-            'trash',
             'trash-o',
             'tree',
             'trophy',
@@ -1120,13 +1093,11 @@ class Controller extends BlockController
             'warning',
             'wheelchair',
             'wheelchair-alt',
-            'window-close',
             'window-close-o',
             'window-maximize',
             'window-restore',
             'wifi',
             'wrench',
-            'facebook'
         );
     }
 
@@ -1378,7 +1349,7 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . self::$btHandlerId . '.conf');
+            $this->requireAsset('jst.animate.' . $this->getBlockAssetsId() . '.conf');
         }
 
         if ($this->getAll_hasLightbox(range(1, self::get_btItemsTotal())) == true) {
@@ -1463,7 +1434,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . self::$btHandlerId . '.conf', array(
+            'jst.animate.' . $this->getBlockAssetsId() . '.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -1766,6 +1737,11 @@ class Controller extends BlockController
     protected function getJSelectorId()
     {
         return $this->getSectionId() . '.' . self::$btHandlerId;
+    }
+
+    protected function getBlockAssetsId()
+    {
+        return $this->getJSelectorId();
     }
  
     protected function getSelectorBlock()

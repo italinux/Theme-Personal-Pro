@@ -90,5 +90,10 @@ var what_i_do = {
             effect: "none",
             delay: 0,
         },
+        "global-cta": {
+            offset: 750,
+            effect: "none",
+            delay: 0,
+        },
     },
 };

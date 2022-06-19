@@ -250,7 +250,7 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.' . self::$btHandlerId . '.conf');
+            $this->requireAsset('jst.animate.' . $this->getBlockAssetsId() . '.conf');
         }
     }
 
@@ -310,7 +310,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("footer#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.' . self::$btHandlerId . '.conf', array(
+            'jst.animate.' . $this->getBlockAssetsId() . '.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -536,6 +536,11 @@ class Controller extends BlockController
     protected function getJSelectorId()
     {
         return $this->getSectionId() . '.' . self::$btHandlerId;
+    }
+
+    protected function getBlockAssetsId()
+    {
+        return $this->getJSelectorId();
     }
  
     protected function getSelectorBlock()
