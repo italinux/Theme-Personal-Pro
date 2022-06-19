@@ -39,13 +39,13 @@ class Controller extends Package
 {
 
     protected $pkgHandle = 'theme_lazy5basic';
-    protected $pkgVersion = '1.5.3';
+    protected $pkgVersion = '2.5.3';
     protected $pkgPrefix = 'l5b';
     protected $pkgAlias = 'Personal Pro';
 
     protected $pkgAllowsFullContentSwap = true;
 
-    protected $appVersionRequired = '5.7.5.9';
+    protected $appVersionRequired = '9.0';
 
     protected $pkg;
 
@@ -63,6 +63,10 @@ class Controller extends Package
         'social_media',
         'footer'
     );
+
+    protected $pkgAutoloaderRegistries = [
+        'src/Utils' => '\Concrete\Package\ThemeLazy5basic\Src\Utils',
+    ];
 
     public static function create()
     {
@@ -159,9 +163,6 @@ class Controller extends Package
         // Import Bootstrap
         $al->register('css', 'cst.bootstrap', self::_getCssPath() . '/build/bootstrap/bootstrap.min.css', $ph, $this);
 
-        // Import Bootstrap Theme
-        $al->register('css', 'cst.bootstrap-theme', self::_getCssPath() . '/build/bootstrap/bootstrap-theme.min.css', $ph, $this);
-
         // CSS font-awesome
         $al->register('css', 'font-awesome', self::_getCssPath() . '/font-awesome/min/font-awesome.min.css', $ph, $this);
 
@@ -178,10 +179,6 @@ class Controller extends Package
                array(
                    'css',
                    'cst.bootstrap'
-               ),
-               array(
-                   'css',
-                   'cst.bootstrap-theme'
                ),
                array(
                    'css',
@@ -256,6 +253,7 @@ class Controller extends Package
         /**
         * Required JS + CSS Animate for this Theme
         */
+        $al->register('javascript', 'jt.jquery.migrate', self::_getJsPath() . '/min/jquery.migrate.min.js', $pf, $this);
         $al->register('javascript', 'jt.jquery.waypoints', self::_getJsPath() . '/min/jquery.waypoints.min.js', $pf, $this);
 
         // Register Assets Animate
@@ -267,9 +265,13 @@ class Controller extends Package
 
         $al->registerGroup(
             'jst.animate.assets', array(
-                array(
-                    'javascript',
-                    'jt.jquery.waypoints'
+               array(
+                   'javascript',
+                   'jt.jquery.migrate'
+               ),
+               array(
+                   'javascript',
+                   'jt.jquery.waypoints'
                ),
                array(
                    'javascript',

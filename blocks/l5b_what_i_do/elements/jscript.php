@@ -52,7 +52,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
            // Content Toggle (show|hide)
            $(this).siblings("div.ccm-tab-content").hide();
-           $(this).siblings("div#ccm-tab-content-" + tabData).show();
+           $(this).siblings("div#" + tabData).show();
          },
        change: function(e, ui) {},
        update: function(e, ui) {
@@ -106,7 +106,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                      "input:radio[id*=_linkType]",
                      "input:radio[id*=_imageType]" ], function(id, el) {
 
-             $("#ccm-tab-content-" + tabData).find(el).each(function () {
+             $("#" + tabData).find(el).each(function () {
 
                if ($(this).length) {
 
@@ -148,7 +148,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                  "input:radio[id*=_linkType]",
                  "input:radio[id*=_imageType]" ], function(key, el) {
 
-         $("#ccm-tab-content-" + tabData).find(el).each(function() {
+         $("div#" + tabData).find(el).each(function() {
 
            if ($(this).length) {
 
@@ -181,7 +181,14 @@ defined('C5_EXECUTE') or die("Access Denied.");
      // - - - - - - - - - - - - - - - - - - - - - - - - -
      // JQuery function BEFORE form submission
      //
-     $("form").on("submit", function(e){
+     //  ADD & EDIT: <form method="post" id="ccm-block-form" class="validate" enctype="multipart/form-data">
+     //
+     //  ADD SUBMIT: <input type="submit" name="ccm-add-block-submit" value="submit" style="display: none" id="ccm-form-submit-button">
+     // EDIT SUBMIT: <input type="submit" name="ccm-edit-block-submit" value="submit" style="display: none" id="ccm-form-submit-button">
+     //
+     $("form input[type=submit]").on('click', function(e) {
+
+       // - - - - - - - - - - - - - - - - - - - - - - - - -
        // this will prevent the default submit
        // commented because on insert would not work otherwise !important
        // e.preventDefault();
@@ -213,7 +220,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                    "input:radio[id*=_linkType]",
                    "input:radio[id*=_imageType]" ], function(id, el) {
 
-           $("#ccm-tab-content-" + tabData).find(el).each(function() {
+           $("div#" + tabData).find(el).each(function() {
 
              if ($(this).length) {
 
@@ -259,6 +266,22 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
       $("ul.nav-tabs").append('<li class="ui-sortable-disabled ' + plusHide + ' plus"><span class="fa fa-plus fa-2x"></span></li>');
 
+      // - - - - - - - - - - - - -
+      // ACTIVATE this Tab (A)
+      //
+      $("ul.nav-tabs > li > a").on("click", function() {
+
+        var $thisParent = $(this).parent();
+
+        // remove active class from all Tabs controls
+        $thisParent.siblings('li').children('a').removeClass('active');
+        $thisParent.siblings('li').removeClass('active');
+
+        // add active class to current tab control
+        $(this).addClass('active');
+        $thisParent.addClass('active');
+      });
+
       // - - - - - - - - - - - - - - - - - - - - - - - - -
       // Show new data-tab (function)
       //
@@ -272,17 +295,23 @@ defined('C5_EXECUTE') or die("Access Denied.");
         var dataTab = this.siblings('.active').eq(0).children('a').attr('data-tab');
 
         this.parent().siblings('div.ccm-tab-content').hide(0, function() {
-          if ($(this).attr('id') == 'ccm-tab-content-' + dataTab) {
+          if ($(this).attr('id') == dataTab) {
 
             if (p1 == 'plus') {
               $(this).changeStatusItem(1);
             }
+
+            // remove active class from all Tabs
+            $(this).siblings().removeClass('active');
+
+            // add active class to this Tab + animate (fadeIn)
+            $(this).addClass('active');
             $(this).fadeIn(animSecs, 'swing');
           }
         });
 
         if (p1 == 'minus') {
-          $('div#ccm-tab-content-' + this.children('a').attr('data-tab')).changeStatusItem(0);
+          $('div#' + this.children('a').attr('data-tab')).changeStatusItem(0);
         }
       };
 
@@ -307,6 +336,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
         var $thisParent = $(this).parent();
 
         $thisParent.siblings().removeClass('only active');
+        $thisParent.siblings().children('a').removeClass('active');
+
+        $thisParent.siblings('.hide').eq(0).children('a').addClass('active');
         $thisParent.siblings('.hide').eq(0).addClass('active').removeClass('hide');
 
         // - - - - - - - - - - - - -
@@ -330,6 +362,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
         if ($thisParent.hasClass('active')) {
 
           var $thisTab = ($thisParent.nextAll('li:not(.hide, .plus):first').length == true) ? $thisParent.nextAll('li:not(.hide, .plus):first') : $thisParent.prevAll('li:not(.hide, .plus):first');
+              $thisTab.children('a').addClass('active');
               $thisTab.addClass('active');
         }
 
@@ -339,6 +372,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
         $thisParent.activeTab('minus', 200);
 
         // hide current tab control
+        $thisParent.children('a').removeClass('active');
         $thisParent.removeClass('active').addClass('hide');
 
         // min tabs reached, so hide minus

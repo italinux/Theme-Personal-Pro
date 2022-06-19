@@ -61,12 +61,12 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
             <?php
               // display Tabs control
-              echo $hUI::tabs($itemsTotalTabs);
+              echo $hUI->tabs($itemsTotalTabs);
 
               for ($i=1; $i<(count($itemsTotalTabs)+1); $i++) {
             ?>
             <!-- Tabs -->
-            <div class="ccm-tab-content no-space-bottom" id="ccm-tab-content-item_<?php echo $i?>" <?php echo ($i==1) ? ' style="display:block"' : null?>>
+            <div class="ccm-tab-content no-space-bottom <?php echo ($i==1) ? 'active' : null?>" id="item_<?php echo $i?>">
               <fieldset class="triple-space-bottom">
                 <div class="col-lg-11">
                   <div class="form-group center single-space-top link-block-opts" style="max-width: 750px;">
@@ -110,7 +110,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <?php echo $form->text('o' . $i . '_url', ${"o" . $i . "_url"}, array('maxlength' => 255,  'placeholder' => t('http://blah-blah.com/%1$s-%2$s', t('web'), t('page'))))?>
                         </div>
                         <div id="o<?php echo $i?>_linkType_pID" class="input-group center current-<?php echo ${"o" . $i . "_linkType"}?>">
-                          <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, 'ccm_selectSitemapNode')?>
+                          <?php echo $pageSelector->selectPage('o' . $i . '_pID', ${"o" . $i . "_pID"}, array())?>
                         </div>
                       </div>
                       <div class="col-lg-3 no-sides-paddings">
@@ -219,7 +219,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="col-lg-12 separator-top">
                   <div class="form-group center light-title no-margins no-sides-paddings single-space-bottom double-space-top">
                     <?php echo $form->label('bgColorRGBA', t('background colour %s', '<br /><span>(' . t('with or without transparency') . ')</span>'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format with Transparency Slider (RGBA) -->
                       <?php $color->output('bgColorRGBA', $bgColorRGBA, $bgColorPalette)?>
                     </div>
@@ -261,7 +261,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                 <div class="col-lg-12">
                   <div class="form-group center light-title single-space-bottom double-space-top">
                     <?php echo $form->label('fgColorRGB', t('font colour'))?>
-                    <div class="input-group">
+                    <div class="input-group center p50">
                       <!-- Show a Color Palette in RGB Color Format -->
                       <?php $color->output('fgColorRGB', $fgColorRGB, $fgColorPalette)?>
                     </div>

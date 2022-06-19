@@ -498,7 +498,7 @@ class Controller extends BlockController
         */
         if ($this->getIsAnimationEnabled() === true) {
             // Import Animations CSS & JS Configuration
-            $this->requireAsset('jst.animate.conf');
+            $this->requireAsset('jst.animate.' . $this->getBlockAssetsId() . '.conf');
         }
 
         if ($this->getShowLanguage() === true) {
@@ -606,7 +606,7 @@ class Controller extends BlockController
         $al->register('javascript-inline', $this->getJSelectorId() . '.animate-init',  '$("section#' . $this->getSectionId()  . '").lazyAnimate(' . $this->getSelectorBlock() . ');', $cf, $this->getPackageHandle());
 
         $al->registerGroup(
-            'jst.animate.conf', array(
+            'jst.animate.' . $this->getBlockAssetsId() . '.conf', array(
                array(
                    'javascript',
                    $this->getJSelectorId() . '.animate-conf'
@@ -840,7 +840,7 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = 'transparent';
+                    $args[$key] = null;
                 }
                 break;
             }
@@ -879,6 +879,11 @@ class Controller extends BlockController
     protected function getJSelectorId()
     {
         return $this->getSectionId() . '.' . self::$btHandlerId;
+    }
+
+    protected function getBlockAssetsId()
+    {
+        return $this->getJSelectorId();
     }
  
     protected function getSelectorBlock()
@@ -1199,6 +1204,7 @@ class Controller extends BlockController
         $this->addFormExtraValues();
 
         // Add Assets to Window Overlay
+        $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');
         $this->addLocalAssets('../../../css/tools/lazy-global-ui.css', 'css');
     }
 

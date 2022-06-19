@@ -29,7 +29,7 @@ echo $cStyle;
   <div class="container-fluid" id="<?php echo $viewPoint?>">
     <div class="row main">
 
-      <div class="col-xs-12 about-me-left">
+      <div class="col-12 about-me-left">
         <div data-animation="photo" class="<?php echo $nopaque?> about-me-photo <?php echo $imageClass?>">
           <div class="loader"></div>
           <?php
@@ -45,7 +45,7 @@ echo $cStyle;
           <img class="img-responsive <?php echo $playNow?>" width="<?php echo $image['width']?>" height="<?php echo $image['height']?>" src="<?php echo $image['path']?>" alt="" />
         </div>
       </div>
-      <div class="col-xs-12 about-me-right">
+      <div class="col-12 about-me-right">
         <div data-animation="text" class="<?php echo $nopaque?> about-me-text">
 
           <!-- title -->

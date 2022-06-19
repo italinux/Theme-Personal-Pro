@@ -29,8 +29,8 @@ echo $cStyle;
   <div class="container-fluid" id="<?php echo $viewPoint?>">
     <div class="row main">
 
-      <div class="col-xs-12 about-me-left"></div>
-      <div class="col-xs-12 about-me-right">
+      <div class="col-12 about-me-left"></div>
+      <div class="col-12 about-me-right">
         <div data-animation="text" class="<?php echo $nopaque?> about-me-text">
 
           <!-- title -->
