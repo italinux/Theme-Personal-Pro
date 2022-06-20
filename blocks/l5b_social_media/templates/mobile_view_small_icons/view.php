@@ -45,7 +45,7 @@ echo $cStyle;
             $linkAttr = ($value['link'] != '' || $value['hash'] != '') ? 'target="' . $value['target'] . '" href="' . $value['link'] . $value['hash'] . '" ' : null;
 
             // Set icon attributes (font-awesome class)
-            $iconAttr = 'fa fa-' . $value['icon']['tag'] . ' fa-4x';
+            $iconAttr = 'fa fa-' . $value['icon']['tag'] . ' fa-3x';
 
             // Get type (image or icon)
             switch ($value['imageType']) {

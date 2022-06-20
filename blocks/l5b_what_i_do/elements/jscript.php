@@ -36,23 +36,32 @@ defined('C5_EXECUTE') or die("Access Denied.");
          stop: function(e, ui) {
 
            // - - - - - - - - - - - - - - - - - - - - - - - - -
-           // New Tab position (after drag & drop)
-           var endPosition = ui.item.index();
+           // Tab Control current position (after drag & drop)
+           var thisPosition = ui.item.index();
 
-           // Targets
+           // Tab Control current Target
            var listTarget = $(this).children("li:not(.ui-sortable-disabled)");
-           var thisTarget = listTarget.eq(endPosition);
+           var thisTarget = listTarget.eq(thisPosition);
 
            var tabData = thisTarget.children('a').attr('data-tab');
 
            // - - - - - - - - - - - - - - - - - - - - - - - - -
-           // Tabs Toggle Actives
+           // Tabs Control remove ALL Actives
            listTarget.removeClass('active');
-           thisTarget.addClass('active');
+           listTarget.children('a').removeClass('active');
 
-           // Content Toggle (show|hide)
-           $(this).siblings("div.ccm-tab-content").hide();
-           $(this).siblings("div#" + tabData).show();
+           // - - - - - - - - - - - - - - - - - - - - - - - - -
+           // Tab Control current add Actives
+           thisTarget.addClass('active');
+           thisTarget.children('a').addClass('active');
+
+           // - - - - - - - - - - - - - - - - - - - - - - - - -
+           // Tabs Content remove ALL Actives
+           $(this).siblings("div.ccm-tab-content").removeClass('active');
+
+           // - - - - - - - - - - - - - - - - - - - - - - - - -
+           // Tab Content current add Actives
+           $(this).siblings("div#" + tabData).addClass('active');
          },
        change: function(e, ui) {},
        update: function(e, ui) {
@@ -63,10 +72,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
          // Target input name & value
          var inputName, inputValue;
 
-
          // - - - - - - - - - - - - - - - - - - - - - - - - -
          // Reset Tab text Titles
-         $("ul.nav-tabs > li:not(.ui-sortable-disabled)").each(function (key, value) {
+         $("ul.nav-tabs > li:not(.ui-sortable-disabled)").each(function(key, value) {
 
            // Target anchor
            aTarget = $(this).children('a');
@@ -106,7 +114,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                      "input:radio[id*=_linkType]",
                      "input:radio[id*=_imageType]" ], function(id, el) {
 
-             $("#" + tabData).find(el).each(function () {
+             $("#" + tabData).find(el).each(function() {
 
                if ($(this).length) {
 
@@ -140,7 +148,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
      //
      $("ul.nav-tabs > li:not(.ui-sortable-disabled)").each(function() {
 
-     tabData = $(this).children('a').attr('data-tab');
+       tabData = $(this).children('a').attr('data-tab');
 
        // - - - - - - - - - - - - - - - - - - - - - - - - -
        // Loop through fields indexes
@@ -191,7 +199,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
        // - - - - - - - - - - - - - - - - - - - - - - - - -
        // this will prevent the default submit
        // commented because on insert would not work otherwise !important
-       // e.preventDefault();
+       //e.preventDefault();
 
        // Target key
        var tabData;
@@ -273,11 +281,11 @@ defined('C5_EXECUTE') or die("Access Denied.");
 
         var $thisParent = $(this).parent();
 
-        // remove active class from all Tabs controls
+        // Tabs Control remove ALL Actives
         $thisParent.siblings('li').children('a').removeClass('active');
         $thisParent.siblings('li').removeClass('active');
 
-        // add active class to current tab control
+        // Tab Control current add Actives
         $(this).addClass('active');
         $thisParent.addClass('active');
       });
@@ -301,10 +309,10 @@ defined('C5_EXECUTE') or die("Access Denied.");
               $(this).changeStatusItem(1);
             }
 
-            // remove active class from all Tabs
+            // Tabs Content remove ALL Actives
             $(this).siblings().removeClass('active');
 
-            // add active class to this Tab + animate (fadeIn)
+            // Tab Content current add Actives + animate (fadeIn)
             $(this).addClass('active');
             $(this).fadeIn(animSecs, 'swing');
           }
@@ -371,7 +379,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
         //
         $thisParent.activeTab('minus', 200);
 
-        // hide current tab control
+        // Tab Control current Hide
         $thisParent.children('a').removeClass('active');
         $thisParent.removeClass('active').addClass('hide');
 
