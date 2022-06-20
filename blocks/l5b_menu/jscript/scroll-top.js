@@ -1,7 +1,7 @@
 /**
 * ============================================
 * File type: Conf
-* File provides: SCROLL-TOP on click
+* File provides: SCROLL-TOP Menu Navigation 
 *
 * @author:  Matteo Montanari <matteo@italinux.com>
 *
@@ -25,40 +25,15 @@
 * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 * IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 * ============================================
-* SCROLL-TOP on click menu logo | title
-* ============================================
 */
 
 $(function() {
 
     if (CCM_EDIT_MODE === false) {
-      
-        $(".scroll-top").click(function(e) {
 
-            e.preventDefault();
-
-            var speedFactor = 3.5; // + o - speed (play with decimals first)
-
-            // minimum animation duration in millisecs
-            var animDurationMsecsDefault = 500;
-
-            // get current element offset
-            var thisElementOffset = $(this).offset().top;
-
-            // calculate speed (animation)
-            var animDurationMsecs = Math.ceil(thisElementOffset / speedFactor);
-
-            // final speed (animation)
-            var thisAnimDurationMsecs = (animDurationMsecs < animDurationMsecsDefault) ? animDurationMsecsDefault : animDurationMsecs;
-
-            // Scroll Animate
-            $("html, body").animate({
-                scrollTop: 0
-            }, thisAnimDurationMsecs, "swing");
-        });
     /*
     * ============================================
-    * SCROLL-TOP on click title
+    * NAVIGATION TITLE: APPEARING (FadeIn)
     * ============================================
     */
         var thisNavbar = $("section.menu");
@@ -90,6 +65,34 @@ $(function() {
             } else {
                 thisNavbar.find('.nav-title').removeClass(showClass);
             }
+        });
+    /*
+    * ============================================
+    * NAVIGATION LOGO & TITLE: SCROLL-TOP on Click
+    * ============================================
+    */
+        $("section.menu div.title-wrapper .scroll-top").click(function(e) {
+
+            e.preventDefault();
+
+            var speedFactor = 3.5; // + o - speed (play with decimals first)
+
+            // minimum animation duration in millisecs
+            var animDurationMsecsDefault = 500;
+
+            // get current element offset
+            var thisElementOffset = $(this).offset().top;
+
+            // calculate speed (animation)
+            var animDurationMsecs = Math.ceil(thisElementOffset / speedFactor);
+
+            // final speed (animation)
+            var thisAnimDurationMsecs = (animDurationMsecs < animDurationMsecsDefault) ? animDurationMsecsDefault : animDurationMsecs;
+
+            // Scroll Animate
+            $("html, body").animate({
+                scrollTop: 0
+            }, thisAnimDurationMsecs, "swing");
         });
     }
 });

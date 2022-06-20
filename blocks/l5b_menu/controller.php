@@ -1191,12 +1191,6 @@ class Controller extends BlockController
 
         $this->set('btWrapperForm', $this->btWrapperForm);
 
-        // Add Assets Site-Map
-        $this->requireAsset('core/sitemap');
-
-        // Page Selector
-        $this->set('pageSelector', BlockUtils::getThisApp()->make('helper/form/page_selector'));
-
         // Urls
         $this->set('hUrl', BlockUtils::getThisApp()->make('helper/concrete/urls'));
 

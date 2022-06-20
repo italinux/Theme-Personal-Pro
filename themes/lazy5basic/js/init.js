@@ -194,7 +194,7 @@ $(function() {
 
             var postOffset = baseOffset + ((thisOffsetConfig === undefined || thisOffsetConfig === null) ? thisOffsetDefault : thisOffsetConfig);
 
-            // Scroll Animate
+            // Scroll + Animate (fadeOut at completion)
             $("html, body").animate({
                 scrollTop: thisHandlerOffset - postOffset
             }, {
@@ -328,7 +328,7 @@ $(function() {
         // To be disabled if in Mobiles View
         if (window.innerWidth > minWidth) {
 
-            // Scroll Animate
+            // Scroll + Animate (fadeOut at completion)
             $("html, body").animate({
                 scrollTop: 0
             }, thisAnimDurationMsecs, "swing");

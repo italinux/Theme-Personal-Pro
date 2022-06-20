@@ -42,7 +42,7 @@ $c = Page::getCurrentPage();
                 array('item_5', t('Captcha')),
             ));
           ?>
-          <input type="hidden" name="miniSurveyServices" value="<?php echo $hUrl->getBlockTypeToolsURL($bType)?>/services" />
+          <input type="hidden" name="miniSurveyServices" value="<?php /* echo $hUrl->getBlockTypeToolsURL($bType) */?>/services" />
           <input type="hidden" id="ccm-ignoreQuestionIDs" name="ignoreQuestionIDs" value="" />
           <input type="hidden" id="ccm-pendingDeleteIDs" name="pendingDeleteIDs" value="" />
           <input type="hidden" id="qsID" name="qsID" type="text" value="<?php echo intval($miniSurveyInfo['questionSetId'])?>" />
