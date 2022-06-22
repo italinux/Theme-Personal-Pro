@@ -6,9 +6,6 @@
       <autoincrement/>
       <key/>
     </field>
-    <field name="questionSetId" type="integer">
-      <unsigned/>
-    </field>
     <field name="title" type="string" size="50">
       <default value=""/>
     </field>
@@ -52,9 +49,6 @@
     </field>
     <index name="bgFID">
       <col>bgFID</col>
-    </index>
-    <index name="questionSetId">
-      <col>questionSetId</col>
     </index>
   </table>
 </schema>

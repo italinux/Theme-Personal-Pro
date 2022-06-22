@@ -38,7 +38,7 @@ echo $cStyle;
       <?php 
         if ((trim($telephone) == true) || (trim($email) == true) || (trim($fbPageUrl) == true)) {
         ?>
-        <div class="col-xxl-3 offset-xxl-1 col-md-4 offset-md-0 col-12">
+        <div class="col-12">
 
         <?php
           if (trim($telephone) == true) {

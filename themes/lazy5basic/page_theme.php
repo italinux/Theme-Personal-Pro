@@ -40,7 +40,6 @@ class PageTheme extends Theme
             'l5b_banner' => 'clean_style',
             'l5b_what_i_do' => 'items_style_clean',
             'l5b_about_me' => 'image_clean_left',
-            'l5b_contacts' => 'flatty_yellow_light',
             'l5b_social_media' => '',
             'l5b_footer' => 'show_credits',
         );
