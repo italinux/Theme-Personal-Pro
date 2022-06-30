@@ -33,7 +33,7 @@ echo $cStyle;
     </div>
 
     <div class="row main">
-      <div id="<?php echo $viewPoint?>-more" data-animation="others" class="others col-12">
+      <div id="<?php echo $viewPoint?>-more" data-animation="others" class="others col-12" style="display: flex">
 
       <?php 
         if ((trim($telephone) == true) || (trim($email) == true) || (trim($fbPageUrl) == true)) {
