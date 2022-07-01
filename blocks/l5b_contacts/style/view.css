@@ -236,6 +236,17 @@ section.contacts.page-block {
   padding-left: 10%;
   padding-right: 10%;
 }
+
+/* START center all content */
+section.contacts div.main {
+  text-align: center;
+}
+section.contacts div[class*="col-"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* END center all content */
+
 section.contacts > div.disabled {
   opacity: 0.85;
   background-color: transparent;

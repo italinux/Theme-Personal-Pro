@@ -325,10 +325,9 @@ here you will write information about yourself or your business.</p>
       </area>
       <area name="Contacts">
         <blocks>
-          <block type="l5b_contacts" name="" custom-template="flatty_yellow_light">
+          <block type="l5b_contacts" name="" custom-template="">
             <data table="btLazy5basicContacts">
               <record>
-                <questionSetId><![CDATA[1591897234]]></questionSetId>
                 <title><![CDATA[contact me]]></title>
                 <subtitle><![CDATA[yeah, go ahead!]]></subtitle>
                 <address><![CDATA[10 rue de Example

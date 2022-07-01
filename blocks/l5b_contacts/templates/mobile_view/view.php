@@ -112,7 +112,7 @@ echo $cStyle;
       <?php
         if (trim($openHours) == true) {
         ?>
-        <div data-animation="other-opening" class="col-md-4 col-12" style="text-align: center">
+        <div data-animation="other-opening" class="col-md-4 col-12">
           <div>
             <div class="col-lg-8">
               <h4><?php echo t('Openings')?>:</h4>
