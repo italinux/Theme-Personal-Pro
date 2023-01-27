@@ -92,13 +92,84 @@ class Controller extends BlockController
 
     // Server cached version even if user is logged in
     protected $btCacheBlockOutputForRegisteredUsers = true;
-
+ 
     /**
     * When block caching is enabled and output caching is enabled for a block,
     * this is the value in seconds before cache being refreshed. Default (0) is no limit.
     */
     protected $btCacheBlockOutputLifetime = 0;
 
+    // HOT-FIX: PHPv8 Compatibility = ADD properties all btStyles
+    // Set properties: all btStyles
+    protected $bgColorRGBA;
+    protected $bgColorOpacity;
+    protected $bgFID;
+    protected $bgSID;
+    protected $fgColorRGB;
+    protected $isAnimated;
+    protected $fs_CTA_pID;
+    protected $fs_isVideoEnabled;
+    protected $cs_CTA_pID;
+    protected $cs_isVideoEnabled;
+    protected $iam_wid_CTA_pID;
+    protected $iam_wid_isVideoEnabled;
+    protected $img_sd_CTA_pID;
+    protected $img_sd_isVideoEnabled;
+    protected $img_sd_fID;
+    protected $img_sd_sID;
+
+    // HOT-FIX: PHPv8 Compatibility = ADD properties all btFields
+    // Set properties: all btFields
+    protected $fs_content;
+    protected $fs_videoURL;
+    protected $fs_videoHQ;
+    protected $fs_CTA_url;
+    protected $fs_CTA_linkType;
+    protected $fs_CTA_hash;
+    protected $fs_CTA_target;
+    protected $fs_CTA_text;
+    protected $cs_title;
+    protected $cs_subtitle;
+    protected $cs_videoURL;
+    protected $cs_videoHQ;
+    protected $cs_CTA_url;
+    protected $cs_CTA_linkType;
+    protected $cs_CTA_hash;
+    protected $cs_CTA_target;
+    protected $cs_CTA_text;
+    protected $iam_wid_iam;
+    protected $iam_wid_title;
+    protected $iam_wid_ido;
+    protected $iam_wid_subtitle;
+    protected $iam_wid_videoURL;
+    protected $iam_wid_videoHQ;
+    protected $iam_wid_CTA_url;
+    protected $iam_wid_CTA_linkType;
+    protected $iam_wid_CTA_hash;
+    protected $iam_wid_CTA_target;
+    protected $iam_wid_CTA_text;
+    protected $img_sd_title;
+    protected $img_sd_subtitle;
+    protected $img_sd_content;
+    protected $img_sd_imageType;
+    protected $img_sd_imageWidth;
+    protected $img_sd_imageHeight;
+    protected $img_sd_videoURL;
+    protected $img_sd_videoHQ;
+    protected $img_sd_CTA_url;
+    protected $img_sd_CTA_linkType;
+    protected $img_sd_CTA_hash;
+    protected $img_sd_CTA_target;
+    protected $img_sd_CTA_text;
+    protected $bg_imageType;
+    protected $videoStartFrom;
+    protected $videoStartTo;
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Block Fields: (Styles)
+    * @description Labels for additonal Fields
+    * @return array
+    */
     protected static function get_btStyles()
     {
         return array(
@@ -1844,7 +1915,8 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = null;
+                    // HOT-FIX: PHPv8 Compatibility REMOVE = null;
+                    $args[$key] = '';
                 }
                 break;
             }
@@ -1973,7 +2045,8 @@ class Controller extends BlockController
     {
         $image = $this->getDefaultImageFullSrc('default', $idx);
 
-        return $image['url'];
+        // HOT-FIX: PHPv8 Compatibility CHECK ARRAY KEY EXISTS
+        return (array_key_exists('url', $image) ? $image['url'] : null);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2300,6 +2373,10 @@ class Controller extends BlockController
 
         $this->addFormDefaultValues();
         $this->addFormExtraValues();
+
+        // HOT-FIX: PHPv8 Compatibility = ADD set bgColorRGBA & fgColorRGB
+        $this->set('bgColorRGBA', $this->bgColorRGBA);
+        $this->set('fgColorRGB', $this->fgColorRGB);
 
         // Add Assets to Window Overlay
         $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');

@@ -27,6 +27,10 @@
   * SEO Metatags - Default app.php
   */
   $seo = \Config::get('app.config.SEO');
+
+  // HOT-FIX: PHPv8 Compatibility CHECK ARRAY KEY EXISTS
+  $seo['page'] = (isset($seo['page']) == true) ? $seo['page'] : null;
+
   $sPage = (is_array($seo['page']) == false ? array() : array_map('html_entity_decode', array_map("t", $seo['page'])));
   $domain = trim(strtolower(\Config::get('app.config.domain')));
 
@@ -34,24 +38,34 @@
   * SEO Metatags - Dashboard
   */
   // Title
+  // HOT-FIX: PHPv8 Compatibility CHECK ARRAY KEY EXISTS
+  $sPage['pageTitle'] = (isset($sPage['pageTitle']) == true) ? $sPage['pageTitle']: null;
   $sPage['pageTitle'] = ($c->getAttribute('meta_title') == true) ? $c->getAttribute('meta_title') : $sPage['pageTitle'];
 
   // Description
+  // HOT-FIX: PHPv8 Compatibility CHECK ARRAY KEY EXISTS
+  $sPage['pageDescription'] = (isset($sPage['pageDescription']) == true) ? $sPage['pageDescription']: null;
   $sPage['pageDescription'] = ($c->getAttribute('meta_description') == true) ? $c->getAttribute('meta_description') : $sPage['pageDescription'];
 
   // Keywords
+  // HOT-FIX: PHPv8 Compatibility CHECK ARRAY KEY EXISTS
+  $sPage['pageKeywords'] = (isset($sPage['pageKeywords']) == true) ? $sPage['pageKeywords']: null;
   $sPage['pageKeywords'] = ($c->getAttribute('meta_keywords') == true) ? $c->getAttribute('meta_keywords') : $sPage['pageKeywords'];
 
   /* - - - - - - - - - - - - - - - - - - -
   * SEO additionals
   */
+
+  // HOT-FIX: PHPv8 Compatibility CHECK ARRAY KEY EXISTS
+  $seo['showDomain'] = (isset($seo['showDomain']) == true) ? $seo['showDomain'] : null;
+
   // Add domain to title (if enabled)
   if (isset($sPage['pageTitle']) && ($seo['showDomain'] == true)) {
       $sPage['pageTitle'] = sprintf('%1$s %2$s %3$s', t($sPage['pageTitle']), '-', $domain);
   }
 
   // Fetch site name
-  $siteName = ($seo['siteName'] == true) ? $seo['siteName'] : null;
+  $siteName = (isset($seo['siteName']) == true) ? $seo['siteName'] : null;
 
   // Add site name to title (if enabled)
   if (isset($sPage['pageTitle']) && ($siteName == true)) {

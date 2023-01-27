@@ -34,7 +34,7 @@ echo $cStyle;
     <div class="row main">
 
     <?php
-      foreach ($allData as $value) {
+      foreach ($allData as $key => $value) {
       ?>
 
       <div class="main-item
@@ -51,7 +51,7 @@ echo $cStyle;
         <?php echo 'col-' . $value['col-xs'][0]?>
         <?php echo 'offset-' . $value['col-xs']['offset']?>">
 
-        <div data-animation="<?php echo ($id == 0 ? 'top' : 'bottom')?>-<?php echo $value['id']?>" class="service-icon <?php echo $nopaque?>">
+        <div data-animation="<?php echo ($key == 0 ? 'top' : 'bottom')?>-<?php echo $value['id']?>" class="service-icon <?php echo $nopaque?>">
           <?php
             // Set link attributes (target & href)
             $linkAttr = ($value['link'] != '' || $value['hash'] != '') ? 'target="' . $value['target'] . '" href="' . $value['link'] . $value['hash'] . '" ' : null;

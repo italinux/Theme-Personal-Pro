@@ -85,6 +85,30 @@ class Controller extends BlockController
     */
     protected $btCacheBlockOutputLifetime = 0;
 
+    // HOT-FIX: PHPv8 Compatibility = ADD properties all btStyles
+    // Set properties: all btStyles
+    protected $bgColorRGBA;
+    protected $bgColorOpacity;
+    protected $bgFID;
+    protected $fgColorRGB;
+    protected $isAnimated;
+
+    // HOT-FIX: PHPv8 Compatibility = SET Default property Value
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Block Fields: Set Default Property Value
+    * @description Prefill Fields with Values
+    * @return Mixed (string|boolean|integer)
+    */
+    protected function setDefaultValue($cName)
+    {
+        // Set Default Value for property: null
+        if ( ! isset($this->{$cName})) {
+            $this->{$cName} = null;
+        }
+
+        return $this->{$cName};
+    }
+
     protected static function get_btStyles()
     {
         return array(
@@ -170,7 +194,9 @@ class Controller extends BlockController
         $cName  = 'title';
         $config = self::$btHandlerId . '.' . $cName;
         $dValue = t('contact me');
-        
+
+        self::setDefaultValue($cName);
+
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
@@ -179,6 +205,8 @@ class Controller extends BlockController
         $cName  = 'subtitle';
         $config = self::$btHandlerId . '.' . $cName;
         $dValue = t('yeah, go ahead!');
+
+        self::setDefaultValue($cName);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -189,6 +217,8 @@ class Controller extends BlockController
         $config = self::$btHandlerId . '.telephone.type';
         $dValue = 'telephone';
 
+        self::setDefaultValue($cName);
+
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
@@ -197,6 +227,8 @@ class Controller extends BlockController
         $cName  = 'telephone';
         $config = self::$btHandlerId . '.telephone.number';
         $dValue = '+0 (1)2 34 56 78';
+
+        self::setDefaultValue($cName);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -209,6 +241,8 @@ class Controller extends BlockController
         $dValue.= t('%s Paris', '75006') . "\n";
         $dValue.= t('France');
 
+        self::setDefaultValue($cName);
+
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
@@ -219,6 +253,8 @@ class Controller extends BlockController
         $dValue = t('Monday %1$s Friday: %2$s', '-', '9am - 6pm') . "\n";
         $dValue.= t('Saturday: %s', '9am - 2pm') . "\n";
         $dValue.= t('Sunday: Closed');
+
+        self::setDefaultValue($cName);
         
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -229,6 +265,8 @@ class Controller extends BlockController
         $config = self::$btHandlerId . '.' . $cName;
         $dValue = null;
 
+        self::setDefaultValue($cName);
+
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
@@ -237,6 +275,8 @@ class Controller extends BlockController
         $cName  = 'email';
         $config = self::$btHandlerId . '.' . $cName;
         $dValue = t('%1$s@email.%2$s', t('your'), t('here'));
+
+        self::setDefaultValue($cName);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -490,7 +530,8 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = null;
+                    // HOT-FIX: PHPv8 Compatibility REMOVE = null;
+                    $args[$key] = '';
                 }
                 break;
             }
@@ -736,6 +777,10 @@ class Controller extends BlockController
 
         $this->addFormDefaultValues();
         $this->addFormExtraValues();
+
+        // HOT-FIX: PHPv8 Compatibility = ADD set bgColorRGBA & fgColorRGB
+        $this->set('bgColorRGBA', $this->bgColorRGBA);
+        $this->set('fgColorRGB', $this->fgColorRGB);
 
         // Add Assets to Window Overlay
         $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');

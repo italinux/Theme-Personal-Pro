@@ -95,13 +95,44 @@ class Controller extends BlockController
     */
     protected $btCacheBlockOutputLifetime = 0;
 
+    // HOT-FIX: PHPv8 Compatibility = ADD properties all btStyles
+    // Set properties: all btStyles
+    protected $layoutColumns;
+    protected $bgColorRGBA;
+    protected $bgColorOpacity;
+    protected $bgFID;
+    protected $fgColorRGB;
+    protected $isAnimated;
+
+    // HOT-FIX: PHPv8 Compatibility = SET Default property Value
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    * Block Fields: All Default Values in Window Overlay
+    * Block Fields: Set Default Property Value
     * @description Prefill Fields with Values
     * @return Mixed (string|boolean|integer)
     */
-    protected static function getDefaultValue($id, $key = null)
+    protected function setDefaultValue($cName)
     {
+        // Set Default Value for property: null
+        if ( ! isset($this->{$cName})) {
+            $this->{$cName} = null;
+        }
+
+        return $this->{$cName};
+    }
+
+    /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    * Block Fields: Get All Default Values in Window Overlay
+    * @description Prefill Fields with Values
+    * @return Mixed (string|boolean|integer)
+    */
+    protected function getDefaultValue($cName, $id = null, $key = null)
+    {
+        // Set default property value
+        $this->setDefaultValue($cName);
+
+        // Set default ID
+        $id = (!isset($id) ? $cName : $id);
+
         $o = array(
           'title' => t('what I do'),
           'subtitle' => null,
@@ -163,6 +194,12 @@ class Controller extends BlockController
         );
 
         return (is_array($o[$id]) ? (array_key_exists($key, $o[$id]) ? $o[$id][$key] : false) : (array_key_exists($id, $o) ? $o[$id] : false));
+    }
+
+    // HOT-FIX: PHPv8 Compatibility = SET property Value
+    protected function getThisValue($cName)
+    {
+        return $this->setDefaultValue($cName);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -443,7 +480,7 @@ class Controller extends BlockController
         $key  = 'url';
         $cName  = $id . '_'. $key;
         $config = self::$btHandlerId . '.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return trim(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}));
     }
@@ -455,14 +492,14 @@ class Controller extends BlockController
         $cName  = $id . '_'. $key;
 
         $config = self::$btHandlerId . '.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
     public function getCTA_pID()
     {
-        return $this->CTA_pID;
+        return $this->getThisValue('CTA_pID');
     }
 
     public function getCTA_hash()
@@ -471,7 +508,7 @@ class Controller extends BlockController
         $key  = 'hash';
         $cName  = $id . '_'. $key;
         $config = self::$btHandlerId . '.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -482,7 +519,7 @@ class Controller extends BlockController
         $key  = 'target';
         $cName  = $id . '_'. $key;
         $config = self::$btHandlerId . '.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -493,7 +530,7 @@ class Controller extends BlockController
         $key  = 'text';
         $cName  = $id . '_'. $key;
         $config = self::$btHandlerId . '.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -506,15 +543,15 @@ class Controller extends BlockController
         $key = 'isEnabled';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return filter_var(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}), FILTER_VALIDATE_BOOLEAN);
     }
 
     public function get_fID($id)
     {
-        if ($this->{'o'.$id.'_fID'} > 0) {
-            $fObj = BlockUtils::getFileObject($this->{'o'.$id.'_fID'});
+        if ($this->getThisValue('o'.$id.'_fID') > 0) {
+            $fObj = BlockUtils::getFileObject($this->getThisValue('o'.$id.'_fID'));
         }
 
         return (isset($fObj) && is_object($fObj)) ? $fObj : null;
@@ -525,7 +562,7 @@ class Controller extends BlockController
         $key  = 'url';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return trim(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}));
     }
@@ -535,9 +572,19 @@ class Controller extends BlockController
         $key  = 'imageType';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
+    }
+
+    public function get_isImageStretched($id)
+    {
+        $key = 'isImageStretched';
+        $cName  = 'o'.$id.'_'.$key;
+        $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
+        $dValue = self::getDefaultValue($cName, $id, $key);
+
+        return filter_var(BlockUtils::getDefaultValue($config, $dValue, $this->{$cName}), FILTER_VALIDATE_BOOLEAN);
     }
 
     public function get_linkType($id)
@@ -545,14 +592,14 @@ class Controller extends BlockController
         $key  = 'linkType';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
 
     public function get_pID($id)
     {
-        return $this->{'o'.$id.'_pID'};
+        return $this->getThisValue('o'.$id.'_pID');
     }
 
     public function get_hash($id)
@@ -560,7 +607,7 @@ class Controller extends BlockController
         $key  = 'hash';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -570,7 +617,7 @@ class Controller extends BlockController
         $key  = 'target';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -580,7 +627,7 @@ class Controller extends BlockController
         $key  = 'icon';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -590,7 +637,7 @@ class Controller extends BlockController
         $key  = 'title';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -600,7 +647,7 @@ class Controller extends BlockController
         $key  = 'content';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -610,7 +657,7 @@ class Controller extends BlockController
         $key  = 'button';
         $cName  = 'o'.$id.'_'.$key;
         $config = self::$btHandlerId . '.item.'.$id.'.'.$key;
-        $dValue = self::getDefaultValue($id, $key);
+        $dValue = self::getDefaultValue($cName, $id, $key);
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -1617,7 +1664,7 @@ class Controller extends BlockController
     protected function doValidateMore($e, $args, $key, $value)
     {
         // output validation
-        $oValid == false;
+        $oValid = false;
 
         /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
         * IF custom condition value IS a METHOD (has PARAMS)
@@ -1674,7 +1721,8 @@ class Controller extends BlockController
             case 'bgColorRGBA':
             case 'fgColorRGB':
                 if (empty($args[$key])) {
-                    $args[$key] = null;
+                    // HOT-FIX: PHPv8 Compatibility REMOVE = null;
+                    $args[$key] = '';
                 }
                 break;
             }
@@ -1992,6 +2040,10 @@ class Controller extends BlockController
 
         $this->addFormDefaultValues();
         $this->addFormExtraValues();
+
+        // HOT-FIX: PHPv8 Compatibility = ADD set bgColorRGBA & fgColorRGB
+        $this->set('bgColorRGBA', $this->bgColorRGBA);
+        $this->set('fgColorRGB', $this->fgColorRGB);
 
         // Add Assets to Window Overlay
         $this->addLocalAssets('../../../css/tools/bootstrap-grid.min.css', 'css');

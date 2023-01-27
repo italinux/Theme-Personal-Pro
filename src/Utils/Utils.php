@@ -262,7 +262,8 @@ class Utils {
     public static function getIsValidURL($uri)
     {
 
-        return ((substr($uri, 0, 4) == 'http' && filter_var($uri, FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED) !== false) ? true : false);
+        // HOT-FIX: PHPv8 Compatibility REMOVE = FILTER_FLAG_SCHEME_REQUIRED
+        return ((substr($uri, 0, 4) == 'http' && filter_var($uri, FILTER_VALIDATE_URL) !== false) ? true : false);
     }
 
     /** - - - - - - - - - - - - - - - - - - - - - - - - - - -
