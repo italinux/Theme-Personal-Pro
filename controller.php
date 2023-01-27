@@ -39,7 +39,7 @@ class Controller extends Package
 {
 
     protected $pkgHandle = 'theme_lazy5basic';
-    protected $pkgVersion = '2.5.4';
+    protected $pkgVersion = '2.5.5';
     protected $pkgPrefix = 'l5b';
     protected $pkgAlias = 'Personal Pro';
 
