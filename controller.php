@@ -39,7 +39,7 @@ class Controller extends Package
 {
 
     protected $pkgHandle = 'theme_lazy5basic';
-    protected $pkgVersion = '2.5.5';
+    protected $pkgVersion = '2.5.6';
     protected $pkgPrefix = 'l5b';
     protected $pkgAlias = 'Personal Pro';
 
@@ -90,7 +90,7 @@ class Controller extends Package
 
     public function getPackageBlockTypeSetID()
     {
-        return strtolower(str_replace(" ", "_", self::getPackageNameID()));
+        return strtolower(self::getPackageNameID());
     }
 
     public function getPackageBlockTypeSetName()
@@ -118,7 +118,7 @@ class Controller extends Package
     */
     public static function _getThemePath() 
     {
-        return 'themes/' . strtolower(str_replace(" ", "_", self::getPackageNameID()));
+        return 'themes/' . strtolower(self::getPackageNameID());
     }
     
     private static function _getJsPath() 
@@ -164,7 +164,7 @@ class Controller extends Package
         $al->register('css', 'cst.bootstrap', self::_getCssPath() . '/build/bootstrap/bootstrap.min.css', $ph, $this);
 
         // CSS font-awesome
-        $al->register('css', 'font-awesome', self::_getCssPath() . '/font-awesome/min/font-awesome.min.css', $ph, $this);
+        $al->register('css', 'cst.font-awesome', self::_getCssPath() . '/font-awesome/min/font-awesome.min.css', $ph, $this);
 
         $al->registerGroup(
             'jst.theme.assets', array(
@@ -182,7 +182,7 @@ class Controller extends Package
                ),
                array(
                    'css',
-                   'font-awesome'
+                   'cst.font-awesome'
                ),
             )
         );
@@ -303,7 +303,7 @@ class Controller extends Package
 
         foreach (array_keys($this->getBlocksAvailable()) as $key) {
             if (is_dir(__DIR__ . '/blocks/' . $this->pkgPrefix . '_' . $key)) {
-                $blocksAndTables[$this->pkgPrefix . '_' . $key] = 'bt' . str_replace(' ', '', self::getPackageNameID()) . ucfirst(str_replace('_', '', mb_convert_case(mb_strtolower($key, "UTF-8"), MB_CASE_TITLE, "UTF-8")));
+                $blocksAndTables[$this->pkgPrefix . '_' . $key] = 'bt' . self::getPackageNameID() . ucfirst(str_replace('_', '', mb_convert_case(mb_strtolower($key, "UTF-8"), MB_CASE_TITLE, "UTF-8")));
             }
         }
 

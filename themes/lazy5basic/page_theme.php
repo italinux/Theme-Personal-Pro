@@ -85,7 +85,7 @@ class PageTheme extends Theme
 
     public function getThemeDescription()
     {
-       return t('A perfectly crafted theme that uses all the power of %s', 'concrete5');
+       return t('A perfectly crafted theme that uses all the power of %s', 'ConcreteCMS');
     }
 
     public function getThemePrefix()

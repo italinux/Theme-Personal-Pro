@@ -62,7 +62,7 @@ class Controller extends BlockController
     protected static $btStyleUploadThumbHeight = 945;
 
     // Set default Active Template Tab in Window Overlay
-    protected static $btDefaultTemplatePrefix = 'no_template';
+    protected static $btDefaultTemplatePrefix = 'clean_style';
 
     // Style Background Over Image default Opacity
     protected static $bgOverImageOpacity = 1;

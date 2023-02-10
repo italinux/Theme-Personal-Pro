@@ -338,8 +338,8 @@ class Controller extends BlockController
 
     public function getO1_fID()
     {
-        if ($this->o1_fID > 0) {
-            $fObj = BlockUtils::getFileObject($this->o1_fID);
+        if ($this->getThisValue('o1_fID') > 0) {
+            $fObj = BlockUtils::getFileObject($this->getThisValue('o1_fID'));
         }
 
         return (isset($fObj) && is_object($fObj)) ? $fObj : null;
