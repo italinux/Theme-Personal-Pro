@@ -1,8 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 28/10/2021 , 1.4.9 , FIX Assets JS Window Overlay / Controller
- ------------------------------------------------
  19/02/2022 , 1.5   , FIX dedicated Blocks Controllers (sorting items)
  ------------------------------------------------
  10/04/2022 , 1.5.1 , FIX Assets Package / Controllers / Blocks
@@ -15,5 +13,7 @@
  ------------------------------------------------
  10/02/2023 , 2.5.5 , Ready for Concrete CMS Version 9
  ------------------------------------------------
- 10/02/2023 , 2.5.6 , FIX Assets JS Window Overlay / Controller
+ 11/02/2023 , 2.5.6 , FIX Bootstrap5 Compatibility
+ ------------------------------------------------
+ 11/02/2023 , 2.5.7 , Added 3 new presets
  ------------------------------------------------

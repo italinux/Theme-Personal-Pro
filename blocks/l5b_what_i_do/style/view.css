@@ -417,14 +417,6 @@ section.what-i-do div.service-item div.service-icon::after {
     width: 50%;
   }
 }
-@media screen and (max-width: 991px) {
-  section.what-i-do div.main > div {
-    left: 0px;
-    right: 0px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 @media screen and (max-width: 768px) {
   section.what-i-do div[data-animation="content"] {
     width: 90%;
