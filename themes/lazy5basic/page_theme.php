@@ -76,6 +76,9 @@ class PageTheme extends Theme
 
         // Import Animations Assets CSS & JS
         $this->requireAsset('jst.animate.assets');
+
+        // HOT-FIX: Import Font-Awesome
+        $this->requireAsset('css', 'font-awesome');
     }
 
     public function getThemeDisplayName($format = 'html')

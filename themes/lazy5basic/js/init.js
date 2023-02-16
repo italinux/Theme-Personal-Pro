@@ -135,10 +135,6 @@ $(function() {
 
         // Exceptions
         switch(thisHash) {
-            case 'what-i-do-more':
-                offsetConfig = { desktop: 165 };
-                thisHash = "what-i-do";
-            break;
             case 'about-me':
                 offsetConfig = { desktop: 120};
                 break;

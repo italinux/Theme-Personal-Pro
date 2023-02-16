@@ -71,7 +71,7 @@ $(function() {
     * NAVIGATION LOGO & TITLE: SCROLL-TOP on Click
     * ============================================
     */
-        $("section.menu div.title-wrapper .scroll-top").click(function(e) {
+        $("section.menu .scroll-top").click(function(e) {
 
             e.preventDefault();
 
