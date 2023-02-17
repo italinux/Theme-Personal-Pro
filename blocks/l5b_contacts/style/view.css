@@ -241,10 +241,6 @@ section.contacts.page-block {
 section.contacts div.main {
   text-align: center;
 }
-section.contacts div[class*="col-"] {
-  margin-left: auto;
-  margin-right: auto;
-}
 /* END center all content */
 
 section.contacts > div.disabled {

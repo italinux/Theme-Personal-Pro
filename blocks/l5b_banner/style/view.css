@@ -358,6 +358,9 @@ section.banner a.CTA-arrow-top {
   z-index: 2;
 }
 section.banner a.CTA-arrow {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 25px;
   display: inline-block;
   z-index: 3;

@@ -37,38 +37,38 @@
 var contacts = {
     "contacts": {
         "subtitle": {
-            offset: 500,
-            effect: "lightSpeedIn",
-            delay: 0,
+            offset: 800,
+            effect: "fadeIn",
+            delay: 0.2,
         },
         "others": {
-            offset: 750,
-            effect: "bounceInRight",
+            offset: 800,
+            effect: "none",
             delay: 0,
         },
         "other-mobile": {
-            offset: 640,
-            effect: "bounceInRight",
-            delay: 0,
-        },
-        "other-address": {
-            offset: 640,
-            effect: "bounceInRight",
-            delay: 0.2,
-        },
-        "other-opening": {
-            offset: 640,
-            effect: "bounceInRight",
+            offset: 750,
+            effect: "fadeIn",
             delay: 0.4,
         },
-        "other-facebook": {
-            offset: 640,
-            effect: "bounceInRight",
-            delay: 0.2,
-        },
         "other-email": {
-            offset: 640,
-            effect: "bounceInRight",
+            offset: 750,
+            effect: "fadeIn",
+            delay: 0.5,
+        },
+        "other-facebook": {
+            offset: 750,
+            effect: "fadeIn",
+            delay: 0.6,
+        },
+        "other-address": {
+            offset: 750,
+            effect: "fadeIn",
+            delay: 0.4,
+        },
+        "other-opening": {
+            offset: 750,
+            effect: "fadeIn",
             delay: 0.4,
         },
     },

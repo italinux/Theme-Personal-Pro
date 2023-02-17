@@ -262,7 +262,7 @@ footer q::after {
 }
 footer div.credits {
   opacity: 0.5;
-  margin-left: 10%;
+  margin-left: 0px;
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: left;
