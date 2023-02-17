@@ -1,8 +1,6 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 19/02/2022 , 1.5   , FIX dedicated Blocks Controllers (sorting items)
- ------------------------------------------------
  10/04/2022 , 1.5.1 , FIX Assets Package / Controllers / Blocks
  ------------------------------------------------
  23/05/2022 , 1.5.2 , FIX Bootstrap Mobile XS on View / Controller
@@ -16,4 +14,6 @@
  11/02/2023 , 2.5.6 , FIX Bootstrap5 Compatibility
  ------------------------------------------------
  17/02/2023 , 2.5.7 , FIX block Contacts Assets / View
+ ------------------------------------------------
+ 17/02/2023 , 2.5.8 , FIX Assets JS Window Overlay / Controller
  ------------------------------------------------
