@@ -449,6 +449,9 @@ msgstr "Typ telefonu"
 msgid "Telephone number"
 msgstr "Telefonn&iacute; &#269;&iacute;slo"
 
+msgid "Openings"
+msgstr "Otvory"
+
 # block Social Media
 msgid "social profiles"
 msgstr "soci&aacute;ln&iacute; profily"
@@ -1207,3 +1210,6 @@ msgstr "ID sady souborů na pozad&iacute;"
 
 msgid "Background Image type"
 msgstr "Typ obr&aacute;zku na pozad&iacute;"
+
+msgid "documentation"
+msgstr "dokumentace"

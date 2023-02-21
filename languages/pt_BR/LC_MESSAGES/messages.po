@@ -449,6 +449,9 @@ msgstr "Tipo de telefone"
 msgid "Telephone number"
 msgstr "N&uacute;mero de telefone"
 
+msgid "Openings"
+msgstr "Vagas"
+
 # block Social Media
 msgid "social profiles"
 msgstr "perfis Sociais"
@@ -1207,3 +1210,6 @@ msgstr "ID de conjunto de ficheiros de fundo"
 
 msgid "Background Image type"
 msgstr "Tipo de imagem de fundo"
+
+msgid "documentation"
+msgstr "documenta&ccedil;&atilde;o"

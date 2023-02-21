@@ -449,6 +449,9 @@ msgstr "Type de t&eacute;l&eacute;phone"
 msgid "Telephone number"
 msgstr "Num&eacute;ro de t&eacute;l&eacute;phone"
 
+msgid "Openings"
+msgstr "Ouvertures"
+
 # block Social Media
 msgid "social profiles"
 msgstr "profils sociaux"
@@ -1207,3 +1210,6 @@ msgstr "ID du jeu de fichiers d’arri&egrave;re-plan"
 
 msgid "Background Image type"
 msgstr "Type d’image d’arri&egrave;re-plan"
+
+msgid "documentation"
+msgstr "documentation"

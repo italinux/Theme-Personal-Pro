@@ -15,5 +15,5 @@
  ------------------------------------------------
  17/02/2023 , 2.5.7 , FIX block Contacts Assets / View
  ------------------------------------------------
- 17/02/2023 , 2.5.8 , FIX Assets JS Window Overlay / Controller
+ 21/02/2023 , 2.5.8 , FIX Assets JS Window Overlay / Controller
  ------------------------------------------------
