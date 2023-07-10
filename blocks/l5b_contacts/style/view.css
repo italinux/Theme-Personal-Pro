@@ -289,9 +289,6 @@ section.contacts div.others p.double-space-left {
   section.contacts {
     text-align: center;
   }
-  section.contacts div.others > div {
-    padding-bottom: 3em;
-  }
   section.contacts div.others p.single-space-left,
   section.contacts div.others p.double-space-left {
     padding-right: 0;

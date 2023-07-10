@@ -32,71 +32,69 @@ echo $cStyle;
       <?php echo (trim($subtitle) == true ? '<h4 data-animation="subtitle">' . h($subtitle) . '</h4>' : '<br />')?>
     </div>
 
-    <div class="row main">
-      <div id="<?php echo $viewPoint?>-more" data-animation="others" class="others col-12">
+    <div class="main">
+      <div id="<?php echo $viewPoint?>-more" data-animation="others" class="row others">
 
       <?php 
         if ((trim($telephone) == true) || (trim($email) == true) || (trim($fbPageUrl) == true)) {
         ?>
-        <div class="col-12">
+        <div class="col-12 no-space-bottom">
 
         <?php
           if (trim($telephone) == true) {
           ?>
-          <div id="<?php echo $viewPoint?>-more-mobile" data-animation="other-mobile" class="col-12">
+          <div id="<?php echo $viewPoint?>-more-mobile" data-animation="other-mobile" class="single-space-bottom">
             <div>
-              <h4><?php echo $telephoneTitle?>:</h4>
+              <h4 class="no-space-bottom"><?php echo $telephoneTitle?>:</h4>
             </div>
             <div>
-              <h4>
+              <h4 class="no-space-bottom">
                 <i class="fa fa-phone fa-1x"></i>
               </h4>
             </div>
-          </div>
-          <div class="no-sides-paddings single-space-bottom contact-details">
-            <p>
-              <?php echo trim($telephone)?>
-            </p>
+            <div class="no-sides-paddings contact-details">
+              <p>
+                <?php echo trim($telephone)?>
+              </p>
+            </div>
           </div>
         <?php } ?>
 
         <?php
           if (trim($email) == true) {
           ?>
-          <div id="<?php echo $viewPoint?>-more-email" data-animation="other-email" class="col-12">
+          <div id="<?php echo $viewPoint?>-more-email" data-animation="other-email" class="single-space-bottom">
             <div>
-              <h4><?php echo t('E-mail')?>:</h4>
+              <h4 class="no-space-bottom"><?php echo t('E-mail')?>:</h4>
             </div>
             <div>
-              <h4>
+              <h4 class="no-space-bottom">
                 <i class="fa fa-paper-plane-o fa-1x"></i>
               </h4>
             </div>
-          </div>
-          <div class="no-sides-paddings single-space-bottom contact-details">
-            <p class="word-wrap-break">
-              <a href="mailto:<?php echo strtolower($email)?>">
-                <?php echo $email?>
-              </a>
-            </p>
+            <div class="no-sides-paddings contact-details">
+              <p class="word-wrap-break">
+                <a href="mailto:<?php echo strtolower($email)?>">
+                  <?php echo $email?>
+                </a>
+              </p>
+            </div>
           </div>
         <?php } ?>
 
         <?php
           if (trim($fbPageUrl) == true) {
           ?>
-          <div data-animation="other-facebook" class="col-12">
+          <div data-animation="other-facebook" class="single-space-bottom">
             <div>
-              <div>
-                <h4>Facebook:</h4>
-              </div>
-              <div>
-                <h4>
-                  <i class="fa fa-facebook fa-1x"></i>
-                </h4>
-              </div>
+              <h4 class="no-space-bottom">Facebook:</h4>
             </div>
-            <div class="no-sides-paddings single-space-bottom contact-details">
+            <div>
+              <h4 class="no-space-bottom">
+                <i class="fa fa-facebook fa-1x"></i>
+              </h4>
+            </div>
+            <div class="no-sides-paddings contact-details">
               <p class="word-wrap-break">
                 <a href="<?php echo $fbPageUrl?>" target="_blank">
                   <?php echo $fbPageUrl?>
@@ -114,14 +112,12 @@ echo $cStyle;
         ?>
         <div data-animation="other-opening" class="col-12">
           <div>
-            <div>
-              <h4><?php echo t('Openings')?>:</h4>
-            </div>
-            <div>
-              <h4>
-                <i class="fa fa-clock-o fa-1x"></i>
-              </h4>
-            </div>
+            <h4 class="no-space-bottom"><?php echo t('Openings')?>:</h4>
+          </div>
+          <div>
+            <h4 class="no-space-bottom">
+              <i class="fa fa-clock-o fa-1x"></i>
+            </h4>
           </div>
           <div class="no-sides-paddings contact-details">
             <p>
@@ -138,14 +134,12 @@ echo $cStyle;
         ?>
         <div id="<?php echo $viewPoint?>-more-address" data-animation="other-address" class="col-12">
           <div>
-            <div>
-              <h4><?php echo t('Address')?>:</h4>
-            </div>
-            <div>
-              <h4>
-                <i class="fa fa-map-marker fa-1x"></i>
-              </h4>
-            </div>
+            <h4 class="no-space-bottom"><?php echo t('Address')?>:</h4>
+          </div>
+          <div>
+            <h4 class="no-space-bottom">
+              <i class="fa fa-map-marker fa-1x"></i>
+            </h4>
           </div>
           <div class="no-sides-paddings contact-details">
             <p>
