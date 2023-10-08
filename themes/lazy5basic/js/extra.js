@@ -210,8 +210,8 @@ $(function() {
                 var thisParent = options[parentHash];
                 var thisChild  = ((typeof thisParent !== 'undefined') && (typeof thisParent[childHash] !== 'undefined')) ? thisParent[childHash] : false;
 
-                    // create current config obj and its fallback
-                    offsetConfig = (thisChild) ? thisChild : thisParent;
+                // create current config obj and its fallback
+                offsetConfig = (thisChild) ? thisChild : thisParent;
             }
 
             // set Object Values
