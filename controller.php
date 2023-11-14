@@ -80,7 +80,7 @@ class Controller extends Package
 
     public function getPackageDescription()
     {
-        return t('%1$s is responsive and multipurpose theme for your website.', self::getPackageNameID());
+        return t('%1$s is responsive and multipurpose theme for your website.', $this->pkgAlias);
     }
 
     public static function getPackageNameID()

@@ -2014,7 +2014,7 @@ class Controller extends BlockController
             $editor = BlockUtils::getThisApp()->make('editor');
 
             $editor->setAllowFileManager(true);
-            $editor->setAllowSitemap(false);
+            $editor->setAllowSitemap(true);
 
             // We can include and exclude editor plugins.
             $editor->getPluginManager()->deselect(array('table', 'specialcharacters'));
