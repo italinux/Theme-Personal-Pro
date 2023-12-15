@@ -258,7 +258,7 @@ section.social-media div.main div.service-icon a {
   justify-content: center;
   display: block;
 }
-section.social-media div.main div.service-icon a.fa:hover {
+section.social-media div.main div.service-icon a:hover {
   opacity: 0.9;
 }
 section.social-media div.main div.service-icon a img {
