@@ -65,7 +65,9 @@ echo $cStyle;
 
       <?php if ((trim($CTA['link']) != '') || (trim($CTA['hash']) != '')) {?>
           <a href="<?php echo trim($CTA['link'])?><?php echo trim($CTA['hash'])?>" class="<?php echo $CTA['class']?> CTA-arrow CTA-clean" target="<?php echo $CTA['target']?>">
-            <i data-animation="top-arrow" class="fa fa-angle-down fa-4x infinite <?php echo $nopaque?>"></i>
+            <i data-animation="top-arrow" class="fa infinite <?php echo $nopaque?>">
+              <img class="img-responsive" width="45" height="51" src="<?php echo $this->getBlockURL()?>/images/angle-down-solid.svg" alt='' />
+            </i>
           </a>
       <?php }?>
     </div>

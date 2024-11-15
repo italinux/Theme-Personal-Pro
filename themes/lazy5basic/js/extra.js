@@ -145,7 +145,7 @@ $(function() {
             'services': {},
             'about-me': {},
             'my-skills': {},
-            'curriculum-vitae': { mobile: 40 },
+            'curriculum-vitae': { desktop: 120, mobile: 150 },
                 'curriculum-vitae-skills': { desktop: 120, mobile: 150 },
                 'curriculum-vitae-resume': { desktop: 120, mobile: 150 },
             'portfolio': {},

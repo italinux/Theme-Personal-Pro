@@ -577,7 +577,7 @@ class Controller extends BlockController
         $cName  = 'cs_videoURL';
         $pTempl = self::getAppConfigCsTemplatePath();
         $config = self::$btHandlerId . '.' . $pTempl . '.video.URL';
-        $dValue = 'http://youtu.be/kQ5HGvQqtKs';
+        $dValue = 'http://youtu.be/eR1K_TbUkbc';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }
@@ -702,7 +702,7 @@ class Controller extends BlockController
         $cName  = 'iam_wid_videoURL';
         $pTempl = self::getAppConfigIam_widTemplatePath();
         $config = self::$btHandlerId . '.' . $pTempl . '.video.URL';
-        $dValue = 'http://youtu.be/eR1K_TbUkbc';
+        $dValue = 'http://youtu.be/kQ5HGvQqtKs';
 
         return BlockUtils::getDefaultValue($config, $dValue, $this->{$cName});
     }

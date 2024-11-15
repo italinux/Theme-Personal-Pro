@@ -154,6 +154,9 @@ defined('C5_EXECUTE') or die("Access Denied.");
                   <div id="o<?php echo $i?>_imageType_icon" class="input-group center current-<?php echo ${"o" . $i . "_imageType"}?>">
                     <div class="form-group center single-space-bottom no-right-space light-title">
                     <?php echo $form->label('o' . $i . '_icon', t("Choose an icon for this item"))?>
+                      <label>
+                         <span><?php echo t('icons are sorted alphabetically from A to Z')?></span>
+                      </label>
                       <div class="input-group single-space-top">
                         <select name="o<?php echo $i?>_icon" multiple="true" style="height:350px">
                           <?php
@@ -163,7 +166,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                                     echo ((is_int(($key) / 10)) == true ? '<option style="visibility:hidden"></option>' : null);
                                 }
                               ?>
-                          <option style="width:10%" value="<?php echo $value ?>" class="fa fa-<?php echo $value ?> fa-responsive" <?php echo ($value == ${"o" . $i . "_icon"}) == true ? 'selected="selected"' : null?>></option>
+                          <option style="width:10%" value="<?php echo $value ?>" class="fab fa-<?php echo $value ?> fa-responsive" <?php echo ($value == ${"o" . $i . "_icon"}) == true ? 'selected="selected"' : null?>></option>
                               <?php
                               }
                             }
