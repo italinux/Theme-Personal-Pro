@@ -1629,12 +1629,6 @@ class Controller extends BlockController
     {
         $al = AssetList::getInstance();
 
-        $ph = array(
-            'position' => Asset::ASSET_POSITION_HEADER,
-            'minify' => true,
-            'combine' => true
-        );
-
         $pf = array(
             'position' => Asset::ASSET_POSITION_FOOTER,
             'minify' => true,
@@ -1649,9 +1643,20 @@ class Controller extends BlockController
 
         // Register Assets this Block: YTPlayer
         $al->register('javascript-inline', 'ytplayer-conf', 'var videoStartAt = ' . rand(intval($this->getVideoStartFrom()), intval($this->getVideoStartTo())) . ';', $pf, $this->getPackageHandle());
-        $al->register('javascript', 'ytplayer-main', 'blocks/' . $this->getBlockHandle() . '/jscript/min/jquery.mb.YTPlayer.min.js', $pf, $this->getPackageHandle());
+        $al->register('javascript', 'ytplayer-main', 'blocks/' . $this->getBlockHandle() . '/jscript/min/jquery.mb.YTPlayer.min.js', array(
+                                                                                                                                       'version' => '3.2.10',
+                                                                                                                                       'position' => Asset::ASSET_POSITION_FOOTER,
+                                                                                                                                       'minify' => false,
+                                                                                                                                       'combine' => true
+                                                                                                                                     ), $this->getPackageHandle());
+
         $al->register('javascript', 'ytplayer-init', 'blocks/' . $this->getBlockHandle() . '/jscript/YTPlayer.init.js', $pf, $this->getPackageHandle());
-        $al->register('css', 'ytplayer-style', 'blocks/' . $this->getBlockHandle() . '/style/ytplayer/jquery.mb.YTPlayer.min.css', $ph, $this->getPackageHandle());
+        $al->register('css', 'ytplayer-style', 'blocks/' . $this->getBlockHandle() . '/style/ytplayer/jquery.mb.YTPlayer.min.css',  array(
+                                                                                                                                      'version' => '3.2.10',
+                                                                                                                                      'position' => Asset::ASSET_POSITION_HEADER,
+                                                                                                                                      'minify' => false,
+                                                                                                                                      'combine' => true
+                                                                                                                                    ), $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.ytplayer', array(

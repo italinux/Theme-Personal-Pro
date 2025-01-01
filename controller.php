@@ -151,6 +151,12 @@ class Controller extends Package
             'combine' => true
         );
 
+        $ch = array(
+            'position' => Asset::ASSET_POSITION_HEADER,
+            'minify' => false,
+            'combine' => true
+        );
+
         /**
         * Required JS + CSS this Theme
         */
@@ -161,10 +167,20 @@ class Controller extends Package
         $al->register('javascript', 'jt.theme.extra', self::_getJsPath() . '/extra.js', $pf, $this);
 
         // Import Bootstrap
-        $al->register('css', 'cst.bootstrap', self::_getCssPath() . '/build/bootstrap/bootstrap.min.css', $ph, $this);
+        $al->register('css', 'cst.bootstrap', self::_getCssPath() . '/build/bootstrap/bootstrap.min.css', array(
+                                                                                                            'version' => '5.1.3',
+                                                                                                            'position' => Asset::ASSET_POSITION_HEADER,
+                                                                                                            'minify' => false,
+                                                                                                            'combine' => true
+                                                                                                          ), $this);
 
         // CSS font-awesome
-        $al->register('css', 'cst.font-awesome', self::_getCssPath() . '/font-awesome/min/font-awesome.min.css', $ph, $this);
+        $al->register('css', 'cst.font-awesome', self::_getCssPath() . '/font-awesome/min/font-awesome.min.css', array(
+                                                                                                                   'version' => '4.7.0',
+                                                                                                                   'position' => Asset::ASSET_POSITION_HEADER,
+                                                                                                                   'minify' => false,
+                                                                                                                   'combine' => true
+                                                                                                                 ), $this);
 
         $al->registerGroup(
             'jst.theme.assets', array(
@@ -239,7 +255,12 @@ class Controller extends Package
         /**
         * Register Assets: Masonry
         */
-        $al->register('javascript', 'masonry-lib', self::_getJsPath() . '/min/jquery.masonry.min.js', $pf, $this);
+        $al->register('javascript', 'masonry-lib', self::_getJsPath() . '/min/jquery.masonry.min.js', array(
+                                                                                                        'version' => '4.2.2',
+                                                                                                        'position' => Asset::ASSET_POSITION_FOOTER,
+                                                                                                        'minify' => false,
+                                                                                                        'combine' => true
+                                                                                                      ), $this);
 
         $al->registerGroup(
             'jst.masonry.assets', array(
@@ -250,18 +271,39 @@ class Controller extends Package
             )
         );
 
-        /**
-        * Required JS + CSS Animate for this Theme
-        */
-        $al->register('javascript', 'jt.jquery.migrate', self::_getJsPath() . '/min/jquery.migrate.min.js', $pf, $this);
-        $al->register('javascript', 'jt.jquery.waypoints', self::_getJsPath() . '/min/jquery.waypoints.min.js', $pf, $this);
+        /** - - - - - - - - - - - - - - - - - - - - - - - - -
+         * Register JS / CSS Animate for this Theme
+         */
+        $al->register('javascript', 'jt.jquery.migrate', self::_getJsPath() . '/min/jquery.migrate.min.js', array(
+                                                                                                              'version' => '3.0.0',
+                                                                                                              'position' => Asset::ASSET_POSITION_FOOTER,
+                                                                                                              'minify' => false,
+                                                                                                              'combine' => true
+                                                                                                            ), $this);
 
+        $al->register('javascript', 'jt.jquery.waypoints', self::_getJsPath() . '/min/jquery.waypoints.min.js', array(
+                                                                                                                  'version' => '3.1.1',
+                                                                                                                  'position' => Asset::ASSET_POSITION_FOOTER,
+                                                                                                                  'minify' => false,
+                                                                                                                  'combine' => true
+                                                                                                                ), $this);
         // Register Assets Animate
-        $al->register('javascript', 'animate-lib', self::_getJsPath() . '/min/jquery.lazy.animate.min.js', $pf, $this);
+        $al->register('javascript', 'animate-lib', self::_getJsPath() . '/min/jquery.lazy.animate.min.js', array(
+                                                                                                             'version' => '1.1.0',
+                                                                                                             'position' => Asset::ASSET_POSITION_FOOTER,
+                                                                                                             'minify' => true,
+                                                                                                             'combine' => true
+                                                                                                            ), $this);
 
-        $al->register('css', 'style.animate', self::_getCssPath() . '/build/animate/animate.min.css', $ph, $this);
-        $al->register('css', 'style.animate.delay', self::_getCssPath() . '/build/animate/animate.delay.min.css', $ph, $this);
-        $al->register('css', 'style.animate.duration', self::_getCssPath() . '/build/animate/animate.duration.min.css', $ph, $this);
+        $al->register('css', 'style.animate', self::_getCssPath() . '/build/animate/animate.min.css', array(
+                                                                                                        'version' => '4.1.1',
+                                                                                                        'position' => Asset::ASSET_POSITION_HEADER,
+                                                                                                        'minify' => false,
+                                                                                                        'combine' => true
+                                                                                                      ), $this);
+
+        $al->register('css', 'style.animate.delay', self::_getCssPath() . '/build/animate/animate.delay.min.css', $ch, $this);
+        $al->register('css', 'style.animate.duration', self::_getCssPath() . '/build/animate/animate.duration.min.css', $ch, $this);
 
         $al->registerGroup(
             'jst.animate.assets', array(
@@ -270,8 +312,8 @@ class Controller extends Package
                    'jt.jquery.migrate'
                ),
                array(
-                   'javascript',
-                   'jt.jquery.waypoints'
+                    'javascript',
+                    'jt.jquery.waypoints'
                ),
                array(
                    'javascript',

@@ -606,14 +606,14 @@ class Controller extends BlockController
     {
         $al = AssetList::getInstance();
 
-        $pf = array(
-            'position' => Asset::ASSET_POSITION_FOOTER,
+        $ph = array(
+            'position' => Asset::ASSET_POSITION_HEADER,
             'minify' => true,
             'combine' => true
         );
 
-        $ph = array(
-            'position' => Asset::ASSET_POSITION_HEADER,
+        $pf = array(
+            'position' => Asset::ASSET_POSITION_FOOTER,
             'minify' => true,
             'combine' => true
         );
@@ -632,7 +632,12 @@ class Controller extends BlockController
 
         // Register Assets this Block
         $al->register('javascript', 'hamburgers-init', 'blocks/' . $this->getBlockHandle() . '/jscript/hamburgers.init.js', $cf, $this->getPackageHandle());
-        $al->register('css', 'hamburgers-style',  'blocks/' . $this->getBlockHandle() . '/style/hamburgers.min.css', $ph, $this->getPackageHandle());
+        $al->register('css', 'hamburgers-style',  'blocks/' . $this->getBlockHandle() . '/style/hamburgers.min.css', array(
+                                                                                                                       'version' => '1.2.0',
+                                                                                                                       'position' => Asset::ASSET_POSITION_HEADER,
+                                                                                                                       'minify' => false,
+                                                                                                                       'combine' => true
+                                                                                                                     ), $this->getPackageHandle());
 
         $al->registerGroup(
             'jst.hamburgers', array(

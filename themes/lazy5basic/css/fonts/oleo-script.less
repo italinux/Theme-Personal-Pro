@@ -1,7 +1,7 @@
 /** - - - - - - - - - - - - - - - - - - - - -
 * Import Google Font
 */
-@import url("https://fonts.googleapis.com/css?display=swap&family=Oleo+Script:900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,400,300italic,300,200italic,200,100italic,100");
+// @import url("https://fonts.googleapis.com/css?display=swap&family=Oleo+Script:900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,400,300italic,300,200italic,200,100italic,100");
 
 /** - - - - - - - - - - - - - - - - - - - - -
 * Set Typography
@@ -15,3 +15,37 @@
 * and replace values here:
 */
 // @h1-type-font-weight: 600;
+
+
+/** - - - - - - - - - - - - - - - - - - - - -
+* Local font
+*/
+/* oleo-script-regular - latin */
+@font-face {
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('oleo-script/oleo-script-v5-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Oleo Script'), local('OleoScript-Regular'),
+       url('oleo-script/oleo-script-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('oleo-script/oleo-script-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('oleo-script/oleo-script-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('oleo-script/oleo-script-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('oleo-script/oleo-script-v5-latin-regular.svg#OleoScript') format('svg'); /* Legacy iOS */
+}
+
+/* oleo-script-700 - latin */
+@font-face {
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('oleo-script/oleo-script-v5-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Oleo Script Bold'), local('OleoScript-Bold'),
+       url('oleo-script/oleo-script-v5-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('oleo-script/oleo-script-v5-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('oleo-script/oleo-script-v5-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('oleo-script/oleo-script-v5-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('oleo-script/oleo-script-v5-latin-700.svg#OleoScript') format('svg'); /* Legacy iOS */
+}
