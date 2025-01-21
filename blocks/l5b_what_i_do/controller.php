@@ -444,8 +444,16 @@ class Controller extends BlockController
         // new method name (e.g: get_title)
         $new_method = $prefix.$suffix;
 
+        /** HOT-FIX: new Marketplace approval guidelines at ConcreteCMS (avoid preg_replace)
+        * parameter = item id (e.g: 1, 2, 3 ..)
+        * $params = substr(preg_replace(array('/^'.$prefix.'/', '/'.$suffix.'$/'), '', $method), 1);
+        */
+
+        // instead use preg_match as alternative
+        preg_match('/^'.$prefix.'(.*)'.$suffix.'$/', $method, $matches);
+
         // parameter = item id (e.g: 1, 2, 3 ..)
-        $params = substr(preg_replace(array('/^'.$prefix.'/', '/'.$suffix.'$/'), '', $method), 1);
+        $params = count($matches) > 0 ? substr($matches[1], 1) : null;
 
         return method_exists($this, $new_method) ? array('method' => $new_method, 'params' => $params) : false;
     }

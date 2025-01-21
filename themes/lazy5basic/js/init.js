@@ -78,7 +78,7 @@ $(function() {
 
         e.preventDefault();
 
-        var speedFactor = 2; // + o - speed (play with decimals first)
+        var speedFactor = 3; // + o - speed (play with decimals first)
 
         // minimum animation duration in millisecs
         var animDurationMsecsDefault = 400;
@@ -220,7 +220,7 @@ $(function() {
 
         $("body").on("click", "a", function() {
 
-             if ( ! $(this).filter('.scroll, .scroll-up, .popup-image, .lightbox, [href^="#"]').length) {
+             if ( ! $(this).filter('.scroll, .scroll-up, .popup-image, [class*="lightbox"], [href^="#"]').length) {
 
                 /** - - - - - - - - - - - - - - - - - -
                 * Additional Check on anchor Class
