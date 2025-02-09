@@ -1,7 +1,9 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 10/01/2025 , 2.6   , FIX new Marketplace approval guidelines
+ 09/02/2025 , 2.5.9.2 , FIX Controller / Model / View on Blocks
+ ------------------------------------------------
+ 27/01/2025 , 2.5.9.1 , FIX new Marketplace approval guidelines
  ------------------------------------------------
  19/04/2023 , 2.5.9 , FIX Design Customise Presets Less
  ------------------------------------------------
@@ -14,6 +16,4 @@
  10/02/2023 , 2.5.5 , Ready for Concrete CMS Version 9
  ------------------------------------------------
  08/01/2023 , 2.5.4 , Ready for PHP Version 8
- ------------------------------------------------
- 01/07/2022 , 2.5.3 , Ready for Concrete CMS Version 9
  ------------------------------------------------
