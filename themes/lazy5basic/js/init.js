@@ -32,7 +32,7 @@
 * - - - - - - - - - - - - - - - - - - - - -*/
 $(function() {
 
-    var thisHandler = "div#preloader";
+    var thisPreload = "div#preloader";
     var transMsecs = 300;
     var delayMsecs = 300;
 
@@ -41,7 +41,7 @@ $(function() {
 
 
     if ($(location).attr("hash")) {
-        $(thisHandler).hide();
+        $(thisPreload).hide();
     } else {
 
         switch (addLagging) {
@@ -56,15 +56,15 @@ $(function() {
           // new timing transition (msecs)
           transMsecs = 300;
 
-          var curBackgroundColor = $(thisHandler).css('background-color'),  // rgba(xxx, xxx, xxx, 0.cx)
+          var curBackgroundColor = $(thisPreload).css('background-color'),  // rgba(xxx, xxx, xxx, 0.cx)
               newBackgroundColor = curBackgroundColor.replace(/[^,]+(?=\))/, newOpacity);  // rgba(xxx, xxx, xxx, 0.nx)
 
-              $(thisHandler).css({ backgroundColor: newBackgroundColor });
+              $(thisPreload).css({ backgroundColor: newBackgroundColor });
           break;
         }
 
         // now Animate preload spinner
-        $(thisHandler).children("div").delay(delayMsecs).fadeOut(transMsecs, function() {
+        $(thisPreload).children("div").delay(delayMsecs).fadeOut(transMsecs, function() {
             $(this).parent().fadeOut(transMsecs);
         });
     }
@@ -245,13 +245,30 @@ $(function() {
                         // For some browsers, `attr` is undefined; for others, `attr` is false. Check for both.
                         if ((typeof target === typeof undefined || target === false || target === null) || (target == '_self') || (target == '')) {
 
+                            // SET thisPreload HIDDEN FLAG to false
+                            var thisPreloadHidden = false;
+
                             // Maximum delay before preloader eventually fades out
                             var maxDelayInFadeOutMsecs = 15000;
 
-                            // show pre-loader
-                            $("div#preloader").fadeIn(100, function() {
-                                $(this).children().fadeIn(300);
-                            }).delay(maxDelayInFadeOutMsecs).fadeOut(300).hide(0);
+                            // HIDE preload spinner on Navigation History (back button pressed)
+                            window.addEventListener('pageshow', function (event) {
+                                if (event.persisted || performance.getEntriesByType('navigation')[0].type === 'back_forward') {
+                                    // HIDE PRELOAD
+                                    $(thisPreload).hide();
+
+                                    // SET thisPreload HIDDEN FLAG to true
+                                    thisPreloadHidden = true;
+                                }
+                            });
+
+                            // MAKE SURE thisPreload gets shown when necessary
+                            if (thisPreloadHidden === false ) {
+                                // SHOW PRELOAD with Maximum delay
+                                $(thisPreload).fadeIn(100, function() {
+                                    $(this).children().fadeIn(300);
+                                }).delay(maxDelayInFadeOutMsecs).fadeOut(300).hide(0);
+                            }
                         }
                     }
                 }
@@ -262,7 +279,7 @@ $(function() {
     /** - - - - - - - - - - - - - - - - - - - - -
     *  HIDE PRE-LOADER on double-click (security measure)
     * - - - - - - - - - - - - - - - - - - - - -*/
-    $(thisHandler).click(function() {
+    $(thisPreload).click(function() {
         // hide pre-loader
         $(this).hide(0, function() {
             $(this).children().hide();
