@@ -445,7 +445,9 @@ section.about-me div.main div.about-me-text big {
     text-align: center !important;
   }
   section.about-me div.main div.about-me-photo {
-    display: none;
+    /* HOT-FIX: DISPLAY PHOTO on SMALL TABLETS
+    * display: none;
+    */
   }
 }
 @media screen and (max-width: 991px) {
