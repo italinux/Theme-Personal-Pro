@@ -49,7 +49,7 @@ class Controller extends BlockController
 
     // Custom Image Thumb Size (pixels) Min & Max
     protected static $btCustomImageThumbSizeMin = 200;
-    protected static $btCustomImageThumbSizeMax = 1000;
+    protected static $btCustomImageThumbSizeMax = 2500;
 
     // Style Background & Foreground Colours
     protected static $btStyleOpacity = '0.82';
@@ -1147,7 +1147,7 @@ class Controller extends BlockController
             $args[$key] = trim(str_replace(PHP_EOL, '', $args[$key]));
 
             // Sanitize URLs
-            $args[$key] = LinkAbstractor::translateTo($args[$key]);
+            $args[$key] = LinkAbstractor::translateFrom($args[$key]);
         }
 
         parent::save($args);

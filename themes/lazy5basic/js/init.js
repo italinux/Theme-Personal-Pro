@@ -338,17 +338,21 @@ $(function() {
         // final speed (animation)
         var thisAnimDurationMsecs = (animDurationMsecs < animDurationMsecsDefault) ? animDurationMsecsDefault : animDurationMsecs;
 
-        // Limit Mobiles View (Tablet & Mobile Phones)
-        var minWidth = 1024;
+        // Scroll + Animate (fadeOut at completion)
+        $("html, body").animate({
+            scrollTop: 0
+        }, {
+            duration: thisAnimDurationMsecs,
+            easing: "swing",
+            complete: function(){
+              // close menu hamburger
+              $("nav").find(".hamburger").removeClass("is-active");
 
-        // This is necessary in 1st level menu items being dropdowns
-        // To be disabled if in Mobiles View
-        if (window.innerWidth > minWidth) {
-
-            // Scroll + Animate (fadeOut at completion)
-            $("html, body").animate({
-                scrollTop: 0
-            }, thisAnimDurationMsecs, "swing");
-        }
+              // hide toggle menu (fullscreen)
+              $("nav").find(".fixed").removeClass('animated').fadeOut(250, "swing", function() {
+                  $(this).removeClass("fixed").addClass('animated');
+              });
+            }
+        });
     });
 });

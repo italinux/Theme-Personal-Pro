@@ -609,7 +609,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                           <div class="row no-margins">
                             <div class="col-lg-5 col-lg-offset-1">
                               <div class="input-group center float-left p70">
-                                <?php echo $form->text($cTempl . '_imageWidth', ${$cTempl . "_imageWidth"}, array('maxlength' => 3,  'placeholder' => $imageWidthPlaceholder))?>
+                                <?php echo $form->text($cTempl . '_imageWidth', ${$cTempl . "_imageWidth"}, array('maxlength' => 4,  'placeholder' => $imageWidthPlaceholder))?>
                               </div>
                               <div class="input-group align-left p30">
                                 <span style="font-size: 1.4em">px</span>
@@ -617,7 +617,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
                             </div>
                             <div class="col-lg-5">
                               <div class="input-group center float-left p70">
-                                <?php echo $form->text($cTempl . '_imageHeight', ${$cTempl . "_imageHeight"}, array('maxlength' => 3,  'placeholder' => $imageHeightPlaceholder))?>
+                                <?php echo $form->text($cTempl . '_imageHeight', ${$cTempl . "_imageHeight"}, array('maxlength' => 4,  'placeholder' => $imageHeightPlaceholder))?>
                               </div>
                               <div class="input-group align-left p30">
                                 <span style="font-size: 1.4em">px</span>

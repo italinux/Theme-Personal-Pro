@@ -862,6 +862,7 @@ class Controller extends BlockController
     public function getBootstrapCol_Config($offset, $key)
     {
 
+        // Number of items enabled
         $array = $this->getAll_isEnabled(range(1, self::get_btItemsTotal()));
 
         // Total number of items

@@ -1,7 +1,7 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 05/01/2026 , 2.5.9.2 , FIX Controller / Model / View on Blocks
+ 10/02/2026 , 2.6.0 , FIX Block Controller LinkAbstractor::translateTo
  ------------------------------------------------
  27/01/2025 , 2.5.9.1 , FIX new Marketplace approval guidelines
  ------------------------------------------------

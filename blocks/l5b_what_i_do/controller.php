@@ -1370,6 +1370,7 @@ class Controller extends BlockController
     public function getBootstrapCol_Config($offset, $key)
     {
 
+        // Number of items enabled
         $array = $this->getAll_isEnabled(range(1, self::get_btItemsTotal()));
 
         // Total number of items
@@ -1762,7 +1763,7 @@ class Controller extends BlockController
             $args[$key] = trim(str_replace(PHP_EOL, '', $args[$key]));
 
             // Sanitize URLs
-            $args[$key] = LinkAbstractor::translateTo($args[$key]);
+            $args[$key] = LinkAbstractor::translateFrom($args[$key]);
         }
 
         // Sort inputs (all items) before saving
