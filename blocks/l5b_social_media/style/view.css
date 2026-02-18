@@ -45,7 +45,7 @@
   text-align: center;
 }
 .fix-spaces-buttons section.social-media div.global-cta .btn.goto > span {
-  max-width: 150px;
+  max-width: 200px;
   display: inline-block;
 }
 .fix-spaces-buttons section.social-media div.global-cta .btn.goto::after {

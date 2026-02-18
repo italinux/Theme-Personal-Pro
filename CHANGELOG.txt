@@ -1,7 +1,7 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 10/02/2026 , 2.6.0 , FIX Block Controller LinkAbstractor::translateTo
+ 18/02/2026 , 2.6.0 , FIX Menu add SVG support to Logo
  ------------------------------------------------
  27/01/2025 , 2.5.9.1 , FIX new Marketplace approval guidelines
  ------------------------------------------------

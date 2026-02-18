@@ -300,18 +300,6 @@ $(function() {
 
         if ($(this).scrollTop() > 500) {
             $(thisHandler).not(".visible").addClass("visible");
-
-            if ((typeof timer === 'undefined') || timer === null) {
-                timer = setTimeout(function() {
-                    $(thisHandler).animate({
-                        width: "85px",
-                        height: "85px",
-                        paddingLeft: "0.8%",
-                        paddingTop: "0.5%",
-                        fontSize: "0.65em",
-                    }, transMsecs, "swing");
-                }, delayMsecs);
-            }
         } else {
             $(thisHandler + ".visible").removeClass("visible");
         }

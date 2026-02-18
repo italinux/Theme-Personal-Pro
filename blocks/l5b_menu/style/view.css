@@ -396,6 +396,7 @@ section.menu nav.navbar div.navbar-center div.menu-wrapper.fixed ul li.highlight
   margin-top: 10px;
 }
 section.menu nav.navbar img {
+  max-width: none;
   max-height: 80px;
   width: auto;
   vertical-align: middle;
