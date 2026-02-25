@@ -1,0 +1,88 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: Latest on Github
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   https://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) current year                                               |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           https://concrete5.org/help/legal/commercial_add-on_license      |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+@media screen and (max-width: 1920px) {
+  section.about-me.page-block {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  section.about-me div.main div.about-me-photo {
+    padding-left: 6%;
+    padding-right: 6%;
+    -webkit-transform: translateY(5%);
+       -moz-transform: translateY(5%);
+         -o-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+}
+@media screen and (max-width: 1680px) {
+  section.about-me.page-block {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  section.about-me div.main div.about-me-photo {
+    padding-left: 5%;
+    padding-right: 5%;
+    -webkit-transform: translateY(10%);
+       -moz-transform: translateY(10%);
+         -o-transform: translateY(10%);
+            transform: translateY(10%);
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.about-me div.main div.about-me-photo {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  section.about-me div.main div.about-me-photo img {
+    min-width: 85%;
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 1199px) {
+  section.about-me.page-block {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  section.about-me div.main div.about-me-text,
+  section.about-me div.main div.global-cta {
+    text-align: center !important;
+  }
+  section.about-me div.main div.about-me-photo {
+    display: none;
+  }
+}
+@media screen and (max-width: 991px) {
+  section.about-me.page-block {
+    padding-top: 30px;
+  }
+  section.about-me div.main div.about-me-photo {
+    display: none;
+  }
+  section.about-me div.main div.about-me-text h2:first-of-type {
+    white-space: normal;
+  }
+}
+section.about-me[class^="mobile_view"] div.main div.about-me-text,
+section.about-me[class^="mobile_view"] div.main div.global-cta {
+  text-align: center;
+}

@@ -1,0 +1,101 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: Latest on Github
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   https://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) current year                                               |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           https://concrete5.org/help/legal/commercial_add-on_license      |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+@media screen and (max-width: 1280px) {
+  section.banner.i_am_what_i_do > div[class^="container"] {
+    padding-top: 8%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section.banner.i_am_what_i_do > div[class^="container"] {
+    padding-top: 20%;
+  }
+}
+@media screen and (max-width: 800px) {
+  section.banner.i_am_what_i_do > div[class^="container"] {
+    padding-top: 22%;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.banner.i_am_what_i_do > div[class^="container"] {
+    padding-top: 25%;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.banner.i_am_what_i_do > div[class^="container"] {
+    padding-top: 15%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.banner.image_round_right > div[class^="container"] {
+    padding-top: 4%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section.banner.image_round_right > div[class^="container"] {
+    padding-top: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.banner.image_round_right > div[class^="container"] {
+    padding-top: 15%;
+  }
+  section.banner.image_round_right > div[class^="container"] > div.main > div {
+    width: 100%;
+  }
+  section.banner.image_round_right > div[class^="container"] div.content {
+    padding-bottom: 3.2em;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.banner.image_round_right > div[class^="container"] div.content {
+    padding-top: 1.6em;
+    padding-bottom: 2.4em;
+  }
+}
+@media screen and (max-width: 1280px) {
+  section.banner.image_square_right > div[class^="container"] {
+    padding-top: 4%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section.banner.image_square_right > div[class^="container"] {
+    padding-top: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.banner.image_square_right > div[class^="container"] {
+    padding-top: 15%;
+  }
+  section.banner.image_square_right > div[class^="container"] > div.main > div {
+    width: 100%;
+  }
+  section.banner.image_square_right > div[class^="container"] div.content {
+    padding-bottom: 3.2em;
+  }
+}
+@media screen and (max-width: 500px) {
+  section.banner.image_square_right > div[class^="container"] div.content {
+    padding-top: 1.6em;
+    padding-bottom: 2.4em;
+  }
+}

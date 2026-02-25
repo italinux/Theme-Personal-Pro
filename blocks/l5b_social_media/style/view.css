@@ -267,24 +267,3 @@ section.social-media div.main div.service-icon a img {
   border-radius: 5px;
   display: inline;
 }
-@media screen and (max-width: 1024px) {
-  section.social-media div.main div.service-icon {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 768px) {
-  section.social-media {
-    overflow: visible;
-  }
-  section.social-media.over-image::before {
-    margin-bottom: -1px;
-  }
-}
-section.social-media[class^="mobile_view"] div.main div.service-icon {
-  text-align: center;
-}
-@media screen and (max-width: 500px) {
-  section.social-media div.main div.service-icon {
-    text-align: center;
-  }
-}

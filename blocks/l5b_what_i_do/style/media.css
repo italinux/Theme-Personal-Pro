@@ -1,0 +1,70 @@
+/**
+.---------------------------------------------------------------------.
+|  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
+|  @version: Latest on Github
+|  @link:    http://italinux.com/personal-pro
+|  @docs:    http://italinux.com/theme-personal-pro
+|
+|  @author: Matteo Montanari <matteo@italinux.com>
+|  @link:   https://matteo-montanari.com
+'---------------------------------------------------------------------'
+.---------------------------------------------------------------------------.
+| @copyright (c) current year                                               |
+| ------------------------------------------------------------------------- |
+| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
+|           https://concrete5.org/help/legal/commercial_add-on_license      |
+|           or just: file://theme_lazy5basic/LICENSE.TXT                    |
+|                                                                           |
+| This program is distributed in the hope that it will be useful - WITHOUT  |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+'---------------------------------------------------------------------------'
+*/
+@media screen and (max-width: 1024px) {
+  section.what-i-do div.global-cta a.btn {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  section.what-i-do div[data-animation="content"] {
+    width: 90%;
+  }
+}
+section.what-i-do[class^="mobile_view"] div[class^="wid-item"] {
+  margin-bottom: 40px;
+}
+section.what-i-do[class^="mobile_view"] div[class^="wid-item"] div[data-animation="content"] {
+  width: 90%;
+}
+section.what-i-do[class^="mobile_view"] div.global-cta a.btn {
+  width: 80%;
+}
+@media screen and (max-width: 500px) {
+  section.what-i-do div[class^="wid-item"] {
+    margin-bottom: 40px;
+  }
+  section.what-i-do div[class^="wid-item"] *[data-animation="title"] {
+    text-shadow: none;
+  }
+  section.what-i-do div[class^="wid-item"] div[data-animation="icon"] {
+    display: none;
+  }
+  section.what-i-do div[class^="wid-item"] div[data-animation="content"] {
+    width: 90%;
+  }
+  section.what-i-do div.wid-item-1 *[data-animation="title"] {
+    color: #884264;
+  }
+  section.what-i-do div.wid-item-2 *[data-animation="title"] {
+    color: #424d88;
+  }
+  section.what-i-do div.wid-item-3 *[data-animation="title"] {
+    color: #427b88;
+  }
+  section.what-i-do div.wid-item-4 *[data-animation="title"] {
+    color: #878842;
+  }
+  section.what-i-do div.global-cta a.btn {
+    width: 80%;
+  }
+}
