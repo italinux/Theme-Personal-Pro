@@ -47,6 +47,11 @@ $(document).ready(function(e) {
             // enable / disable layout on initialization
             initLayout: true,
 
+                // disable any styles being set on container
+                // useful if using absolute position on container
+                // containerStyle: { position: 'relative' }
+                // containerStyle: null
+
             // Recommended. If not set, will use the outer width of the first item.
             // columnWidth: 600,
 

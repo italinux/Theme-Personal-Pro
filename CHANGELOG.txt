@@ -1,7 +1,9 @@
  Date (d/m/Y) | Version | Description / Comment
  ================================================
 
- 26/02/2026 , 2.6.0 , FIX Menu add SVG support to Logo
+ 17/05/2026 , 3.0   , FIX Theme New Styles Customisation
+ ------------------------------------------------
+ 01/05/2026 , 2.6.0 , FIX Latest Version 2
  ------------------------------------------------
  27/01/2025 , 2.5.9.1 , FIX new Marketplace approval guidelines
  ------------------------------------------------

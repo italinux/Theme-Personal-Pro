@@ -1,5 +1,5 @@
 /**
-.---------------------------------------------------------------------.
+.-----------------------------------------------------------------------.
 |  @package: Theme Lazy5basic (a.k.a. theme Personal Pro)
 |  @version: Latest on Github
 |  @link:    http://italinux.com/personal-pro
@@ -7,18 +7,18 @@
 |
 |  @author: Matteo Montanari <matteo@italinux.com>
 |  @link:   https://matteo-montanari.com
-'---------------------------------------------------------------------'
-.---------------------------------------------------------------------------.
+'-----------------------------------------------------------------------'
+.-----------------------------------------------------------------------------.
 | @copyright (c) current year                                               |
-| ------------------------------------------------------------------------- |
-| @license: Concrete5.org Marketplace Commercial Add-Ons & Themes License   |
-|           https://concrete5.org/help/legal/commercial_add-on_license      |
+| --------------------------------------------------------------------------- |
+| @license: ConcreteCMS.com Marketplace Commercial Add-Ons & Themes License   |
+|           https://concretecms.com/about/legal/commercial-extension-license  |
 |           or just: file://theme_lazy5basic/LICENSE.TXT                    |
-|                                                                           |
-| This program is distributed in the hope that it will be useful - WITHOUT  |
-| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
-| FITNESS FOR A PARTICULAR PURPOSE.                                         |
-'---------------------------------------------------------------------------'
+|                                                                             |
+| This program is distributed in the hope that it will be useful - WITHOUT    |
+| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or       |
+| FITNESS FOR A PARTICULAR PURPOSE.                                           |
+'-----------------------------------------------------------------------------'
 */
 .single-space-bottom > section.banner.page-block,
 .double-space-bottom > section.banner.page-block,
@@ -49,7 +49,7 @@
   display: inline-block;
 }
 .fix-spaces-buttons section.banner div.global-cta .btn.goto::after {
-  vertical-align: text-top;
+  vertical-align: initial;
   margin-right: -10px;
 }
 section.banner {
@@ -75,7 +75,7 @@ section.banner a:not(.CTA-clean).info::after {
 section.banner a:not(.CTA-clean).goto::after {
   content: "\f08e";
   margin-left: 6px;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 section.banner div.global-cta {
   margin-top: 4em;
@@ -299,10 +299,18 @@ section.banner div[class^="container"] div.videoStatus {
   display: none;
 }
 section.banner div[class^="container"] div.videoStatus.show {
-  -webkit-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-     -moz-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-       -o-animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
-          animation: videostatusfadeout 2s linear 5s 1 normal forwards running;
+  opacity: 0;
+
+  -webkit-animation: videoStatusFadeInOut 8s ease-in-out 4s 4 normal forwards running;
+     -moz-animation: videoStatusFadeInOut 8s ease-in-out 4s 4 normal forwards running;
+       -o-animation: videoStatusFadeInOut 8s ease-in-out 4s 4 normal forwards running;
+          animation: videoStatusFadeInOut 8s ease-in-out 4s 4 normal forwards running;
+/*
+  -webkit-animation: videoStatusFadeOut 2s linear 5s 1 normal forwards running;
+     -moz-animation: videoStatusFadeOut 2s linear 5s 1 normal forwards running;
+       -o-animation: videoStatusFadeOut 2s linear 5s 1 normal forwards running;
+          animation: videoStatusFadeOut 2s linear 5s 1 normal forwards running;
+*/
   display: block;
 }
 section.banner div[class^="container"] div.videoStatus span {
@@ -315,6 +323,8 @@ section.banner div[class^="container"] div.videoStatus span {
 section.banner div[class^="container"] div.videoStatus span.video-on {
   background-color: #26a428;
   box-shadow: 0 0 5px 3px #90ee90;
+
+  visibility: hidden;
 }
 section.banner div[class^="container"] div.videoStatus span.video-off {
   background-color: #a52a2a;
@@ -365,7 +375,35 @@ section.banner a.CTA-arrow {
   display: inline-block;
   z-index: 3;
 }
-@-webkit-keyframes videostatusfadeout {
+@-webkit-keyframes videoStatusFadeInOut {
+    0% { opacity: 0; }
+   50% { opacity: 0; }
+   60% { opacity: 1; }
+   70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes videoStatusFadeInOut {
+    0% { opacity: 0; }
+   50% { opacity: 0; }
+   60% { opacity: 1; }
+   70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes videoStatusFadeInOut {
+    0% { opacity: 0; }
+   50% { opacity: 0; }
+   60% { opacity: 1; }
+   70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes videoStatusFadeInOut {
+    0% { opacity: 0; }
+   50% { opacity: 0; }
+   60% { opacity: 1; }
+   70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-webkit-keyframes videoStatusFadeOut {
   0% {
     opacity: 1;
   }
@@ -373,7 +411,7 @@ section.banner a.CTA-arrow {
     opacity: 0;
   }
 }
-@-moz-keyframes videostatusfadeout {
+@-moz-keyframes videoStatusFadeOut {
   0% {
     opacity: 1;
   }
@@ -381,7 +419,7 @@ section.banner a.CTA-arrow {
     opacity: 0;
   }
 }
-@-o-keyframes videostatusfadeout {
+@-o-keyframes videoStatusFadeOut {
   0% {
     opacity: 1;
   }
@@ -389,7 +427,7 @@ section.banner a.CTA-arrow {
     opacity: 0;
   }
 }
-@keyframes videostatusfadeout {
+@keyframes videoStatusFadeOut {
   0% {
     opacity: 1;
   }

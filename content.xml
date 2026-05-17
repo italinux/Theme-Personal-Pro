@@ -59,12 +59,6 @@
   </pagetypes>
   <pages>
     <page name="Home" path="" public-date="2020-04-14 21:38:27" filename="" pagetype="page" template="full" user="admin" description="" package="" root="true">
-      <area name="Main">
-        <blocks/>
-      </area>
-      <area name="Page Footer">
-        <blocks/>
-      </area>
       <area name="Menu">
         <blocks>
           <block type="l5b_menu" name="" custom-template="sticky">
@@ -278,9 +272,6 @@
           </block>
         </blocks>
       </area>
-      <area name="Team">
-        <blocks/>
-      </area>
       <area name="About Me">
         <blocks>
           <block type="l5b_about_me" name="" custom-template="image_clean_left">
@@ -316,12 +307,6 @@ here you will write information about yourself or your business.</p>
             </data>
           </block>
         </blocks>
-      </area>
-      <area name="Services">
-        <blocks/>
-      </area>
-      <area name="Portfolio">
-        <blocks/>
       </area>
       <area name="Contacts">
         <blocks>
@@ -427,18 +412,6 @@ Sunday: Closed]]></openHours>
             </data>
           </block>
         </blocks>
-      </area>
-      <area name="Prices">
-        <blocks/>
-      </area>
-      <area name="Clients">
-        <blocks/>
-      </area>
-      <area name="Curriculum Vitae">
-        <blocks/>
-      </area>
-      <area name="My Skills">
-        <blocks/>
       </area>
     </page>
   </pages>
